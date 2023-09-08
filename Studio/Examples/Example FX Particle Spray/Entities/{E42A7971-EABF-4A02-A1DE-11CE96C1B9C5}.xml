@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{E42A7971-EABF-4A02-A1DE-11CE96C1B9C5}">
+      <Name>Room</Name>
+      <Behavior>FPSRender</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{9B907EC9-A5C9-4461-84FC-7C074EE84612}" type="RWSAssetID" />
+      <ParentReference id="{B90B07AB-6BEF-4D74-BE54-18B9AE5E16FB}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Start_Render</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

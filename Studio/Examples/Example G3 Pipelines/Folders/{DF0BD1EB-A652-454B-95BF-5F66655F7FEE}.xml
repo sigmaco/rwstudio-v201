@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{DF0BD1EB-A652-454B-95BF-5F66655F7FEE}" type="generic">
+      <Name>Level: Using G3x_ADL (1 Ambient + 4 Points) Pipe, Warrior has 2 weights per vert</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{B89289A8-CFD7-4E5E-BE7F-C7AE66027AC1}" type="RWSFolderID" />
+      <ChildReference id="{CE03CA3A-D4BE-43C1-9B37-2CB540C4C535}" type="RWSFolderID" />
+      <ChildReference id="{00C25D3C-A9E9-49A1-AE20-9AD708F6D746}" type="RWSFolderID" />
+      <ChildReference id="{84368144-F2F7-44DB-9B67-64F9CF2A2731}" type="RWSFolderID" />
+      <ChildReference id="{78539827-2407-4E71-A84A-EFC032B7791C}" type="RWSFolderID" />
+      <ChildReference id="{90C153EB-F983-4CE8-A2BF-46022835A87B}" type="RWSFolderID" />
+      <ChildReference id="{E0FAC4F9-9C98-425C-A6C6-9D5F8065C370}" type="RWSFolderID" />
+      <ChildReference id="{6F3A7B1F-DF4F-43D2-A9DB-998547D0A0A4}" type="RWSFolderID" />
+      <ParentReference id="{F93B367B-C424-4DEB-90E8-6BC0139409DB}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

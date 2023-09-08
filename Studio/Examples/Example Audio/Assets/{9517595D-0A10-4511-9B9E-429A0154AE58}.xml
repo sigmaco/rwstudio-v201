@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{9517595D-0A10-4511-9B9E-429A0154AE58}">
+      <Name>Red Ball</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures" file="Models\redball.dff" />
+      <ParentReference id="{079C2BA7-BF78-4265-BCC9-E3C3A92B7C67}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

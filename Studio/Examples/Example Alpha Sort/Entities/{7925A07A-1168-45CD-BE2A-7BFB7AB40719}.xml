@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{7925A07A-1168-45CD-BE2A-7BFB7AB40719}">
+      <Name>Timer Trigger</Name>
+      <Behavior>FPSTimer</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{0D7A0334-0E42-4050-93B7-41D4F95973C3}" type="RWSAssetID" />
+      <ParentReference id="{1E1637D5-4B04-4873-93D1-B48198BF526B}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               4496eb33 <!-- 1207.35 -->
+               41cf9e1b <!-- 25.9522 -->
+               44810f0a <!-- 1032.47 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_random</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_target</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="6">alien</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_wait</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40a7e76d <!-- 5.24700 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

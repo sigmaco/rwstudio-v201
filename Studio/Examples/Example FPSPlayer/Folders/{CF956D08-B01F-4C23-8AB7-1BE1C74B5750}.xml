@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{CF956D08-B01F-4C23-8AB7-1BE1C74B5750}" type="generic">
+      <Name>Teleport</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{1F982701-DBED-45E6-AB1D-84175A3F2DE4}" type="RWSEntityID" />
+      <ChildReference id="{B7CDE53E-408E-40E5-AFAA-5784EA55F445}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

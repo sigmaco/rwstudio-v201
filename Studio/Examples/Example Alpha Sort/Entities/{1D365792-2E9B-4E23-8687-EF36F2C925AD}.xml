@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{1D365792-2E9B-4E23-8687-EF36F2C925AD}">
+      <Name>An Opaque Object</Name>
+      <Description></Description>
+      <Behavior>CEntity</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{FD0A6127-0660-4370-8097-54F2BB46FAE3}" type="RWSAssetID" />
+      <ParentReference id="{8BC19067-F13E-460E-9DA7-1FE45FFB0F33}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c49dcc29 <!-- -1262.38 -->
+               40ae1038 <!-- 5.43948 -->
+               44cefb85 <!-- 1655.86 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

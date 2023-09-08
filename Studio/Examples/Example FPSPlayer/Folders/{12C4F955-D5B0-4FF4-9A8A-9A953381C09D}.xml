@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="generic">
+      <Name>Level: FPSPlayer Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{B7067D31-6BD1-43B4-BE5D-812C8EA6C902}" type="RWSFolderID" />
+      <ChildReference id="{8424DD5A-15F3-4FE7-BB1C-3B2ABAAA722F}" type="RWSFolderID" />
+      <ChildReference id="{A80293F2-7FB1-4B42-BD3A-1DAF4B722C63}" type="RWSFolderID" />
+      <ChildReference id="{CF956D08-B01F-4C23-8AB7-1BE1C74B5750}" type="RWSFolderID" />
+      <ChildReference id="{7CEB7549-2DB9-4893-91CA-A5D4CCE0FEF5}" type="RWSFolderID" />
+      <ChildReference id="{AC13CF27-BF49-4CC8-AD70-D35998BFDC20}" type="RWSFolderID" />
+      <ChildReference id="{DE01D002-0C92-4094-B3BA-8031F59F57AE}" type="RWSFolderID" />
+      <ChildReference id="{1E39B4F6-7409-4143-A4B0-8747A40F5072}" type="RWSFolderID" />
+      <ChildReference id="{30A83021-65D9-4247-9703-16FDEC291A0F}" type="RWSFolderID" />
+      <ParentReference id="{9EB80C5B-B506-4DF1-8048-FF7ED22E4D0E}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{AB1B69BA-B495-42A3-A022-F97422487306}">
+      <Name>Large Alien</Name>
+      <Behavior>CMultiAnimate</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{4CAEE679-4632-4598-AF0B-3F125C7F0655}" type="RWSAssetID" />
+      <ChildReference id="{54D06143-DBC2-4741-BB0B-7B1C16DDA7AD}" type="RWSFolderID" />
+      <ParentReference id="{BD14986D-CC29-463C-85D2-A2D722E9D6D8}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3d718330 <!-- 0.0589630 -->
+               3e9d2264 <!-- 0.306903 -->
+               bf732d80 <!-- -0.949913 -->
+               00000000 <!-- 0.000000 -->
+               3e39d302 <!-- 0.181469 -->
+               3f6eb2d1 <!-- 0.932416 -->
+               3ea001f7 <!-- 0.312515 -->
+               00000000 <!-- 0.000000 -->
+               3f7b4bd7 <!-- 0.981626 -->
+               be43632c <!-- -0.190808 -->
+               ba3b8d5f <!-- -0.000715455 -->
+               00000000 <!-- 0.000000 -->
+               441f8550 <!-- 638.083 -->
+               452d22e1 <!-- 2770.18 -->
+               45e592e1 <!-- 7346.36 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CMultiAnimate</Class>
+         <Member>CMD_MsgNextAnimTrigger</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="6">alien</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CMultiAnimate</Class>
+         <Member>CMD_BlendDuration</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3ecccccd <!-- 0.400000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

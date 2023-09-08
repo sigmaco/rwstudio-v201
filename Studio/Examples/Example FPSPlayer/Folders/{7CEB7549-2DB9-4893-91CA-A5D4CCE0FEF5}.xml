@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{7CEB7549-2DB9-4893-91CA-A5D4CCE0FEF5}" type="generic">
+      <Name>Doors</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{E957E538-8214-453F-A737-3CEBC0179265}" type="RWSEntityID" />
+      <ChildReference id="{05442ACE-CAD8-4C05-A842-34C06EED82DE}" type="RWSEntityID" />
+      <ChildReference id="{79F3D1E3-465C-41E6-935A-CF3A2C3E312C}" type="RWSEntityID" />
+      <ChildReference id="{ABF663DD-AFA9-4B34-9E14-9B66F5E284D0}" type="RWSEntityID" />
+      <ChildReference id="{1EB8E8AD-5B05-44B1-822C-B91551DD835B}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

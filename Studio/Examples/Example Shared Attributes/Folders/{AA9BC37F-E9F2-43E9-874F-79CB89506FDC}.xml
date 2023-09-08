@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{AA9BC37F-E9F2-43E9-874F-79CB89506FDC}" type="generic">
+      <Name>Working Lights</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{6121EB97-6966-4D3A-B6E6-489180846778}" type="RWSEntityID" />
+      <ChildReference id="{303E49ED-5527-4DA7-99A6-039391591D09}" type="RWSEntityID" />
+      <ChildReference id="{5E50F8A3-F668-4FE1-A34C-B9AF55226C47}" type="RWSEntityID" />
+      <ChildReference id="{BA84D817-1DEC-498A-8078-CA5E3372A34E}" type="RWSEntityID" />
+      <ChildReference id="{B92DCCAE-4E38-4D0F-B7CB-A5FC9B005CED}" type="RWSEntityID" />
+      <ChildReference id="{4467ABB0-425B-4573-AE93-BD306FD8B70F}" type="RWSEntityID" />
+      <ChildReference id="{28DEF252-5EB6-48D4-8B33-AF4591866A3B}" type="RWSEntityID" />
+      <ChildReference id="{D3FE711D-7113-41D4-9CFE-8D51AA31A1FF}" type="RWSEntityID" />
+      <ParentReference id="{C5535F10-95D2-42F4-AD75-17CB1D801530}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

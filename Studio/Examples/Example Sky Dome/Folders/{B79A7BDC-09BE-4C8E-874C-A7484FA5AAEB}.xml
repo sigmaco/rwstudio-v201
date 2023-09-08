@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{B79A7BDC-09BE-4C8E-874C-A7484FA5AAEB}" type="generic">
+      <Name>Init Enviroment Maps</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{DF2F0FE1-55F3-4FF6-A139-E6C4B4734DCF}" type="RWSEntityID" />
+      <ParentReference id="{F0C7F621-B4CB-46E1-A20B-74687AC19039}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

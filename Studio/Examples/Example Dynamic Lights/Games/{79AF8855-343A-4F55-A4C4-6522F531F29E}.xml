@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{79AF8855-343A-4F55-A4C4-6522F531F29E}">
+      <Name>Game: Dynamic Lights Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{D3F0EBAC-2964-45A5-AA73-6EF1702FD0BE}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{C6100F4F-98E4-4737-9722-D35CD888774D}">
+      <Name>Combination_gcn</Name>
+      <Type>rwID_TEXDICTIONARY</Type>
+      <Description>GCN Maestro Texture Dictionary</Description>
+      <Platform>GameCube</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Maestro\TexDict\Combination_gcn.txd" />
+      <ParentReference id="{77881B3A-5DD0-406F-BBD5-183D7D7FA55C}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

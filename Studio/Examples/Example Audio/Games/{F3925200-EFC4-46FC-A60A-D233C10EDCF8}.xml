@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{F3925200-EFC4-46FC-A60A-D233C10EDCF8}">
+      <Name>Game: Audio Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{7DF3E0B3-D180-4399-AADA-9F1D882865EB}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{5F813F7D-D8D4-40D6-B2A9-39152A17F8F8}">
+      <Name>Reverb</Name>
+      <Behavior>AudioReverb</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{35568527-9E02-4378-BFB2-B1FE5BDF552C}" type="RWSAssetID" />
+      <ParentReference id="{AE7089D1-6710-46F3-A83B-6E6EFC2ABE61}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c1bd147b <!-- -23.6350 -->
+               41cf9e1b <!-- 25.9522 -->
+               44fc8385 <!-- 2020.11 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_decayTime</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41a00000 <!-- 20.0000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_Debug</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_roomRolloffFactor</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41200000 <!-- 10.0000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_reflectionsDelay</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_FadeDown</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_FadeUp</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_reverb</Member>
+         <Type>RwInt32</Type>
+         <Value>
+            <Data type="RWSInt32" num="1">-8272</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_roomHF</Member>
+         <Type>RwInt32</Type>
+         <Value>
+            <Data type="RWSInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_decayHFRatio</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3fcf9a6b <!-- 1.62190 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_hfReference</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               469c4000 <!-- 20000.0 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_reflections</Member>
+         <Type>RwInt32</Type>
+         <Value>
+            <Data type="RWSInt32" num="1">-10000</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_reverbDelay</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3dcccccd <!-- 0.100000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_density</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_environmentGain</Member>
+         <Type>RwInt32</Type>
+         <Value>
+            <Data type="RWSInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_environmentType</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">22</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioReverb</Class>
+         <Member>CMD_TriggerEnvironment</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="16">iMsgStartSystem</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

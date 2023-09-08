@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{FAA191F9-5CF2-4CAE-9EB1-A4DB97A8DEA6}">
+      <Name>Light</Name>
+      <Behavior>CFXColorLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{8088794F-D837-486F-8996-05309A2C4D03}" type="RWSAssetID" />
+      <ParentReference id="{73447139-3FDD-40D0-B189-26446AD051DC}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f7ff62b <!-- 0.999850 -->
+               bc8ef856 <!-- -0.0174524 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3c8ef856 <!-- 0.0174524 -->
+               3f7ff60a <!-- 0.999848 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c2d54ccd <!-- -106.650 -->
+               43935e56 <!-- 294.737 -->
+               c4db3c7b <!-- -1753.89 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_Light_Type</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXColorLight</Class>
+         <Member>CMD_Set_t_color</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4294967295</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_radius</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               459c4000 <!-- 5000.00 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_flag</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

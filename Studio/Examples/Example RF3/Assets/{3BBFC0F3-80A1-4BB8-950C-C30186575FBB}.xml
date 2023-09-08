@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{3BBFC0F3-80A1-4BB8-950C-C30186575FBB}">
+      <Name>idle.rf3</Name>
+      <Type>RF3|rwID_HANIMANIMATION</Type>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures" file="Models\idle.rf3" />
+      <ChildReference id="{7299fcdd-1168-4801-92c9-ae4a6c234785}" type="RWSAssetID" />
+      <ParentReference id="{61E8AA29-F9DB-4612-81FC-241C002CD437}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{E4C469B6-5C58-4CE6-88EA-7406F192D911}">
+      <Name>Game: RF3 Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{5E7AAAD2-B15C-43BE-ABC8-CF4C0813E632}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

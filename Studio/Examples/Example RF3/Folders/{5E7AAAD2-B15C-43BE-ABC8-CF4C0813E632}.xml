@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{5E7AAAD2-B15C-43BE-ABC8-CF4C0813E632}" type="generic">
+      <Name>RF3 Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{44286428-D258-4875-9CD2-31A0CC93CA1D}" type="RWSEntityID" />
+      <ChildReference id="{420FEBB5-80E7-4852-8129-998C335CCAD5}" type="RWSEntityID" />
+      <ChildReference id="{B1125081-C977-4B58-A9D1-ACA94FD891F0}" type="RWSEntityID" />
+      <ChildReference id="{53022C14-036B-4A5B-82A7-4E0BCBF2FEF6}" type="RWSEntityID" />
+      <ChildReference id="{65298FE9-65A7-41EE-9FC5-92A39EE30BCD}" type="RWSEntityID" />
+      <ChildReference id="{39C5FD63-2192-42F9-A293-0CC20473897A}" type="RWSEntityID" />
+      <ChildReference id="{8A238E6D-CE48-4E74-9343-E2E4749B99EE}" type="RWSEntityID" />
+      <ChildReference id="{CC08327D-03E5-4F34-84AA-935A67DCB219}" type="RWSFolderID" />
+      <ChildReference id="{C392AC5F-5F55-4D7B-9A67-88D6BE6C1EAF}" type="RWSFolderID" />
+      <ParentReference id="{E4C469B6-5C58-4CE6-88EA-7406F192D911}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

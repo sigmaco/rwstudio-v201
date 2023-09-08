@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{69AC5373-BEEF-4548-BB3D-A08E317CDA08}" type="generic">
+      <Name>World</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{85A746A0-507C-4DE7-B98D-6A5B46A0B8AE}" type="RWSEntityID" />
+      <ChildReference id="{A8344ED5-6497-4DDA-A3C1-3B14FAD54E61}" type="RWSEntityID" />
+      <ChildReference id="{CB27FAF8-0DA8-4C0D-941F-CB765DEFEFCF}" type="RWSEntityID" />
+      <ChildReference id="{F46AC848-C335-497C-AF5E-3C3910D0B87D}" type="RWSEntityID" />
+      <ChildReference id="{DE131287-32CA-4752-99CB-EFCA95305CB6}" type="RWSEntityID" />
+      <ParentReference id="{7DF3E0B3-D180-4399-AADA-9F1D882865EB}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

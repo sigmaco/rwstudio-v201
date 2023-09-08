@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{96659627-8EB6-4193-B138-EAD431BCEAEB}">
+      <Template />
+      <Name>Template of Particle Effect</Name>
+      <Description></Description>
+      <Behavior>CFXPartSpray</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{C92AF156-5F2D-428E-8102-840C8F14FEE6}" type="RWSAssetID" />
+      <ChildReference id="{11C3464A-B41A-413F-BD61-D42A1610507A}" type="RWSAttributeShareID" />
+      <ParentReference id="RWS_TemplateHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c5ca5333 <!-- -6474.40 -->
+               43ccf2b0 <!-- 409.896 -->
+               453211ec <!-- 2849.12 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

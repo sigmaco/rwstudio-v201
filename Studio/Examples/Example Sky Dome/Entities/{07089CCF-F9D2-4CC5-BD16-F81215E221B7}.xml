@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{07089CCF-F9D2-4CC5-BD16-F81215E221B7}">
+      <Name>Room</Name>
+      <Behavior>FPSRender</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{126CBC2F-390F-40D9-8B13-44883A789AE0}" type="RWSAssetID" />
+      <ParentReference id="{7F31F966-33E8-4EE1-B850-B2BFD444053A}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Start_Render</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_priority</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">56032</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_priority</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">30146</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_ClearScreen</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_ClearZ</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_ClearStencil</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_far_clip_factor</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4318828f <!-- 152.510 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_DEBUG_WORLD_SECTORS</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_FogType</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_FogColor</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">3561049</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

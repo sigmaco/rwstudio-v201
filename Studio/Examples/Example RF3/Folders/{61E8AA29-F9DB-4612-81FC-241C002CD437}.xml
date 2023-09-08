@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{61E8AA29-F9DB-4612-81FC-241C002CD437}" type="asset">
+      <Name>Guard Animation</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{4AD86970-8383-454A-97D2-A8FD91B85783}" type="RWSAssetID" />
+      <ChildReference id="{6F6920D0-82E5-4EAF-8993-4E0A379F1018}" type="RWSAssetID" />
+      <ChildReference id="{79BDB634-A663-4C9F-9ABF-4382EB5655AF}" type="RWSAssetID" />
+      <ChildReference id="{3BBFC0F3-80A1-4BB8-950C-C30186575FBB}" type="RWSAssetID" />
+      <ParentReference id="{53022C14-036B-4A5B-82A7-4E0BCBF2FEF6}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{63258A25-CC86-4396-BC2B-8128F8154305}">
+      <Name>Ambient Light</Name>
+      <Behavior>CFXColorLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{6164DC98-E0C3-4068-8215-D11B292E588C}" type="RWSAssetID" />
+      <ParentReference id="{F86C081F-AF59-4681-B6CF-8B8E494175AF}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               4540363d <!-- 3075.39 -->
+               424dd5b5 <!-- 51.4587 -->
+               4492e70a <!-- 1175.22 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_Light_Type</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXColorLight</Class>
+         <Member>CMD_Set_t_color</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4279834905</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetSolidFlag</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetCollisionFlag</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

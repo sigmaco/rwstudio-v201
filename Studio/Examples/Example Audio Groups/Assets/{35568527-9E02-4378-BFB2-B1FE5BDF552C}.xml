@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{35568527-9E02-4378-BFB2-B1FE5BDF552C}">
+      <Name>.\Models\BOX.dff</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="textures" file=".\Models\BOX.dff" />
+      <ParentReference id="{0196891F-6A57-404F-A527-035CE064A764}" type="RWSEntityID" />
+      <ParentReference id="{23DAE796-0406-4D3F-8C08-278094A598AF}" type="RWSEntityID" />
+      <ParentReference id="{2773B0B4-9B77-480A-AF8F-F3E0D864C80A}" type="RWSEntityID" />
+      <ParentReference id="{4975F712-6E42-433C-B664-D5A06E95FB09}" type="RWSEntityID" />
+      <ParentReference id="{4A9BCD20-ABA3-4402-AE38-2B3860D9B75A}" type="RWSEntityID" />
+      <ParentReference id="{5F813F7D-D8D4-40D6-B2A9-39152A17F8F8}" type="RWSEntityID" />
+      <ParentReference id="{6B8F9B85-F882-42D7-95E8-DD894CB50065}" type="RWSEntityID" />
+      <ParentReference id="{9055C212-A1D2-4272-95F3-C3A2FE0AEF81}" type="RWSEntityID" />
+      <ParentReference id="{BC73FCAF-1AB4-4837-A510-8B5837E13147}" type="RWSEntityID" />
+      <ParentReference id="{CB27FAF8-0DA8-4C0D-941F-CB765DEFEFCF}" type="RWSEntityID" />
+      <ParentReference id="{DF7BB431-C3A2-408F-B1D9-478A0D2BAC1A}" type="RWSEntityID" />
+      <ParentReference id="{E478F2D5-C7E1-48D9-A688-7F14289B99A3}" type="RWSEntityID" />
+      <ParentReference id="{E6CD4C8F-DCB1-4DC4-BF95-032697F56E6A}" type="RWSEntityID" />
+      <ParentReference id="{E7D956D3-DD8B-4BB9-92F0-D8E326DB5D72}" type="RWSEntityID" />
+      <ParentReference id="{EEEAA375-AE94-4B53-91FC-AD99A2DC7A4E}" type="RWSEntityID" />
+      <ParentReference id="{F754F9C5-65D2-41AF-8274-64EFCB6F38E1}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

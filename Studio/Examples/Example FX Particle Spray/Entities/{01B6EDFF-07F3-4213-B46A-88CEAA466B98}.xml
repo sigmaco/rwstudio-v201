@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{01B6EDFF-07F3-4213-B46A-88CEAA466B98}">
+      <Name>Light</Name>
+      <Behavior>CFXColorLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{BC89B65A-A138-4F86-996D-D6467CF2615F}" type="RWSAssetID" />
+      <ParentReference id="{2A6A9BC2-57A6-4F16-BB13-DDEACAF9F412}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               458dbc29 <!-- 4535.52 -->
+               41abb261 <!-- 21.4621 -->
+               4546c7ae <!-- 3180.48 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXColorLight</Class>
+         <Member>CMD_Set_t_color</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4079166</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_Light_Type</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_flag</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

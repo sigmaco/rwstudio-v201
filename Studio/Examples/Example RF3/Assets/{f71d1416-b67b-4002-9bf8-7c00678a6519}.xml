@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{f71d1416-b67b-4002-9bf8-7c00678a6519}">
+      <Name>military_lab_vertexlit</Name>
+      <Type>rwID_WORLD</Type>
+      <Description>Auto-generated from: Models\military_lab_vertexlit.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures\" file="RWStudio RF3 Exports\Generic\Models\military_lab\military_lab4.rws" />
+      <ParentReference id="{44286428-D258-4875-9CD2-31A0CC93CA1D}" type="RWSEntityID" />
+      <ParentReference id="{0D7AC3E2-4E3C-4392-A27C-5A3B8CC4CB0C}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

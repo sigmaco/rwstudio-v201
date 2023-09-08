@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{8F8C0B59-6FD9-420D-8904-BDF746DE6CD7}">
+      <Name>Game: Shared Attributes Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{C5535F10-95D2-42F4-AD75-17CB1D801530}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

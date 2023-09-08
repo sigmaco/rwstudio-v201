@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{42C58C5D-A7D7-48D6-A7D7-E7594781BAB2}">
+      <Name>FPSTimer</Name>
+      <Description></Description>
+      <Behavior>FPSTimer</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{13105F34-ED05-4DD5-BAE2-504626D644D3}" type="RWSAssetID" />
+      <ParentReference id="{BD14986D-CC29-463C-85D2-A2D722E9D6D8}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               4497a9ec <!-- 1213.31 -->
+               41cf9e1b <!-- 25.9522 -->
+               45bd41c3 <!-- 6056.22 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_target</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="6">alien</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_wait</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4081e354 <!-- 4.05900 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

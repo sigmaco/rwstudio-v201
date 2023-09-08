@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{444222FD-1A41-4DA1-AC1F-BDF6EEC2EE24}">
+      <Name>Broken Light 4</Name>
+      <Behavior>CFXWaveLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{89F6BCD9-5D18-40CA-85ED-EFFC7B9C631D}" type="RWSAssetID" />
+      <ChildReference id="{39AFC320-2EAD-4CAA-897E-5F669FC68710}" type="RWSAttributeShareID" />
+      <ParentReference id="{DB3B07CC-DFDA-44C8-9D3C-4DE20581F09C}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               450a84a4 <!-- 2216.29 -->
+               449b84cd <!-- 1244.15 -->
+               c58db333 <!-- -4534.40 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

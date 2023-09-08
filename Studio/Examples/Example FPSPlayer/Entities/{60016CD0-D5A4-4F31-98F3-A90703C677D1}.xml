@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{60016CD0-D5A4-4F31-98F3-A90703C677D1}">
+      <Name>Entity&lt;6067&gt;</Name>
+      <Behavior>FPSTrain</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{0924210D-5C48-494E-9F2F-570F97CF56D2}" type="RWSAssetID" />
+      <ParentReference id="{DE01D002-0C92-4094-B3BA-8031F59F57AE}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               40a719b9 <!-- 5.22189 -->
+               43e33f5c <!-- 454.495 -->
+               c52209c3 <!-- -2592.61 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTrain</Class>
+         <Member>CMD_target</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="3">p1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTrain</Class>
+         <Member>CMD_speed</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">500</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

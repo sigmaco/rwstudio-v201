@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{1217EE09-54F9-4BF2-B6DF-C30D9E7B9348}">
+      <Template />
+      <Name>Template of Working Light</Name>
+      <Behavior>CFXWaveLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{89F6BCD9-5D18-40CA-85ED-EFFC7B9C631D}" type="RWSAssetID" />
+      <ChildReference id="{CDF054E6-4D78-4E24-8849-3AF5B92B2B91}" type="RWSAttributeShareID" />
+      <ParentReference id="RWS_TemplateHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c43656d9 <!-- -729.357 -->
+               44a22c7b <!-- 1297.39 -->
+               c6248b9a <!-- -10530.9 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

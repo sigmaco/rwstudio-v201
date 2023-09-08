@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{987DBD1C-7E71-4292-A576-78F5B988A702}">
+      <Name>at_rest</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\at_rest.dff" />
+      <ParentReference id="{19636156-DAA3-4008-BBBE-F00BB7312926}" type="RWSEntityID" />
+      <ParentReference id="{7C78FA30-6012-4780-93E4-6591D4C0EF04}" type="RWSEntityID" />
+      <ParentReference id="{9BFFDCC7-6BE9-47F3-8C1D-4356852AC5F4}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

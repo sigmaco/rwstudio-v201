@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{361F7A81-4FA6-4AF7-89A8-96CD3B5C9517}">
+      <Name>Enviroment Map Control</Name>
+      <Behavior>CFXEnvironmentMap</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{14FF781D-017C-42E4-8AF1-AA2F932F26F9}" type="RWSAssetID" />
+      <ChildReference id="{1E213493-5CBF-4B6D-8B14-634010AAF238}" type="RWSAssetID" />
+      <ChildReference id="{C7B42A3B-D693-4F0B-9E44-47645CD2E287}" type="RWSAssetID" />
+      <ParentReference id="{8BFCF1F6-190F-4CA1-B634-F217306B9395}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_Source</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_AnimRotation_y</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               409b851f <!-- 4.86000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_UserRotation_y</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

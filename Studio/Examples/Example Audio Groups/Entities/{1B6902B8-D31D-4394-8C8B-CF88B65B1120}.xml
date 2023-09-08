@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{1B6902B8-D31D-4394-8C8B-CF88B65B1120}">
+      <Name>Animal 3 Sound</Name>
+      <Behavior>AudioSound3D</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{9517595D-0A10-4511-9B9E-429A0154AE58}" type="RWSAssetID" />
+      <ParentReference id="{33D4B109-EA9F-41C3-9FE7-22166593FBAE}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               45221214 <!-- 2593.13 -->
+               41d36b85 <!-- 26.4275 -->
+               45e57814 <!-- 7343.01 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_selectText</Member>
+         <Type>RwChar</Type>
+         <Value>
+            <Data type="RWSChar" num="8">ANIMAL1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_m_play</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="10">animal3fx</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_Debug</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_m_stop</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_gain</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f5645a2 <!-- 0.837000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

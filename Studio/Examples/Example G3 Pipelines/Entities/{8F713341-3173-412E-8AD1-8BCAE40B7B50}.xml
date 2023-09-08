@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{8F713341-3173-412E-8AD1-8BCAE40B7B50}">
+      <Name>A4D Material Pipe</Name>
+      <Description></Description>
+      <Behavior>CG3x_A4D_MatPipeID</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{04DCAD32-03A9-4F21-B807-435713E95886}" type="RWSAssetID" />
+      <ChildReference id="{C17C6AA6-0065-4306-9D66-E051A72A4253}" type="RWSAssetID" />
+      <ParentReference id="{8FDEA2E1-2000-41BD-8DEE-B37FA1766BF2}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

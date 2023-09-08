@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{D9D7CB72-2E77-4EC8-B740-A50FE31E8C93}">
+      <Name>Scrolling Motion Blur</Name>
+      <Description></Description>
+      <Behavior>CFXMotionBlur</Behavior>
+      <Platform>GameCube,PS2,Xbox</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{932E58C0-D9E6-455B-8DBB-BEE4EDEC3E1C}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Priority</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Start_Render</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Set_m_OffsetX</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3d4ccccd <!-- 0.0500000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Set_m_BlurAmount</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f2353f8 <!-- 0.638000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Set_m_Angle</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

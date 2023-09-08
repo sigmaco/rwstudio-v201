@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{72220ED9-F980-42E8-B259-99185FE55F47}">
+      <Name>PCKeyMenuLeft</Name>
+      <Description></Description>
+      <Behavior>CWin32Keyboard</Behavior>
+      <Platform>DirectX,OpenGL</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{F6225147-AAAA-4E4B-9D1A-D81379C9DB43}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_m_InqKey_Msg_Id</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="18">INQ_MENU_BTN_LEFT</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_vKey1</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">19</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

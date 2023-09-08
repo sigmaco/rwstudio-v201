@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{743FBA32-20DC-42CE-9880-F0FE9AA6BF34}">
+      <Name>Power Up</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\Cap.dff" />
+      <ParentReference id="{11D21284-3D96-4A1C-BDDD-D7116E5EE23C}" type="RWSEntityID" />
+      <ParentReference id="{4304AC7C-0ED8-4E13-9D3B-D3BD089777E5}" type="RWSEntityID" />
+      <ParentReference id="{556953D7-AA2A-4F71-95FE-B54F7C2287D7}" type="RWSEntityID" />
+      <ParentReference id="{56EA942F-2777-45AB-B1CB-DBF1C2F10F19}" type="RWSEntityID" />
+      <ParentReference id="{70303084-20ED-4133-B013-54CEB199F2BC}" type="RWSEntityID" />
+      <ParentReference id="{758C3A82-7025-4172-838D-11D560D899FD}" type="RWSEntityID" />
+      <ParentReference id="{8E1E918E-CDFF-4BD3-8BAC-9A569414AC60}" type="RWSEntityID" />
+      <ParentReference id="{91CEA6E5-79DE-4E69-B428-E2654F0EE5B4}" type="RWSEntityID" />
+      <ParentReference id="{E709704E-186C-46B1-90C8-F0F6C32CED55}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

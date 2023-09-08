@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{511CCD21-171D-4693-A158-99FEC22D746E}">
+      <Name>Player</Name>
+      <Behavior>FPSPlayer</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{BC89B65A-A138-4F86-996D-D6467CF2615F}" type="RWSAssetID" />
+      <ParentReference id="{2970DCD2-049E-4BCD-B065-4080C50F5774}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               beaf1d60 <!-- -0.342021 -->
+               00000000 <!-- 0.000000 -->
+               bf708fc9 <!-- -0.939694 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f7fffef <!-- 0.999999 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f708fc9 <!-- 0.939694 -->
+               00000000 <!-- 0.000000 -->
+               beaf1d60 <!-- -0.342021 -->
+               00000000 <!-- 0.000000 -->
+               452d0785 <!-- 2768.47 -->
+               421f2666 <!-- 39.7875 -->
+               c12d6b51 <!-- -10.8387 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_Set_m_Tx_Pos</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="11">player_pos</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

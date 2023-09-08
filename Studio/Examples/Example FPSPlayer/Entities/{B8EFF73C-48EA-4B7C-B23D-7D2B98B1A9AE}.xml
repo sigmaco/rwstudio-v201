@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{B8EFF73C-48EA-4B7C-B23D-7D2B98B1A9AE}">
+      <Name>Mac Pad Fwd</Name>
+      <Description></Description>
+      <Behavior>CMacOSXKeyboard</Behavior>
+      <Platform>Mac</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{AC13CF27-BF49-4CC8-AD70-D35998BFDC20}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CMacOSXKeyboard</Class>
+         <Member>CMD_vKey2</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CMacOSXKeyboard</Class>
+         <Member>CMD_m_InqKey_Msg_Id</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="13">INQ_ACTN_FWD</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

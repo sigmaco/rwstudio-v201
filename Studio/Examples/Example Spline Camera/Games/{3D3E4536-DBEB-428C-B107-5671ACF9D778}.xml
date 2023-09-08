@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{3D3E4536-DBEB-428C-B107-5671ACF9D778}">
+      <Name>Game: Spline Camera Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{B4E0589A-7BDF-49B2-95C5-3DD581369028}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

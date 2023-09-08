@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{b8ed664f-9368-4504-8ed5-8ad5404e6d3c}">
+      <Name>prowl</Name>
+      <Type>rwID_HANIMANIMATION</Type>
+      <Description>Auto-generated from: Models\prowl.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures" file="RWStudio RF3 Exports\Generic\Models\prowl\prowl1.rws" />
+      <ParentReference id="{4AD86970-8383-454A-97D2-A8FD91B85783}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

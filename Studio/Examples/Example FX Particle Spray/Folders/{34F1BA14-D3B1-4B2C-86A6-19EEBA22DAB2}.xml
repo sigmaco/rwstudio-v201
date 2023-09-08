@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{34F1BA14-D3B1-4B2C-86A6-19EEBA22DAB2}" type="generic">
+      <Name>Simple Particles</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{C6FABC52-4A75-47F5-86EB-EA65F5068E6E}" type="RWSEntityID" />
+      <ChildReference id="{925A4B8E-024C-41A0-A562-F941E6809A24}" type="RWSEntityID" />
+      <ParentReference id="{93B1650B-428F-4103-9576-6FC20B3648E2}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

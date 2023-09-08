@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{D3F0EBAC-2964-45A5-AA73-6EF1702FD0BE}" type="generic">
+      <Name>Level: Dynamic Lights Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{02FE9AFC-618F-4A62-B2AA-73FDA0C2B6AD}" type="RWSFolderID" />
+      <ChildReference id="{9AE6FB89-91FA-4F3A-AB8B-A6A6B9BF3EF5}" type="RWSFolderID" />
+      <ChildReference id="{1223F26B-DAA5-462D-A5A7-99BB9291DBF4}" type="RWSFolderID" />
+      <ChildReference id="{39D65CAB-0D7E-48E8-8913-7D7725D7DC96}" type="RWSFolderID" />
+      <ParentReference id="{79AF8855-343A-4F55-A4C4-6522F531F29E}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{C634F9B0-9F62-4D36-AA54-A6F9EA7180C6}">
+      <Name>Debug Tools</Name>
+      <Behavior>CDebugTools</Behavior>
+      <Build>
+      </Build>
+      <ParentReference id="{39D65CAB-0D7E-48E8-8913-7D7725D7DC96}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CDebugTools</Class>
+         <Member>CMD_MessageFlows</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CDebugTools</Class>
+         <Member>CMD_Start_Render</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="7">render</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CDebugTools</Class>
+         <Member>CMD_DebugPrintf</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

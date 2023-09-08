@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{9788B437-CC24-4973-A8CC-1D314F023D05}">
+      <Name>Combination_Fonts_txd_ogl</Name>
+      <Type>rwID_PITEXDICTIONARY</Type>
+      <Description>Combination Fonts Texture Dictionary OpenGL</Description>
+      <Platform>OpenGL</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\opengl\Combination_Fonts_ogl.txd" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

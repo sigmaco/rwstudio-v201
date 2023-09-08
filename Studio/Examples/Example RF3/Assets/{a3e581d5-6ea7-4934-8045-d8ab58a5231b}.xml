@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{a3e581d5-6ea7-4934-8045-d8ab58a5231b}">
+      <Name>lift_cave_jail</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description>Auto-generated from: Models\military_lab.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures\" file="RWStudio RF3 Exports\Generic\Models\military_lab\military_lab1.rws" />
+      <ChildReference id="{20b50d60-41d4-4bb0-b997-d1e914dcedd1}" type="RWSAssetID" />
+      <ParentReference id="{8A238E6D-CE48-4E74-9343-E2E4749B99EE}" type="RWSEntityID" />
+      <ParentReference id="{0D7AC3E2-4E3C-4392-A27C-5A3B8CC4CB0C}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

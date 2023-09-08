@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{00C25D3C-A9E9-49A1-AE20-9AD708F6D746}" type="generic">
+      <Name>1 Ambient + 1 Directional Light</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{7B5F2E0D-423A-42DA-86EE-61FD80142BD6}" type="RWSEntityID" />
+      <ChildReference id="{2D9FD45A-CA6B-4967-941D-E52169B6E981}" type="RWSEntityID" />
+      <ParentReference id="{36427FD4-1928-41C9-A976-51562D4D0304}" type="RWSFolderID" />
+      <ParentReference id="{D1D4936D-628B-4CF2-8496-1F93820D5C85}" type="RWSFolderID" />
+      <ParentReference id="{DF0BD1EB-A652-454B-95BF-5F66655F7FEE}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

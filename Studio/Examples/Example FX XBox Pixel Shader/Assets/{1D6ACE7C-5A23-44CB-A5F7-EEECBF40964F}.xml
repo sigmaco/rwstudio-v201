@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{1D6ACE7C-5A23-44CB-A5F7-EEECBF40964F}">
+      <Name>tank</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\tank.dff" />
+      <ParentReference id="{26C98BFB-588A-4117-8BA0-7A034A2D945E}" type="RWSEntityID" />
+      <ParentReference id="{8A457AC1-D540-4573-926D-C71B757788B0}" type="RWSEntityID" />
+      <ParentReference id="{BF312CF1-1FB8-4751-A7A8-1478877F6337}" type="RWSEntityID" />
+      <ParentReference id="{D6909861-674B-4A94-9603-70D59E20D7FF}" type="RWSEntityID" />
+      <ParentReference id="{EBB143D1-04A8-4AE8-8A1D-E37B375CAC0F}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

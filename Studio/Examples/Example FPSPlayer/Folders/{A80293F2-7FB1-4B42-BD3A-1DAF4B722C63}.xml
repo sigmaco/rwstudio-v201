@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{A80293F2-7FB1-4B42-BD3A-1DAF4B722C63}" type="generic">
+      <Name>Pickups</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{94F60485-BC9B-40BD-9C21-E3F82BA3CCFD}" type="RWSEntityID" />
+      <ChildReference id="{3AC9E651-9D1D-4E3C-9F7D-DF5EDB6F7FAA}" type="RWSEntityID" />
+      <ChildReference id="{0526F489-564F-4EF6-929C-89DCD113E256}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

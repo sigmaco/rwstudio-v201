@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <AttributeShare id="{77C25EFB-24BD-42B8-8FCA-E51AB93CBF13}">
+      <Name>Shared attribute(s) for AmbientLight</Name>
+      <ParentReference id="{54B4B510-3542-453F-9420-98AEF9C22196}" type="RWSEntityID" />
+      <ParentReference id="{585DD658-6EEF-451C-96B5-53C2AE48989D}" type="RWSEntityID" />
+      <ParentReference id="RWS_AttributeShareHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CFXColorLight</Class>
+         <Member>CMD_Set_t_color</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">13036535</Data>
+         </Value>
+      </Attribute>
+   </AttributeShare>
+
+</RenderWareStudio>
+

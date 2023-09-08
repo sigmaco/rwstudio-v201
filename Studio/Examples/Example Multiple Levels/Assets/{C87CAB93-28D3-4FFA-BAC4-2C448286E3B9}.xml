@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{C87CAB93-28D3-4FFA-BAC4-2C448286E3B9}">
+      <Name>bulb</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Textures" file="Models\bulb.dff" />
+      <ParentReference id="{A1800162-2937-43BB-9F0E-22354A16F4D7}" type="RWSEntityID" />
+      <ParentReference id="{A35DBD2A-62E6-446E-9B7F-DCAEE6AB2F39}" type="RWSEntityID" />
+      <ParentReference id="{B92D0EC1-E611-4741-870A-C0947C68A0BE}" type="RWSEntityID" />
+      <ParentReference id="{DB9BB9A9-4691-44A8-8A45-336057C8E669}" type="RWSEntityID" />
+      <ParentReference id="{DD06C857-BED9-430B-A403-12AAD23AD0C6}" type="RWSEntityID" />
+      <ParentReference id="{E36FE42E-FC44-4FB3-98B8-9BCC9155569D}" type="RWSEntityID" />
+      <ParentReference id="{FBB5E80B-6987-4BBA-B9B1-BD911E8E7164}" type="RWSEntityID" />
+      <ParentReference id="{FDAEB45D-119C-437B-A353-862EF0F2931E}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

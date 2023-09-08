@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{F0C7F621-B4CB-46E1-A20B-74687AC19039}" type="generic">
+      <Name>Level: Sky Dome</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{B79A7BDC-09BE-4C8E-874C-A7484FA5AAEB}" type="RWSFolderID" />
+      <ChildReference id="{F333113F-063C-4B1C-9948-5F3811189374}" type="RWSFolderID" />
+      <ChildReference id="{7F31F966-33E8-4EE1-B850-B2BFD444053A}" type="RWSFolderID" />
+      <ChildReference id="{305E0B6F-2FB0-4A3D-9177-25F36D7AA395}" type="RWSFolderID" />
+      <ChildReference id="{6AAB1500-F349-42A0-870B-ED38DFC56620}" type="RWSFolderID" />
+      <ParentReference id="{54D71843-2E23-47F3-ADF6-CBC7D5C167F8}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

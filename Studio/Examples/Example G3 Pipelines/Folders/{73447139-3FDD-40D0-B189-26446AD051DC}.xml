@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{73447139-3FDD-40D0-B189-26446AD051DC}" type="generic">
+      <Name>Alpha World</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{40178A58-6026-4FB6-AB3B-E1F7BE0CAD9B}" type="RWSEntityID" />
+      <ChildReference id="{FAA191F9-5CF2-4CAE-9EB1-A4DB97A8DEA6}" type="RWSEntityID" />
+      <ParentReference id="{905DA911-A24A-4422-BDD3-2BFBAD954158}" type="RWSFolderID" />
+      <ParentReference id="{CD7FB7BB-45F7-4443-B290-D7DE6C282A78}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

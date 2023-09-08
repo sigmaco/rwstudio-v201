@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{0FCAB8A8-FAA1-448E-8966-0AEE272B3D64}">
+      <Name>Group - Animal</Name>
+      <Behavior>AudioGroup</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{7078EF53-7D51-4F16-BD40-51B7A86AA710}" type="RWSAssetID" />
+      <ChildReference id="{69DB23ED-FC1F-4D84-B075-3E7F9D52E1F0}" type="RWSAssetID" />
+      <ChildReference id="{F79D3F54-AFCE-4DF0-BD1B-BB33D3C1233E}" type="RWSAssetID" />
+      <ChildReference id="{C58CD21A-BB0D-447B-9EEF-7A71C5A80E8F}" type="RWSAssetID" />
+      <ChildReference id="{1F3538BB-AB9B-4F3C-9DBF-EABBD4F27BDB}" type="RWSAssetID" />
+      <ParentReference id="{E9DFAEF7-CD7D-4C0F-9513-2494A1DC45CD}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c030c27a <!-- -2.76187 -->
+               418c0831 <!-- 17.5040 -->
+               441ad800 <!-- 619.375 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioGroup</Class>
+         <Member>CMD_FadeDown</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioGroup</Class>
+         <Member>CMD_FadeUp</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

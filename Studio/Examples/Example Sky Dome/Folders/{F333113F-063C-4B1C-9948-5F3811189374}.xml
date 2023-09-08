@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{F333113F-063C-4B1C-9948-5F3811189374}" type="generic">
+      <Name>SkyDome</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{76EDFFB0-6131-4A58-BD15-933460D64F8C}" type="RWSEntityID" />
+      <ChildReference id="{585DD658-6EEF-451C-96B5-53C2AE48989D}" type="RWSEntityID" />
+      <ChildReference id="{5771508C-DC9A-4CF2-AD0E-254423CFA66E}" type="RWSEntityID" />
+      <ParentReference id="{F0C7F621-B4CB-46E1-A20B-74687AC19039}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

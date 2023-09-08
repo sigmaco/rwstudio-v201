@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <AttributeShare id="{C7216554-959D-4AE5-BF69-28922290CBEC}">
+      <Name>Shared attribute(s) for PowerUp</Name>
+      <ParentReference id="{11D21284-3D96-4A1C-BDDD-D7116E5EE23C}" type="RWSEntityID" />
+      <ParentReference id="{4304AC7C-0ED8-4E13-9D3B-D3BD089777E5}" type="RWSEntityID" />
+      <ParentReference id="{56EA942F-2777-45AB-B1CB-DBF1C2F10F19}" type="RWSEntityID" />
+      <ParentReference id="{758C3A82-7025-4172-838D-11D560D899FD}" type="RWSEntityID" />
+      <ParentReference id="{8E1E918E-CDFF-4BD3-8BAC-9A569414AC60}" type="RWSEntityID" />
+      <ParentReference id="{91CEA6E5-79DE-4E69-B428-E2654F0EE5B4}" type="RWSEntityID" />
+      <ParentReference id="{E709704E-186C-46B1-90C8-F0F6C32CED55}" type="RWSEntityID" />
+      <ParentReference id="RWS_AttributeShareHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>FPSBouncyPickup</Class>
+         <Member>CMD_Set_Spin_Rate</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41166666 <!-- 9.40000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSBouncyPickup</Class>
+         <Member>CMD_Set_Bounce_Height</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41fccccd <!-- 31.6000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSBouncyPickup</Class>
+         <Member>CMD_Set_Bounce_Rate</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41000000 <!-- 8.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </AttributeShare>
+
+</RenderWareStudio>
+

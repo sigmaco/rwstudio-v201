@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{77A43C22-4847-4A31-AEF0-D87D99220D09}" type="generic">
+      <Name>Level: Scrolling Motion Blur</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{AF25558E-BDCF-4EBE-9E52-57C492FF3F0D}" type="RWSFolderID" />
+      <ChildReference id="{4E557B39-A505-4109-ADB8-F71398E7C2A4}" type="RWSFolderID" />
+      <ChildReference id="{8980B306-FFF3-443A-ADE6-168BCB179ED4}" type="RWSFolderID" />
+      <ChildReference id="{932E58C0-D9E6-455B-8DBB-BEE4EDEC3E1C}" type="RWSFolderID" />
+      <ParentReference id="{671CC586-1A51-49F7-ACD6-A156290DBE2C}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

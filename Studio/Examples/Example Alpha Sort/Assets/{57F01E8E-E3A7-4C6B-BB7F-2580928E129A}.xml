@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{57F01E8E-E3A7-4C6B-BB7F-2580928E129A}">
+      <Name>alpha_teapot</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\alpha_teapot.dff" />
+      <ParentReference id="{11560AAB-B37B-49A6-9B0C-E1375322BF29}" type="RWSEntityID" />
+      <ParentReference id="{14E7B62E-6EE3-432F-9DA1-928CE9E720E2}" type="RWSEntityID" />
+      <ParentReference id="{16ECCBDD-7268-4D7B-A966-833530B52D83}" type="RWSEntityID" />
+      <ParentReference id="{4E00FBD3-171A-4E51-AACD-61498DF97713}" type="RWSEntityID" />
+      <ParentReference id="{54F0DD8D-6D1B-4D93-B63F-CBAA3C55A710}" type="RWSEntityID" />
+      <ParentReference id="{581D4913-16E7-41E3-B574-22CF87366ECE}" type="RWSEntityID" />
+      <ParentReference id="{76C7D144-47D7-456D-B653-7E498824B841}" type="RWSEntityID" />
+      <ParentReference id="{828D6893-E707-4F35-A349-41100EA8C304}" type="RWSEntityID" />
+      <ParentReference id="{9B9B5175-5842-4702-B40A-37080FC62F40}" type="RWSEntityID" />
+      <ParentReference id="{9C5560A6-46E4-418D-9AC3-7208652E8DD6}" type="RWSEntityID" />
+      <ParentReference id="{A42FCB42-64E6-4D01-ACF7-67AE2BDC6E16}" type="RWSEntityID" />
+      <ParentReference id="{A6D0B4F0-F989-43B0-AB69-27F9A8D7B3DC}" type="RWSEntityID" />
+      <ParentReference id="{BB0BA2DC-095E-4A87-9E0C-461D853D22AA}" type="RWSEntityID" />
+      <ParentReference id="{C9BCCA69-1482-4341-87AC-B05A4F892B91}" type="RWSEntityID" />
+      <ParentReference id="{E2C76977-B369-45D1-B0C1-B7B9C00F4DA6}" type="RWSEntityID" />
+      <ParentReference id="{F9FA52AB-D19B-4ECB-8ED7-D9ABB5CEB757}" type="RWSEntityID" />
+      <ParentReference id="{FB35CCC4-A3AB-48B5-9595-E8C07A287041}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

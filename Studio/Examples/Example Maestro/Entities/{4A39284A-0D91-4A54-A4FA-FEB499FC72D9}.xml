@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{4A39284A-0D91-4A54-A4FA-FEB499FC72D9}">
+      <Name>Gamecube Controller</Name>
+      <Description></Description>
+      <Behavior>CGCNStandardController</Behavior>
+      <Platform>GameCube</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{F6225147-AAAA-4E4B-9D1A-D81379C9DB43}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CGCNStandardController</Class>
+         <Member>CMD_m_Inq_DPadUp</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="16">INQ_MENU_BTN_UP</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CGCNStandardController</Class>
+         <Member>CMD_m_Inq_DPadDown</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="18">INQ_MENU_BTN_DOWN</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CGCNStandardController</Class>
+         <Member>CMD_m_Inq_A</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="20">INQ_MENU_BTN_SELECT</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CGCNStandardController</Class>
+         <Member>CMD_m_Inq_B</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="20">INQ_MENU_BTN_CANCEL</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CGCNStandardController</Class>
+         <Member>CMD_m_Inq_DPadLeft</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="18">INQ_MENU_BTN_LEFT</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CGCNStandardController</Class>
+         <Member>CMD_m_Inq_DPadRight</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="19">INQ_MENU_BTN_RIGHT</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

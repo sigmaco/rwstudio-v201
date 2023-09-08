@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{2F9E0693-C041-4AE1-B95A-8AB754BB80ED}">
+      <Name>Adler22</Name>
+      <Type>rwID_2DFONT</Type>
+      <Description>D3D8 Maestro Font - Adler Size 22</Description>
+      <Platform>DirectX</Platform>
+      <Model></Model>
+      <SendName>1</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\d3d8\Adler22.fnt" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

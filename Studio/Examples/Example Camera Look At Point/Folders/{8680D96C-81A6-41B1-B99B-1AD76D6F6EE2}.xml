@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{8680D96C-81A6-41B1-B99B-1AD76D6F6EE2}" type="generic">
+      <Name>Debug Tools</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{66113373-55ED-4AD1-8420-AD765D62B6AA}" type="RWSEntityID" />
+      <ChildReference id="{7A6277E4-BF2E-4929-B501-FB34E9261C53}" type="RWSEntityID" />
+      <ParentReference id="{336F07D8-C17D-4808-BA0A-548D44441392}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

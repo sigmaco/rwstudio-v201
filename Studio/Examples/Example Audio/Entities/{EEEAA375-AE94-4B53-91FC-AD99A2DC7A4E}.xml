@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{EEEAA375-AE94-4B53-91FC-AD99A2DC7A4E}">
+      <Template />
+      <Name>Pod Rumble Timer</Name>
+      <Behavior>FPSTimer</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{4F7363C4-D2EF-4373-AA4D-646850578A33}" type="RWSAssetID" />
+      <ParentReference id="RWS_TemplateHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               46022785 <!-- 8329.88 -->
+               41cf9e1b <!-- 25.9522 -->
+               c10ce3a8 <!-- -8.80558 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_target</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="8">playfx1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_wait</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40000000 <!-- 2.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_random</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

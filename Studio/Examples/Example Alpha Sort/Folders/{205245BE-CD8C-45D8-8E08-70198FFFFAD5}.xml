@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{205245BE-CD8C-45D8-8E08-70198FFFFAD5}" type="generic">
+      <Name>Level: Alpha sort using opaque + translucent world, atomics auto select which world using CSetCRpLevelHint</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{B0CFBA89-8656-43A9-8512-5525FCBCEB78}" type="RWSFolderID" />
+      <ChildReference id="{38EED304-02E3-4483-BBAF-5E07BD8A1D05}" type="RWSFolderID" />
+      <ChildReference id="{BFEAB478-A747-4DDB-B748-E28EA953D07D}" type="RWSFolderID" />
+      <ChildReference id="{A8F2E322-FC67-4757-90B2-270985F1D22D}" type="RWSFolderID" />
+      <ChildReference id="{8BC19067-F13E-460E-9DA7-1FE45FFB0F33}" type="RWSFolderID" />
+      <ChildReference id="{28BEB4DF-0D3B-4253-A8D8-07885CA7F847}" type="RWSFolderID" />
+      <ChildReference id="{83A9BB3B-EF6D-4B88-BD82-113F6DEFD9F2}" type="RWSFolderID" />
+      <ChildReference id="{73F07DFB-EFC7-4A97-8AFB-920173F1B3EE}" type="RWSFolderID" />
+      <ChildReference id="{1E1637D5-4B04-4873-93D1-B48198BF526B}" type="RWSFolderID" />
+      <ChildReference id="{114E7BF8-5BBC-4055-90D0-3CA906D33143}" type="RWSFolderID" />
+      <ParentReference id="{81B1FC21-F9AE-4F3E-A4D4-C3F399383A1F}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

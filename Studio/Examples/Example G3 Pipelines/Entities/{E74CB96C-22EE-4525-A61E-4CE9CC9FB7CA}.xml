@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{E74CB96C-22EE-4525-A61E-4CE9CC9FB7CA}">
+      <Name>APL Material Pipe</Name>
+      <Description></Description>
+      <Behavior>CG3x_APL_MatPipeID</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{C17C6AA6-0065-4306-9D66-E051A72A4253}" type="RWSAssetID" />
+      <ChildReference id="{04DCAD32-03A9-4F21-B807-435713E95886}" type="RWSAssetID" />
+      <ParentReference id="{A12FA59D-9AAD-41D1-9650-1B5903D669DD}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{F5657D44-A230-4B84-B447-16604CBA5E8F}">
+      <Name>Set CRpLevel Hint Translucent</Name>
+      <Behavior>CSetCRpLevelHint</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{14FF781D-017C-42E4-8AF1-AA2F932F26F9}" type="RWSAssetID" />
+      <ChildReference id="{1E213493-5CBF-4B6D-8B14-634010AAF238}" type="RWSAssetID" />
+      <ChildReference id="{C7B42A3B-D693-4F0B-9E44-47645CD2E287}" type="RWSAssetID" />
+      <ParentReference id="{C03E69F9-DC2B-4F53-94EB-CDB64D02C284}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSetCRpLevelHint</Class>
+         <Member>CMD_CRpLevelHint</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

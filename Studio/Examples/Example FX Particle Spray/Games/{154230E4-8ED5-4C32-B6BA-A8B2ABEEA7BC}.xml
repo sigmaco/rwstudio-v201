@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{154230E4-8ED5-4C32-B6BA-A8B2ABEEA7BC}">
+      <Name>Game: Particle Spray Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{0C384E4C-A693-400F-9E1E-2F229914DE6B}" type="RWSFolderID" />
+      <ChildReference id="{93B1650B-428F-4103-9576-6FC20B3648E2}" type="RWSFolderID" />
+      <ChildReference id="{53684608-39B7-4F23-B027-DBA091640FA8}" type="RWSFolderID" />
+      <ChildReference id="{884B6728-6A53-47AB-BADC-53C87FBB4901}" type="RWSFolderID" />
+      <ChildReference id="{622537B4-4673-44A8-AFF7-B84624288925}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

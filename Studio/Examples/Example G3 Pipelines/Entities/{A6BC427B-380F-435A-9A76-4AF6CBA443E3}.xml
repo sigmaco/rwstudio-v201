@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{A6BC427B-380F-435A-9A76-4AF6CBA443E3}">
+      <Name>ADL Material Pipe</Name>
+      <Description></Description>
+      <Behavior>CG3x_ADL_MatPipeID</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{C17C6AA6-0065-4306-9D66-E051A72A4253}" type="RWSAssetID" />
+      <ChildReference id="{04DCAD32-03A9-4F21-B807-435713E95886}" type="RWSAssetID" />
+      <ParentReference id="{B89289A8-CFD7-4E5E-BE7F-C7AE66027AC1}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

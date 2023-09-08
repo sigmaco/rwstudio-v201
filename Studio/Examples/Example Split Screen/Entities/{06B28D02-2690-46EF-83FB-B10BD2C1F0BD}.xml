@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{06B28D02-2690-46EF-83FB-B10BD2C1F0BD}">
+      <Name>World - FPS Render</Name>
+      <Behavior>FPSRender</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{A6F96EC7-BD95-420A-83D7-FE8A7C4798F0}" type="RWSAssetID" />
+      <ParentReference id="{6033C43C-325E-404A-9B51-0DA203E25E45}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               c12c8034 <!-- -10.7813 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Start_Render</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="7">render</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_FogType</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_near_clip_factor</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3d4ccccd <!-- 0.0500000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_BackgroundColor</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_FogColor</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSRender</Class>
+         <Member>CMD_Set_m_FogDensity</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3912ccf7 <!-- 0.000140000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

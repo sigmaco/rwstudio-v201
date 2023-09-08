@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{6776E18F-44C1-42AD-87C1-DBB734F64D94}" type="generic">
+      <Name>Player view</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{6CC793C1-37A5-46F5-B815-76982EFD4D47}" type="RWSEntityID" />
+      <ChildReference id="{C5793961-8151-445C-AF8E-3CEFDA348765}" type="RWSEntityID" />
+      <ParentReference id="{336F07D8-C17D-4808-BA0A-548D44441392}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

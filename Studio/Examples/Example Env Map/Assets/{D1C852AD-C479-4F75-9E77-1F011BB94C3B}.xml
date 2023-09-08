@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{D1C852AD-C479-4F75-9E77-1F011BB94C3B}">
+      <Name>Cap</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\Cap.dff" />
+      <ParentReference id="{037D7950-09C5-4060-A772-9B4E5E56CDE0}" type="RWSEntityID" />
+      <ParentReference id="{66CBDA2C-424A-4710-8859-5A95339E9698}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

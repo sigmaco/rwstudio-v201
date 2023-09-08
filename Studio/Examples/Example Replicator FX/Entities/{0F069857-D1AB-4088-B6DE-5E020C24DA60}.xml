@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{0F069857-D1AB-4088-B6DE-5E020C24DA60}">
+      <Name>Directors camera</Name>
+      <Behavior>CDirectorsCamera</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{91344B69-B520-4E17-81D4-0A8E51977238}" type="RWSAssetID" />
+      <ParentReference id="{01B14A61-7F5B-490C-BC50-5658B3FB7CEA}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               43ea074c <!-- 468.057 -->
+               41cf9e4f <!-- 25.9523 -->
+               443660b4 <!-- 729.511 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CDirectorsCamera</Class>
+         <Member>CMD_RenderOut</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{2A24BA36-840C-4832-B435-33BF85A0F931}" type="generic">
+      <Name>Design Tools</Name>
+      <Build>
+      </Build>
+      <ParentReference id="{BD835D7B-5822-4FCE-B399-A4831F39D2E3}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

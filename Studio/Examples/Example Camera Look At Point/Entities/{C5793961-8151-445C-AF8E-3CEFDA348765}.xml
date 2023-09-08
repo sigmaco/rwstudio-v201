@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{C5793961-8151-445C-AF8E-3CEFDA348765}">
+      <Name>player</Name>
+      <Behavior>FPSPlayer</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{A2D24321-C0FE-40A4-AB37-84D4A6331BC6}" type="RWSAssetID" />
+      <ParentReference id="{6776E18F-44C1-42AD-87C1-DBB734F64D94}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               430ee24e <!-- 142.884 -->
+               429b179a <!-- 77.5461 -->
+               44206083 <!-- 641.508 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_Set_m_Tx_Pos</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="11">player_pos</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_cameraheight</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41a25c29 <!-- 20.2950 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_Set_m_height</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               428f999a <!-- 71.8000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_Set_m_height_when_on_ground</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               422b999a <!-- 42.9000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_Set_m_width</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4233999a <!-- 44.9000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_Set_m_input_fwd_scale</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40800000 <!-- 4.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_Set_m_input_bak_scale</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40628f5c <!-- 3.54000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlayer</Class>
+         <Member>CMD_m_input_strafe_scale</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4077ced9 <!-- 3.87200 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

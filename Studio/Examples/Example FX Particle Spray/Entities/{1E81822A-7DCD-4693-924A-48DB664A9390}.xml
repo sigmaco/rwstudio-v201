@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{1E81822A-7DCD-4693-924A-48DB664A9390}">
+      <Name>FX Light</Name>
+      <Behavior>CFXWaveLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{BC89B65A-A138-4F86-996D-D6467CF2615F}" type="RWSAssetID" />
+      <ParentReference id="{551E35ED-E7B2-4F82-A7DC-D43F6D40E3F2}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               4508875c <!-- 2184.46 -->
+               44125948 <!-- 585.395 -->
+               455006e1 <!-- 3328.43 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_Light_Type</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">3</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXWaveLight</Class>
+         <Member>CMD_spawnflags</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXWaveLight</Class>
+         <Member>CMD_targetname</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXWaveLight</Class>
+         <Member>CMD_style</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXWaveLight</Class>
+         <Member>CMD_Set_t_color</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4278255615</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetCollisionFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetSolidFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

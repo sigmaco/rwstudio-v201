@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{8424DD5A-15F3-4FE7-BB1C-3B2ABAAA722F}" type="generic">
+      <Name>Lights</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{D49768CA-176E-4837-ACAB-410636A2C021}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

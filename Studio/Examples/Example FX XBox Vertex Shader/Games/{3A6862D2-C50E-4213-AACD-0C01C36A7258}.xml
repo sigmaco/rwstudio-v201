@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{3A6862D2-C50E-4213-AACD-0C01C36A7258}">
+      <Name>Game: XBox Vertex Shader Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{DE403EC7-A66D-49D9-BCBC-175F7160B711}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

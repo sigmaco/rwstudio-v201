@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{522c7c66-4053-4878-8841-6917546a1e05}">
+      <Name>walk</Name>
+      <Type>rwID_HANIMANIMATION</Type>
+      <Description>Auto-generated from: Models\walk.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures" file="RWStudio RF3 Exports\Generic\Models\walk\walk1.rws" />
+      <ParentReference id="{79BDB634-A663-4C9F-9ABF-4382EB5655AF}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

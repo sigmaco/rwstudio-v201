@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{8FEBBD39-3F6D-421A-A1F3-D9C926C8AD12}">
+      <Name>Combination_Fonts_txd_Xbox</Name>
+      <Type>rwID_TEXDICTIONARY</Type>
+      <Description>Combination Fonts Texture Dictionary Xbox</Description>
+      <Platform>Xbox</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\xbox\Combination_Fonts_xbox.txd" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

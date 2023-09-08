@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{48722686-E4BE-46A7-90CC-639F44831FB9}">
+      <Name>GCN controller</Name>
+      <Description></Description>
+      <Behavior>CGCNStandardController</Behavior>
+      <Platform>GameCube</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{123AB5CE-C02C-4C91-A06C-294D2F439875}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

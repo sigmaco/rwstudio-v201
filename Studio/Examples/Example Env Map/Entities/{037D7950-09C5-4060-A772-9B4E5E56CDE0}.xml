@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{037D7950-09C5-4060-A772-9B4E5E56CDE0}">
+      <Name>Capsule</Name>
+      <Behavior>FPSSpinningPickup</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{D1C852AD-C479-4F75-9E77-1F011BB94C3B}" type="RWSAssetID" />
+      <ParentReference id="{C589679D-2A41-4C31-A56E-7EC34B9CE68A}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               450bb51f <!-- 2235.32 -->
+               41b39d49 <!-- 22.4518 -->
+               c4079117 <!-- -542.267 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

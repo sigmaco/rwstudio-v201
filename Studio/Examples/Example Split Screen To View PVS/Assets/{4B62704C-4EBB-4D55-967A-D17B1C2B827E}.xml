@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{4B62704C-4EBB-4D55-967A-D17B1C2B827E}">
+      <Name>at_rest</Name>
+      <Type>rwID_HANIMANIMATION</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\at_rest.anm" />
+      <ParentReference id="{46A1B4E0-C3E3-4064-8545-537E239C3496}" type="RWSEntityID" />
+      <ParentReference id="{5BF994E3-217C-4440-93EA-F9F393F45709}" type="RWSEntityID" />
+      <ParentReference id="{62926323-3EE3-46B0-A529-2B630247E1F6}" type="RWSEntityID" />
+      <ParentReference id="{94D7F44B-E81B-4E0B-94D1-706F3FCF8785}" type="RWSEntityID" />
+      <ParentReference id="{DB5A8126-7299-47CE-B231-BA6AB3BD49F5}" type="RWSEntityID" />
+      <ParentReference id="{F41C70A2-05BD-4C64-86CA-280995B71CF4}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

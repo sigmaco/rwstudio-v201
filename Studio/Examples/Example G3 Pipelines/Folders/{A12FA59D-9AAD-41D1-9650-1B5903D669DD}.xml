@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{A12FA59D-9AAD-41D1-9650-1B5903D669DD}" type="generic">
+      <Name>G3x_APL Pipes</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{E74CB96C-22EE-4525-A61E-4CE9CC9FB7CA}" type="RWSEntityID" />
+      <ChildReference id="{00B8746E-9993-4489-92E0-17491952BEAF}" type="RWSEntityID" />
+      <ChildReference id="{33DE32FB-FD8A-46C9-B3C3-455B42C13680}" type="RWSEntityID" />
+      <ParentReference id="{D6E0BF4B-E1A5-4C13-A01E-B415005F4FFF}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

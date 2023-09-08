@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{00B8746E-9993-4489-92E0-17491952BEAF}">
+      <Name>APL Enviroment Mapped Material Pipe</Name>
+      <Description></Description>
+      <Behavior>CG3x_APLGem_MatPipeID</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{1E213493-5CBF-4B6D-8B14-634010AAF238}" type="RWSAssetID" />
+      <ChildReference id="{14FF781D-017C-42E4-8AF1-AA2F932F26F9}" type="RWSAssetID" />
+      <ChildReference id="{C7B42A3B-D693-4F0B-9E44-47645CD2E287}" type="RWSAssetID" />
+      <ParentReference id="{A12FA59D-9AAD-41D1-9650-1B5903D669DD}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{8CADFC39-0E8C-4C5F-B680-027ED9B19639}">
+      <Name>Combination_Fonts_txd_gcn</Name>
+      <Type>rwID_TEXDICTIONARY</Type>
+      <Description>Combination Fonts Texture Dictionary Gamecube</Description>
+      <Platform>GameCube</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\gcn\Combination_Fonts_gcn.txd" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

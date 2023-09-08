@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{DE403EC7-A66D-49D9-BCBC-175F7160B711}" type="generic">
+      <Name>Level: XBox Vertex Shader</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{01476A1A-CF86-426A-B030-E94CE7E2BB63}" type="RWSFolderID" />
+      <ChildReference id="{F760310A-FB63-402A-B38D-AA512FFECCEA}" type="RWSFolderID" />
+      <ChildReference id="{FAB55001-D7FF-472E-8D23-A2BBE3DB2097}" type="RWSFolderID" />
+      <ChildReference id="{B83CD901-F5F8-4DEA-94D4-2A77E6218346}" type="RWSFolderID" />
+      <ParentReference id="{3A6862D2-C50E-4213-AACD-0C01C36A7258}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

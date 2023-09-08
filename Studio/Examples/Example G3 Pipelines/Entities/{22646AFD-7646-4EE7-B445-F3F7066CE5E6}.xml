@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{22646AFD-7646-4EE7-B445-F3F7066CE5E6}">
+      <Name>Warrior 4 weights per vertex</Name>
+      <Description></Description>
+      <Behavior>CMultiAnimate</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{42C47057-34CF-492B-92D8-9FCAD252761E}" type="RWSAssetID" />
+      <ChildReference id="{F88E3509-B881-44C2-BC63-965E532CF862}" type="RWSAssetID" />
+      <ChildReference id="{360FDF35-75D2-4450-9046-F9DEF0C02F3B}" type="RWSAttributeShareID" />
+      <ParentReference id="{42D74B2E-52C6-44B8-AEAF-E9AB482AD94D}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               40400000 <!-- 3.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               40400000 <!-- 3.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               40400000 <!-- 3.00000 -->
+               00000000 <!-- 0.000000 -->
+               43909937 <!-- 289.197 -->
+               40bb06b8 <!-- 5.84457 -->
+               c4dc8f5c <!-- -1764.48 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

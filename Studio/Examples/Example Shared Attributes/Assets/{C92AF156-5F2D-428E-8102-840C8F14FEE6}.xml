@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{C92AF156-5F2D-428E-8102-840C8F14FEE6}">
+      <Name>Particle Model</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\Effects\" file="Models\fx_stars.dff" />
+      <ParentReference id="{04D22A78-7EC9-4E6F-BD79-0F6CA4A86194}" type="RWSEntityID" />
+      <ParentReference id="{299B1BE5-53DC-406E-A404-71EFF6BB71FF}" type="RWSEntityID" />
+      <ParentReference id="{3B72908E-C283-4E52-AD5E-0F516144124B}" type="RWSEntityID" />
+      <ParentReference id="{8A76EFD5-D17A-4955-AF4C-2EA6FF5155AC}" type="RWSEntityID" />
+      <ParentReference id="{96659627-8EB6-4193-B138-EAD431BCEAEB}" type="RWSEntityID" />
+      <ParentReference id="{AD0370D0-45E4-435B-953B-FACABB1ADB34}" type="RWSEntityID" />
+      <ParentReference id="{D7303C42-45E0-4693-BD48-1473FAD53D0A}" type="RWSEntityID" />
+      <ParentReference id="{FE7BBFF1-26DB-4405-91EF-172A7513B19C}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

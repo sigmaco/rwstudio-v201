@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{4E09C445-537C-44E6-8DFE-F9C66006BADB}">
+      <Name>MaestroAnimation</Name>
+      <Type>rwID_2DMAESTRO</Type>
+      <Description>Main Maestro Animation</Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Maestro\Combination.anm" />
+      <ParentReference id="{77881B3A-5DD0-406F-BBD5-183D7D7FA55C}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

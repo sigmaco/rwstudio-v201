@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{EF88843F-464A-4D4E-A220-30740EF01895}">
+      <Name>health</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Textures" file="Models\health.dff" />
+      <ParentReference id="{144F066E-C03C-4C13-BC1C-C783181DE139}" type="RWSEntityID" />
+      <ParentReference id="{8BECF7EC-354B-4E6B-AF4D-40525F7D1D12}" type="RWSEntityID" />
+      <ParentReference id="{9F085251-D959-46AF-9B6C-6ECD77AA282B}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

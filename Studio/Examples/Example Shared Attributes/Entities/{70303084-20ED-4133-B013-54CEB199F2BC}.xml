@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{70303084-20ED-4133-B013-54CEB199F2BC}">
+      <Template />
+      <Name>Template of PowerUp</Name>
+      <Behavior>FPSBouncyPickup</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{743FBA32-20DC-42CE-9880-F0FE9AA6BF34}" type="RWSAssetID" />
+      <ParentReference id="RWS_TemplateHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c1e614af <!-- -28.7601 -->
+               43490148 <!-- 201.005 -->
+               452ef852 <!-- 2799.52 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSBouncyPickup</Class>
+         <Member>CMD_Set_Bounce_Height</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41fccccd <!-- 31.6000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSBouncyPickup</Class>
+         <Member>CMD_Set_Spin_Rate</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40be6666 <!-- 5.95000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

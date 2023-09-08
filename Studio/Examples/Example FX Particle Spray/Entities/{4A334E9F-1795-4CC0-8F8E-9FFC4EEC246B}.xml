@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{4A334E9F-1795-4CC0-8F8E-9FFC4EEC246B}">
+      <Name>Win32 Fwd controller</Name>
+      <Description></Description>
+      <Behavior>CWin32Keyboard</Behavior>
+      <Platform>DirectX,OpenGL</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{123AB5CE-C02C-4C91-A06C-294D2F439875}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_vKey1</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">20</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_vKey2</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">22</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_m_InqKey_Msg_Id</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="13">INQ_ACTN_FWD</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

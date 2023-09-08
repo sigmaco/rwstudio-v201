@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{E7D956D3-DD8B-4BB9-92F0-D8E326DB5D72}">
+      <Template />
+      <Name>Template of Animal Timer</Name>
+      <Behavior>FPSTimer</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{35568527-9E02-4378-BFB2-B1FE5BDF552C}" type="RWSAssetID" />
+      <ParentReference id="RWS_TemplateHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               42e1e042 <!-- 112.938 -->
+               41cf9e1b <!-- 25.9522 -->
+               c511feb8 <!-- -2335.92 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_target</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="10">animal1fx</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSTimer</Class>
+         <Member>CMD_wait</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41a0c6a8 <!-- 20.0970 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

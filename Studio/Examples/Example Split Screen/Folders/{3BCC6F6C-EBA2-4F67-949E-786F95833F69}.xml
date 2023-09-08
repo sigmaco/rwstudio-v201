@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{3BCC6F6C-EBA2-4F67-949E-786F95833F69}" type="generic">
+      <Name>Screen Split</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{160FD3AB-CFAC-4A31-8299-FE87FCB17AED}" type="RWSEntityID" />
+      <ChildReference id="{C58D7FFC-063B-4DAA-8D42-5E251D1903DB}" type="RWSEntityID" />
+      <ParentReference id="{1E5EE507-62B8-46C7-A1F7-E1DD3B525834}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

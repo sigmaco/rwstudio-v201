@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{A48315DE-BB12-4DDA-A5EC-26CAEFC2C743}" type="asset">
+      <Name>Alien Animation</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{1E719994-3508-4EC1-A66E-EA94D7A28502}" type="RWSAssetID" />
+      <ChildReference id="{B401E80A-22BC-4A52-A985-BFBB53594463}" type="RWSAssetID" />
+      <ChildReference id="{AC5E35FC-2165-42FA-9736-CE350B97CB9E}" type="RWSAssetID" />
+      <ChildReference id="{CFD082C5-6D17-4A35-80D9-02929031FCCE}" type="RWSAssetID" />
+      <ParentReference id="{9BFFDCC7-6BE9-47F3-8C1D-4356852AC5F4}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

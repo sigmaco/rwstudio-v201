@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{DCC2CEFB-0B37-4617-A07D-3F52F3FB778C}" type="generic">
+      <Name>Triggered Effects</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{EB1647E8-485C-42BA-A61F-A5A0B0588DD3}" type="RWSEntityID" />
+      <ChildReference id="{B3967E1F-09A8-4A34-8E16-3EF18F8B84EC}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

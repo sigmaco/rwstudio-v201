@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{144F066E-C03C-4C13-BC1C-C783181DE139}">
+      <Name>Bouncy Pickup1</Name>
+      <Behavior>FPSBouncyPickup</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{EF88843F-464A-4D4E-A220-30740EF01895}" type="RWSAssetID" />
+      <ParentReference id="{775E9408-CBB0-4CB4-8329-1CDF24E19689}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               44ce8052 <!-- 1652.01 -->
+               428c44dd <!-- 70.1345 -->
+               454f5dc3 <!-- 3317.86 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSBouncyPickup</Class>
+         <Member>CMD_Set_Bounce_Rate</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               422c0000 <!-- 43.0000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSBouncyPickup</Class>
+         <Member>CMD_Set_Spin_Rate</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41000000 <!-- 8.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

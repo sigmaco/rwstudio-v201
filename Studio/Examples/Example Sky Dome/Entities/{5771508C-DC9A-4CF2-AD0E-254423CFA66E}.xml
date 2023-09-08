@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{5771508C-DC9A-4CF2-AD0E-254423CFA66E}">
+      <Name>Object as part of SkyDome</Name>
+      <Behavior>FPSSpinningPickup</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{39AC08DC-A215-453B-8E26-92191A753BA8}" type="RWSAssetID" />
+      <ParentReference id="{F333113F-063C-4B1C-9948-5F3811189374}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               41c80000 <!-- 25.0000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               41c80000 <!-- 25.0000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               41c80000 <!-- 25.0000 -->
+               00000000 <!-- 0.000000 -->
+               46e0d59a <!-- 28778.8 -->
+               45d05e00 <!-- 6667.75 -->
+               c58f6229 <!-- -4588.27 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

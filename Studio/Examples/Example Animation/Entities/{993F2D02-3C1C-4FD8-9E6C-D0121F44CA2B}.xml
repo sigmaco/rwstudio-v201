@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{993F2D02-3C1C-4FD8-9E6C-D0121F44CA2B}">
+      <Template />
+      <Name>Template of 3D Audio Sound</Name>
+      <Behavior>AudioSound3D</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{CA22D80B-A891-448C-8E01-A2765CDDB3C8}" type="RWSAssetID" />
+      <ParentReference id="RWS_TemplateHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               44baa2e1 <!-- 1493.09 -->
+               43bedefa <!-- 381.742 -->
+               4501059a <!-- 2064.35 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_selectText</Member>
+         <Type>RwChar</Type>
+         <Value>
+            <Data type="RWSChar" num="4">TWO</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_looped</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_gain</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f41cac1 <!-- 0.757000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_channel1</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_sample</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_m_stop</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_m_play</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

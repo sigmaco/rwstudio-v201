@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{9AB87155-A822-4985-89F4-A37C901D7E48}">
+      <Template />
+      <Name>Pod Rumble</Name>
+      <Behavior>AudioSound3D</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{53D6B893-2078-44EB-AD83-078699079584}" type="RWSAssetID" />
+      <ParentReference id="RWS_TemplateHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               4600be71 <!-- 8239.61 -->
+               43480000 <!-- 200.000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_selectText</Member>
+         <Type>RwChar</Type>
+         <Value>
+            <Data type="RWSChar" num="7">ATMOS1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_looped</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_gain</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_channel1</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_sample</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_m_stop</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_m_play</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="8">playfx1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_ManualSample</Member>
+         <Type>RwInt32</Type>
+         <Value>
+            <Data type="RWSInt32" num="1">9408</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_preset</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_FadeDown</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_FadeUp</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_Debug</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_FadeStep</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3d343958 <!-- 0.0440000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_No_Restart</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

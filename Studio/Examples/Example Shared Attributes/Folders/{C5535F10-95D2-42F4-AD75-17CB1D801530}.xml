@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{C5535F10-95D2-42F4-AD75-17CB1D801530}" type="generic">
+      <Name>Level: Shared Attributes Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{AE5BF632-70D1-4BC5-86C5-014B236CD4C2}" type="RWSFolderID" />
+      <ChildReference id="{9F318B4F-277E-4F5B-A202-D6DD2474E6B6}" type="RWSFolderID" />
+      <ChildReference id="{DB3B07CC-DFDA-44C8-9D3C-4DE20581F09C}" type="RWSFolderID" />
+      <ChildReference id="{AA9BC37F-E9F2-43E9-874F-79CB89506FDC}" type="RWSFolderID" />
+      <ChildReference id="{19E71916-395E-494C-AC53-38631D13CB17}" type="RWSFolderID" />
+      <ChildReference id="{7B332A8B-59E8-45F6-A18B-C766B6D52923}" type="RWSFolderID" />
+      <ChildReference id="{1EBC0B8C-23F7-409E-9487-B3581069FC72}" type="RWSFolderID" />
+      <ParentReference id="{8F8C0B59-6FD9-420D-8904-BDF746DE6CD7}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

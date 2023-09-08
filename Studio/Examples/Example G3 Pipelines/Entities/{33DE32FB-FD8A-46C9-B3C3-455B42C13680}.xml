@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{33DE32FB-FD8A-46C9-B3C3-455B42C13680}">
+      <Name>APL Skinned Material Pipe</Name>
+      <Description></Description>
+      <Behavior>CG3x_APLSkin_MatPipeID</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{42C47057-34CF-492B-92D8-9FCAD252761E}" type="RWSAssetID" />
+      <ChildReference id="{D18F14F4-BB58-4676-9E1B-6402EF6B988D}" type="RWSAssetID" />
+      <ParentReference id="{A12FA59D-9AAD-41D1-9650-1B5903D669DD}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

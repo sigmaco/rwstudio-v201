@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{C9F41F91-773E-4B2C-8B64-83EDEC2AD647}">
+      <Name>Directors Camera</Name>
+      <Behavior>CDirectorsCamera</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{CA22D80B-A891-448C-8E01-A2765CDDB3C8}" type="RWSAssetID" />
+      <ParentReference id="{C392AC5F-5F55-4D7B-9A67-88D6BE6C1EAF}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f7ff10f <!-- 0.999772 -->
+               3caf2262 <!-- 0.0213787 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               bcaf2262 <!-- -0.0213787 -->
+               3f7ff10f <!-- 0.999772 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c414fd3f <!-- -595.957 -->
+               41a66b85 <!-- 20.8025 -->
+               45f6a214 <!-- 7892.26 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSubRasterCamera</Class>
+         <Member>CMD_In</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="13">iMsgDoRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSubRasterCamera</Class>
+         <Member>CMD_Out</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="7">render</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSubRasterCamera</Class>
+         <Member>CMD_Left</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSubRasterCamera</Class>
+         <Member>CMD_Right</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSubRasterCamera</Class>
+         <Member>CMD_Top</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSubRasterCamera</Class>
+         <Member>CMD_Bottom</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CDirectorsCamera</Class>
+         <Member>CMD_RenderOut</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="7">render</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

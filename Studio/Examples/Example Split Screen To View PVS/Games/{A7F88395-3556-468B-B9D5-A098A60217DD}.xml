@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{A7F88395-3556-468B-B9D5-A098A60217DD}">
+      <Name>Game: Split Screen To View PVS</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{482FDB6A-E67E-4FBB-948C-8BDA66CE5E87}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

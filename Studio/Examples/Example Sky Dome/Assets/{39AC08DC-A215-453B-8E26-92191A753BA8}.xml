@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{39AC08DC-A215-453B-8E26-92191A753BA8}">
+      <Name>alpha_torus</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\alpha_torus.dff" />
+      <ParentReference id="{5771508C-DC9A-4CF2-AD0E-254423CFA66E}" type="RWSEntityID" />
+      <ParentReference id="{DF2F0FE1-55F3-4FF6-A139-E6C4B4734DCF}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

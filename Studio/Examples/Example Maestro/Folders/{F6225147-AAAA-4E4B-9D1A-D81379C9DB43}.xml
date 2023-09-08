@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{F6225147-AAAA-4E4B-9D1A-D81379C9DB43}" type="generic">
+      <Name>Controls</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{51F92DDC-C196-488C-B660-4D3D169868F7}" type="RWSEntityID" />
+      <ChildReference id="{72220ED9-F980-42E8-B259-99185FE55F47}" type="RWSEntityID" />
+      <ChildReference id="{747BC50B-6F8E-4A67-B9CC-2E0E6DC3A939}" type="RWSEntityID" />
+      <ChildReference id="{1A679707-2079-4612-A532-4F284DDC56E0}" type="RWSEntityID" />
+      <ChildReference id="{459A3F96-1CF4-4645-941A-0BB019355B9B}" type="RWSEntityID" />
+      <ChildReference id="{4A39284A-0D91-4A54-A4FA-FEB499FC72D9}" type="RWSEntityID" />
+      <ChildReference id="{9F768767-0014-4995-BA65-02FF9CF6FE1B}" type="RWSEntityID" />
+      <ChildReference id="{CF4B1385-6F7B-46AF-AEC9-946BD7A1A84C}" type="RWSEntityID" />
+      <ChildReference id="{AEEF861B-79EA-4C64-BA9E-EB04EE5F8140}" type="RWSEntityID" />
+      <ParentReference id="{9B5484A0-7BA8-40AA-8138-2CC5D2CADF91}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

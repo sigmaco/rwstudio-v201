@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{6F3A7B1F-DF4F-43D2-A9DB-998547D0A0A4}" type="generic">
+      <Name>Warriors 2 weights per vertex ADL</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{27F8FBB9-A3E2-44E9-8C0E-0A39ED5BDAD2}" type="RWSEntityID" />
+      <ChildReference id="{458D7A63-2896-4E25-B47D-ED2042C5EBCF}" type="RWSEntityID" />
+      <ChildReference id="{8666C9A2-2113-4B3B-8F8D-27BBDAD4CABB}" type="RWSEntityID" />
+      <ChildReference id="{FAB79D6C-8874-4496-A3CD-5F971065F622}" type="RWSEntityID" />
+      <ChildReference id="{151BA7F3-1126-47AC-AF13-5FEDE9BF047B}" type="RWSEntityID" />
+      <ChildReference id="{B2455A76-256A-4930-B271-EC92F08E955C}" type="RWSEntityID" />
+      <ChildReference id="{2F0D33DD-5B90-4F2D-9FBC-FCAC7027A8F9}" type="RWSEntityID" />
+      <ChildReference id="{C837F9B8-FD80-4A28-B358-24B0769BD206}" type="RWSEntityID" />
+      <ChildReference id="{7ECB71DE-1AC0-4987-A60E-8E1874D15F19}" type="RWSEntityID" />
+      <ChildReference id="{EF609C62-0D41-4302-9BC0-317158467588}" type="RWSEntityID" />
+      <ChildReference id="{941468E0-94FF-4902-8ABF-1925D0AE10DD}" type="RWSEntityID" />
+      <ParentReference id="{DF0BD1EB-A652-454B-95BF-5F66655F7FEE}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

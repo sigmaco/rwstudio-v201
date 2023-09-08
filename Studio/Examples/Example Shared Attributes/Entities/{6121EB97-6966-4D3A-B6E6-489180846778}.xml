@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{6121EB97-6966-4D3A-B6E6-489180846778}">
+      <Name>Working Light 5</Name>
+      <Behavior>CFXWaveLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{89F6BCD9-5D18-40CA-85ED-EFFC7B9C631D}" type="RWSAssetID" />
+      <ChildReference id="{CDF054E6-4D78-4E24-8849-3AF5B92B2B91}" type="RWSAttributeShareID" />
+      <ParentReference id="{AA9BC37F-E9F2-43E9-874F-79CB89506FDC}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c5fee70a <!-- -8156.88 -->
+               44a1f148 <!-- 1295.54 -->
+               c42b1312 <!-- -684.298 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

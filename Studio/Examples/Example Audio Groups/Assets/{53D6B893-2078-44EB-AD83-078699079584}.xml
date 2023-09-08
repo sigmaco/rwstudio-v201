@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{53D6B893-2078-44EB-AD83-078699079584}">
+      <Name>Green Ball</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures" file="Models\greenball.dff" />
+      <ParentReference id="{056A4F02-E580-48B7-B6E8-A9F62797BF64}" type="RWSEntityID" />
+      <ParentReference id="{49B4C522-2D10-4565-AD33-4A51CC1AA607}" type="RWSEntityID" />
+      <ParentReference id="{4B314B40-B4D9-44DC-BE08-97E8521DF735}" type="RWSEntityID" />
+      <ParentReference id="{7310378E-A1A0-418F-828B-28792BEB274E}" type="RWSEntityID" />
+      <ParentReference id="{9AB87155-A822-4985-89F4-A37C901D7E48}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

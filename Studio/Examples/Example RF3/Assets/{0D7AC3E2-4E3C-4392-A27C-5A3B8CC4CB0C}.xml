@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{0D7AC3E2-4E3C-4392-A27C-5A3B8CC4CB0C}">
+      <Name>military_lab</Name>
+      <Type>RF3|rwID_WORLD|rwID_CLUMP|rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\military_lab.rf3" />
+      <ChildReference id="{f71d1416-b67b-4002-9bf8-7c00678a6519}" type="RWSAssetID" />
+      <ChildReference id="{a3e581d5-6ea7-4934-8045-d8ab58a5231b}" type="RWSAssetID" />
+      <ChildReference id="{06ffd5a1-5d24-4782-8c37-444922747b0e}" type="RWSAssetID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

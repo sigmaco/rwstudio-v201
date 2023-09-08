@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{78539827-2407-4E71-A84A-EFC032B7791C}" type="generic">
+      <Name>Misc</Name>
+      <Description></Description>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{E29F3EC0-9127-4BEB-9BCF-3F44778CF57B}" type="RWSEntityID" />
+      <ChildReference id="{6E3DB4B8-3DA1-4A01-B3F1-F12D10CB4D64}" type="RWSEntityID" />
+      <ParentReference id="{1A94019D-AB22-494B-B8FA-124A2F6B1B82}" type="RWSFolderID" />
+      <ParentReference id="{36427FD4-1928-41C9-A976-51562D4D0304}" type="RWSFolderID" />
+      <ParentReference id="{905DA911-A24A-4422-BDD3-2BFBAD954158}" type="RWSFolderID" />
+      <ParentReference id="{CD7FB7BB-45F7-4443-B290-D7DE6C282A78}" type="RWSFolderID" />
+      <ParentReference id="{D1D4936D-628B-4CF2-8496-1F93820D5C85}" type="RWSFolderID" />
+      <ParentReference id="{D6E0BF4B-E1A5-4C13-A01E-B415005F4FFF}" type="RWSFolderID" />
+      <ParentReference id="{DF0BD1EB-A652-454B-95BF-5F66655F7FEE}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

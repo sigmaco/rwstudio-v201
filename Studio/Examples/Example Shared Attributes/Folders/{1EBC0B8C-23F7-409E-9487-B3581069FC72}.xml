@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{1EBC0B8C-23F7-409E-9487-B3581069FC72}" type="generic">
+      <Name>Powerups</Name>
+      <Description></Description>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{8E1E918E-CDFF-4BD3-8BAC-9A569414AC60}" type="RWSEntityID" />
+      <ChildReference id="{4304AC7C-0ED8-4E13-9D3B-D3BD089777E5}" type="RWSEntityID" />
+      <ChildReference id="{E709704E-186C-46B1-90C8-F0F6C32CED55}" type="RWSEntityID" />
+      <ChildReference id="{11D21284-3D96-4A1C-BDDD-D7116E5EE23C}" type="RWSEntityID" />
+      <ChildReference id="{91CEA6E5-79DE-4E69-B428-E2654F0EE5B4}" type="RWSEntityID" />
+      <ChildReference id="{758C3A82-7025-4172-838D-11D560D899FD}" type="RWSEntityID" />
+      <ChildReference id="{56EA942F-2777-45AB-B1CB-DBF1C2F10F19}" type="RWSEntityID" />
+      <ParentReference id="{C5535F10-95D2-42F4-AD75-17CB1D801530}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

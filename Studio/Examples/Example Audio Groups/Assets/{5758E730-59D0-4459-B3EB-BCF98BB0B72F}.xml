@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{5758E730-59D0-4459-B3EB-BCF98BB0B72F}">
+      <Name>Ambient Xbox</Name>
+      <Type>rwaID_WAVEDICT</Type>
+      <Description></Description>
+      <Platform>XBox</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Models\ambient_xbox.rws" />
+      <ParentReference id="{FF83FD24-DFF9-4AFB-9E73-177A93620009}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

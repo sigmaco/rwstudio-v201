@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{B777994A-919F-4C82-8510-3FB2501C7593}">
+      <Name>GameCube controller</Name>
+      <Description></Description>
+      <Behavior>CGCNStandardController</Behavior>
+      <Platform>GameCube</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{A2D24321-C0FE-40A4-AB37-84D4A6331BC6}" type="RWSAssetID" />
+      <ParentReference id="{32D4928D-3225-4DFF-AA46-E506390C39D8}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f7fffef <!-- 0.999999 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f7ff4cb <!-- 0.999829 -->
+               3c975db5 <!-- 0.0184773 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               bc975db5 <!-- -0.0184773 -->
+               3f7ff4cb <!-- 0.999829 -->
+               00000000 <!-- 0.000000 -->
+               c4521302 <!-- -840.297 -->
+               41ae9a6b <!-- 21.8254 -->
+               440ca917 <!-- 562.642 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

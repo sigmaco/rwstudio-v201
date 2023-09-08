@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{1E6D1477-6D20-4509-992C-88A33AE58721}" type="generic">
+      <Name>Input Devices</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{EF04C607-83CA-4E1F-8A04-ACD75EE54894}" type="RWSEntityID" />
+      <ChildReference id="{B819406E-BDAA-419F-9171-FED779895874}" type="RWSEntityID" />
+      <ChildReference id="{0DAEAD06-14CC-4982-94E0-E36C27F8FCEB}" type="RWSEntityID" />
+      <ChildReference id="{3FCC006C-237A-4C02-AD15-F79EB6054F6F}" type="RWSEntityID" />
+      <ChildReference id="{8C643679-C868-413C-A333-1D950BE5CCE6}" type="RWSEntityID" />
+      <ChildReference id="{B0A1695A-DC0D-4683-9316-FD619E4662C6}" type="RWSEntityID" />
+      <ParentReference id="RWS_GlobalFolder" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{3D5AD670-E60A-4E0E-8049-85CF80AC5AB7}">
+      <Name>fx_splash</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\Effects\" file="Models\fx_splash.dff" />
+      <ParentReference id="{0AE09566-1B48-4281-BE58-6F4F84B5864D}" type="RWSEntityID" />
+      <ParentReference id="{1270A3BE-B289-4BE1-81AD-EB64D99E9D88}" type="RWSEntityID" />
+      <ParentReference id="{227FC774-E9B4-49D8-88FF-DE80E9FED599}" type="RWSEntityID" />
+      <ParentReference id="{3829A0EA-E9EC-4F9F-9866-C26E57813A29}" type="RWSEntityID" />
+      <ParentReference id="{4113A4A4-F6E7-43E3-A3F3-3EA3E53FF4C7}" type="RWSEntityID" />
+      <ParentReference id="{5CD11119-703B-4EFA-876D-2C1A4595A1A0}" type="RWSEntityID" />
+      <ParentReference id="{600025BC-58AD-4F0C-8B43-55C784FD20F1}" type="RWSEntityID" />
+      <ParentReference id="{BBFA7278-2D78-4CC4-A86D-7329F62BD56B}" type="RWSEntityID" />
+      <ParentReference id="{CBD23638-785D-4112-B2DE-55EFB8AD1231}" type="RWSEntityID" />
+      <ParentReference id="{D988CF3E-83EC-4387-8DCD-D5F154C79038}" type="RWSEntityID" />
+      <ParentReference id="{ED7FADEE-FE4A-42C3-BA95-14DE61A5254F}" type="RWSEntityID" />
+      <ParentReference id="{F0CD2186-EB1F-403E-BABC-E0F3DEDC2542}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

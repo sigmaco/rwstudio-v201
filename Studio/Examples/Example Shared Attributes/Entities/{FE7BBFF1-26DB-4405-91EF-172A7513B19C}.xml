@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{FE7BBFF1-26DB-4405-91EF-172A7513B19C}">
+      <Name>Particle Effect 7</Name>
+      <Description></Description>
+      <Behavior>CFXPartSpray</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{C92AF156-5F2D-428E-8102-840C8F14FEE6}" type="RWSAssetID" />
+      <ChildReference id="{11C3464A-B41A-413F-BD61-D42A1610507A}" type="RWSAttributeShareID" />
+      <ParentReference id="{7B332A8B-59E8-45F6-A18B-C766B6D52923}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c1a65495 <!-- -20.7913 -->
+               415d2d0e <!-- 13.8235 -->
+               c5ce6ae1 <!-- -6605.36 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

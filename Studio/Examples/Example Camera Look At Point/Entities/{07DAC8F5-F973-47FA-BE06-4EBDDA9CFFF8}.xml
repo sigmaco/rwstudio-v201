@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{07DAC8F5-F973-47FA-BE06-4EBDDA9CFFF8}">
+      <Name>PC left/right</Name>
+      <Description></Description>
+      <Behavior>CWin32Keyboard</Behavior>
+      <Platform>DirectX,OpenGL</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{A2D24321-C0FE-40A4-AB37-84D4A6331BC6}" type="RWSAssetID" />
+      <ParentReference id="{32D4928D-3225-4DFF-AA46-E506390C39D8}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c40ca581 <!-- -562.586 -->
+               41abb261 <!-- 21.4621 -->
+               4421478d <!-- 645.118 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_m_InqKey_Msg_Id</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="14">INQ_ACTN_TURN</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_vKey1</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">19</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_vKey2</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">21</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

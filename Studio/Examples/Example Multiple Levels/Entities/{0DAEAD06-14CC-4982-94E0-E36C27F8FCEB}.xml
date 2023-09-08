@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{0DAEAD06-14CC-4982-94E0-E36C27F8FCEB}">
+      <Name>PC Keyboard JUMP</Name>
+      <Description></Description>
+      <Behavior>CWin32Keyboard</Behavior>
+      <Platform>DirectX,OpenGL</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{1E6D1477-6D20-4509-992C-88A33AE58721}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_m_InqKey_Msg_Id</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="14">INQ_ACTN_JUMP</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_vKey1</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">14</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CWin32Keyboard</Class>
+         <Member>CMD_vKey2</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">14</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

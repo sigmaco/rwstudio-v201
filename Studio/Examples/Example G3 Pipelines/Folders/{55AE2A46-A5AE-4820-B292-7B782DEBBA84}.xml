@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{55AE2A46-A5AE-4820-B292-7B782DEBBA84}" type="generic">
+      <Name>1 Ambient + 1 Point Light</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{2D9FD45A-CA6B-4967-941D-E52169B6E981}" type="RWSEntityID" />
+      <ChildReference id="{028DA20E-24A6-4240-BBF5-EB86C960DA79}" type="RWSEntityID" />
+      <ParentReference id="{D6E0BF4B-E1A5-4C13-A01E-B415005F4FFF}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{60929F07-51B7-4C8A-98B6-9A87ED44C332}">
+      <Name>Firework Trigger</Name>
+      <Description></Description>
+      <Behavior>ATBox</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{77C78EF3-1CC0-44BD-A1B8-6AC5298EFE4A}" type="RWSAssetID" />
+      <ParentReference id="{578C34B5-BACF-4B8D-B8D8-66A519127102}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               457a0000 <!-- 4000.00 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               451c4000 <!-- 2500.00 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               447a0000 <!-- 1000.00 -->
+               00000000 <!-- 0.000000 -->
+               c1c80000 <!-- -25.0000 -->
+               449ce000 <!-- 1255.00 -->
+               c5b54000 <!-- -5800.00 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_DebugRender</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetSolidFlag</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetCollisionFlag</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_EnterEvent</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">firework</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_QueryEvent</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="13">trigger_test</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_Logic</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

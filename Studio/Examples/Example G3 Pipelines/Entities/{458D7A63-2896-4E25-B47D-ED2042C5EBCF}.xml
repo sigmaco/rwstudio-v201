@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{458D7A63-2896-4E25-B47D-ED2042C5EBCF}">
+      <Name>Warrior</Name>
+      <Description></Description>
+      <Behavior>CMultiAnimate</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{D18F14F4-BB58-4676-9E1B-6402EF6B988D}" type="RWSAssetID" />
+      <ChildReference id="{7D91EB25-2976-427E-903E-E00C29FCEE41}" type="RWSAssetID" />
+      <ParentReference id="{6F3A7B1F-DF4F-43D2-A9DB-998547D0A0A4}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               402ccdc8 <!-- 2.70006 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               402ccdc8 <!-- 2.70006 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               402ccdc8 <!-- 2.70006 -->
+               00000000 <!-- 0.000000 -->
+               43ba53d7 <!-- 372.655 -->
+               c1dfa57a <!-- -27.9558 -->
+               c412fe14 <!-- -587.970 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

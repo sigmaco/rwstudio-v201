@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{FD864DCC-86F2-4F46-A349-D12DD69E4F6A}">
+      <Name>Combination_Fonts_txd_ps2</Name>
+      <Type>rwID_TEXDICTIONARY</Type>
+      <Description>Combination Fonts Texture Dictionary PS2</Description>
+      <Platform>PS2</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\ps2\Combination_Fonts_ps2.txd" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

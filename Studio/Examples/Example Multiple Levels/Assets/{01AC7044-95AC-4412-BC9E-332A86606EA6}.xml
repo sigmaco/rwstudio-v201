@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{01AC7044-95AC-4412-BC9E-332A86606EA6}">
+      <Name>teleporter_start</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Textures" file="Models\teleporter_start.dff" />
+      <ParentReference id="{8737FEED-B347-4E42-88F3-8399EB4EC23E}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

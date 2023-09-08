@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{C887BF38-A74C-4E8E-9790-CCC1C3F45966}">
+      <Name>Fire Sparks</Name>
+      <Behavior>CFXPartSpray</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{6CB46670-4B8D-4513-B5B5-F7117CE1E011}" type="RWSAssetID" />
+      <ParentReference id="{8980B306-FFF3-443A-ADE6-168BCB179ED4}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               4437b073 <!-- 734.757 -->
+               40ae0fa6 <!-- 5.43941 -->
+               458af614 <!-- 4446.76 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_rateSpread</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_vel</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4150288d <!-- 13.0099 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_gravity</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f0ccccd <!-- 0.550000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_size</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41795a1d <!-- 15.5845 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_col</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4294901760</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_drag</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3cf5c28f <!-- 0.0300000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_life</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f666666 <!-- 0.900000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_rate</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_emitSpread</Member>
+         <Type>RwV3d</Type>
+         <Value>
+            <Data type="RWSReal" num="3" encoding="binary">
+               42020000 <!-- 32.5000 -->
+               00000000 <!-- 0.000000 -->
+               42240000 <!-- 41.0000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_spreadX</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               433570a4 <!-- 181.440 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_spreadZ</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4336e148 <!-- 182.880 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_lifeSpread</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3dcccccd <!-- 0.100000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_velSpread</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peCol</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peRVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peGVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">84</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peBVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">84</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peColOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peSizeOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peSize</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               42c80000 <!-- 100.000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_seColOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_secOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_secTime</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f6d97f6 <!-- 0.928100 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_seCol</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1088354295</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_seRVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_seGVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">155</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_seBVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">155</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_seSizeOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_seSize</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41200000 <!-- 10.0000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_seSizeSpread</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40a00000 <!-- 5.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_max</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">128</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>MSG_render</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>MSG_emit</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="3">T3</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>MSG_enable</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_texName</Member>
+         <Type>RwChar</Type>
+         <Value>
+            <Data type="RWSChar" num="7">splash</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peGravity</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3fb33333 <!-- 1.40000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_rVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_gVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_bVar</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_sizeSpread</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               402ccccd <!-- 2.70000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_destBlend</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_subTexType</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_ssGravity</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               bfc66666 <!-- -1.55000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_ssColOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_ssCol</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4292228096</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_ssGravityOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_secEmit</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_secMinAng</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_ssDragOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_ssSize</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3dcccccd <!-- 0.100000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_ssSizeOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>MSG_pos</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="3">T3</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_srcBlend</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peAccelOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peAccel</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3ff0a3d7 <!-- 1.88000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peAccelSpread</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_peGravityOn</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXPartSpray</Class>
+         <Member>CMD_order</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">39321</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

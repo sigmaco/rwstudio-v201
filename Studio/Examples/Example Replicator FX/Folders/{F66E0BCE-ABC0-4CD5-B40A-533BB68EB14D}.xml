@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{F66E0BCE-ABC0-4CD5-B40A-533BB68EB14D}" type="generic">
+      <Name>Timers</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{EAF9D82B-1C2B-477D-B957-3E4253007D81}" type="RWSEntityID" />
+      <ChildReference id="{39BFF07D-5F1C-4606-B561-E0B8F71DA89B}" type="RWSEntityID" />
+      <ChildReference id="{D035C5E9-2F15-4CBC-AE2B-AB29FD0106F7}" type="RWSEntityID" />
+      <ParentReference id="{303A82AE-3E3A-466E-8A07-EBAB6FF10487}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

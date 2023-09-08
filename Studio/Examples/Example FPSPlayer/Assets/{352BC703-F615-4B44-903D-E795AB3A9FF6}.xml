@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{352BC703-F615-4B44-903D-E795AB3A9FF6}">
+      <Name>.\Models\Large Alien.dff</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources=".\Models\Textures\" file=".\Models\Large Alien.dff" />
+      <ParentReference id="{7DE12195-433A-40A5-9363-26B1539A9291}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

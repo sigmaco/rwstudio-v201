@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{7E73BBA7-A623-4893-B469-1158A4A1C41B}" type="generic">
+      <Name>Camera</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{D9133C77-E27E-4461-B8B7-BBA79C68EDDD}" type="RWSEntityID" />
+      <ParentReference id="{B4E0589A-7BDF-49B2-95C5-3DD581369028}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

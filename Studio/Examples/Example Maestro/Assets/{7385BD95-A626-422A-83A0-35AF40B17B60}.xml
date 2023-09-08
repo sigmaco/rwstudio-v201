@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{7385BD95-A626-422A-83A0-35AF40B17B60}">
+      <Name>Box</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description>Dummy box object</Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Models\BOX.dff" />
+      <ParentReference id="{85C7B7FF-9572-44D5-A956-23D4CC2D002E}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

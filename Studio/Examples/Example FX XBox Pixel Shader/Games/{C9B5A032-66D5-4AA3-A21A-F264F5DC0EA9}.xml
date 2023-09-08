@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{C9B5A032-66D5-4AA3-A21A-F264F5DC0EA9}">
+      <Name>Game: XBox Pixel Shader Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{C89556C1-BC8C-49DA-9230-71017CFA4412}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

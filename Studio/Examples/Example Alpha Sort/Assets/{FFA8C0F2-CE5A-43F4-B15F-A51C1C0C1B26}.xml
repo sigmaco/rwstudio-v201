@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{FFA8C0F2-CE5A-43F4-B15F-A51C1C0C1B26}">
+      <Name>alpha_star</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\alpha_star.dff" />
+      <ParentReference id="{15AFF52D-25B5-4E27-A274-FC63AB4F241B}" type="RWSEntityID" />
+      <ParentReference id="{160A8B6D-2C8D-427D-B50E-7D921E7E689C}" type="RWSEntityID" />
+      <ParentReference id="{2DE48F0C-9E18-4CB9-9C12-71684BE727D8}" type="RWSEntityID" />
+      <ParentReference id="{54F0DD8D-6D1B-4D93-B63F-CBAA3C55A710}" type="RWSEntityID" />
+      <ParentReference id="{7F7B87D8-A1CE-4352-8EBE-9247E377E5D5}" type="RWSEntityID" />
+      <ParentReference id="{85FA804A-4A17-42AE-A854-E38DBB9EC9B0}" type="RWSEntityID" />
+      <ParentReference id="{8EE56EB5-6BE4-404B-824F-9545C8583F6F}" type="RWSEntityID" />
+      <ParentReference id="{A42FCB42-64E6-4D01-ACF7-67AE2BDC6E16}" type="RWSEntityID" />
+      <ParentReference id="{ACEF0646-74CA-4406-A495-311289F65E73}" type="RWSEntityID" />
+      <ParentReference id="{B788D97F-130C-4BA4-B274-7F7CF0F97A78}" type="RWSEntityID" />
+      <ParentReference id="{BD29B8F6-7089-443C-8957-F0BE1C7EAE9C}" type="RWSEntityID" />
+      <ParentReference id="{CBFBF919-E21B-4F2C-8347-E927D3A20258}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

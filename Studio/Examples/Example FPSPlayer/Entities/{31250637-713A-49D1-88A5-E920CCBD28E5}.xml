@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{31250637-713A-49D1-88A5-E920CCBD28E5}">
+      <Name>Entity&lt;6069&gt;</Name>
+      <Behavior>FPSPathNode</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{C920DAEE-2A66-44FE-92E9-2BB1B8DC5560}" type="RWSAssetID" />
+      <ParentReference id="{DE01D002-0C92-4094-B3BA-8031F59F57AE}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c21ccb44 <!-- -39.1985 -->
+               43eccbc7 <!-- 473.592 -->
+               c5219171 <!-- -2585.09 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPathNode</Class>
+         <Member>CMD_targetname</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="3">p1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPathNode</Class>
+         <Member>CMD_target</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="3">p2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPathNode</Class>
+         <Member>CMD_wait</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

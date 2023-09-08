@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{7DE12195-433A-40A5-9363-26B1539A9291}">
+      <Name>Large Alien</Name>
+      <Behavior>CEntity</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{352BC703-F615-4B44-903D-E795AB3A9FF6}" type="RWSAssetID" />
+      <ParentReference id="{B7067D31-6BD1-43B4-BE5D-812C8EA6C902}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3b75bbd9 <!-- 0.00374960 -->
+               bf7fffac <!-- -0.999995 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f7fffac <!-- 0.999995 -->
+               3b75bbd9 <!-- 0.00374960 -->
+               00000000 <!-- 0.000000 -->
+               c2700000 <!-- -60.0000 -->
+               44960000 <!-- 1200.00 -->
+               458ca000 <!-- 4500.00 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

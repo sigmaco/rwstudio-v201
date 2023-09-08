@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{1EB9CE61-550A-4C9A-B454-C48A1682B1EF}">
+      <Name>A4D Enviroment Mapped Material Pipe</Name>
+      <Description></Description>
+      <Behavior>CG3x_A4DGem_MatPipeID</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{C7B42A3B-D693-4F0B-9E44-47645CD2E287}" type="RWSAssetID" />
+      <ChildReference id="{1E213493-5CBF-4B6D-8B14-634010AAF238}" type="RWSAssetID" />
+      <ChildReference id="{14FF781D-017C-42E4-8AF1-AA2F932F26F9}" type="RWSAssetID" />
+      <ParentReference id="{8FDEA2E1-2000-41BD-8DEE-B37FA1766BF2}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

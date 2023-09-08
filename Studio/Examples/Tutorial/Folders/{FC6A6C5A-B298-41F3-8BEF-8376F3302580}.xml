@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{FC6A6C5A-B298-41F3-8BEF-8376F3302580}" type="generic">
+      <Name>Game: Tutorial</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{3CB0E9CE-2BA4-4CD0-9548-49055AAE1146}" type="RWSEntityID" />
+      <ChildReference id="{CBE47DC1-9BBE-4A97-B33F-262300C5FECE}" type="RWSEntityID" />
+      <ParentReference id="{CB0EF3E3-0648-463B-9652-55B174727152}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+
