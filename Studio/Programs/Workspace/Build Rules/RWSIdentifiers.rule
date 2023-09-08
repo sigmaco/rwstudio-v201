@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<build version = "1.0">
+   <rule name="ReplaceRWSIdentifiers" dependencygraph="ReplaceRWSIdentifiersDependencies"
+                                      buildcommand="ReplaceRWSIdentifiersCommand"
+                                      strictvalidation="false">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' RWSIdentifiers.rule - ReplaceRWSIdentifiers rule 
+         '
+         ' This is the rule for removing RWSIdentifier strings, and replacing with rpID's
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub ReplaceRWSIdentifiersDependencies (Task, Asset)
+            
+            ' Generate the source and target paths
+            Dim srcFile, trgFile
+            srcFile = GetAssetsFilename (Asset, GetParam ("WKSRESOURCEROOT") )
+            
+            ' Only need to do something if the srcFile exists
+            If FileSystem.FileExists (srcFile) Then
+
+                trgFile = BuildTargetResourceFilename (Asset, GetParam ("DESTDIR"))
+
+                ' Depend on the assets file
+                Task.AddDependency srcFile
+
+                ' The target
+                Task.AddTarget trgFile
+                
+            End If
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub ReplaceRWSIdentifiersCommand (Task, Asset)
+
+            ' Generate the source and target paths
+            Dim srcFile, trgFile
+            srcFile = GetAssetsFilename (Asset, GetParam ("WKSRESOURCEROOT") )
+
+            ' Only need to do something if the srcFile exists
+            If FileSystem.FileExists (srcFile) Then
+
+                trgFile = BuildTargetResourceFilename (Asset, GetParam ("DESTDIR"))
+
+                ' Check if the file exists, and remove the read only flag if present
+                If FileSystem.FileExists (trgFile) Then
+                    Dim file
+                    Set file = FileSystem.GetFile (trgFile)
+                    If file.attributes and 1 Then '(1 = read only)
+                        file.attributes = file.attributes - 1
+                    End If
+                End If
+
+                Dim fileExtension
+                fileExtension = FileSystem.GetExtensionName (srcFile)
+
+                ' Check this is a valid RWG stream file, which will have an
+                '  extension of 'dff', 'bsp' or 'rws' - files of other types
+                '  may have n undetermined effect on stripud.exe
+                If LCase (fileExtension) = "bsp" Or _
+                   LCase (fileExtension) = "rws" Or _
+                   LCase (fileExtension) = "dff" Then
+
+                    ' There is one dependency -
+                    '    1. The asset's stream file (bsp, dff, rws)
+                    '   and one target
+                    '    2. The target file (rws at present)
+                                  
+                    ExecuteShellCommand ( """" & GetStripRWSIdsExe () & """" _
+                                          & " """ & srcFile & """" _
+                                          & " -o""" & trgFile & """" )
+                Else
+
+                    ' Just copy the resource file
+                    FileSystem.CopyFile srcFile, trgFile
+
+                    ' And touch it, so the time/date stamp gets updated
+                    TouchFile trgFile
+
+                End If
+
+            End If
+
+         End Sub
+      ]]></script>
+   </rule>
+
+</build>

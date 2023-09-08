@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example FPSPlayer\Games" />
+   <EntitiesLocation path="Example FPSPlayer\Entities" />
+   <AssetsLocation path="Example FPSPlayer\Assets" />
+   <AttributeSharesLocation path="Example FPSPlayer\AttributeShares" />
+   <FoldersLocation path="Example FPSPlayer\Folders" />
+
+</RenderWareStudio>
+

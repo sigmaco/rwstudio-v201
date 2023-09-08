@@ -1,0 +1,2225 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="empty_framework"
+	SccProjectName="&quot;$/RenderWare Studio/Console/empty_framework&quot;, BXSCAAAA"
+	SccLocalPath=".">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="PS2 Design Metrics|Win32"
+			OutputDirectory=".\../bin/SNPS2_Design_Metrics/empty_framework/obj"
+			IntermediateDirectory=".\../bin/SNPS2_Design_Metrics/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -g -fexceptions "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="../../../game_framework/source,../../source,$(RWGSDK)\include\sky2,..\..\source\framework\core\MemoryHandler,..\..\..\game_framework\source\framework\core\MemoryHandler"
+				PreprocessorDefinitions="NDEBUG;RWMETRICS;RWAMETRICS;RWS_DESIGN;RWS_EVENTVISUALIZATION;RWS_DEBUGTOOLS;RWS_DEBUGSWITCHES;RWS_TRACE_METRICS;RWS_MEMORY_PROFILING;RWS_FUNCTIONPROFILE;SN_TARGET_PS2;RWS_DISABLE_MEMORY_CHECKING"
+				StringPooling="TRUE"
+				RuntimeLibrary="5"
+				EnableFunctionLevelLinking="TRUE"
+				PrecompiledHeaderFile=".\../bin/SNPS2_Design_Metrics/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/SNPS2_Design_Metrics/empty_framework/obj/"
+				ObjectFile=".\../bin/SNPS2_Design_Metrics/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/SNPS2_Design_Metrics/empty_framework/obj/"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-report-unused -Wl,-strip-unused /D:SN_TARGET_PS2  /D:SN_TARGET_PS2 "
+				AdditionalDependencies="libm.a libsn.a librtfsyst.a librppds.a librtanim.a librtpitexd.a librpanisot.a librpcollis.a librpdmorph.a librphanim.a librplodatm.a librplogo.a librpltmap.a librpmatfx.a librpmipkl.a librpmorph.a librppatch.a librppatchmatfx.a librppatchskin.a librppatchskinmatfx.a librpprtstd.a librpptank.a librppvs.a librprandom.a librpskinmatfx.a librpspline.a librpusrdat.a librpworld.a librt2d.a librt2danim.a librtbezpat.a librtbmp.a librtcharse.a librtimport.a librtintsec.a librtltmap.a librtmipk.a librtmipkmatfx.a librtmipkpatch.a librtmipkpatchmatfx.a librtpick.a librtpng.a librtquat.a librtras.a librtray.a librtslerp.a librtsplpvs.a librttiff.a librttilerd.a librttoc.a librtbary.a librtworld.a librwcore.a libpc.a libpad.a libgraph.a libcdvd.a libdma.a libdev.a libvu0.a libstdc++.a"
+				OutputFile="../bin/SNPS2_Design_Metrics/empty_framework_ps2.elf"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\sky2\metrics,$(RWGSDK)\lib\sky2\metrics\archive"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\../bin/SNPS2_Design_Metrics/empty_framework/obj/empty_framework.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS2 Design Release CDROM|Win32"
+			OutputDirectory=".\../bin/SNPS2_Design_Release_CDROM/empty_framework/obj"
+			IntermediateDirectory=".\../bin/SNPS2_Design_Release_CDROM/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -fexceptions "
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="../../../game_framework/source,../../source,$(RWGSDK)\include\sky2,..\..\source\framework\core\MemoryHandler,..\..\..\game_framework\source\framework\core\MemoryHandler,C:\usr\local\sce\common\include"
+				PreprocessorDefinitions="NDEBUG;CDROM;RWS_DESIGN;RWS_EVENTVISUALIZATION;RWS_DEBUGTOOLS;RWS_DEBUGSWITCHES;RWS_TRACE_METRICS;RWS_MEMORY_PROFILING;RWS_FUNCTIONPROFILE;SN_TARGET_PS2;RWS_DISABLE_MEMORY_CHECKING"
+				StringPooling="TRUE"
+				RuntimeLibrary="5"
+				EnableFunctionLevelLinking="TRUE"
+				PrecompiledHeaderFile=".\../bin/SNPS2_Design_Release_CDROM/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/SNPS2_Design_Release_CDROM/empty_framework/obj/"
+				ObjectFile=".\../bin/SNPS2_Design_Release_CDROM/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/SNPS2_Design_Release_CDROM/empty_framework/obj/"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-strip-unused -Wl,-s /D:SN_TARGET_PS2  /D:SN_TARGET_PS2 "
+				AdditionalDependencies="libm.a libsn.a librtfsyst.a librppds.a librtanim.a librtpitexd.a librpanisot.a librpcollis.a librpdmorph.a librphanim.a librplodatm.a librplogo.a librpltmap.a librpmatfx.a librpmipkl.a librpmorph.a librppatch.a librppatchmatfx.a librppatchskin.a librppatchskinmatfx.a librpprtstd.a librpptank.a librppvs.a librprandom.a librpskinmatfx.a librpspline.a librpusrdat.a librpworld.a librt2d.a librt2danim.a librtbezpat.a librtbmp.a librtcharse.a librtimport.a librtintsec.a librtltmap.a librtmipk.a librtmipkmatfx.a librtmipkpatch.a librtmipkpatchmatfx.a librtpick.a librtpng.a librtquat.a librtras.a librtray.a librtslerp.a librtsplpvs.a librttiff.a librttilerd.a librttoc.a librtbary.a librtworld.a librwcore.a libpc.a libpad.a libgraph.a libcdvd.a libdma.a libdev.a libvu0.a libstdc++.a"
+				OutputFile="../bin/SNPS2_Design_Release_CDROM/empty_framework_ps2.elf"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\sky2\release,$(RWGSDK)\lib\sky2\release\archive"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\../bin/SNPS2_Design_Release_CDROM/empty_framework/obj/empty_framework.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS2 Design Release|Win32"
+			OutputDirectory=".\../bin/SNPS2_Design_Release/empty_framework/obj"
+			IntermediateDirectory=".\../bin/SNPS2_Design_Release/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -fexceptions "
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="../../../game_framework/source,../../source,$(RWGSDK)\include\sky2,..\..\source\framework\core\MemoryHandler,..\..\..\game_framework\source\framework\core\MemoryHandler"
+				PreprocessorDefinitions="NDEBUG;RWS_DESIGN;RWS_EVENTVISUALIZATION;RWS_DEBUGTOOLS;RWS_DEBUGSWITCHES;RWS_TRACE_METRICS;RWS_MEMORY_PROFILING;RWS_FUNCTIONPROFILE;SN_TARGET_PS2;RWS_DISABLE_MEMORY_CHECKING"
+				StringPooling="TRUE"
+				RuntimeLibrary="5"
+				EnableFunctionLevelLinking="TRUE"
+				PrecompiledHeaderFile=".\../bin/SNPS2_Design_Release/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/SNPS2_Design_Release/empty_framework/obj/"
+				ObjectFile=".\../bin/SNPS2_Design_Release/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/SNPS2_Design_Release/empty_framework/obj/"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-report-unused -Wl,-strip-unused /D:SN_TARGET_PS2  /D:SN_TARGET_PS2 -Wl,-s  -Wl,-s "
+				AdditionalDependencies="libm.a libsn.a librtfsyst.a librppds.a librtanim.a librtpitexd.a librpanisot.a librpcollis.a librpdmorph.a librphanim.a librplodatm.a librplogo.a librpltmap.a librpmatfx.a librpmipkl.a librpmorph.a librppatch.a librppatchmatfx.a librppatchskin.a librppatchskinmatfx.a librpprtstd.a librpptank.a librppvs.a librprandom.a librpskinmatfx.a librpspline.a librpusrdat.a librpworld.a librt2d.a librt2danim.a librtbezpat.a librtbmp.a librtcharse.a librtimport.a librtintsec.a librtltmap.a librtmipk.a librtmipkmatfx.a librtmipkpatch.a librtmipkpatchmatfx.a librtpick.a librtpng.a librtquat.a librtras.a librtray.a librtslerp.a librtsplpvs.a librttiff.a librttilerd.a librttoc.a librtbary.a librtworld.a librwcore.a libpc.a libpad.a libgraph.a libcdvd.a libdma.a libdev.a libvu0.a libstdc++.a"
+				OutputFile="../bin/SNPS2_Design_Release/empty_framework_ps2.elf"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\sky2\release,$(RWGSDK)\lib\sky2\release\archive"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\../bin/SNPS2_Design_Release/empty_framework/obj/empty_framework.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS2 Metrics|Win32"
+			OutputDirectory=".\../bin/SNPS2_Metrics/empty_framework/obj"
+			IntermediateDirectory=".\../bin/SNPS2_Metrics/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -g "
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="../../../game_framework/source,../../source,$(RWGSDK)\include\sky2,..\..\source\framework\core\MemoryHandler,..\..\..\game_framework\source\framework\core\MemoryHandler"
+				PreprocessorDefinitions="NDEBUG;RWMETRICS;RWAMETRICS;SN_TARGET_PS2;RWS_DISABLE_MEMORY_CHECKING"
+				StringPooling="TRUE"
+				RuntimeLibrary="5"
+				EnableFunctionLevelLinking="TRUE"
+				PrecompiledHeaderFile=".\../bin/SNPS2_Metrics/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/SNPS2_Metrics/empty_framework/obj/"
+				ObjectFile=".\../bin/SNPS2_Metrics/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/SNPS2_Metrics/empty_framework/obj/"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/D:SN_TARGET_PS2 -Wl,-strip-unused "
+				AdditionalDependencies="libm.a librtfsyst.a librppds.a librtanim.a librtpitexd.a librpanisot.a librpcollis.a librpdmorph.a librphanim.a librplodatm.a librplogo.a librpltmap.a librpmatfx.a librpmipkl.a librpmorph.a librppatch.a librppatchmatfx.a librppatchskin.a librppatchskinmatfx.a librpprtstd.a librpptank.a librppvs.a librprandom.a librpskinmatfx.a librpspline.a librpusrdat.a librpworld.a librt2d.a librt2danim.a librtbezpat.a librtbmp.a librtcharse.a librtimport.a librtintsec.a librtltmap.a librtmipk.a librtmipkmatfx.a librtmipkpatch.a librtmipkpatchmatfx.a librtpick.a librtpng.a librtquat.a librtras.a librtray.a librtslerp.a librtsplpvs.a librttiff.a librttilerd.a librttoc.a librtbary.a librtworld.a librwcore.a libpc.a libpad.a libgraph.a libcdvd.a libdma.a libdev.a libvu0.a libstdc++.a"
+				OutputFile="../bin/SNPS2_Metrics/empty_framework_ps2.elf"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\sky2\metrics,$(RWGSDK)\lib\sky2\metrics\archive"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\../bin/SNPS2_Metrics/empty_framework/obj/empty_framework.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS2 Debug|Win32"
+			OutputDirectory=".\../bin/SNPS2_Debug/empty_framework/obj"
+			IntermediateDirectory=".\../bin/SNPS2_Debug/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -g"
+				Optimization="0"
+				AdditionalIncludeDirectories="../../../game_framework/source,../../source,$(RWGSDK)\include\sky2,..\..\source\framework\core\MemoryHandler,..\..\..\game_framework\source\framework\core\MemoryHandler"
+				PreprocessorDefinitions="_DEBUG;RWDEBUG;IOPPATH=&quot;c:/usr/local/sce/iop&quot;;RWADEBUG;SN_TARGET_PS2;RWS_DISABLE_MEMORY_CHECKING"
+				RuntimeLibrary="5"
+				PrecompiledHeaderFile=".\../bin/SNPS2_Debug/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/SNPS2_Debug/empty_framework/obj/"
+				ObjectFile=".\../bin/SNPS2_Debug/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/SNPS2_Debug/empty_framework/obj/"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/D:SN_TARGET_PS2"
+				AdditionalDependencies="libm.a librtfsyst.a librppds.a librtanim.a librtpitexd.a librpanisot.a librpcollis.a librpdmorph.a librphanim.a librplodatm.a librplogo.a librpltmap.a librpmatfx.a librpmipkl.a librpmorph.a librppatch.a librppatchmatfx.a librppatchskin.a librppatchskinmatfx.a librpprtstd.a librpptank.a librppvs.a librprandom.a librpskinmatfx.a librpspline.a librpusrdat.a librpworld.a librt2d.a librt2danim.a librtbezpat.a librtbmp.a librtcharse.a librtimport.a librtintsec.a librtltmap.a librtmipk.a librtmipkmatfx.a librtmipkpatch.a librtmipkpatchmatfx.a librtpick.a librtpng.a librtquat.a librtras.a librtray.a librtslerp.a librtsplpvs.a librttiff.a librttilerd.a librttoc.a librtbary.a librtworld.a librwcore.a libpc.a libpad.a libgraph.a libcdvd.a libdma.a libdev.a libvu0.a libstdc++.a"
+				OutputFile="../bin/SNPS2_Debug/empty_framework_ps2.elf"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\sky2\debug,$(RWGSDK)\lib\sky2\debug\archive"
+				GenerateDebugInformation="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\../bin/SNPS2_Debug/empty_framework/obj/empty_framework.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS2 Release CDROM|Win32"
+			OutputDirectory=".\../bin/SNPS2_Release_CDROM/empty_framework/obj"
+			IntermediateDirectory=".\../bin/SNPS2_Release_CDROM/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 "
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="../../../game_framework/source,../../source,$(RWGSDK)\include\sky2,..\..\source\framework\core\MemoryHandler,..\..\..\game_framework\source\framework\core\MemoryHandler,C:\usr\local\sce\common\include"
+				PreprocessorDefinitions="NDEBUG;CDROM;SN_TARGET_PS2;RWS_DISABLE_MEMORY_CHECKING"
+				StringPooling="TRUE"
+				RuntimeLibrary="5"
+				EnableFunctionLevelLinking="TRUE"
+				PrecompiledHeaderFile=".\../bin/SNPS2_Release_CDROM/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/SNPS2_Release_CDROM/empty_framework/obj/"
+				ObjectFile=".\../bin/SNPS2_Release_CDROM/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/SNPS2_Release_CDROM/empty_framework/obj/"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-strip-unused -Wl,-s /D:SN_TARGET_PS2  /D:SN_TARGET_PS2 "
+				AdditionalDependencies="libm.a librtfsyst.a librppds.a librtanim.a librtpitexd.a librpanisot.a librpcollis.a librpdmorph.a librphanim.a librplodatm.a librplogo.a librpltmap.a librpmatfx.a librpmipkl.a librpmorph.a librppatch.a librppatchmatfx.a librppatchskin.a librppatchskinmatfx.a librpprtstd.a librpptank.a librppvs.a librprandom.a librpskinmatfx.a librpspline.a librpusrdat.a librpworld.a librt2d.a librt2danim.a librtbezpat.a librtbmp.a librtcharse.a librtimport.a librtintsec.a librtltmap.a librtmipk.a librtmipkmatfx.a librtmipkpatch.a librtmipkpatchmatfx.a librtpick.a librtpng.a librtquat.a librtras.a librtray.a librtslerp.a librtsplpvs.a librttiff.a librttilerd.a librttoc.a librtbary.a librtworld.a librwcore.a libpc.a libpad.a libgraph.a libcdvd.a libdma.a libdev.a libvu0.a libstdc++.a"
+				OutputFile="../bin/SNPS2_Release_CDROM/empty_framework_ps2.elf"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\sky2\release,$(RWGSDK)\lib\sky2\release\archive"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\../bin/SNPS2_Release_CDROM/empty_framework/obj/empty_framework.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS2 Release|Win32"
+			OutputDirectory=".\../bin/SNPS2_Release/empty_framework/obj"
+			IntermediateDirectory=".\../bin/SNPS2_Release/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="../../../game_framework/source,../../source,$(RWGSDK)\include\sky2,..\..\source\framework\core\MemoryHandler,..\..\..\game_framework\source\framework\core\MemoryHandler"
+				PreprocessorDefinitions="NDEBUG;SN_TARGET_PS2;RWS_DISABLE_MEMORY_CHECKING"
+				StringPooling="TRUE"
+				RuntimeLibrary="5"
+				EnableFunctionLevelLinking="TRUE"
+				PrecompiledHeaderFile=".\../bin/SNPS2_Release/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/SNPS2_Release/empty_framework/obj/"
+				ObjectFile=".\../bin/SNPS2_Release/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/SNPS2_Release/empty_framework/obj/"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="-Wl,-strip-unused /D:SN_TARGET_PS2 -Wl,-s  -Wl,-s "
+				AdditionalDependencies="libm.a librtfsyst.a librppds.a librtanim.a librtpitexd.a librpanisot.a librpcollis.a librpdmorph.a librphanim.a librplodatm.a librplogo.a librpltmap.a librpmatfx.a librpmipkl.a librpmorph.a librppatch.a librppatchmatfx.a librppatchskin.a librppatchskinmatfx.a librpprtstd.a librpptank.a librppvs.a librprandom.a librpskinmatfx.a librpspline.a librpusrdat.a librpworld.a librt2d.a librt2danim.a librtbezpat.a librtbmp.a librtcharse.a librtimport.a librtintsec.a librtltmap.a librtmipk.a librtmipkmatfx.a librtmipkpatch.a librtmipkpatchmatfx.a librtpick.a librtpng.a librtquat.a librtras.a librtray.a librtslerp.a librtsplpvs.a librttiff.a librttilerd.a librttoc.a librtbary.a librtworld.a librwcore.a libpc.a libpad.a libgraph.a libcdvd.a libdma.a libdev.a libvu0.a libstdc++.a"
+				OutputFile="../bin/SNPS2_Release/empty_framework_ps2.elf"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\sky2\release,$(RWGSDK)\lib\sky2\release\archive"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\../bin/SNPS2_Release/empty_framework/obj/empty_framework.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS2 Design Debug|Win32"
+			OutputDirectory=".\../bin/SNPS2_Design_Debug/empty_framework/obj"
+			IntermediateDirectory=".\../bin/SNPS2_Design_Debug/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-G0 -g -fexceptions "
+				Optimization="0"
+				AdditionalIncludeDirectories="../../../game_framework/source,../../source,$(RWGSDK)\include\sky2,..\..\source\framework\core\MemoryHandler,..\..\..\game_framework\source\framework\core\MemoryHandler"
+				PreprocessorDefinitions="_DEBUG;RWDEBUG;RWADEBUG;RWS_DESIGN;RWS_EVENTVISUALIZATION;RWS_DEBUGTOOLS;RWS_DEBUGSWITCHES;RWS_TRACE_METRICS;RWS_MEMORY_PROFILING;RWS_FUNCTIONPROFILE;SN_TARGET_PS2"
+				RuntimeLibrary="5"
+				PrecompiledHeaderFile=".\../bin/SNPS2_Design_Debug/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/SNPS2_Design_Debug/empty_framework/obj/"
+				ObjectFile=".\../bin/SNPS2_Design_Debug/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/SNPS2_Design_Debug/empty_framework/obj/"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/D:SN_TARGET_PS2"
+				AdditionalDependencies="libm.a libsn.a librtfsyst.a librppds.a librtanim.a librtpitexd.a librpanisot.a librpcollis.a librpdmorph.a librphanim.a librplodatm.a librplogo.a librpltmap.a librpmatfx.a librpmipkl.a librpmorph.a librppatch.a librppatchmatfx.a librppatchskin.a librppatchskinmatfx.a librpprtstd.a librpptank.a librppvs.a librprandom.a librpskinmatfx.a librpspline.a librpusrdat.a librpworld.a librt2d.a librt2danim.a librtbezpat.a librtbmp.a librtcharse.a librtimport.a librtintsec.a librtltmap.a librtmipk.a librtmipkmatfx.a librtmipkpatch.a librtmipkpatchmatfx.a librtpick.a librtpng.a librtquat.a librtras.a librtray.a librtslerp.a librtsplpvs.a librttiff.a librttilerd.a librttoc.a librtbary.a librtworld.a librwcore.a libpc.a libpad.a libgraph.a libcdvd.a libdma.a libdev.a libvu0.a libstdc++.a"
+				OutputFile="../bin/SNPS2_Design_Debug/empty_framework_ps2.elf"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\sky2\debug,$(RWGSDK)\lib\sky2\debug\archive"
+				GenerateDebugInformation="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\../bin/SNPS2_Design_Debug/empty_framework/obj/empty_framework.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<Filter
+				Name="Modules"
+				Filter="">
+				<Filter
+					Name="Generic"
+					Filter="">
+					<Filter
+						Name="CEntity"
+						Filter="">
+						<File
+							RelativePath="..\..\source\modules\generic\CEntity\CEntity.cpp">
+							<FileConfiguration
+								Name="PS2 Design Metrics|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Release CDROM|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Release|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Metrics|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Debug|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="0"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Release CDROM|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Release|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Debug|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="0"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+						</File>
+						<File
+							RelativePath="..\..\source\modules\generic\CEntity\CEntity.h">
+						</File>
+					</Filter>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="toolkits"
+				Filter="">
+				<Filter
+					Name="RwGfxResource"
+					Filter="">
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\rwgfxresource\rwgfxresource.cpp">
+						<FileConfiguration
+							Name="PS2 Design Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\rwgfxresource\rwgfxresource.h">
+					</File>
+				</Filter>
+				<Filter
+					Name="Time"
+					Filter="">
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\time\gftime.cpp">
+						<FileConfiguration
+							Name="PS2 Design Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\time\gftime.h">
+					</File>
+				</Filter>
+				<Filter
+					Name="World"
+					Filter="">
+					<Filter
+						Name="helpers"
+						Filter="">
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\helpers\camerahelper.cpp">
+							<FileConfiguration
+								Name="PS2 Design Metrics|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Release CDROM|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Release|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Metrics|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Debug|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="0"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Release CDROM|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Release|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Debug|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="0"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+						</File>
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\helpers\camerahelper.h">
+						</File>
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\helpers\framehelper.cpp">
+							<FileConfiguration
+								Name="PS2 Design Metrics|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Release CDROM|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Release|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Metrics|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Debug|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="0"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Release CDROM|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Release|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Debug|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="0"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+						</File>
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\helpers\framehelper.h">
+						</File>
+					</Filter>
+					<Filter
+						Name="SmartPtrs"
+						Filter="">
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\smartptrs\ccameraptr.cpp">
+							<FileConfiguration
+								Name="PS2 Design Metrics|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Release CDROM|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Release|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Metrics|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Debug|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="0"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Release CDROM|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Release|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="2"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="PS2 Design Debug|Win32">
+								<Tool
+									Name="VCCLCompilerTool"
+									Optimization="0"
+									AdditionalIncludeDirectories=""
+									PreprocessorDefinitions=""/>
+							</FileConfiguration>
+						</File>
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\smartptrs\ccameraptr.h">
+						</File>
+					</Filter>
+				</Filter>
+				<Filter
+					Name="DebugTools"
+					Filter="">
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\debugtools\debugswitches.cpp">
+						<FileConfiguration
+							Name="PS2 Design Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\debugtools\debugswitches.h">
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\debugtools\debugtools.cpp">
+						<FileConfiguration
+							Name="PS2 Design Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\debugtools\debugtools.h">
+					</File>
+				</Filter>
+				<Filter
+					Name="EventVisualization"
+					Filter="">
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\eventvisualization\eventvisualization.cpp">
+						<FileConfiguration
+							Name="PS2 Design Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\eventvisualization\eventvisualization.h">
+					</File>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="MainLoop"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\mainloop\connectionscreen.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\connectionscreen.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\logic.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\logic.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\mainloop.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\mainloop.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\network.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\network.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\render.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\render.h">
+				</File>
+			</Filter>
+			<Filter
+				Name="StartUp"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\startup\attachplugins.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\attachplugins.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\debugmsghandler.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\debugmsghandler.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\loadgamedatabase.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\loadgamedatabase.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\registerimageloaders.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\registerimageloaders.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\startup.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\startup.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\videomode.cpp">
+					<FileConfiguration
+						Name="PS2 Design Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Metrics|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release CDROM|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Release|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="PS2 Design Debug|Win32">
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							AdditionalIncludeDirectories=""
+							PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\videomode.h">
+				</File>
+				<Filter
+					Name="sky bootup"
+					Filter="">
+					<File
+						RelativePath="..\..\source\framework\startup\sky\sky.cpp">
+						<FileConfiguration
+							Name="PS2 Design Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\source\framework\startup\sky\sky.h">
+					</File>
+					<File
+						RelativePath="..\..\source\framework\startup\sky\skyiop.h">
+					</File>
+					<File
+						RelativePath="..\..\source\framework\startup\sky\skyregisterpipes.cpp">
+						<FileConfiguration
+							Name="PS2 Design Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Metrics|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release CDROM|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Release|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="PS2 Design Debug|Win32">
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								AdditionalIncludeDirectories=""
+								PreprocessorDefinitions=""/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\source\framework\startup\sky\skyregisterpipes.h">
+					</File>
+				</Filter>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath="precomp.cpp">
+				<FileConfiguration
+					Name="PS2 Design Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS2 Design Release CDROM|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS2 Design Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS2 Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS2 Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS2 Release CDROM|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS2 Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS2 Design Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="precomp.h">
+			</File>
+			<File
+				RelativePath="PS2_in_VC.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="MiscFiles"
+			Filter="">
+			<File
+				RelativePath="app.cmd">
+			</File>
+			<File
+				RelativePath="crt0.s">
+			</File>
+			<File
+				RelativePath="ps2.lk">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="NetTest"
+	ProjectGUID="{ABD3FB5E-C58A-4B28-A156-73A44B3D844A}"
+	SccProjectName="Perforce Project"
+	SccAuxPath=""
+	SccLocalPath="..\..\.."
+	SccProvider="MSSCCI:Perforce SCM"
+	Keyword="AtlProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug Unicode|Win32"
+			OutputDirectory=".\NetTest___Win32_Debug_Unicode"
+			IntermediateDirectory=".\NetTest___Win32_Debug_Unicode"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(RENDERWARESTUDIO)\Console\game_framework\source&quot;;&quot;$(RWGSDK)\include\null&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;RWS_DESIGN;RWDEBUG"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\NetTest___Win32_Debug_Unicode/NetTest.pch"
+				AssemblerListingLocation=".\NetTest___Win32_Debug_Unicode/"
+				ObjectFile=".\NetTest___Win32_Debug_Unicode/"
+				ProgramDataBaseFileName=".\NetTest___Win32_Debug_Unicode/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Performing registration"
+				CommandLine="if &quot;%OS%&quot;==&quot;&quot; goto NOTNT
+if not &quot;%OS%&quot;==&quot;Windows_NT&quot; goto NOTNT
+&quot;$(TargetPath)&quot; /RegServer
+echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;
+echo Server registration done!
+goto end
+:NOTNT
+echo Warning : Cannot register Unicode EXE on Windows 95
+:end
+"
+				Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="rwcore.lib winmm.lib odbc32.lib odbccp32.lib"
+				OutputFile="../NetTestd.exe"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\null\debug"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\NetTest___Win32_Debug_Unicode/NetTestd.pdb"
+				SubSystem="2"
+				EntryPointSymbol="wWinMainCRTStartup"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\NetTest___Win32_Debug_Unicode/NetTest.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Build proxy stub"
+				CommandLine="nmake /nologo NetTestps.mk
+regsvr32 /s nettestps.dll
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release Unicode|Win32"
+			OutputDirectory=".\NetTest___Win32_Release_Unicode"
+			IntermediateDirectory=".\NetTest___Win32_Release_Unicode"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			UseOfATL="1"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="1"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="&quot;$(RENDERWARESTUDIO)\Console\game_framework\source&quot;;&quot;$(RWGSDK)\include\null&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;RWS_DESIGN"
+				StringPooling="TRUE"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\NetTest___Win32_Release_Unicode/NetTest.pch"
+				AssemblerListingLocation=".\NetTest___Win32_Release_Unicode/"
+				ObjectFile=".\NetTest___Win32_Release_Unicode/"
+				ProgramDataBaseFileName=".\NetTest___Win32_Release_Unicode/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Performing registration"
+				CommandLine="if &quot;%OS%&quot;==&quot;&quot; goto NOTNT
+if not &quot;%OS%&quot;==&quot;Windows_NT&quot; goto NOTNT
+&quot;$(TargetPath)&quot; /RegServer
+echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;
+echo Server registration done!
+goto end
+:NOTNT
+echo Warning : Cannot register Unicode EXE on Windows 95
+:end
+"
+				Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="rwcore.lib winmm.lib odbc32.lib odbccp32.lib"
+				OutputFile="../NetTest.exe"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)\lib\null\release"
+				ProgramDatabaseFile=".\NetTest___Win32_Release_Unicode/NetTest.pdb"
+				SubSystem="2"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\NetTest___Win32_Release_Unicode/NetTest.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				CommandLine="nmake /nologo NetTestps.mk
+regsvr32 /s nettestps.dll
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath="NetTest.cpp">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_UNICODE;RWS_DESIGN;RWDEBUG;$(NoInherit)"
+						BasicRuntimeChecks="3"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="1"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_UNICODE;_ATL_STATIC_REGISTRY;RWS_DESIGN;$(NoInherit)"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="NetTest.idl">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCMIDLTool"
+						GenerateStublessProxies="TRUE"
+						TypeLibraryName=".\NetTest.tlb"
+						HeaderFileName="NetTest.h"
+						InterfaceIdentifierFileName="NetTest_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCMIDLTool"
+						GenerateStublessProxies="TRUE"
+						TypeLibraryName=".\NetTest.tlb"
+						HeaderFileName="NetTest.h"
+						InterfaceIdentifierFileName="NetTest_i.c"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="NetTest.rc">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCResourceCompilerTool"
+						PreprocessorDefinitions="_DEBUG;$(NoInherit)"
+						AdditionalIncludeDirectories="$(OUTDIR)"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCResourceCompilerTool"
+						PreprocessorDefinitions="NDEBUG;$(NoInherit)"
+						AdditionalIncludeDirectories="$(OUTDIR)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="NetTestCtl.cpp">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_UNICODE;RWS_DESIGN;RWDEBUG;$(NoInherit)"
+						BasicRuntimeChecks="3"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="1"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_UNICODE;_ATL_STATIC_REGISTRY;RWS_DESIGN;$(NoInherit)"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="precomp.cpp">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_UNICODE;RWS_DESIGN;RWDEBUG;$(NoInherit)"
+						BasicRuntimeChecks="3"
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="1"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_UNICODE;_ATL_STATIC_REGISTRY;RWS_DESIGN;$(NoInherit)"
+						UsePrecompiledHeader="1"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath="NetTestCP.h">
+			</File>
+			<File
+				RelativePath="NetTestCtl.h">
+			</File>
+			<File
+				RelativePath="precomp.h">
+			</File>
+			<File
+				RelativePath="Resource.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File
+				RelativePath="NetTest.rgs">
+			</File>
+			<File
+				RelativePath="NetTestCtl.rgs">
+			</File>
+		</Filter>
+		<Filter
+			Name="Game Framework Files"
+			Filter="">
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\macros\debugmacros.cpp">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_UNICODE;RWS_DESIGN;RWDEBUG;$(NoInherit)"
+						BasicRuntimeChecks="3"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="1"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_UNICODE;_ATL_STATIC_REGISTRY;RWS_DESIGN;$(NoInherit)"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\macros\debugmacros.h">
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\macros\debugostream.cpp">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_UNICODE;RWS_DESIGN;RWDEBUG;$(NoInherit)"
+						BasicRuntimeChecks="3"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="1"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_UNICODE;_ATL_STATIC_REGISTRY;RWS_DESIGN;$(NoInherit)"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\macros\debugostream.h">
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\macros\iocoercion.h">
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\netstream\msc\netstrm.cpp">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_UNICODE;RWS_DESIGN;RWDEBUG;$(NoInherit)"
+						BasicRuntimeChecks="3"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="1"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_UNICODE;_ATL_STATIC_REGISTRY;RWS_DESIGN;$(NoInherit)"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\netstream\netstrm.h">
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\netstream\nettools.cpp">
+				<FileConfiguration
+					Name="Debug Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_UNICODE;RWS_DESIGN;RWDEBUG;$(NoInherit)"
+						BasicRuntimeChecks="3"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release Unicode|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="1"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_UNICODE;_ATL_STATIC_REGISTRY;RWS_DESIGN;$(NoInherit)"
+						PrecompiledHeaderThrough="precomp.h"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\netstream\nettools.h">
+			</File>
+			<File
+				RelativePath="..\..\console\game_framework\source\framework\core\streamhandler\strfunc.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

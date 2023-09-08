@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Template version="3,7,0,3">
+	<AssetTemplate description="The default Animated Hierarchy asset template. This should be used for hierarchies within the scene that need to be animated at run time (through skinning, morphing, rigid animation etc) or that contain cameras or lights.">
+		<Common>
+			<param name="Asset Type" type="enum" value="2"/>
+			<param name="Global Scale Factor" type="float" value="1.0"/>
+			<param name="Global Scale Type" type="enum" value="0"/>
+			<param name="World Space" type="bool" value="true"/>
+			<param name="Convert Axis System" type="bool" value="true"/>
+			<param name="Lighting Flag" type="bool" value="true"/>
+			<param name="Vertex Normals" type="bool" value="true"/>
+			<param name="Export Patches" type="bool" value="true"/>
+			<param name="Vertex Prelights" type="bool" value="true"/>
+			<param name="Weld Vertices" type="bool" value="false">
+				<param name="Position Weld Threshold" type="float" value="0.01"/>
+				<param name="UV Weld Threshold" type="float" value="0.00390625"/>
+				<param name="Angular Weld Threshold" type="float" value="1.0"/>
+				<param name="PreLitColor Weld Threshold" type="float" value="0.0078125"/>
+			</param>
+			<param name="Generate Collision" type="bool" value="false"/>
+			<param name="Process Lightmaps" type="enum" value="0">
+				<param name="Default Lightmap Background" type="enum" value="0">
+					<param name="Default Lightmap Red" type="float" value="0.0"/>
+					<param name="Default Lightmap Green" type="float" value="0.0"/>
+					<param name="Default Lightmap Blue" type="float" value="0.0"/>
+				</param>
+				<param name="Default Lightmap Size" type="enum" value="5"/>
+				<param name="Sampling Factor" type="float" value="2"/>
+				<param name="Resample Imported" type="bool" value="false"/>
+				<param name="Use Greedy Rasterization" type="bool" value="false"/>
+				<param name="Rejection Factor" type="float" value="0.0"/>
+				<param name="Density Factor" type="float" value="1.0"/>
+				<param name="Dump Lightmaps" type="bool" value="false"/>
+				<param name="Lightmap Prefix String" type="string" value="ltmp"/>
+			</param>
+			<param name="Export Toon Data" type="bool" value="false">
+				<param name="Generate Crease Edges from Smoothing Groups" type="bool" value="false"/>
+				<param name="Default Crease Ink Name" type="string" value="Default Crease Ink Name"/>
+				<param name="Default Silhouette Ink Name" type="string" value="Default Silhouette Ink Name"/>
+				<param name="Default Paint Name" type="string" value="Default Paint Name"/>
+			</param>
+			<param name="Create RpHAnimHierarchy" type="bool" value="true">
+				<param name="RpHAnimHierarchy No Matrices" type="bool" value="false"/>
+				<param name="RpHAnimHierarchy Local Matrices" type="bool" value="false"/>
+			</param>
+			<param name="Traverse Order" type="enum" value="1"/>
+			<param name="Optimize Hierarchy" type="bool" value="true"/>
+			<param name="Export Skinning" type="bool" value="true">
+				<param name="Max Skin Weights Per Vertex" type="int" value="4"/>
+			</param>
+			<param name="Export RpDMorph" type="bool" value="true"/>
+			<param name="Export RpMorph Targets" type="bool" value="true">
+				<param name="RpMorph Sample" type="bool" value="false">
+					<param name="RpMorph Sample Interval" type="int" value="1"/>
+				</param>
+			</param>
+			<param name="Export UV Animation" type="bool" value="true"/>
+			<param name="Export User Data" type="bool" value="true"/>
+			<param name="Export Object Name" type="bool" value="false">
+				<param name="User Data Entry Name" type="string" value="name"/>
+				<param name="Export RpGeometry Name" type="bool" value="true"/>
+				<param name="Export RwFrame Name" type="bool" value="true"/>
+				<param name="Export RwCamera Name" type="bool" value="true"/>
+				<param name="Export RpLight Name" type="bool" value="true"/>
+				<param name="Export RpMaterial Name" type="bool" value="true"/>
+				<param name="Export RwTexture Name" type="bool" value="true"/>
+			</param>
+			<param name="Texture Name Case" type="enum" value="0"/>
+			<param name="3ds max Export Two Sided Materials" type="bool" value="false"/>
+			<param name="3ds max User Defined Properties" type="bool" value="false"/>
+			<param name="Legacy Allocate Prelight Space" type="bool" value="false"/>
+		</Common>
+		<Platform>
+			<Generic>
+				<param name="Lightmap Mipmapping" type="bool" value="true"/>
+				<param name="Lightmap Color Depth" type="enum" value="1"/>
+				<param name="ADC Processing" type="enum" value="0"/>
+			</Generic>
+			<PS2>
+				<param name="Lightmap Mipmapping" type="bool" value="false"/>
+				<param name="Lightmap Color Depth" type="enum" value="2"/>
+				<param name="rwPDS_G3_Generic_MatPipeID" type="enumstring" value="rwPDS_G3_Generic_MatPipeID"/>
+				<param name="rwPDS_G3_Gem_MatPipeID" type="enumstring" value="rwPDS_G3_Gem_MatPipeID"/>
+				<param name="rwPDS_G3_Dup_MatPipeID" type="enumstring" value="rwPDS_G3_Dup_MatPipeID"/>
+				<param name="rwPDS_G3_Uva_MatPipeID" type="enumstring" value="rwPDS_G3_Uva_MatPipeID"/>
+				<param name="rwPDS_G3_DupUva_MatPipeID" type="enumstring" value="rwPDS_G3_DupUva_MatPipeID"/>
+				<param name="rwPDS_G3_Skin_MatPipeID" type="enumstring" value="rwPDS_G3_Skin_MatPipeID"/>
+				<param name="rwPDS_G3_SkinGem_MatPipeID" type="enumstring" value="rwPDS_G3_SkinGem_MatPipeID"/>
+				<param name="rwPDS_G3_SkinDup_MatPipeID" type="enumstring" value="rwPDS_G3_SkinDup_MatPipeID"/>
+				<param name="rwPDS_G3_SkinUva_MatPipeID" type="enumstring" value="rwPDS_G3_SkinUva_MatPipeID"/>
+				<param name="rwPDS_G3_SkinDupUva_MatPipeID" type="enumstring" value="rwPDS_G3_SkinDupUva_MatPipeID"/>
+				<param name="ADC Processing" type="enum" value="0"/>
+			</PS2>
+			<Xbox>
+				<param name="Lightmap Mipmapping" type="bool" value="true"/>
+				<param name="Lightmap Color Depth" type="enum" value="1"/>
+				<param name="ADC Processing" type="enum" value="0"/>
+			</Xbox>
+			<GameCube>
+				<param name="Lightmap Mipmapping" type="bool" value="true"/>
+				<param name="Lightmap Color Depth" type="enum" value="1"/>
+				<param name="ADC Processing" type="enum" value="0"/>
+			</GameCube>
+		</Platform>
+	</AssetTemplate>
+</Template>

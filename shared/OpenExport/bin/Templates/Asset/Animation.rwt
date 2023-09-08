@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Template version="3,7,0,3">
+	<AssetTemplate description="The default Animation asset template. Creates an uncompressed animation asset. Animation assets must always be children of Animated Hierarchies.">
+		<Common>
+			<param name="Asset Type" type="enum" value="0"/>
+			<param name="Keyframe Compression" type="enum" value="0"/>
+			<param name="3ds max Filter Biped Keys" type="bool" value="false"/>
+		</Common>
+		<Platform>
+			<Generic/>
+			<PS2/>
+			<Xbox/>
+			<GameCube/>
+		</Platform>
+	</AssetTemplate>
+</Template>

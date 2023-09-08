@@ -1,0 +1,231 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "CustInfoExport"=.\CustInfoExport\CustInfoExport.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\custinfoexport
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "CustPrtPropComm"=.\CustPrtProp\common\CustPrtPropComm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\custprtprop\common
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "CustPrtPropMax"=.\CustPrtProp\max\CustPrtPropMax.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\custprtprop\max
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name CustPrtPropComm
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "CustPrtPropMaya"=.\CustPrtProp\maya\CustPrtPropMaya.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\custprtprop\maya
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name CustPrtPropComm
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "FurShader"=.\Shader\common\FurShader.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    FurShader
+    .\shader\common
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "GeomFilter"=.\TravAction\GeomFilter.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\travaction
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MaxFurShader"=.\Shader\max\MaxFurShader.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MaxFurShader
+    .\shader\max
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MaxSimple"=.\MaxSimple\MaxSimple.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\maxsimple
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "MayaFurShader"=.\Shader\maya\MayaFurShader.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    MayaFurShader
+    .\shader\maya
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "OptTex"=.\ExportObject\OptTex.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\exportobject
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "PreLight"=.\VertexFilter\PreLight.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\vertexfilter
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ScaleAnim"=.\ScaleAnim\ScaleAnim.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\scaleanim
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Stream"=.\PostProcess\Stream.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Perforce Project
+    .\postprocess
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

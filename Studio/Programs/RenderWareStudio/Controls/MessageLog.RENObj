@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="{1A19857D-9E69-4460-9D33-3D089BB16E9F}" id="MessageLog" runtime=""><param name="Caption" value="Message Log" />
+<param name="Top" value="26" />
+<param name="Left" value="4" />
+<param name="Width" value="998" />
+<param name="Height" value="157" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="1" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<stream encode="BASE64">AAMAAHiAAAAODgAA
+</stream>
+</object>
+</RENApplication>

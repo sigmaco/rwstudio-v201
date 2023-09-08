@@ -1,0 +1,43 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="RWSLaunch" buildcommand="RWSLaunchCommand" alwaysbuild="true">
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' TargetLaunch.rule - RWSLaunch rule
+         '
+         ' Will run a command on a given platform. If the platform is Playstation2 it
+         ' will run it in a seperate process, to prevent RWStudio from locking up.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         ' Executes the given command, and logs its output
+         '
+         Sub RWSLaunchCommand (Task, strCommandToExecute, strCurrentPlatform)
+
+            BuildLog "Executing command: " & strCommandToExecute
+
+            ' If we do this on PS2, the command locks up occasionally :(
+            If Not LCase (strCurrentPlatform) = "playstation 2" Then
+               Dim OutputStrings, strLine, retVal
+
+               Set OutputStrings = ExecuteShellCommand (strCommandToExecute, retVal)
+               For Each strLine In OutputStrings
+                     BuildLog strLine
+               Next
+               
+               If retVal <> 0 Then
+                   BuildError "Launch Failed"
+               End If
+            Else
+               Dim Shell
+               Set Shell = CreateObject("WScript.Shell")
+               Shell.Run strCommandToExecute
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+</build>

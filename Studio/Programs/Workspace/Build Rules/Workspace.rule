@@ -1,0 +1,440 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+
+   <rule name="ParseSource" dependencygraph="ParseSourceDependencies"
+                            buildcommand="ParseSourceCommand" strictvalidation="false">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - ParseSource rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' --------------------------------------------------------------------
+         ' 
+         Sub ParseSourceDependencies (Task, GlobalScript)
+            ' Depend on all current behavior files
+            If Not GetParam ("Cleaning") Then
+               BuildLog "Searching for unparsed behavior source code..."
+
+               Dim oBehavior
+               For Each oBehavior In RWSScript.Behaviors (False) ' bCreatableOnly = False
+                  If Len (oBehavior.FileName) > 0 Then
+                     Task.AddDependency oBehavior.FileName
+                  End If
+               Next
+            End If
+
+            ' Target is a text file telling us the last time we parsed the source
+            Task.AddTarget BuildPath (FileSystem.GetParentFolderName (GetParam ("DESTDIR")), "SourceParsed")
+         End Sub
+
+         ' --------------------------------------------------------------------
+         ' 
+         Sub ParseSourceCommand (Task, GlobalScript)
+            BuildLog "Parsing behavior source code..."
+            ' This function touches the target file
+            GlobalScript.ParseSource
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Connect" dependencygraph="ConnectDependencies"
+                        buildcommand="ConnectCommand" alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - Connect rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub ConnectDependencies (Task, Game, PlatformFilter, Connection, bSendActiveFolder)
+            ' Clear the list of sent objects then populate it only with the required objects.
+            GetParam ("SENTOBJECTS").Clear
+            Task.AddSubTask "LoadSentObjects", Game.GlobalFolder
+            If Not Game.GlobalFolder.UID = Game.ActiveFolder.UID Then
+               Task.AddSubTask "LoadSentObjects", Game.ActiveFolder
+            End If
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub ConnectCommand (Task, Game, PlatformFilter, Connection, bSendActiveFolder)
+            Dim MemoryBuffer, ActiveFolderBuffer, AFBufferFilename
+            Dim GlobalFolder, GlobalFolderBuffer, GFBufferFilename
+
+            ' Build the pre-send stream and send it
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+            AppendSystemPreSendGame MemoryBuffer
+            Connection.SendBuffer MemoryBuffer
+
+            ' Get the global folder buffer and send it.
+            Set GlobalFolder = Game.GlobalFolder
+            If Not GlobalFolder Is Nothing Then
+               If PlatformFilter.IsValidPlatform (GlobalFolder.Platform) Then
+                  GFBufferFilename = RootFolderFile (GetParam ("DESTDIR"), GlobalFolder)
+                  Set GlobalFolderBuffer = RWSComms.CreateFileBuffer (GFBufferFilename, 1)
+                  If Not GlobalFolderBuffer Is Nothing Then
+                     BuildLog "Sending Global Folder data stream from: " & GFBufferFilename
+                     Connection.SendBuffer GlobalFolderBuffer
+
+                     ' We've now sent the global folder, if this is the same as the
+                     ' active folder, don't send the active folder.
+                     If Game.GlobalFolder.UID = Game.ActiveFolder.UID Then
+                        bSendActiveFolder = False
+                     End If
+                  Else
+                     BuildWarning "The Global Folder data stream from: " & GFBufferFilename & " is empty"
+                  End If
+               End If
+            End If
+
+            ' Get the active folder buffer and send it
+            If bSendActiveFolder Then
+               AFBufferFilename = RootFolderFile (GetParam ("DESTDIR"), Game.ActiveFolder)
+               Set ActiveFolderBuffer = RWSComms.CreateFileBuffer (AFBufferFilename, 1)
+               If Not ActiveFolderBuffer Is Nothing Then
+                  BuildLog "Sending Active Folder data stream from: " & AFBufferFilename
+                  Connection.SendBuffer ActiveFolderBuffer
+               Else
+                  BuildWarning "The Active Folder data stream from: " & AFBufferFilename & " is empty"
+               End If
+            End If
+
+            ' Build the post-send stream and send it
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+            AppendStartSystem MemoryBuffer
+
+            Connection.SendBuffer MemoryBuffer
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Disconnect" buildcommand="DisconnectCommand" alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - Disconnect rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub DisconnectCommand (Task, Connection)
+            Dim MemoryBuffer
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+
+            ' Connection must be closed before disconnecting
+            AppendCloseConnection MemoryBuffer
+            Connection.SendBuffer MemoryBuffer
+
+            ' Disconnect from the console
+            Connection.Disconnect
+
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="DirectorsCamera" buildcommand="DirectorsCameraCommand"
+                                alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - DirectorsCamera rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub DirectorsCameraCommand (Task, Connection, bDirectorsCameraEnabled)
+            Dim MemoryBuffer
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+
+            If bDirectorsCameraEnabled Then
+               AppendUpdateDirectorsCamera MemoryBuffer, RWSScript.Game.CameraAttribute
+               AppendEnableDirectorsCamera MemoryBuffer
+            Else
+               AppendDisableDirectorsCamera MemoryBuffer
+            End If
+
+            Connection.SendBuffer MemoryBuffer
+
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="PauseGame" buildcommand="PauseGameCommand" alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - PauseGame rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub PauseGameCommand (Task, Connection, bPauseMode)
+
+            Dim MemoryBuffer
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+
+            If bPauseMode Then
+               AppendFreezeSystem MemoryBuffer
+            Else
+               AppendRunSystem MemoryBuffer
+            End If
+
+            Connection.SendBuffer MemoryBuffer
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="CameraChange" buildcommand="CameraChangeCommand" alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - CameraChange rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         ' When the user flies in the game view, an event will fire, invoking this rule.
+         Sub CameraChangeCommand (Task, Connection, CameraAttribute)
+            Dim MemoryBuffer
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+
+            AppendUpdateDirectorsCamera MemoryBuffer, CameraAttribute
+            Connection.SendBuffer MemoryBuffer
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="SyncCamera" buildcommand="SyncCameraCommand" alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - SyncCamera rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         ' From a context menu, the user selects to update the game view with the
+         ' console's camera position.
+         Sub SyncCameraCommand (Task, Connection)
+            Dim MemoryBuffer
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+
+            AppendGetCameraMatrix MemoryBuffer
+            Connection.SendBuffer MemoryBuffer
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="TestFireSendEvent" buildcommand="TestFireSendEventCommand"
+                                  alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - TestFireSendEvent rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         ' From a context menu, the user selects to update the game view with the
+         ' console's camera position.
+         Sub TestFireSendEventCommand (Task, Connection, EventName)
+            Dim MemoryBuffer
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+
+            AppendTestEvent MemoryBuffer, EventName
+            Connection.SendBuffer MemoryBuffer
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="TestFireReceiveEvent" buildcommand="TestFireReceiveEventCommand"
+                                     alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - TestFireReceiveEvent rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub TestFireReceiveEventCommand (Task, Connection, Entity, AttributeOrCommand)
+            Dim MemoryBuffer
+            Set MemoryBuffer       = RWSComms.CreateMemoryBuffer ()
+            MemoryBuffer.BigEndian = Connection.BigEndian
+            MemoryBuffer.Unicode   = Connection.Unicode
+ 
+            If AttributeOrCommand.IDType = otAttribute Then 
+                ' Call the helper function to test fire this attribute 
+                TestFireReceiveEventHelper MemoryBuffer, Entity, _ 
+                                           AttributeOrCommand, _ 
+                                           GetAttributeIndex (AttributeOrCommand) 
+            Else 
+                ' Determine the index of the command 
+                Dim Behavior, Command, Commands, Index 
+                Set Behavior = AttributeOrCommand.ParentBehaviors (1) 
+                Set Commands = Behavior.ChildCommands 
+
+                Index = 0
+ 
+                For Each Command In Commands
+                  ' Need to check command type so that we ignoe RWS_SEPERATOR and get
+                  ' the correct index.
+                  '
+                  If Command.Name = "RWS_ATTRIBUTE" Or Command.Name = "RWS_MESSAGE" Then
+
+                    If Command.ID = AttributeOrCommand.ID Then 
+                        ' Call the helper function to send the data 
+                        TestFireReceiveEventHelper MemoryBuffer, Entity, _ 
+                                                   Command.DefaultAttribute, _
+                                                   (Index)
+                    End If
+
+                    Index = Index + 1
+
+                  End If
+
+                Next
+
+            End If 
+
+            Connection.SendBuffer MemoryBuffer   
+         End Sub
+
+         '------------------------------------------------------------------------------         
+         '  
+         Sub TestFireReceiveEventHelper (Buffer, Entity, Attribute, AttributeIndex) 
+
+            Dim EventAttribute, EventAttributeData 
+            Set EventAttribute     = RWSScript.CreateAttribute () 
+            Set EventAttributeData = EventAttribute.Data 
+
+            ' Make the new attribute a copy of the old  
+            EventAttribute.ClassUID = Attribute.ClassUID  
+            EventAttribute.Member   = Attribute.Member  
+            EventAttribute.Type     = Attribute.Type  
+            EventAttribute.Platform = Attribute.Platform 
+
+            ' Set the first data section to be an array of chars  
+            Dim EventAttributeSection, EventUID, Index  
+            Set EventAttributeSection = EventAttributeData.Add (dtChar)  
+            EventUID = RWSScript.GenerateUID ()  
+            For Index = 1 To Len (EventUID)
+               EventAttributeSection.Add Asc (Mid (EventUID, Index, 1))  
+            Next 
+            EventAttributeSection.Add 0 ' Null terminate the string
+            EventAttribute.Data = EventAttributeData
+
+            ' Send the new attribute to the console  
+            AppendUpdateEntityAttributes Buffer, Entity, EventAttribute, AttributeIndex  
+
+            ' Test fire the new event
+            AppendTestEvent Buffer, EventUID  
+
+            ' Set the entities attribute back to the correct event
+            AppendUpdateEntityAttributes Buffer, Entity, Attribute, AttributeIndex 
+
+            ' Delete the event attribute - no longer required
+            RWSScript.Delete EventAttribute
+         End Sub
+      ]]></script>
+   </rule>
+
+   <rule name="ConvertProjectToVersion2" buildcommand="ConvertCommand" alwaysbuild="true">
+      <script language="VBScript"><![CDATA[
+
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - ConvertProjectToVersion2 rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         Sub ConvertCommand (Task, strOldFilename, strNewFilename)
+
+            BuildLog "Converting " & strOldFilename & " - saving as " & strNewFilename
+
+            ' Run the conversion tool
+            Dim strConverterToolExe, strConverterCommand, RetVal, strOutput, oToolOutput
+            strConverterToolExe = GetParam ("TOOLDIR") & "\" & "DBConverter.exe"
+            strConverterCommand = strConverterToolExe & " """ & strOldFilename & """ """ & _
+                                                                strNewFilename & """"
+            RetVal = 0
+            Set oToolOutput = ExecuteShellCommand (strConverterCommand, RetVal)
+
+            ' Display the results in the output panel
+            ' comment out the lines below to remove texture dictionary info
+            For Each strOutput In oToolOutput
+               BuildLog strOutput
+            Next
+
+            If RetVal <> 0 Then
+               BuildError "The database conversion tool (" & strConverterToolExe & _
+                          ") failed to complete (tool returned a value of " & RetVal & ")."
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+</build>

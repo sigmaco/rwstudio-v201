@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="RENLayoutControl.RENPage.1" id="FlightOptions" runtime=""><param name="Caption" value="Flight Options" />
+<param name="Group" value="grpDialogs" />
+<param name="Top" value="0" />
+<param name="Left" value="0" />
+<param name="Width" value="332" />
+<param name="Height" value="301" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="1" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<param name="_cx" value="8784" />
+<param name="_cy" value="7964" />
+<param name="BackColor" value="3452816845" />
+<param name="BorderStyle" value="-842150451" />
+<param name="Reserved" value="" />
+<param name="ForeColor" value="3452816845" />
+<param name="MousePointer" value="-842150451" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Objects" runtime=""><param name="Count" value="21" />
+<param name="key0" value="Image1" />
+<param name="key1" value="Image2" />
+<param name="key2" value="Label1" />
+<param name="key3" value="Label2" />
+<param name="key4" value="Label3" />
+<param name="key5" value="Label4" />
+<param name="key6" value="MouseSensitivityBar" />
+<param name="key7" value="MouseWheelSensitivityBar" />
+<param name="key8" value="KeySensitivityBar" />
+<param name="key9" value="Label5" />
+<param name="key10" value="Label6" />
+<param name="key11" value="ApplyButton" />
+<param name="key12" value="CancelButton" />
+<param name="key13" value="OKButton" />
+<param name="key14" value="Label7" />
+<param name="key15" value="Label8" />
+<param name="key16" value="ZoomFactorBar" />
+<param name="key17" value="Label9" />
+<param name="key18" value="Label10" />
+<param name="key19" value="ResetSensitivity" />
+<param name="key20" value="ResetZoom" />
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item0" runtime=""><param name="Left" value="10" />
+<param name="Top" value="17" />
+<param name="Right" value="319" />
+<param name="Bottom" value="158" />
+<param name="ProgID" value="Forms.Image.1" />
+<stream encode="BASE64">AAIQACADAAAAAwAA8B8AAJMOAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item1" runtime=""><param name="Left" value="10" />
+<param name="Top" value="172" />
+<param name="Right" value="320" />
+<param name="Bottom" value="256" />
+<param name="ProgID" value="Forms.Image.1" />
+<stream encode="BASE64">AAIQACADAAAAAwAACiAAAK8IAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item2" runtime=""><param name="Left" value="33" />
+<param name="Top" value="56" />
+<param name="Right" value="99" />
+<param name="Bottom" value="67" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIgACkAAAAAAAAACgAAgE1vdXNlIE1vdmV1ANIGAAAjAQAAAAIMADQAAAClAAAAAAIAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item3" runtime=""><param name="Left" value="33" />
+<param name="Top" value="81" />
+<param name="Right" value="100" />
+<param name="Bottom" value="94" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIkAC0AAAAAAAAAGwCAEAsAAIBNb3VzZSBXaGVlbADtBgAAWAEAAAACDAA0AAAApQAAAAACAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item4" runtime=""><param name="Left" value="33" />
+<param name="Top" value="106" />
+<param name="Right" value="84" />
+<param name="Bottom" value="122" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIcACkAAAAAAAAACAAAgEtleWJvYXJkRQUAAKcBAAAAAgwANAAAAKUAAAAAAgAA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item5" runtime=""><param name="Left" value="22" />
+<param name="Top" value="12" />
+<param name="Right" value="128" />
+<param name="Bottom" value="28" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIsACkAAAAAAAAAFgAAgE1vdmVtZW50IFNlbnNpdGl2aXR5DQoAAPUKAACnAQAAAAIMADQAAACl
+AAAAAAIAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item6" runtime=""><param name="Left" value="118" />
+<param name="Top" value="56" />
+<param name="Right" value="304" />
+<param name="Bottom" value="67" />
+<param name="ProgID" value="Forms.ScrollBar.1" />
+<stream encode="BASE64">AAIYAOgAAAABAAAAZAAAAAEAAAA5EwAAIwEAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item7" runtime=""><param name="Left" value="118" />
+<param name="Top" value="81" />
+<param name="Right" value="304" />
+<param name="Bottom" value="92" />
+<param name="ProgID" value="Forms.ScrollBar.1" />
+<stream encode="BASE64">AAIYAOgAAAABAAAAZAAAAAIAAAA5EwAAIwEAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item8" runtime=""><param name="Left" value="118" />
+<param name="Top" value="106" />
+<param name="Right" value="304" />
+<param name="Bottom" value="117" />
+<param name="ProgID" value="Forms.ScrollBar.1" />
+<stream encode="BASE64">AAIYAOgAAAABAAAAZAAAAAEAAAA5EwAAIwEAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item9" runtime=""><param name="Left" value="118" />
+<param name="Top" value="31" />
+<param name="Right" value="139" />
+<param name="Bottom" value="44" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIcAC0AAAAAAAAAGwCAEAQAAIBGaW5lLAIAAFgBAAAAAgwANAAAAKUAAAAAAgAA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item10" runtime=""><param name="Left" value="263" />
+<param name="Top" value="31" />
+<param name="Right" value="304" />
+<param name="Bottom" value="42" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIcACkAAAAAAAAABgAAgENvYXJzZXJkPQQAACMBAAAAAgwAdAAAAKUAAAAAAgIA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item11" runtime=""><param name="Left" value="244" />
+<param name="Top" value="267" />
+<param name="Right" value="320" />
+<param name="Bottom" value="293" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIYACgAAAAFAACAQXBwbHllcmTbBwAAsAIAAAACDAB0AAAApQAAAAACAwA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item12" runtime=""><param name="Left" value="159" />
+<param name="Top" value="267" />
+<param name="Right" value="235" />
+<param name="Bottom" value="293" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIYACgAAAAGAACAQ2FuY2VscmTbBwAAsAIAAAACDAB0AAAApQAAAAACAwA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item13" runtime=""><param name="Left" value="74" />
+<param name="Top" value="267" />
+<param name="Right" value="150" />
+<param name="Bottom" value="293" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIUACgAAAACAACAT0sAANsHAACwAgAAAAIMAHQAAAClAAAAAAIDAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item14" runtime=""><param name="Left" value="22" />
+<param name="Top" value="168" />
+<param name="Right" value="98" />
+<param name="Bottom" value="184" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIkACkAAAAAAAAAEAAAgExvY2F0ZSBPcHRpb25zDQrbBwAApwEAAAACDAA0AAAApQAAAAACAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item15" runtime=""><param name="Left" value="32" />
+<param name="Top" value="207" />
+<param name="Right" value="103" />
+<param name="Bottom" value="218" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIgACkAAAAAAAAACwAAgFpvb20gRmFjdG9yAFcHAAAjAQAAAAIMADQAAAClAAAAAAIAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item16" runtime=""><param name="Left" value="117" />
+<param name="Top" value="207" />
+<param name="Right" value="303" />
+<param name="Bottom" value="218" />
+<param name="ProgID" value="Forms.ScrollBar.1" />
+<stream encode="BASE64">AAIQAEgAAABkAAAAORMAACMBAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item17" runtime=""><param name="Left" value="117" />
+<param name="Top" value="186" />
+<param name="Right" value="137" />
+<param name="Bottom" value="199" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIcAC0AAAAAAAAAGwCAEAIAAIBJbgAAEQIAAFgBAAAAAgwANAAAAKUAAAAAAgAA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item18" runtime=""><param name="Left" value="281" />
+<param name="Top" value="186" />
+<param name="Right" value="303" />
+<param name="Bottom" value="199" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIcAC0AAAAAAAAAGwCAEAMAAIBPdXQARgIAAFgBAAAAAgwAdAAAAKUAAAAAAgIA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item19" runtime=""><param name="Left" value="255" />
+<param name="Top" value="129" />
+<param name="Right" value="304" />
+<param name="Bottom" value="152" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIYACgAAAAFAACAUmVzZXRscmQQBQAAYQIAAAACHAB1AAAACwAAgIcAAAAAAgMAU21hbGwgRm9u
+dHMA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item20" runtime=""><param name="Left" value="255" />
+<param name="Top" value="227" />
+<param name="Right" value="304" />
+<param name="Bottom" value="250" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIYACgAAAAFAACAUmVzZXRscmQQBQAAYQIAAAACHAB1AAAACwAAgIcAAAAAAgMAU21hbGwgRm9u
+dHMA
+</stream>
+</object>
+</object>
+</object>
+</RENApplication>

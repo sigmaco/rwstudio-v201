@@ -1,0 +1,113 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game_framework", "game_framework.vcproj", "{C2F03A8A-4339-4136-932A-91A53BDEE5FF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6DCA897-77BB-493E-872E-C633CD13DB64} = {E6DCA897-77BB-493E-872E-C633CD13DB64}
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146} = {DF9C0ADB-1B83-4F89-9840-2DA7BB740146}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gfCore", "..\gfcore\gfCore.vcproj", "{E6DCA897-77BB-493E-872E-C633CD13DB64}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadingScreen", "..\..\..\plugins\loading_screen\sn_gcn\loadingscreen\LoadingScreen\LoadingScreen.vcproj", "{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectName0 = Perforce\u0020Project
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {543C1D6C-9F47-41B5-A600-AB0B80DE3BC0}
+		SccProjectUniqueName1 = game_framework.vcproj
+		SccLocalPath1 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = ..\\gfcore\\gfCore.vcproj
+		SccLocalPath2 = ..\\gfcore
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = ..\\..\\..\\plugins\\loading_screen\\sn_gcn\\loadingscreen\\LoadingScreen\\LoadingScreen.vcproj
+		SccLocalPath3 = ..\\..\\..\\plugins\\loading_screen
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection3 = sn_gcn\\loadingscreen\\LoadingScreen\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		NGC Debug = NGC Debug
+		NGC GDEV Debug = NGC GDEV Debug
+		NGC GDEV DesignDebug = NGC GDEV DesignDebug
+		NGC GDEV DesignDebug Broadband = NGC GDEV DesignDebug Broadband
+		NGC GDEV DesignRelease = NGC GDEV DesignRelease
+		NGC GDEV DesignRelease Broadband = NGC GDEV DesignRelease Broadband
+		NGC GDEV Release = NGC GDEV Release
+		NGC Release = NGC Release
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.Debug.ActiveCfg = Debug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.Debug.Build.0 = Debug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC Debug.ActiveCfg = NGC DesignDebug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC Debug.Build.0 = NGC DesignDebug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV Debug.ActiveCfg = Debug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV Debug.Build.0 = Debug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV DesignDebug.ActiveCfg = Debug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV DesignDebug.Build.0 = Debug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV DesignDebug Broadband.ActiveCfg = Debug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV DesignDebug Broadband.Build.0 = Debug|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV DesignRelease.ActiveCfg = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV DesignRelease.Build.0 = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV DesignRelease Broadband.ActiveCfg = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV DesignRelease Broadband.Build.0 = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV Release.ActiveCfg = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC GDEV Release.Build.0 = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC Release.ActiveCfg = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.NGC Release.Build.0 = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.Release.ActiveCfg = Release|Win32
+		{C2F03A8A-4339-4136-932A-91A53BDEE5FF}.Release.Build.0 = Release|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.Debug.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.Debug.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC Debug.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC Debug.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV Debug.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV Debug.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV DesignDebug.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV DesignDebug.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV DesignDebug Broadband.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV DesignDebug Broadband.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV DesignRelease.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV DesignRelease.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV DesignRelease Broadband.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV DesignRelease Broadband.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV Release.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC GDEV Release.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC Release.ActiveCfg = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.NGC Release.Build.0 = NGC DesignDebug|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.Release.ActiveCfg = NGC DesignRelease|Win32
+		{E6DCA897-77BB-493E-872E-C633CD13DB64}.Release.Build.0 = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.Debug.ActiveCfg = NGC DesignDebug|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.Debug.Build.0 = NGC DesignDebug|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC Debug.ActiveCfg = NGC DesignDebug|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC Debug.Build.0 = NGC DesignDebug|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV Debug.ActiveCfg = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV Debug.Build.0 = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV DesignDebug.ActiveCfg = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV DesignDebug.Build.0 = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV DesignDebug Broadband.ActiveCfg = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV DesignDebug Broadband.Build.0 = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV DesignRelease.ActiveCfg = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV DesignRelease.Build.0 = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV DesignRelease Broadband.ActiveCfg = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV DesignRelease Broadband.Build.0 = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV Release.ActiveCfg = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC GDEV Release.Build.0 = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC Release.ActiveCfg = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.NGC Release.Build.0 = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.Release.ActiveCfg = NGC DesignRelease|Win32
+		{DF9C0ADB-1B83-4F89-9840-2DA7BB740146}.Release.Build.0 = NGC DesignRelease|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

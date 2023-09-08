@@ -1,0 +1,9 @@
+
+LIBRARY      "NetTestPS"
+
+EXPORTS
+	DllGetClassObject       PRIVATE
+	DllCanUnloadNow         PRIVATE
+	GetProxyDllInfo         @1	PRIVATE
+	DllRegisterServer		PRIVATE
+	DllUnregisterServer		PRIVATE

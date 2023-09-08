@@ -1,0 +1,97 @@
+body
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	margin: 0;
+	padding: 0 1em 1em 1em;
+	color: #000000;
+	background-color: #FFFFFF;
+	line-height: 1.3em;
+	}
+
+table
+	{
+	font-size: 100%; /* Text in table is same size as text outside table */
+	border-collapse: collapse;
+	}
+	
+h1
+	{
+	font-size: 130%;
+	}
+
+p, pre
+	{
+	margin: 0.5em 0 0.5em 0;
+	}
+	
+pre, code, .path, h2.folder
+	{
+	font-family: "Courier New", Courier, monospace;
+	}
+
+pre.code
+	{
+	margin: 1em 0 1em 0;
+	padding: 0.5em;
+	background-color: #D9E3F5; /* xlight */
+	}
+
+a
+	{
+	text-decoration: none;
+	color: #0000CC; /* blue */
+	}
+	
+a:hover
+	{
+	cursor: hand;
+	text-decoration: underline;
+	}
+	
+a:visited
+	{
+	cursor: hand;
+	color: #800080; /* purple */
+	}
+	
+.purged
+	{
+	color: #CC0000; /* dark red */
+	text-decoration: line-through;
+	}
+
+h2
+	{
+	font-size: 120%;
+	background-color: #B2C8EA; /* light */
+	padding: 0.5em;
+	width: 100%;
+	margin: 1em 0 1em 0;
+	}
+	
+h2.folder
+	{
+	background-color: #D9E3F5; /* xlight */
+	}
+
+ol, ul
+	{
+	margin: .5em 0 0 2em; 
+	}
+
+ul, ul ul, ul ul ul
+	{
+	list-style-type: square;	
+	}
+	
+@media screen
+{
+h1
+	{
+	background-color: #7FA3DC; /* mid */
+	padding: 1em 0em 1em 1em;
+	margin: 0 -1em 1em -1em;
+	}
+	
+}

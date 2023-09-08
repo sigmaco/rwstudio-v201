@@ -1,0 +1,210 @@
+<html>
+<head>
+<hta:application id="objHTA" navigable="yes" scroll="no" />
+<title>Purge deleted objects from RenderWare Studio game database</title>
+<style>
+body
+	{
+	margin: 0;
+	}
+</style>
+<script language="VBScript" src="shared.vbs"></script>
+<script language="VBScript">
+Option Explicit
+
+' Scroll to bottom of list frame
+Sub ScrollToBottom
+	With document.frames("list").document
+		.parentWindow.scrollTo 0, .body.scrollHeight - .body.clientHeight
+	End With
+End Sub
+
+' Appends element to body of current document in Internet Explorer
+Sub LogHTML(strHTML)
+	Dim objHTMLElement
+	With document.frames("list").document
+		Set objHTMLElement = .createElement(strHTML)
+		' Append element to HTML document
+		.body.appendChild objHTMLElement
+		objHTMLElement.outerHTML = strHTML
+		.body.lastChild.scrollIntoView(false)
+	End With
+End Sub
+
+' Process files already identified by href attributes of <a id="deleted"> elements
+Function PostProcessDeletedObjects(intAction)
+
+	Dim objLinkElement, objProgressMeter, clnDeleted, strAction, strProjectFolderPath, strBackupFolderPath, strFilePath, blnAborted, objHTMLListFrameDocument
+	
+	Set objHTMLListFrameDocument = document.frames("list").document
+	
+	Set clnDeleted = objHTMLListFrameDocument.all.item("deleted")
+	
+	Select Case intAction
+		Case conActionBackup
+			strAction = "Backing-up files"
+			strProjectFolderPath = fso.GetParentFolderName(fso.GetParentFolderName(Unescape(clnDeleted.Item(0).pathname)))
+			strBackupFolderPath = objHTMLListFrameDocument.all.item("backupfolderpath").value
+		Case conActionDelete
+			strAction = "Deleting files"
+		Case Else
+			MsgBox "Action not recognized."
+	End Select
+
+	' Start progress meter
+	Set objProgressMeter = CreateObject("CSL.RWSUtils.ProgressMeter")
+	If Not objProgressMeter Is Nothing Then
+		objProgressMeter.ShowProgressMeter strAction, 0, clnDeleted.Length + 1, True, 0
+	End If
+	
+	For Each objLinkElement In clnDeleted
+		' To get the file path, we need to unescape the pathname property of the <a> element
+		strFilePath = Unescape(objLinkElement.pathname)
+		Select Case intAction
+			Case conActionBackup
+				CopyFile strFilePath, GetBackupFilePath(strFilePath, strBackupFolderPath)
+			Case conActionDelete
+				' Delete file, even if it is read-only
+				fso.DeleteFile strFilePath, conForceDeleteIfReadOnly
+				objLinkElement.scrollIntoView(false)
+				objLinkElement.className = "purged"
+		End Select
+		' Has the user clicked the Abort button on the progress meter?
+		blnAborted = Not(StepProgressMeter(objProgressMeter))
+		If blnAborted Then
+			Exit For
+		End If
+	Next
+	
+	' Replace button with action report
+	With objHTMLListFrameDocument.all
+		Select Case intAction
+			Case conActionBackup
+				With .item("backup")
+					If blnAborted Then
+						.outerHTML = "<p>Backup aborted: incomplete.</p>"
+					Else
+						.outerHTML = "<p><strong>Files backed up to:</strong> <code><a target=""_blank"" href=""" & strBackupFolderPath & """>" & strBackupFolderPath & "</code></p>"
+					End If
+				End With
+			Case conActionDelete
+				With .item("delete")
+					If blnAborted Then
+						.outerHTML = "<p>Delete aborted: incomplete.</p>"
+					Else
+						.outerHTML = "<p><strong>Files deleted.</strong></p>"
+					End If
+				End With
+		End Select
+	End With
+	
+	ScrollToBottom
+
+End Function
+
+' Invoked by onload event of viewer frame.
+' This frame shows the contents of an XML file
+' When IE loads an XML file, it uses a default
+' built-in XSLT stylesheet to transform it into HTML.
+' This function inserts the path of the file into
+' the transformed HTML document
+Sub InsertFilePath
+
+	Dim objHTMLElement, strFilePath
+	
+	With document.frames("viewer").document
+		' Remove leading slash from pathname
+		strFilePath = Unescape(.location.pathname)
+		strFilePath = Right(strFilePath, Len(strFilePath) - 1)
+		' When application starts, frame is blank
+		If strFilePath <> "blank" Then
+			' Customize default stylesheet
+			With .styleSheets(0)
+				.addRule "a", "text-decoration: none;"
+				.addRule "a:hover", "text-decoration: underline;"
+				.addRule "span.filepath", "font-family: ""Courier New"", monospace;"
+			End With
+			Set objHTMLElement = .createElement("p")
+			.body.insertBefore objHTMLElement, .body.firstChild
+			
+			objHTMLElement.innerHTML = "<span class=""filepath""><a title=""Open file in new browser window"" target=""_blank"" href=""" & strFilePath & """>" & strFilePath & "</a></span>"
+		End If
+	End With
+
+End Sub
+
+Sub window_onload
+
+	Dim strProjectFilePath, strProjectFolderPath, objHTMLLink, intDeletedObjectsFoundInDatabase, strHTABaseName, strBackupFolderPath, WshShell, WshUserEnv
+	
+	strHTABaseName = fso.GetBaseName(document.location.pathname)
+	
+	document.frames("list").document.createStyleSheet strHTABaseName & ".css"
+	
+	document.frames("viewer").document.write "<table width=""100%"" height=""100%""><tr valign=""center""><td align=""center"">Click the file names in the left-hand frame to view the file contents here</td></tr></table>"
+	
+	document.frames("viewer").document.createStyleSheet strHTABaseName & ".css"
+	
+	strProjectFilePath = ""
+	strBackupFolderPath = ""
+
+	' Has this application been called via script?
+	If InStr(objHTA.commandLine, conCalledViaScript) > 0 Then
+		' Get values passed by script, if any
+		Set WshShell = CreateObject("WScript.Shell")
+		Set WshUserEnv = WshShell.Environment("USER")
+
+		strProjectFilePath = WshUserEnv(conEnvVarProject)
+		strBackupFolderPath = WshUserEnv(conEnvVarBackup)
+	End If
+	
+	If strProjectFilePath = "" Then
+		' Display dialog
+		strProjectFilePath = GetProjectFilePath()
+	End If
+	
+	If strProjectFilePath = "" Then
+	
+		window.close
+	
+	Else
+	
+		intDeletedObjectsFoundInDatabase = ProcessDeletedObjects(strProjectFilePath, "", conActionReport + conActionShowProgress)
+	
+		' Did processing complete?
+		If intDeletedObjectsFoundInDatabase > -1 Then
+		
+			' Were deleted objects found?
+			If intDeletedObjectsFoundInDatabase > 0 Then
+		
+				If strBackupFolderPath = "" Then
+					strBackupFolderPath = GetDefaultBackupFolderPath(strProjectFilePath)
+				End If
+				
+				LogHTML "<p id=""backup""><button onclick=""parent.PostProcessDeletedObjects(" & conActionBackup & ")"">Back up files to folder</button><input name=""backupfolderpath"" class=""path"" value=""" & strBackupFolderPath & """ type=""text"" maxlength=""256"" size=""60""/></p>"
+				
+				LogHTML "<p id=""delete""><button onclick=""parent.PostProcessDeletedObjects(" & conActionDelete & ")"">Delete files</button></p>"
+				
+			End If
+
+			ScrollToBottom
+			
+		Else
+		
+			window.close
+		
+		End If
+		
+	End If
+	
+End Sub
+</script>
+</head>
+<frameset cols="50%, 50%">
+	<frame name="list" application="yes" scrolling="yes"/>
+	<frameset rows="50%, 50%">
+		<frame name="help" src="readme.htm" application="yes" scrolling="yes"/>
+		<frame name="viewer" application="yes" scrolling="yes" onload="InsertFilePath"/>
+	</frameset>
+</frameset>
+</html>

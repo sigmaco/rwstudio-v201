@@ -1,0 +1,181 @@
+<?xml version="1.0" ?>
+<build version = "1.0">
+   <rule name="RootFolder" dependencygraph="RootFolderDependencies"
+                           buildcommand="RootFolderCommand">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' RootFolder.rule - RootFolder rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub RootFolderDependencies (Task, Folder, PlatformFilter, RecursionGuard)
+            Dim TextureDictionaryTask, SubtaskTargets, SubMake
+
+            Task.AddDependency Folder.PersistentFilename
+
+            ' Clear the sent objects list.
+            GetParam ("SENTOBJECTS").Clear
+
+            ' Build the root folder's data
+            Task.AddSubTask BuildRule (Folder, "Folder"), Folder, PlatformFilter, RecursionGuard
+
+            ' Now save the root folder's sent objects if they're different from the current items
+            Set SubMake = CloneMake ()
+            If Not SubMake Is Nothing Then
+               SubMake.AddTask "SaveSentObjects", Folder
+
+               If GetParam ("Cleaning") Then
+                  SubMake.Clean
+               Else
+                  ' Depend on the sent objects list - this is so objects that are removed from it force a re-build
+                  Task.AddDependency SentObjectsFile (GetParam ("DESTDIR"), Folder)
+
+                  SubMake.Build
+               End If
+            Else
+               BuildError "Could not create a cloned make object to save the sent objects"
+            End If
+
+            ' Root folders require a texture dictionary
+            Set TextureDictionaryTask = Task.AddSubtask ("Texture Dictionary", Folder, PlatformFilter)
+            Set SubtaskTargets = TextureDictionaryTask.GetTargets ()
+            Task.SetParam "TEXTUREDICTIONARYFILE", SubtaskTargets.Item (0)
+
+            ' Root folders depend upon their placement new file
+            Task.AddSubtask "PlacementNew", Folder, PlatformFilter
+
+            Task.AddTarget RootFolderFile (GetParam ("DESTDIR"), Folder)
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub RootFolderCommand (Task, Folder, PlatformFilter, RecursionGuard)
+            BuildLog "Building " & Folder.Name
+            Dim DestDirectory, RootFolderBuffer, APIObject, ObjectBuffer, TextureDictionaryBuffer
+
+            ' The root folder is a concatenation of all asset/entities and child folders
+            DestDirectory   = GetParam ("DESTDIR")
+            Set RootFolderBuffer = RWSComms.CreateFileBuffer (RootFolderFile (DestDirectory, Folder), faCreate)
+
+            If Not RootFolderBuffer Is Nothing Then
+               RootFolderBuffer.BigEndian = GetParam ("BIGENDIAN")
+               RootFolderBuffer.Unicode   = GetParam ("UNICODE")
+
+               ' Attach the placement new header to the root folder stream
+               Set ObjectBuffer = RWSComms.CreateFileBuffer (PNHeaderFile(GetParam ("DESTDIR"), Folder), faRead)
+               If Not ObjectBuffer Is Nothing Then
+                  RootFolderBuffer.WriteBuffer ObjectBuffer, AddAsNewHeader
+               End If
+
+               ' Attach the texture dictionary file if it exists
+               Set TextureDictionaryBuffer = RWSComms.CreateFileBuffer (Task.GetParam ("TEXTUREDICTIONARYFILE"), faRead)
+               If Not TextureDictionaryBuffer Is Nothing Then
+                  RootFolderBuffer.WriteBuffer TextureDictionaryBuffer, AddAsNewHeader
+               Else
+                  BuildLog "No texture dictionary available"
+               End If
+
+               ' Make sure we've loaded the list of sent objects that this folder requires.
+               Dim SubMake
+               Set SubMake = CloneMake ()
+               If Not SubMake Is Nothing Then
+                  GetParam ("SENTOBJECTS").Clear
+                  SubMake.AddTask "LoadSentObjects", Folder
+
+                  If GetParam ("Cleaning") Then
+                     SubMake.Clean
+                  Else
+                     SubMake.Build
+                  End If
+               Else
+                  BuildError "Could not create a cloned make object to load the sent objects"
+               End If
+
+               ' Concatenate all objects in the sent objects container together
+               For Each APIObject In GetParam ("SENTOBJECTS")
+                  Set ObjectBuffer = RWSComms.CreateFileBuffer (StreamFile (DestDirectory, APIObject), faRead)
+                  If Not ObjectBuffer Is Nothing Then
+                     RootFolderBuffer.WriteBuffer ObjectBuffer, AddAsNewHeader
+                  End If
+               Next
+            Else
+               BuildError "Could not create root folder stream " & RootFolderFile (DestDirectory, Folder)
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="RootFolderSend" dependencygraph="RootFolderSendDependencies">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' RootFolder.rule - RootFolder rule
+         '
+         ' Set the dependencies for root folder buffer. These must be in the order 
+         ' they will be built into the stream as there is no command function
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub RootFolderSendDependencies (Task, Folder, PlatformFilter, Buffer)
+
+            ' Root folders depend upon their placement new file
+            Task.AddSubtask "PlacementNewSend", Folder, PlatformFilter, Buffer
+
+            ' Build the root folders data
+            Task.AddSubTask "FolderSend", Folder, PlatformFilter, Buffer
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="RootFolderResetEntities" dependencygraph="RootFolderResetEntitiesDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' RootFolder.rule - RootFolderResetEntities rule
+         '
+         ' Reset all the entities in the folder. This means resending the
+         ' attribute packet, but not resending the assets.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub RootFolderResetEntitiesDependencies (Task, Folder, PlatformFilter, Buffer)
+            Dim SentObjects
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If SentObjects.Exists (Folder) Then
+               ' Root folders depend upon their placement new header
+               Task.AddSubtask "PlacementNewSend", Folder, PlatformFilter, Buffer
+
+               ' Reset the entities in the folder
+               Task.AddSubTask "FolderResetEntities", Folder, PlatformFilter, Buffer
+            End If
+
+         End Sub
+
+      ]]></script>
+
+   </rule>
+
+</build>

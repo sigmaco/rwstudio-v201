@@ -1,0 +1,10 @@
+DESCRIPTION  'Windows Dynamic Link Library'
+
+EXPORTS
+    InitRwPlugin                    @1
+    RegisterCustomCreatorObjects    @2
+    initializePlugin                @3
+    uninitializePlugin              @4
+
+SECTIONS
+    .data READ WRITE

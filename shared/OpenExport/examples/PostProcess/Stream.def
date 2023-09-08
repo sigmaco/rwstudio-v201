@@ -1,0 +1,9 @@
+LIBRARY      "Stream"
+DESCRIPTION  'rwexp Windows Dynamic Link Library'
+
+EXPORTS
+	InitRwPlugin						@1
+	SetCustomExportManager				@2
+
+SECTIONS
+	.data READ WRITE

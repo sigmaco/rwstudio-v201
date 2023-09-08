@@ -1,0 +1,7 @@
+# <Sony Computer Entertainment Inc.>
+
+type nic
+
+vendor "SCE"
+product "Ethernet (Network Adaptor)"
+phy_config auto

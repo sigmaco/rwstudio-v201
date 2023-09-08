@@ -1,0 +1,24 @@
+HKCR
+{
+	CSL.RWS.NetTest.1 = s 'NetTestCtl Class'
+	{
+		CLSID = s '{D65104A9-2E62-442F-89F5-00C279888406}'
+	}
+	CSL.RWS.NetTest = s 'NetTestCtl Class'
+	{
+		CLSID = s '{D65104A9-2E62-442F-89F5-00C279888406}'
+		CurVer = s 'CSL.RWS.NetTest.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {D65104A9-2E62-442F-89F5-00C279888406} = s 'NetTestCtl Class'
+		{
+			ProgID = s 'CSL.RWS.NetTest.1'
+			VersionIndependentProgID = s 'CSL.RWS.NetTest'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{BAB399F6-0521-42CE-95C6-208E58C22393}'
+			'TypeLib' = s '{FEEBE387-1F1C-47E1-90B1-A87FC967D103}'
+		}
+	}
+}

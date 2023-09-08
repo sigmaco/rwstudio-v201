@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Multiple Levels\Games" />
+   <EntitiesLocation path="Example Multiple Levels\Entities" />
+   <AssetsLocation path="Example Multiple Levels\Assets" />
+   <AttributeSharesLocation path="Example Multiple Levels\AttributeShares" />
+   <FoldersLocation path="Example Multiple Levels\Folders" />
+
+</RenderWareStudio>
+

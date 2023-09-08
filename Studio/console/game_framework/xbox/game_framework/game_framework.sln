@@ -1,0 +1,74 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadingScreen", "..\..\..\plugins\Loading_Screen\Xbox\LoadingScreen.vcproj", "{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gfCore", "..\gfCore\gfCore.vcproj", "{927CB8AE-DC0A-4726-9864-C8BCB154D371}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game_framework", "game_framework.vcproj", "{E1F989EE-D755-4AA8-836D-5B62105CD72E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91} = {7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371} = {927CB8AE-DC0A-4726-9864-C8BCB154D371}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectUniqueName0 = ..\\..\\..\\plugins\\Loading_Screen\\Xbox\\LoadingScreen.vcproj
+		SccProjectName0 = Perforce\u0020Project
+		SccLocalPath0 = ..\\..\\..
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection0 = plugins\\Loading_Screen\\Xbox\\
+		SccProjectUniqueName1 = ..\\gfCore\\gfCore.vcproj
+		SccProjectName1 = Perforce\u0020Project
+		SccLocalPath1 = ..\\..\\..
+		SccProvider1 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection1 = game_framework\\xbox\\gfCore\\
+		SccProjectUniqueName2 = game_framework.vcproj
+		SccProjectName2 = Perforce\u0020Project
+		SccLocalPath2 = ..\\..\\..
+		SccProvider2 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection2 = game_framework\\xbox\\game_framework\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Design Debug = Design Debug
+		Design Release = Design Release
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}.Debug.ActiveCfg = Debug|Xbox
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}.Debug.Build.0 = Debug|Xbox
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}.Design Debug.ActiveCfg = Design Debug|Xbox
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}.Design Debug.Build.0 = Design Debug|Xbox
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}.Design Release.ActiveCfg = Design Release|Xbox
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}.Design Release.Build.0 = Design Release|Xbox
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}.Release.ActiveCfg = Release|Xbox
+		{7E0BA20E-A4A4-47DB-9946-C83CECCC3A91}.Release.Build.0 = Release|Xbox
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371}.Debug.ActiveCfg = Debug|Xbox
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371}.Debug.Build.0 = Debug|Xbox
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371}.Design Debug.ActiveCfg = Design Debug|Xbox
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371}.Design Debug.Build.0 = Design Debug|Xbox
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371}.Design Release.ActiveCfg = Design Release|Xbox
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371}.Design Release.Build.0 = Design Release|Xbox
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371}.Release.ActiveCfg = Release|Xbox
+		{927CB8AE-DC0A-4726-9864-C8BCB154D371}.Release.Build.0 = Release|Xbox
+		{E1F989EE-D755-4AA8-836D-5B62105CD72E}.Debug.ActiveCfg = Debug|Xbox
+		{E1F989EE-D755-4AA8-836D-5B62105CD72E}.Debug.Build.0 = Debug|Xbox
+		{E1F989EE-D755-4AA8-836D-5B62105CD72E}.Design Debug.ActiveCfg = Design Debug|Xbox
+		{E1F989EE-D755-4AA8-836D-5B62105CD72E}.Design Debug.Build.0 = Design Debug|Xbox
+		{E1F989EE-D755-4AA8-836D-5B62105CD72E}.Design Release.ActiveCfg = Design Release|Xbox
+		{E1F989EE-D755-4AA8-836D-5B62105CD72E}.Design Release.Build.0 = Design Release|Xbox
+		{E1F989EE-D755-4AA8-836D-5B62105CD72E}.Release.ActiveCfg = Release|Xbox
+		{E1F989EE-D755-4AA8-836D-5B62105CD72E}.Release.Build.0 = Release|Xbox
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

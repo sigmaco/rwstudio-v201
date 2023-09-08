@@ -1,0 +1,105 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="AttributeShare_OnChange">
+      <script language="VBScript"><![CDATA[
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         ' The attribute share has changed. This will not effect the state of the console
+
+      ]]></script>
+   </rule>
+
+   <rule name="AttributeShare_OnDelete" dependencygraph="AttributeShareOnDeleteDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AttributeShare.rule - AttributeShare_OnDelete rule
+         '
+         ' The attribute share has been deleted. We need to resend any entities that
+         ' use this share
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AttributeShareOnDeleteDependencies (Task, AttributeShare, PlatformFilter, Buffer)
+            Dim Entity, SentObjects
+            Set SentObjects = GetParam ("SENTOBJECTS")
+            For Each Entity In GetParentEntities (AttributeShare)
+               If SentObjects.Exists (Entity) Then
+                  Task.AddSubtask "AttributeSendAll", Entity, Buffer
+               End If
+            Next
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AttributeShare_OnAdd" dependencygraph="AttributeShareOnAddDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AttributeShare.rule - AttributeShare_OnAdd rule
+         '
+         ' An attribute has been added to this attribute share. Resend any entities
+         ' that use it.
+         '------------------------------------------------------------------------------
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AttributeShareOnAddDependencies (Task, AttributeShare, Child, PlatformFilter, Buffer)
+            Dim Entity, SentObjects, AttributeIndex
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If otAttribute = Child.IDType Then
+               AttributeIndex = GetAttributeIndex (Child)
+
+               For Each Entity In GetParentEntities (AttributeShare)
+                  If SentObjects.Exists (Entity) Then
+                     ' Send the attribute to any entity that uses it
+                     If EntityUsesAttribute (Entity, Child, AttributeIndex) Then
+                        Task.AddSubtask "AttributeSend", Child, Entity, AttributeIndex, Buffer
+                     End If
+                  End If
+               Next
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AttributeShare_OnRemove" dependencygraph="AttributeShareOnRemoveDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AttributeShare.rule - AttributeShare_OnRemove rule
+         '
+         ' An attribute has been removed from this attribute share. Resend any entities
+         ' that use it.
+         '------------------------------------------------------------------------------
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AttributeShareOnRemoveDependencies (Task, AttributeShare, Child, PlatformFilter, Buffer)
+            Dim Entity, SentObjects
+            Set SentObjects = GetParam ("SENTOBJECTS")
+            For Each Entity In GetParentEntities (AttributeShare)
+               If SentObjects.Exists (Entity) Then
+                  Task.AddSubtask "AttributeSendAll", Entity, Buffer
+               End If
+            Next
+         End Sub
+
+      ]]></script>
+   </rule>
+</build>

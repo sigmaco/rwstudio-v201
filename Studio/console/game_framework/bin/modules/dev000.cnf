@@ -1,0 +1,35 @@
+# <Sony Computer Entertainment Inc.>
+#
+# device configuration sample for USB-Ethernet
+#
+# $Id: dev000.cnf,v 1.2 2000/12/27 06:56:10 tetsu Exp $
+
+type eth
+
+#vendor "Melco"
+#product "LUA-TX"
+
+#vendor "I-O Data"
+#product "ET/TX"
+
+#vendor "PLANEX"
+#product "UE-100TX"
+
+#vendor "Corega"
+#product "USB-TX"
+
+#vendor "Linksys"
+#product "USB100TX"
+
+#vendor "D-Link"
+#product "DSB-650TX"
+
+#vendor "ADMtek"
+#product "Pegasus"
+
+#vendor "D-Link"
+#product "DU-E100"
+
+-vendor                 # any vendor
+-product                # any product
+-location               # any location

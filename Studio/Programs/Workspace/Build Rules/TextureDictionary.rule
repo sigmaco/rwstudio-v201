@@ -1,0 +1,509 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="Texture Dictionary" dependencygraph="TDDependencies"
+                                   buildcommand="TDCommand">
+      <object id="RWSComms"   progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript"  progid="CSL.RWSScript.RWSScript"/>
+      <object id="RWSUtils"   progid="CSL.RWSUtils.Utility"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '------------------------------------------------------------------------------
+         ' TextureDictionary.rule - Texture Dictionary rule
+         '
+         ' This rule creates a stream file containing an asset.
+         ' The asset's file is a texture dictionary created by "TDGenTexDicFile" rule.
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub TDDependencies (Task, Folder, PlatformFilter)
+            Dim strTargetPath, Subtask, SubtaskTargets
+
+            ' Depend on the file specifying resource roots and "embed assets" flag
+            Task.AddDependency AssetGlobalsFile (GetParam ("DESTDIR"))
+
+            ' Dependency on the rule to generate the dictionary file
+            Set Subtask = Task.AddSubtask ("TDGenTexDicFile", Folder, PlatformFilter)
+            Set SubtaskTargets = Subtask.GetTargets ()
+
+            Task.SetParam "GENTEXDICFILE", SubtaskTargets.Item (0)
+
+            ' Target is a buffer containing commands to upload the asset on the console
+            strTargetPath = TDOutputLocation (GetParam ("DESTDIR"))
+            strTargetPath = BuildPath (strTargetPath, Folder.UID & ".rws")
+            Task.SetParam "TARGETFILE", strTargetPath
+            Task.AddTarget strTargetPath
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub TDCommand (Task, Folder, PlatformFilter)
+            Dim strTargetPath, TDAssetBuffer, AssetUID
+            Dim GlobalFolder, IsGlobal
+
+            strTargetPath = Task.GetParam ("TARGETFILE")
+            
+            ' Concatenate the texture dictionary file into an asset for uploading to console
+            Set TDAssetBuffer = RWSComms.CreateFileBuffer (strTargetPath, faCreate)
+
+            If Not TDAssetBuffer Is Nothing Then
+               TDAssetBuffer.BigEndian = GetParam ("BIGENDIAN")
+               TDAssetBuffer.Unicode   = GetParam ("UNICODE")
+
+               IsGlobal = False
+               Set GlobalFolder = RWSScript.Game.GlobalFolder
+               If Not GlobalFolder Is Nothing Then
+                  If GlobalFolder.UID = Folder.UID Then
+                     IsGlobal = True
+                  End If
+               End If
+
+               ' Generate a UID
+               AssetUID = RWSScript.GenerateUID ()
+
+               ' Determine the texture dictionary's path relative to the
+               ' connection's resource root if not embedding assets
+               Dim strAssetFile
+               strAssetFile = Task.GetParam ("GENTEXDICFILE")
+               If Not GetParam ("EMBEDASSETS") Then
+
+                  Dim strTgtResourceRoot, strWksResourceRoot
+                  strWksResourceRoot = GetParam ("WKSRESOURCEROOT")
+                  strTgtResourceRoot = GetParam ("TGTRESOURCEROOT")
+
+                  strAssetFile = RWSUtils.GetRelativePath (strAssetFile, strTgtResourceRoot)
+                  strAssetFile = BuildPath (strTgtResourceRoot, strAssetFile)
+               End If
+
+               AppendCreateAssetData TDAssetBuffer, "", AssetUID, _
+                                     "rwID_TEXDICTIONARY", strAssetFile, _
+                                     "", IsGlobal
+            Else
+               BuildError "Could not create texture dictionary asset stream " & strTargetPath
+            End If
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+
+      ]]></script>
+   </rule>
+
+   <rule name="TDGenTexDicFile" dependencygraph="TDGeneratorDependencies"
+                                buildcommand="TDGeneratorCommand">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '------------------------------------------------------------------------------
+         ' TextureDictionary.rule - TDGenTexDicFile rule
+         '
+         ' This rule loops over all assets in the sent items list, determining what
+         ' textures each uses.  It also generates a list of all asset files and image paths
+         ' (Asset.Dependencies in the RWS API)
+         '
+         ' An asset-list file is generated during the dependency calculation phase
+         ' and the contents of this list are used to build the dictionary by the command.
+         '
+         ' Dependencies are any asset that wrote to the list, and all textures used.
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub TDGeneratorDependencies (Task, Folder, PlatformFilter)
+
+            Dim strAssetListPath, AssetList, strWksResourceRoot
+            Dim strDependencyRoot, strAssetFile, TextureList, strTexFile
+            Dim strAssetDependencyDir, strAssetFileDir
+            Dim WordArray, Asset, strTexture, strTargetPath
+            Dim ProcessedAssets
+
+            Set ProcessedAssets = RWSScript.CreateContainer ()
+
+            ' Declare temporary asset list file
+            strAssetListPath = TDOutputLocation (GetParam ("DESTDIR"))
+            strAssetListPath = BuildPath (strAssetListPath, Folder.UID & ".assetlist")
+            DeclareTemporaryFile strAssetListPath
+            Task.SetParam "TDASSETLISTPATH", strAssetListPath
+
+            strWksResourceRoot = GetParam ("WKSRESOURCEROOT")
+
+            ' Create the asset list file
+            Set AssetList = FileSystem.CreateTextFile (strAssetListPath, True, False)
+
+            ' Target is the texture dictionary file
+            strTargetPath = TDOutputLocation (GetParam ("DESTDIR"))
+            strTargetPath = BuildPath (strTargetPath , Folder.UID & ".txd")
+            Task.SetParam "TARGETFILE", strTargetPath
+            Task.AddTarget strTargetPath
+
+            ' Add dependencies on any assets that write to list
+            For Each Asset In GetChildAssets (Folder, PlatformFilter)
+               If Len (Asset.File) > 0 Then
+                  If Not ProcessedAssets.Exists (Asset) Then
+                     If Not AssetIsRootRF3 (Asset) Then
+                        strAssetFile = GetAssetsFilename (Asset, strWksResourceRoot)
+                        If Len (strAssetFile) > 0 Then
+
+                           ' Add the asset's dependency folder as a dependency.
+                           strAssetDependencyDir = BuildPath (strWksResourceRoot, Asset.Dependencies)
+                           If Right (strAssetDependencyDir, 1) <> "\" And Right (strAssetDependencyDir, 1) <> "\" Then
+                              strAssetDependencyDir = strAssetDependencyDir & "\"
+                           End If
+
+                           ' Add the asset's file folder as a dependency.
+                           strAssetFileDir = FileSystem.GetParentFolderName (strAssetFile)
+                           If Right (strAssetFileDir, 1) <> "\" And Right (strAssetFileDir, 1) <> "\" Then
+                              strAssetFileDir = strAssetFileDir & "\"
+                           End If
+
+                           ' Scan asset's file for texture dependencies, and read output
+                           ' Output line format is: "Texture"\t"Texture Mask" Flags
+                           strDependencyRoot = strAssetDependencyDir & ";" & strAssetFileDir 
+
+                           If Not GetParam ("Cleaning") Then
+                              On Error Resume Next
+                              Dim RetVal, nError
+                              RetVal = 0
+                              nError = 0
+                              Set TextureList = ExecuteShellCommand ( """" & GetTDGeneratorExe () & """" & " -dep " _
+                                                                     & """" & strAssetFile & """" & " " & """" & _
+                                                                     strDependencyRoot & """", RetVal)
+                              nError = Err.Number
+                              On Error Goto 0
+
+                              ' RetVal error messages are tool-dependant. If you change the
+                              ' return values, you must also change the following messages.
+                              If RetVal = -2 Then
+                                 BuildError "Error reading file: " & strAssetFile
+                              ElseIf nError = 0 Then
+                                 ' Add textures and asset files as dependencies
+                                 If TextureList.Count > 0 Then
+                                    For Each strTexture In TextureList
+                                       ' Split the line up into quoted strings
+                                       WordArray = Split (strTexture, """")
+
+                                       ' Depend on texture (first string), and mask (string after the tab)
+                                       AddTextureDependencies Task, strAssetDependencyDir, strAssetFileDir, _
+                                                            WordArray (1), WordArray (3), Asset.Name
+                                    Next
+
+                                    ' Depend on asset file
+                                    Task.AddDependency strAssetFile
+
+                                    ' Add asset to assetlist
+                                    AssetList.WriteLine """" & strAssetFile & """ """ & strDependencyRoot & """"
+                                 End If
+                              Else
+                                 ' There's been an error, the build process will have already
+                                 ' reported this. Most likely, the exe is missing.
+                              End If
+                           End If
+
+                           ProcessedAssets.Add Asset
+                        End If
+                     End If
+                  End If
+               End If
+            Next
+
+            ' Add a dependency on the tools themselves
+            Task.AddDependency GetTDGeneratorExe ()
+
+            ' Add a dependency on the folder this texture dictionary is being built for
+            Task.AddDependency StreamFile (GetParam ("DESTDIR"), Folder)
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub TDGeneratorCommand (Task, Folder, PlatformFilter)
+            Dim strTargetPath, strAssetListPath
+
+            ' Output is the texture dictionary file
+            strTargetPath = Task.GetParam ("TARGETFILE")
+            BuildLog "Building " & strTargetPath & CHR(13) & "Using " & GetTDGeneratorExe () 
+
+            ' Generate the texture dictionary from the asset list
+            strAssetListPath = Task.GetParam ("TDASSETLISTPATH")
+
+            ' Run the texture generator tool
+            Dim OutputList, Output
+
+            On Error Resume Next
+            Dim RetVal
+            RetVal = 0
+            Set OutputList = ExecuteShellCommand ( """" & GetTDGeneratorExe () & """" & " -gen" & " """ & strAssetListPath & """ """ & strTargetPath & """", RetVal)
+            If Err.Number <> 0 Then
+               ' There's been an error, the build process will have already
+               ' reported this. Most likely, the exe is missing.
+            End If
+            On Error Goto 0
+
+            ' The following error messages are tool-dependant. If you change the
+            ' return values, you must also change the following messages.
+            If RetVal = -2 Then
+               BuildError "Problem with the texture list file: " & strAssetListPath
+            ElseIf RetVal = -3 Then
+               BuildError "Cannot save the texture dictionary to: " & strTargetPath
+            End If
+
+            ' Display the results in the output panel
+            ' comment out the lines below to remove texture dictionary info
+            For Each Output In OutputList
+               BuildLog Output
+            Next
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Function FindTextureFile (strImagePath, strTextureName)
+            Dim strTextureFile
+            Dim count
+
+            strTextureFile = BuildPath (strImagePath, strTextureName)
+
+            count = 0
+
+            ' Append some known extensions to find the file that exists
+            If FileSystem.FileExists (strTextureFile & ".png") Then
+               strTextureFile = strTextureFile & ".png"
+               count = count + 1
+            End If
+            
+            If FileSystem.FileExists (strTextureFile & ".ras") Then
+               strTextureFile = strTextureFile & ".ras"
+               count = count + 1
+            End If
+
+            If FileSystem.FileExists (strTextureFile & ".tif") Then
+               strTextureFile = strTextureFile & ".tif"
+               count = count + 1
+            End If
+
+            If FileSystem.FileExists (strTextureFile & ".bmp") Then
+               strTextureFile = strTextureFile & ".bmp"
+               count = count + 1
+            End If
+
+            If FileSystem.FileExists (strTextureFile & ".tga") Then
+               strTextureFile = strTextureFile & ".tga"
+               count = count + 1
+            End If
+
+            If FileSystem.FileExists (strTextureFile & ".dds") Then
+               strTextureFile = strTextureFile & ".dds"
+               count = count + 1
+            End If
+
+            If count = 0 Then
+               strTextureFile = ""
+            End If
+
+            If count > 1 Then
+               BuildWarning "Texture " & strImagePath & strTextureName & " has multiple formats, unable to determine which version to use."
+            End If
+
+            FindTextureFile = strTextureFile
+         End Function
+
+
+         '------------------------------------------------------------------------------
+         '
+         Sub AddTextureDependencies (Task, strAssetDependencyDir, strAssetFileDir, _
+                                     strTextureName, strTextureMask, strAssetName)
+            Dim strTextureFile
+
+            ' Depend on texture file
+            If Len (strTextureName) > 0 Then
+               ' Find the texture file from the the Asset's dependency directory and name
+               strTextureFile = FindTextureFile (strAssetDependencyDir, strTextureName)
+               If Len (strTextureFile) = 0 Then
+                  ' Not found, so search the Asset's directory using the same name
+                  strTextureFile = FindTextureFile (strAssetFileDir, strTextureName)
+               End If
+               If Len (strTextureFile) = 0 Then
+                  BuildWarning "Unable to locate texture " & strTextureName _
+                               & " used by asset """ & strAssetName & """"
+
+                 ' Remove the texture dictionary, to force a rebuild
+                 If FileSystem.FileExists (Task.GetParam ("TARGETFILE")) Then
+                    FileSystem.DeleteFile Task.GetParam ("TARGETFILE")
+                 End If
+               Else
+                 Task.AddDependency strTextureFile
+               End If
+           End If
+
+           ' Depend on mask texture too
+           If Len (strTextureMask) > 0 Then
+               ' Find the texture file from the Asset's dependency directory and name
+               strTextureFile = FindTextureFile (strAssetDependencyDir, strTextureName)
+               If Len (strTextureFile) = 0 Then
+                  ' Not found, so search the Asset's directory using the same name
+                  strTextureFile = FindTextureFile (strAssetFileDir, strTextureName)
+               End If
+              If Len (strTextureFile) = 0 Then
+                 BuildWarning "Unable to locate texture mask " & strTextureMask _
+                              & " used by asset """ & strAssetName & """"
+
+                 ' Remove the texture dictionary, to force a rebuild
+                 If FileSystem.FileExists (Task.GetParam ("TARGETFILE")) Then
+                    FileSystem.DeleteFile Task.GetParam ("TARGETFILE")
+                 End If
+              Else
+                 Task.AddDependency strTextureFile
+              End If
+           End If
+         End Sub
+
+         '------------------------------------------------------------------------------
+
+      ]]></script>
+   </rule>
+   
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="DynamicTextureDictionary" dependencygraph="DynamicTextureDictionaryBuild">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' DynamicTextureDictionary.rule - Dynamic Texture dictionary rule
+         '
+         ' Used to generate a temporary texture dictionary when dynamically adding
+         ' assets to a running console.
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+
+         Sub DynamicTextureDictionaryBuild (Task, Asset, Buffer)
+
+            ' An asset being added while connected may require a texture dictionary to be displayed properly.
+            ' If it does generate a texture dictionary and send that to the console first.
+            '
+            Dim strAssetFile              ' File name of the asset
+            Dim strDependencyRoot         ' Typically the image path where the textures can be found
+            Dim strWksResourceRoot        ' Resource root path
+
+            strWksResourceRoot = GetParam ("WKSRESOURCEROOT")
+
+            strAssetFile = GetAssetsFilename (Asset, strWksResourceRoot)
+            If Len (strAssetFile) > 0 Then
+               strDependencyRoot = BuildPath (strWksResourceRoot, Asset.Dependencies)
+
+               ' Find out what textures the asset needs if any
+               '
+               Dim TextureList               ' List of textures this asset requires
+
+               On Error Resume Next
+               Dim RetVal
+               RetVal = 0
+               Set TextureList = ExecuteShellCommand ( """" & GetTDGeneratorExe () & """" & " -dep " _
+                                 & """" & strAssetFile & """" & " " & """" & strDependencyRoot & """", RetVal)
+               If Err.Number <> 0 Then
+                  ' There's been an error, the build process will have already
+                  ' reported this. Most likely, the exe is missing.
+               End If
+               On Error Goto 0
+
+               ' The following error messages are tool-dependant. If you change the
+               ' return values, you must also change the following messages.
+               If RetVal = -2 Then
+                  BuildError "Error reading file: " & strAssetFile
+               End If
+
+               ' Asset requires a texture dictionary, build it and send it to the console
+               '
+               If TextureList.Count > 0 Then
+                  Dim strTextureDictionaryPath             ' File name of the texture dictionary we are generating 
+
+                  strTextureDictionaryPath = TDOutputLocation (GetParam ("DESTDIR"))
+                  strTextureDictionaryPath = BuildPath (strTextureDictionaryPath, Asset.UID & ".txd")
+
+                  DeclareTemporaryFile strTextureDictionaryPath
+
+                  Dim fileAssetList                            ' Handle to the asset list file
+                  Dim strFileAssetListPath                     ' Name of the asset list file
+
+                  strFileAssetListPath = TDOutputLocation (GetParam ("DESTDIR"))
+                  strFileAssetListPath = BuildPath (strFileAssetListPath, Asset.UID & ".fileAssetList")
+
+                  DeclareTemporaryFile strFileAssetListPath
+
+                  Set fileAssetList = FileSystem.CreateTextFile (strFileAssetListPath, True, False)
+
+                  fileAssetList.WriteLine """" & strAssetFile & """ """ & strDependencyRoot & """"
+
+                  Dim OutputList                               ' Output of texture generator tool
+                  Dim Output                                   ' Used to iterate over the output
+
+                  On Error Resume Next
+                  RetVal = 0
+                  Set OutputList = ExecuteShellCommand ( """" & GetTDGeneratorExe () & """" & " -gen" & " """ & strFileAssetListPath & """ """ & strTextureDictionaryPath & """", RetVal)
+                  If Err.Number <> 0 Then
+                     ' There's been an error, the build process will have already
+                     ' reported this. Most likely, the exe is missing.
+                  End If
+                  On Error Goto 0
+
+                  ' The following error messages are tool-dependant. If you change the
+                  ' return values, you must also change the following messages.
+                  If RetVal = -2 Then
+                     BuildError "Problem with the texture list file: " & strAssetListPath
+                  ElseIf RetVal = -3 Then
+                     BuildError "Cannot save the texture dictionary to: " & strTargetPath
+                  End If
+
+                  ' Display the results in the output panel
+                  ' comment out the lines below to remove texture dictionary info
+                  For Each Output In OutputList
+                     BuildLog Output
+                  Next
+
+                  ' Concatenate the texture dictionary file into an asset for uploading to console
+                  '
+                  Dim AssetUID                                 ' We need to give the texture dictionary a unique Id
+
+                  AssetUID = RWSScript.GenerateUID ()
+
+                  AppendCreateAssetData Buffer, "", AssetUID, _
+                                       "rwID_TEXDICTIONARY", strTextureDictionaryPath, _
+                                       "", False
+               End If
+            End If
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+
+      ]]></script>
+   </rule>
+
+</build>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="RENLayoutControl.RENMenuBar.1" id="LightmapToolBar" runtime=""><param name="Caption" value="Light Map" />
+<param name="Group" value="grpToolbars" />
+<param name="Top" value="0" />
+<param name="Left" value="0" />
+<param name="Width" value="115" />
+<param name="Height" value="22" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="0" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<param name="ViewType" value="MB_SHOWTOOLBAR" />
+<param name="MenuName" value="root" />
+<param name="Count" value="3" />
+<param name="key0" value="Light Map Preview" />
+<param name="key1" value="Light Map Generate" />
+<param name="key2" value="Light Map Settings" />
+<param name="_cx" value="3043" />
+<param name="_cy" value="582" />
+<object clsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" id="Toolbar" runtime=""><stream encode="BASE64">bHQAADYJAABCTTYJAAAAAAAANgAAACgAAAAwAAAAEAAAAAEAGAAAAAAAAAkAABMLAAATCwAAAAAA
+AAAAAADQuLC8bETowLjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDAwMDAwMDAwMCchHScjITAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDAwMDAwMDAwMDAwMConJScnJTAwMDAwMDAwMDAwMB0XEyMLAjIbETAwMDAwMDAwMDAwMDA
+wMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCMQBiUTCSsqKTAwMCs
+qKSAUDCcnJTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCIYEichHSARCSARCSsqKSc
+nJTAwMDAwMDAwMBsTDyMLAjMeFTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMConJSsqKTAwMCsjHisUBy8VCC8VCCsZDiUTCSIOAyonJTAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDAwMDAwMDAwMCMQBiIOAyUTCSMQBiANAx0PBjAwMDAwMDAwMDAwMBsTDyoOBDkiGTAwMDA
+wMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMB0NAyAPBiYUDCsUBzUYCTsdDTsdDTU
+YCS8VCCYSBionJTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCslISYYDyYSBisjHjAwMDErKSY
+YDyARCSsqKTAwMDAwMDAwMDAwMBsTDy4SBjkiGTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDAwMCchHSIOAykSBi8VCDsdDTouIjouIjceES8VCCsUByUTCSonJScnJTAwMDAwMDAwMDA
+wMDAwMDAwMDAwMC4oJSkSBisZDjAwMDAwMDAwMDErKSIOAx0NAyonJTAwMDAwMDAwMDAwMBcMBi8
+VCDgkEjwsFDowGjo0IDw4IDw6HjAwMDAwMDAwMDAwMDAwMDAwMCslISIOAysUBzEaDjErKTAwMDA
+wMDAwMDAeFCkSBiMQBh0NAxcJASMgHjAwMDAwMDAwMDAwMDAwMDAwMDAwMCsZDisZDjAwMDAwMDA
+wMC4qJiIOAycjITAwMDAwMDAwMDAwMDAwMCcjITIeCzgoFjIsJjAwMDAwMDAwMDIwKDk4IjAwMDA
+wMDAwMDAwMDAwMCAUDCMQBikSBjErKTAwMDAwMDAwMDAwMDAwMCkWCyMQBh0NAyEbFzAwMDAwMDA
+wMDAwMDAwMDAwMDAwMDErKS8VCC8VCC8kHjAwMC4rKSkWCyANAysqKTAwMDAwMDAwMDAwMDAwMDw
+wJDYkEjEuKTAwMDAwMD4+Pj4+PjQ0NDExLTk4IjAwMDAwMCEbFxcJAR0NAyAPBiUTCTAwMDAwMDA
+wMDAwMDAwMDAwMCocFCANAx0NAzAwMDAwMDAwMDAwMC4mIjErKTIgFzMeFTErKS8jGzEaDisUByk
+SBikSBiUTCSYZEichHTAwMDAwMDAwMDAwMDAwMDgmFDEpITAwMDAwMDAwMDAwMD4+Pj4+PjQ0NDY
+0KD4+IjAwMCcjIRsTDxoMAx0NAyUTCTAwMDAwMDAwMDAwMDAwMDAwMCYZEh0NAxoMAysqKTAwMDA
+wMDAwMDEaDjgYCDsbCTsbCTccDTIgFy8jGy8bES8jGykSBisjHjAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDMgCzErKTAwMDAwMDAwMDAwMDAwMD4+Pj4+PjExLTw2GjAwMDAwMDAwMCEbFx0NAx0NAysjHjA
+wMDAwMDAwMDAwMC4oJSAPBh0NAxcJARcMBicnJTAwMC8kHjccDTomGjAwMDQsKDwgDjceETErKTA
+wMDAwMC4rKTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDIeCzEuKTAwMDAwMDAwMDAwMDAwMDAwMD4
++PjExLTsxFzAwMDAwMDAwMCcnJRcJAR0NAx0NAygeGi4rKS4rKSslIR0PBh0NAxkKBBoQChcMBic
+nJS4qJjUYCTsdDTAwMDAwMDAwMDYsJjsbCTIbETAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDMgCy4oIjAwMDAwMDAwMDAwMDAwMDAwMDAwMDEuKTsxFzAwMDAwMDAwMBsTDxcJARcJARo
+MAxoMAx0NAx0NAxoMAxoMAxkKBBwWEDAwMDAwMDAwMDAwMDIiGjsdDTAwMDAwMDAwMDYsJjsbCTA
+oJDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYoGi4gEjAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDMpHT4yHDAwMDAwMDAwMBYPCh0XEyIeGhcMBhkKBBkKBBcJARcJARcJARQJAisqKTAwMDA
+wMDAwMDAwMDEYCjsbCTgqIDAwMDAwMDwiEjUYCTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDAwMDAwMDMgCy8jGzAwMDAwMDAwMDAwMDAwMDMpHTwoEDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMCsqKRcMBhQJAhsTDyMgHh0XExAEACMgHjAwMDAwMDAwMDAwMDErKTIlHTsbCTsdDTsdDTccDTA
+gFi4oJTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDMhDi4eEDAmHDEpITM
+pHTIiFDomDjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMBIKBhYPCjAwMDAwMDAwMCIgIDAwMDA
+wMDAwMDAwMDAwMDAwMDErKTEaDjIlHTEYCjEpITAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDAwMDAwMDAwMDAwMDAwMDYqHDMhDjMgCzYiDjosHjAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
+wMDAwMDAwMCsqKTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMC4rKTA
+wMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA=
+</stream>
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item0" runtime=""><param name="MenuName" value="Light Map Preview" />
+<param name="Event" value="OnLtMapPreview" />
+<param name="Index" value="1" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item1" runtime=""><param name="MenuName" value="Light Map Generate" />
+<param name="Event" value="OnLtMapGenerate" />
+<param name="Index" value="2" />
+<param name="PictureIndex" value="1" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item2" runtime=""><param name="MenuName" value="Light Map Settings" />
+<param name="Event" value="OnLtMapSettings" />
+<param name="Index" value="3" />
+<param name="PictureIndex" value="2" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+</object>
+</RENApplication>

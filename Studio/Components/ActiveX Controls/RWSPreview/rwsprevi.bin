@@ -1,0 +1,11 @@
+HKCR
+{
+   NoRemove AppID
+   {
+      {982E3D91-9E34-4108-942D-8B17203DB567} = s 'RWSPreview'
+      'RWSPreview.EXE'
+      {
+         val AppID = s {982E3D91-9E34-4108-942D-8B17203DB567}
+      }
+   }
+}

@@ -1,0 +1,11 @@
+# <Sony Computer Entertainment Inc.>
+#
+# NET configuration sample
+#
+# $Id: net000.cnf,v 1.1 2000/12/23 05:09:36 tetsu Exp $
+
+# USB Ethernet
+interface "IFC000.CNF + DEV000.CNF" "IFC000.CNF" "DEV000.CNF"
+
+# BB Ethernet
+interface "IFC001.CNF+ DEV001.CNF" "IFC001.CNF" "DEV001.CNF"

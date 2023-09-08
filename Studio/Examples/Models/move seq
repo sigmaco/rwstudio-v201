@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RwRf3 version="1.0">
+	<sequence length="29716">
+		<entity uid="{6E3DFEFB-FF63-48A5-BF50-849ADB7C6B87}" name="Entity&lt;7059&gt;" behavior="CEntity">
+			<attribute command="CMD_LoadMatrix" behavior="CSystemCommands" type="RwMatrix" keyframeplugin="{26C92EC8-14DB-492A-BCA0-C36CB38759D6}">
+				<keyframe time="0">
+					<data type="RwReal" num="16">1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2057.29, 5.4394, 1344.85, 0</data>
+					<interpolator id="CLinearInterpolator"/>
+				</keyframe>
+				<keyframe time="6074">
+					<data type="RwReal" num="16">1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2047.65, 5.43938, 2541.7, 0</data>
+					<interpolator id="CLinearInterpolator"/>
+				</keyframe>
+				<keyframe time="12089">
+					<data type="RwReal" num="16">1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2499.97, 5.43937, 2831.27, 0</data>
+					<interpolator id="CLinearInterpolator"/>
+				</keyframe>
+				<keyframe time="18104">
+					<data type="RwReal" num="16">1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2391.52, 5.43936, 1789.23, 0</data>
+					<interpolator id="CLinearInterpolator"/>
+				</keyframe>
+				<keyframe time="23940">
+					<data type="RwReal" num="16">1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2177.71, 5.43937, 1176.95, 0</data>
+					<interpolator id="CLinearInterpolator"/>
+				</keyframe>
+				<keyframe time="29716">
+					<data type="RwReal" num="16">1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1900.94, 5.43938, 1230.02, 0</data>
+				</keyframe>
+			</attribute>
+		</entity>
+		<event time="0"/>
+	</sequence>
+	<asset>
+		<param name="translator" data="string">"RWSSequence"</param>
+	</asset>
+</RwRf3>

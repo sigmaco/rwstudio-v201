@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Template version="3,7,0,3">
+	<AssetTemplate description="The default Spline asset template. This should be used for individual spline objects within the scene.">
+		<Common>
+			<param name="Asset Type" type="enum" value="3"/>
+			<param name="Global Scale Factor" type="float" value="1.0"/>
+			<param name="Global Scale Type" type="enum" value="0"/>
+			<param name="Spline Vertex Type" type="enum" value="0"/>
+		</Common>
+		<Platform>
+			<Generic/>
+			<PS2/>
+			<Xbox/>
+			<GameCube/>
+		</Platform>
+	</AssetTemplate>
+</Template>

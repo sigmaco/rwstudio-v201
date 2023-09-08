@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Env Map\Games" />
+   <EntitiesLocation path="Example Env Map\Entities" />
+   <AssetsLocation path="Example Env Map\Assets" />
+   <AttributeSharesLocation path="Example Env Map\AttributeShares" />
+   <FoldersLocation path="Example Env Map\Folders" />
+
+</RenderWareStudio>
+

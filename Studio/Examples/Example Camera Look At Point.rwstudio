@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Camera Look At Point\Games" />
+   <EntitiesLocation path="Example Camera Look At Point\Entities" />
+   <AssetsLocation path="Example Camera Look At Point\Assets" />
+   <AttributeSharesLocation path="Example Camera Look At Point\AttributeShares" />
+   <FoldersLocation path="Example Camera Look At Point\Folders" />
+
+</RenderWareStudio>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Spline Camera\Games" />
+   <EntitiesLocation path="Example Spline Camera\Entities" />
+   <AssetsLocation path="Example Spline Camera\Assets" />
+   <AttributeSharesLocation path="Example Spline Camera\AttributeShares" />
+   <FoldersLocation path="Example Spline Camera\Folders" />
+
+</RenderWareStudio>
+

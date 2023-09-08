@@ -1,0 +1,378 @@
+<?xml version="1.0" ?>
+<OBJECT NAME="Settings" VERSION="2.0">
+   <OBJECT NAME="Platform Flags">
+      <PARAM NAME="DirectX" VALUE="" />
+      <PARAM NAME="GameCube" VALUE="" />
+      <PARAM NAME="OpenGL" VALUE="" />
+      <PARAM NAME="PS2" VALUE="" />
+      <PARAM NAME="Xbox" VALUE="" />
+   </OBJECT>
+   <OBJECT NAME="RecentFileList"/>
+   <OBJECT NAME="TargetLink">
+      <OBJECT NAME="Platforms">
+         <OBJECT NAME="DirectX PC">
+            <PARAM NAME="Default Port" VALUE="5607" />
+            <PARAM NAME="Platform Flags" VALUE="DirectX" />
+            <OBJECT NAME="Local PC">
+               <PARAM NAME="Launch" VALUE="&quot;c:\Projects\RenderWare Studio\Tools\RWSCLaunch.exe&quot; $(Platform Flags) $(Address) $(Executable)" />
+            </OBJECT>
+            <OBJECT NAME="Remote PC">
+            </OBJECT>
+         </OBJECT>
+         <OBJECT NAME="GameCube">
+            <PARAM NAME="Default Port" VALUE="5611" />
+            <PARAM NAME="Platform Flags" VALUE="GameCube" />
+            <PARAM NAME="Big Endian" VALUE="True" />
+            <OBJECT NAME="GameCube">
+            </OBJECT>
+         </OBJECT>
+         <OBJECT NAME="OpenGL PC">
+            <PARAM NAME="Default Port" VALUE="5608" />
+            <PARAM NAME="Platform Flags" VALUE="OpenGL" />
+            <OBJECT NAME="Local PC">
+               <PARAM NAME="Launch" VALUE="&quot;c:\Projects\RenderWare Studio\Tools\RWSCLaunch.exe&quot; $(Platform Flags) $(Address) $(Executable)" />
+            </OBJECT>
+            <OBJECT NAME="Remote PC">
+            </OBJECT>
+         </OBJECT>
+         <OBJECT NAME="Playstation 2">
+            <PARAM NAME="Default Port" VALUE="5609" />
+            <PARAM NAME="Platform Flags" VALUE="PS2" />
+            <OBJECT NAME="Development Tool">
+               <PARAM NAME="Launch" VALUE="&quot;c:\Projects\RenderWare Studio\Tools\RWSCLaunch.exe&quot; $(Platform Flags) $(Tool Address) $(elf file)" />
+               <PARAM NAME="Reset" VALUE="&quot;c:\Projects\RenderWare Studio\Tools\RWSCLaunch.exe&quot; $(Platform Flags) $(Tool Address)" />
+            </OBJECT>
+            <OBJECT NAME="Test Station">
+            </OBJECT>
+         </OBJECT>
+         <OBJECT NAME="Xbox">
+            <PARAM NAME="Default Port" VALUE="5610" />
+            <PARAM NAME="Platform Flags" VALUE="Xbox" />
+            <OBJECT NAME="Xbox">
+               <PARAM NAME="Launch" VALUE="&quot;c:\Projects\RenderWare Studio\Tools\RWSCLaunch.exe&quot; $(Platform Flags) $(Debug Address) $(xbe file)" />
+               <PARAM NAME="Reset" VALUE="&quot;c:\Projects\RenderWare Studio\Tools\RWSCLaunch.exe&quot; $(Platform Flags) $(Debug Address)" />
+            </OBJECT>
+         </OBJECT>
+      </OBJECT>
+   </OBJECT>
+   <RWSScriptedSettings>
+      <TargetLink>
+         <columns>
+            <column uid="Address" name="Address" width="100">
+            </column>
+            <column uid="DebugAddress" name="Debug Address" width="100">
+            </column>
+            <column uid="EmbedAssets" name="Embed Assets" width="100">
+            </column>
+            <column uid="Executable" name="Executable" width="100">
+            </column>
+            <column uid="ID" name="" width="100">
+            </column>
+            <column uid="IDInstall" name="Install ID" width="100">
+            </column>
+            <column uid="Name" name="Name" width="100">
+            </column>
+            <column uid="Platform" name="Platform" width="100">
+            </column>
+            <column uid="PlatformFlags" name="Platform Flags" width="100">
+            </column>
+            <column uid="Port" name="Port" width="100">
+            </column>
+            <column uid="Resources" name="Resources" width="100">
+            </column>
+            <column uid="Status" name="Status" width="100">
+            </column>
+            <column uid="Target" name="Target" width="100">
+            </column>
+            <column uid="TargetRF3Template" name="Target RF3 Template" width="100">
+            </column>
+            <column uid="Timeout" name="Timeout (ms)" width="100">
+            </column>
+            <column uid="ToolAddress" name="Tool Address" width="100">
+            </column>
+            <column uid="elffile" name="elf file" width="100">
+            </column>
+            <column uid="xbefile" name="xbe file" width="100">
+            </column>
+         </columns>
+         <rows>
+            <row uid="Connection1">
+               <field value="Enter IP Address here">
+               </field>
+               <field>
+               </field>
+               <field value="yes">
+               </field>
+               <field>
+               </field>
+               <field value="0">
+               </field>
+               <field value="RWS_GAMECUBE_GF">
+               </field>
+               <field value="GameCube">
+               </field>
+               <field value="GameCube">
+               </field>
+               <field value="GameCube">
+               </field>
+               <field value="5611">
+               </field>
+               <field value="">
+               </field>
+               <field value="Disconnected">
+               </field>
+               <field value="GameCube">
+               </field>
+               <field value="C:\abdata\Examples\Export Templates\Project\GameCube.rwt">
+               </field>
+               <field value="10000">
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+            </row>
+            <row uid="Connection2">
+               <field value="localhost">
+               </field>
+               <field>
+               </field>
+               <field value="yes">
+               </field>
+               <field value="&quot;C:\Projects\Renderware Studio\console\game_framework\win32\bin\Win32 D3D Design Debug\game_framework_d3d.exe&quot;">
+               </field>
+               <field value="0">
+               </field>
+               <field value="RWS_DXPC_GF">
+               </field>
+               <field value="Local PC - DirectX">
+               </field>
+               <field value="DirectX PC">
+               </field>
+               <field value="DirectX">
+               </field>
+               <field value="5607">
+               </field>
+               <field value="">
+               </field>
+               <field value="Disconnected">
+               </field>
+               <field value="Local PC">
+               </field>
+               <field value="C:\abdata\Examples\Export Templates\Project\Generic.rwt">
+               </field>
+               <field value="10000">
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+            </row>
+            <row uid="Connection3">
+               <field value="localhost">
+               </field>
+               <field>
+               </field>
+               <field value="yes">
+               </field>
+               <field value="&quot;C:\Projects\Renderware Studio\console\game_framework\win32\bin\Win32 OGL Design Debug\game_framework_ogl.exe&quot;">
+               </field>
+               <field value="0">
+               </field>
+               <field value="RWS_OGLPC_GF">
+               </field>
+               <field value="Local PC - OpenGL">
+               </field>
+               <field value="OpenGL PC">
+               </field>
+               <field value="OpenGL">
+               </field>
+               <field value="5608">
+               </field>
+               <field value="">
+               </field>
+               <field value="Disconnected">
+               </field>
+               <field value="Local PC">
+               </field>
+               <field value="C:\abdata\Examples\Export Templates\Project\Generic.rwt">
+               </field>
+               <field value="10000">
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+            </row>
+            <row uid="Connection4">
+               <field value="Enter IP Address here">
+               </field>
+               <field>
+               </field>
+               <field value="yes">
+               </field>
+               <field>
+               </field>
+               <field value="0">
+               </field>
+               <field value="RWS_PS2DEBUG_GF">
+               </field>
+               <field value="PS2 Debug Station">
+               </field>
+               <field value="Playstation 2">
+               </field>
+               <field value="PS2">
+               </field>
+               <field value="5609">
+               </field>
+               <field value="">
+               </field>
+               <field value="Disconnected">
+               </field>
+               <field value="Test Station">
+               </field>
+               <field value="C:\abdata\Examples\Export Templates\Project\PS2.rwt">
+               </field>
+               <field value="10000">
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+            </row>
+            <row uid="Connection5">
+               <field value="Enter IP Address here">
+               </field>
+               <field>
+               </field>
+               <field value="yes">
+               </field>
+               <field>
+               </field>
+               <field value="0">
+               </field>
+               <field value="RWS_PS2DEV_GF">
+               </field>
+               <field value="PS2 Development Station">
+               </field>
+               <field value="Playstation 2">
+               </field>
+               <field value="PS2">
+               </field>
+               <field value="5609">
+               </field>
+               <field value="">
+               </field>
+               <field value="Disconnected">
+               </field>
+               <field value="Development Tool">
+               </field>
+               <field value="C:\abdata\Examples\Export Templates\Project\PS2.rwt">
+               </field>
+               <field value="10000">
+               </field>
+               <field value="Enter Tool IP Address here">
+               </field>
+               <field value="Enter path and name of ELF file here">
+               </field>
+               <field>
+               </field>
+            </row>
+            <row uid="Connection6">
+               <field value="Enter IP Address here">
+               </field>
+               <field value="Enter Debug IP Address here">
+               </field>
+               <field value="yes">
+               </field>
+               <field>
+               </field>
+               <field value="0">
+               </field>
+               <field value="RWS_XBOX_GF">
+               </field>
+               <field value="Xbox">
+               </field>
+               <field value="Xbox">
+               </field>
+               <field value="Xbox">
+               </field>
+               <field value="5610">
+               </field>
+               <field value="">
+               </field>
+               <field value="Disconnected">
+               </field>
+               <field value="Xbox">
+               </field>
+               <field value="C:\abdata\Examples\Export Templates\Project\Xbox.rwt">
+               </field>
+               <field value="10000">
+               </field>
+               <field>
+               </field>
+               <field>
+               </field>
+               <field value="Enter path and name of XBE file here">
+               </field>
+            </row>
+         </rows>
+      </TargetLink>
+      <ListerTools>
+         <ListerAssetPlugins>
+            <!-- The following are registered with all of the listers. They represent the plugins used
+	         to render the asset previews -->
+            <Plugin type="rwID_ATOMIC" progid="CSL.RWSListerPlugins.RenderWareGraphic" backgroundthread="True">
+            </Plugin>
+            <Plugin type="rwID_CLUMP" progid="CSL.RWSListerPlugins.RenderWareGraphic" backgroundthread="True">
+            </Plugin>
+            <Plugin type="rwID_WORLD" progid="CSL.RWSListerPlugins.RenderWareGraphic" backgroundthread="True">
+            </Plugin>
+            <Icon type="rwID_SEQUENCE" filename="C:\Projects\Renderware Studio\Workspace\Resources\sequence.ico">
+            </Icon>
+            <Icon type="rwID_SPLINE" filename="C:\Projects\Renderware Studio\Workspace\Resources\spline.ico">
+            </Icon>
+            <Icon type="rwID_TEXDICTIONARY" filename="C:\Projects\Renderware Studio\Workspace\Resources\texdict.ico">
+            </Icon>
+            <Icon type="rwID_PITEXDICTIONARY" filename="C:\Projects\Renderware Studio\Workspace\Resources\texdict.ico">
+            </Icon>
+            <Icon type="rwID_2DMAESTRO" filename="C:\Projects\Renderware Studio\Workspace\Resources\maestro.ico">
+            </Icon>
+            <Icon type="rwaID_WAVEDICT" filename="C:\Projects\Renderware Studio\Workspace\Resources\wavedict.ico">
+            </Icon>
+            <Icon type="rwID_2DFONT" filename="C:\Projects\Renderware Studio\Workspace\Resources\font.ico">
+            </Icon>
+            <Icon type="rwID_HANIMANIMATION" filename="C:\Projects\Renderware Studio\Workspace\Resources\anim.ico">
+            </Icon>
+            <Icon type="MET" filename="C:\Projects\Renderware Studio\Workspace\Resources\font.ico">
+            </Icon>
+            <Icon type="rwaiID_ASTAR" filename="C:\Projects\Renderware Studio\Workspace\Resources\rwaiID_ASTAR.ico">
+            </Icon>
+            <Icon type="rwaiID_FINDNEAREST" filename="C:\Projects\Renderware Studio\Workspace\Resources\rwaiID_FINDNEAREST.ico">
+            </Icon>
+            <Icon type="rwaiID_GRAPH" filename="C:\Projects\Renderware Studio\Workspace\Resources\rwaiID_GRAPH.ico">
+            </Icon>
+            <Icon type="rwaiID_PATHWAY" filename="C:\Projects\Renderware Studio\Workspace\Resources\rwaiID_PATHWAY.ico">
+            </Icon>
+            <Icon type="rwpID_BODYDEF" filename="C:\Projects\Renderware Studio\Workspace\Resources\rwpID_BODYDEF.ico">
+            </Icon>
+            <Icon type="BMP" filename="C:\Projects\Renderware Studio\Workspace\Resources\texture.ico">
+            </Icon>
+            <Icon type="PNG" filename="C:\Projects\Renderware Studio\Workspace\Resources\texture.ico">
+            </Icon>
+            <Icon type="rwaiID_STATECHART" filename="C:\Projects\Renderware Studio\Workspace\Resources\rwaiID_STATECHART.ico">
+            </Icon>
+         </ListerAssetPlugins>
+         <AssetLister ViewMode="Small Thumbnails">
+         </AssetLister>
+      </ListerTools>
+   </RWSScriptedSettings>
+</OBJECT>

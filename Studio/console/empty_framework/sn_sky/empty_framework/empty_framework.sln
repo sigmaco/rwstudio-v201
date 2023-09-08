@@ -1,0 +1,121 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "COMMSMODULE", "..\..\..\game_framework\source\framework\core\commsserver\psx\commsmodule\commsmodule.vcproj", "{5845A477-CC33-455B-856D-D4F2EA8CCF36}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadingScreen", "..\..\..\plugins\loading_screen\sn_sky\loadingscreen.vcproj", "{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "empty_framework", "empty_framework.vcproj", "{291EEC77-D440-4FF3-9F00-52D08FEA521E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B} = {A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E} = {188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gfCore", "..\..\..\game_framework\sn_sky\gfcore\gfcore.vcproj", "{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectUniqueName0 = ..\\..\\..\\game_framework\\source\\framework\\core\\commsserver\\psx\\commsmodule\\commsmodule.vcproj
+		SccProjectName0 = COMMSMODULE
+		SccLocalPath0 = ..\\..\\..\\game_framework\\source\\framework\\core\\commsserver\\psx
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		SccProjectFilePathRelativizedFromConnection0 = commsmodule\\
+		SccProjectUniqueName1 = ..\\..\\..\\plugins\\loading_screen\\sn_sky\\loadingscreen.vcproj
+		SccProjectName1 = LoadingScreen
+		SccLocalPath1 = ..\\..\\..\\plugins\\loading_screen\\sn_sky
+		SccProvider1 = MSSCCI:Perforce\u0020SCM
+		SccProjectUniqueName2 = empty_framework.vcproj
+		SccProjectName2 = \u0022$/RenderWare\u0020Studio/Console/empty_framework\u0022,\u0020BXSCAAAA
+		SccLocalPath2 = .
+		SccProvider2 = MSSCCI:Perforce\u0020SCM
+		SccProjectUniqueName3 = ..\\..\\..\\game_framework\\sn_sky\\gfcore\\gfcore.vcproj
+		SccProjectName3 = gfCore
+		SccLocalPath3 = ..\\..\\..\\game_framework\\sn_sky\\gfcore
+		SccProvider3 = MSSCCI:Perforce\u0020SCM
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		PS2 Debug = PS2 Debug
+		PS2 Design Debug = PS2 Design Debug
+		PS2 Design Metrics = PS2 Design Metrics
+		PS2 Design Release = PS2 Design Release
+		PS2 Design Release CDROM = PS2 Design Release CDROM
+		PS2 Metrics = PS2 Metrics
+		PS2 Release = PS2 Release
+		PS2 Release CDROM = PS2 Release CDROM
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Debug.ActiveCfg = PS2 Debug|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Debug.Build.0 = PS2 Debug|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Design Debug.ActiveCfg = PS2 Design Debug|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Design Debug.Build.0 = PS2 Design Debug|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Design Metrics.ActiveCfg = PS2 Design Metrics|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Design Metrics.Build.0 = PS2 Design Metrics|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Design Release.ActiveCfg = PS2 Design Release|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Design Release.Build.0 = PS2 Design Release|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Design Release CDROM.ActiveCfg = PS2 Design Release CDROM|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Design Release CDROM.Build.0 = PS2 Design Release CDROM|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Metrics.ActiveCfg = PS2 Metrics|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Metrics.Build.0 = PS2 Metrics|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Release.ActiveCfg = PS2 Release|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Release.Build.0 = PS2 Release|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Release CDROM.ActiveCfg = PS2 Release CDROM|Win32
+		{5845A477-CC33-455B-856D-D4F2EA8CCF36}.PS2 Release CDROM.Build.0 = PS2 Release CDROM|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Debug.ActiveCfg = PS2 Debug|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Debug.Build.0 = PS2 Debug|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Design Debug.ActiveCfg = PS2 Design Debug|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Design Debug.Build.0 = PS2 Design Debug|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Design Metrics.ActiveCfg = PS2 Design Metrics|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Design Metrics.Build.0 = PS2 Design Metrics|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Design Release.ActiveCfg = PS2 Design Release|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Design Release.Build.0 = PS2 Design Release|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Design Release CDROM.ActiveCfg = PS2 Design Release CDROM|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Design Release CDROM.Build.0 = PS2 Design Release CDROM|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Metrics.ActiveCfg = PS2 Metrics|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Metrics.Build.0 = PS2 Metrics|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Release.ActiveCfg = PS2 Release|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Release.Build.0 = PS2 Release|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Release CDROM.ActiveCfg = PS2 Release CDROM|Win32
+		{A7B8BE6A-2EA2-447E-8B3F-FD0783AF793B}.PS2 Release CDROM.Build.0 = PS2 Release CDROM|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Debug.ActiveCfg = PS2 Debug|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Debug.Build.0 = PS2 Debug|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Design Debug.ActiveCfg = PS2 Design Debug|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Design Debug.Build.0 = PS2 Design Debug|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Design Metrics.ActiveCfg = PS2 Design Metrics|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Design Metrics.Build.0 = PS2 Design Metrics|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Design Release.ActiveCfg = PS2 Design Release|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Design Release.Build.0 = PS2 Design Release|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Design Release CDROM.ActiveCfg = PS2 Design Release CDROM|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Design Release CDROM.Build.0 = PS2 Design Release CDROM|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Metrics.ActiveCfg = PS2 Metrics|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Metrics.Build.0 = PS2 Metrics|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Release.ActiveCfg = PS2 Release|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Release.Build.0 = PS2 Release|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Release CDROM.ActiveCfg = PS2 Release CDROM|Win32
+		{291EEC77-D440-4FF3-9F00-52D08FEA521E}.PS2 Release CDROM.Build.0 = PS2 Release CDROM|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Debug.ActiveCfg = PS2 Debug|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Debug.Build.0 = PS2 Debug|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Design Debug.ActiveCfg = PS2 Design Debug|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Design Debug.Build.0 = PS2 Design Debug|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Design Metrics.ActiveCfg = PS2 Design Metrics|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Design Metrics.Build.0 = PS2 Design Metrics|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Design Release.ActiveCfg = PS2 Design Release|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Design Release.Build.0 = PS2 Design Release|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Design Release CDROM.ActiveCfg = PS2 Design Release CDROM|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Design Release CDROM.Build.0 = PS2 Design Release CDROM|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Metrics.ActiveCfg = PS2 Metrics|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Metrics.Build.0 = PS2 Metrics|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Release.ActiveCfg = PS2 Release|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Release.Build.0 = PS2 Release|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Release CDROM.ActiveCfg = PS2 Release CDROM|Win32
+		{188EDF86-DDBE-4606-A7AC-8EFEF7F2158E}.PS2 Release CDROM.Build.0 = PS2 Release CDROM|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

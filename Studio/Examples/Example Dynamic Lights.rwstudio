@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Dynamic Lights\Games" />
+   <EntitiesLocation path="Example Dynamic Lights\Entities" />
+   <AssetsLocation path="Example Dynamic Lights\Assets" />
+   <AttributeSharesLocation path="Example Dynamic Lights\AttributeShares" />
+   <FoldersLocation path="Example Dynamic Lights\Folders" />
+
+</RenderWareStudio>
+

@@ -1,0 +1,851 @@
+19/02/04 Added world support into the preview control.
+
+09/12/03 Updated texture dictionary tool, dosn't report blending mode correctly, also have been advised 
+         by devrels that darkmaps for ps2 should be set as FILTERLINEAR.
+
+03/12/03 Extended 3DUIExtension objects to allow loading of RWG stream files (bsp,dff,rws).
+
+18/11/03 Added stream viewer & editor control into workspace. Allows users to tweak the contents of
+         plugin data within the stream (provided a suitable DLL has been written to provide an activeX
+         control), with the changes being sent to any connected consoles. Changes are stored in the
+         xml file for the asset (the original asset file (bsp, dff, rws) is not changed). Build rules 
+         have been updated so that, when connecting to a console, assets are sent with the changes
+         embedded.
+
+         Any objects within the stream must have the 'RWS Identifier' user data present before
+         the stream editor can change the plugin data - this in an option on the exporters.
+
+17/11/03 Added a new stream function - strfunc_UpdateAsset. This updates a resource and typically calls
+	 CResourceHandler::UpdateResource. It can be used by appending the resource's ID and a block of
+	 data to be used on the console. This data can be anything that is required to update the relevant
+	 resource.
+
+11/11/03 Updates / optimizations to the 3DUIExtension object. Objects are now created in an 'unlocked' state,
+         and are not rendered until they are locked. Whilst unlocked, the geometry can be changed (add polygons,
+         spheres, etc...). When locked, geometry can not be changed.  Also added 'instancing' mechanism, to
+         allow several 3DUIExtension object to share geometry (but different transform / properties).
+
+06/11/03 Changing the texture and font dictionary build rules to use the platform flags string instead of
+         the platform string. 'playstation' now becomes 'ps2'.
+
+03/10/03 BugFix, Test fire events didn't work if the RWS_MESSAGE macro followed an RWS_SEPERATOR macro.
+
+26/09/03 Added user control of lighting in 3D Views - can control brightness, and whether lights/atomics
+         are lit
+
+25/09/03 BuildLog, BuildWarning, BuildError automatically add the name of the build rule to the start
+	 of the message by the ren foi.e. [Rule Name]custom message here
+
+25/09/03 BugFix, it is now possible to override a build rule in a game database. i.e. by creating a build
+	 rule called say "Entity" in the game database build rules folder this one will be used in
+	 preference to the default one in the RenderWare studio build rules folder. A warning is displayed
+	 "[Rule Name] Rule has been overridden." for each rule.
+
+23/09/03 Build rules may now use environment variables when specifying vbs scripts for inclusion.
+         For example, it is now possible to specify...
+            <script language="VBScript" src="%RENDERWARESTUDIO%\Workspace\Build Rules\BuildTools.vbs"/>
+
+29/09/03 Fixed bug where image loaders for TIFF and RAS files were not registered for the preview control. Bug #6429
+
+07/08/03 Maestro Exporter, command line version which uses null libs for PS2, Xbox and GCN.
+
+	 Just pass in .anm files to command line to export required data.
+         Need to have fonts in 'font' folder and textures in 'textures' folder.
+         
+         Old Maestro Exporter (visual version) has now been removed.
+
+05/08/03 Added a new method to set the offset for new spline nodes from script.
+	 The value used to be passed with RWSSpline::NewNodes when the new nodes mode was switched.
+	 The value is now only passed via RWSSplineCtrl::SetNodesOffset when the create new nodes mode
+	 is switched on.
+
+04/08/03 'DirectX8' platform string automatically changed to 'DirectX' when loading a project
+         whose version < 1.20. This is due to the default DirectX platform name changing from
+         'DirectX8' to 'DirectX'.
+
+30/07/03 RenderWare Spline support.
+	 Created a new ActiveX control (RWSSpline) to manage RenderWare Splines.
+	 RWSSpline uses the Graph Module to display the spline data associated with a spline asset.
+	 The spline data contained in the asset may be modified in RenderWare Studio.
+	 Spline nodes may be moved using the standard pick mechanism in the Orthoviews.
+	 Once nodes are selected they can be deleted from the spline and new nodes may be inserted.
+	 When the create new nodes mode is turned on from the spline toolbar, new nodes can be created for the
+	 spline by picking a point in the Orthoviews.
+	 A new spline asset may be created from the asset lister and will be managed by Alienbrain if the project is.
+	 A new toolbar has been created and added to the RenderWareStudio.ren file for the operations related to
+	 the spline control.
+	 Each RenderWare Spline asset (type = rwID_SPLINE) now uses spline.ico for the image in the Asset Lister.
+
+23/07/03 Updated RWS Asset to change font IDs from rwID_2DPLUGIN to rwID_2DFONT.
+
+22/07/03 Added new 'RWS3DSceneControl' (for use with RWS3DUIExtensions) - has interface to enable/disable
+         updating of 3D views. Also move object selection interface from IRWS3DEventInfoObject into new
+         SceneControl object
+
+11/07/03 Added pick & drag mode, new icon, menu item and 'quick key' (4 key). Allows objects to be dragged around
+         the scene and automatically aligns their origins to the result of a ray-test into the scene. Needs
+         additional work to allow alignment to be changed, etc.
+
+07/07/03 Changed Animation preview control so that you can control the animation using a slider at the bottom of the window. You also have the option to render the clump's skeleton if one is available.
+
+30/06/03 Added new RWSPersist API function to manage non-database items within the project's changelist. See help for
+            RWSPersistFileCheckOut.
+         Also added RWSPersistFileImportToVersionControl to add a file directly to version control without making an entry
+         to the project's changelist
+         Also added RWSPersistPathIsManaged to determine whether a file or folder is managed by version control.
+         RWSPersistProjectGetLatest now takes as, an optional argument, the resource root. If this path is managed then 
+         the latest version of the files will be obtained from version control.
+
+18/06/03 Made changes to the Animation preview control so that it uses the same Orbit, Pan and Zoom controls as the Ortho views.
+	 Firstly this means listening to the menu and toolbars to change the mode, and secondly this involves using the max style navigation.
+
+	 The current max controls in the animation preview window work as follows:
+	 RIGHT MOUSE BUTTON             - Pan mode.
+	 RIGHT MOUSE BUTTON + ALT KEY   - Orbit mode.
+	 RIGHT MOUSE BUTTON + CTRL KEY  - Zoom mode.
+
+11/06/03 The attribute sections for RWSReal and RWSDouble data are now written as a hex encoded representation 
+         of the IEEE floating point bits. Each value is followed by a comment within which is the human readable
+         form. Data written using versions prior to 1.2 will be read in normally but any subsequent saves will use
+         the new, encoded, format. The encoding removes any rounding errors that may be introduced by the load/save
+         process.
+
+10/06/03 Added 'Aim at in view' to context menu for assets, etc in the game database window. Also fixed update
+         issue with selection menu and selection toolbar (bugzilla 5118).
+
+06/06/03 Added Shift-F3 (menu as Aim At) to locate the selected entity in the view WITHOUT moving the camera's
+         position.
+
+06/06/03 The attribute data sections in the project XML have been reformatted to better support UNICODE characters.
+         Previous attribute data has been stored within CDATA sections, i.e.
+             <Data type="RWSChar" num="9"><![CDATA[TELEPORT]]></Data>
+         The new format removes the CDATA section and encodes non-printing or UNICODE characters beyond 255 as
+         character references, i.e.
+             <Data type="RWSChar" num="9">abcd§&#256;&gt;12</Data>
+         The previously CDATA formatted data will be parsed correctly by the new version of RWStudio.
+
+30/05/03 The GUID for an entity or asset is now sent to the console as an array of four integer numbers,
+         instead of as a string. This gives a number of advantages:
+
+         - The GUID does not need to be converted to a number from a string on the console anymore.
+         - Finding a particular asset or entity on the console is more efficient, as it avoids
+            having to convert a string into a number.
+         - The GUID of an entity in the workspace is now also the GUID used on the console, making
+            identifying a particular asset or entity easier.
+
+         BuildTools.vbs has been modified to write the GUID for an entity or asset as an integer value 
+         instead of as a string.
+
+         BuildTools.vbs has also been modified to write the asset name, type, file and dependency path
+         as strings padded out to a multiple of 4bytes in size. This avoids some data alignment issues
+         with the integer GUID on the PS2.
+
+22/05/03 Modified the orbiting system so that it can operate in three 'types of orbit'. Also modified the operation of the
+         alternative orbit point selection ('O' key) and the visuals of the orbit mode.
+
+	 New 'types' are: ORBIT_ONLY = orbits either the world origin, selected object origin or alternative origin;
+         ORBIT_OBJECT = orbits selected object or alternative orbit point, but if neither selection or alternative
+         set, then it rotates around the camera's view (camera arc rotate); CAMERA_ARC = always rotates about the
+         camera's view, except when an alternative orbit point is set. The 3 modes are entered via 3 new icons on the
+         tool bar or three new items in the selection menu.
+
+         If 'quick orbit' (via middle mouse button + alt) then the alternative orbit point is ALWAYS ignored in all
+         three of these orbit types.
+
+         The 'O' key can still be used to set an alternative orbit point (in the same way, hold and left-click), however,
+         it can now be toggled on and off by pressing and releaseing the 'O' key without performing a left-click. The
+         alternative orbit is still disabled when selections are made, etc, but you can flick back to the last specified
+         alternative orbit by press/release the 'O' key to toggle it.
+
+         Changes to the visuals for the orbit mode are to allow the user to see what they are orbiting around, even if the
+         orbit point itself is off screen. The change does NOT show where the orbit point is, but does show which class of
+         orbit point is in use. So...
+
+            Normal circle only = orbiting around the camera or camera arc rotate mode.
+            Inner circle shown = orbiting around an alternative orbit point, ie one selected using 'O' key + left-click.
+            Inner square shown = orbiting around the origin of a selected object.
+            Inner cross shown  = orbiting around the world origin (0,0,0).        
+
+22/05/03 Modified the instance edit module to remove bug 5000 - CTRL-clicking a group of entities and then
+         CTRL-clicking the last one, unselects them all instead of just the last one. Code now also sends
+         out a selection message to indicate which item in a list has become selected when a part-deselection
+         occurs. This is sent in addition (immediately after) the deselection pick message, IF there the
+         newly modified selection list is not empty.
+
+21/05/03 Added entity reset command to the context menu of entities, entity collections and levels in the
+         the game database. The reset command is meant to reset the selected entity / entities in the 
+         selected object back to their initial states. 
+
+         A new stream command, strfunc_ResetEntity, has been created to communicate the reset request to 
+         the game framework. The full attribute packet for the entity is sent along with the command,
+         which the game framework can use to reset the entity. 
+
+         The default implementation of strfunc_ResetEntity in the game framework simply destroys the entity
+         and then recreates it. (This can be changed by customising the handler for the strfunc_ResetEntity           command.)
+
+19/05/03 Added function profiling module which enables profiling of functions within the game framework. To eneable the profiler you need to have RWS_FUNCTIONPROFILE defined in gfcore.dsp and game_framework.dsp.
+
+14/05/03 Added selection locking (spacebar while not dragging) and fixed issues with right-button reset on dragging of
+         objects in pick&translate, pick&rotate and pick&scale modes.
+
+13/05/03 Added Memory profiling control to the workspace. The user interface is similar to the metrics control where data
+         for a specific connection is viewed using the right click context menu.
+
+13/05/03 Expected behavior improvements to Metrics control, several menu options added, Delete All, Reset and Stop. User
+         can select more than one connection to apply the context menu action to. The graph window re-opens using the
+         last size and viewing multiple windows offsets them.
+
+12/05/03 Modified the default flight keys (w->S, S->X, R->F and F->V) so that Q, W, E & R can be used for Max-style pick
+         only, pick & translate, pick & rotate and pick & scale selection. Also added pick only mode. Added toolbar icon
+         and menu option for 'lock selection' but no underlying code, yet.
+
+         NOTE: the .settings file must be deleted and the default one inserted to cause the new features to work correctly.
+
+
+12/05/03 Added RADIO_BUTTON attribute editor, uses a similar declaration to the LIST control to display (n) items each
+         with a button to select it. Selecting one deselects all of the others. Below is an example of the source code
+         decoration required to use it.
+
+         RWS_ATTRIBUTE( CMD_RadioRwUInt32, "RADIO RwUInt32","Right Click - View Source for details",RADIO_BUTTON, RwUInt32, LIST("red|green|blue|@cyan|purple"))
+
+29/04/03 (ref: change list 16054) Modified the .ren file so that the middle-mouse-button can be used to 'quick enter'
+         the pan, orbit (+ALT) and zoom (+ALT & CTRL) modes (there is also a fast-pan mode on middle-mouse-button +
+         CTRL only). The mode remains until the mouse button is release, at which point it reverts to the previously
+         selected mode. While the button is held, clicking the right-mouse button will reset the camera to where it
+         was when the mode was entered / a modifier key (ALT & CTRL) was pressed / released. Additionally, some tidying
+         of the code occurred...
+
+         *) The selected view is now modified when the mouse moves into the window instead of when the window is clicked.
+            This has the side-effect of fixing mouse wheel zoom in isometric views.
+
+         *) CInstanceEdit::OnMouseButtonDown & ...Up used to globally capture and release the mouse movement, the code
+            to do this has now been removed - it has had no visible effect and it's reason for inclusion was unknown.
+
+         *) CMaxNavigation has had the m_alt_nav_mode1 & 2 + m_alt_mode1 & 2 variables removed. The InqAltNavigationMode
+            and InqAltNavigationKey function have been modified to output a warning message (function deprecated).
+
+         *) Also the 'CorrectedNavMode' function and associated variables, etc have been removed - unused functionality.
+         
+14/04/03 Workspace now displays the name of the user who has a file checked out from alienbrain.
+         This has required changes to the RWSPersistIDGetStatus and RWSPersistFileGetStatus functions to
+         retrieve this extended information in a structure.
+
+24/03/03 Added 'wireframe display' override to the 3D UI extension objects
+
+20/03/03 Checkin code will now submit all files within the Assets, Entities, Games, Levels and Collections folders
+         of the project, regardless of whether there are entries in the changelog. This is to provide improved 
+         checkin times.
+
+24/02/03 Fixed the invincible tooltips (Bug 4156)
+
+24/02/03 Fixed TargetLink problem - sending wrong attribute in rare cases.
+	 (inheritance hierarchies containing same attribute name in 2 or more classes)
+
+24/02/03 Event visualizer now pans more naturally.
+
+21/02/03 Updates to source parser to remove error reports
+
+20/02/03 Event Visualizer now zooms out further, reducing the font size to suit.
+
+17/02/03 The visibility status of entities is now persisted.
+
+14/03/03 Added event logging to the RenderWare import to help track down bad assets - enabled by registry setting :
+           in HKCU\Software\CSL\RenderWare Studio, add a DWORD value called 'ImportLogEnable', and
+           set the value to 1 to enable, 0 to disable
+           Logging is fixed to 'c:\RWStudio_Import_Log.txt'
+
+14/02/03 The RWSPrst (XML parser) API now issues a callback (set using RWSPersistErrorSetCallback) for all 
+         errors encountered. This provides improved error reporting in Workspace.
+
+11/02/03 When getting latest or undoing checkouts with the alienbrain integration the system now honors the 
+         modtime settings specified in the alienbrain client. Previously the integration enforced the "DEFAULT"
+         modtime setting when files were obtained from the server.
+
+10/01/03 Removed RWSComms->RWSCAppendGenerateTextureDictionary() and CommsImpl->StreamGenerateTextureDictionary()
+	 since strfunc_WriteTextureDictionary is no longer used.
+
+24/01/03 The alienbrain integration now uses a combination of file size and CRC value to determine if the
+         user has the latest version of a file. The integration with alienbrain now supports the use of
+         either DEFAULT, CHECK-iN and CURRENT alienbrain settings for time stamping client files.
+
+15/01/03 Workspace now uses the new type: Template Collections.
+
+08/01/03 Workspace now supports .ras and .tif (as well as .bmp and .tga)
+
+06/01/03 RWSAttributeControl.dll has now been renamed to RWSAttributeEditor.dll. 
+         This does not affect any of the contained components.
+
+02/01/03 Fixed RWSPersist.h so that it may be compiled with C
+
+02/12/02 Version incremented to Release 1.1
+
+29/11/02 Added 'Flight Keys...' to options menu
+
+29/11/02 Flight options (mouse/keyboard sensitivity etc) are now persisted between runs of RWStudio
+
+27/11/02 Added a list box to replace the MS Forms list box, which has no problems when used within
+         RenderWare Studio layouts. It's progID is CSL.ListBox.1.
+
+21/11/02 Added camera location display (switchable from Display Options dialog)
+
+21/11/02 Added (hideable) toolbar to each of the orthoviews, giving controls for display mode
+         along with front/back clipping planes
+
+21/11/02 Added 'Axis align' drop-down list to Object Information bar
+
+15/11/02 Added a database validation/repair tool.
+
+13/11/02 Improved GDI resource usage in Game Database, Behavior Lister and Asset Lister.
+
+12/11/02 Added the GUIDEnforcer app. This checks that all IDs are GUID, optionally replacing ALL
+         IDs with new GUIDs.
+
+12/11/02 Added import functionality - now able to import levels and templates.
+
+12/11/02 Fixed a bug where launching workspace by double clicking a .rwstudio file in explorer was
+	 sometimes causing workspace to deadlock.
+
+12/11/02 Added new display modes for 3D views : solid/wireframe + textured/untextured
+
+08/11/02 Texture dictionaries creation has been enhanced, such that texture dictionaries should now contain
+	 the same textures as those created on the console. MipKl values should now be preserved and
+	 textures used by MatFX are now included.
+
+07/11/02 To aid in dragging assets or templates multiple times into the orthoviews, a 'stamp' feature
+	 has been added. Simply press the space bar while dragging a new item into the view and a copy
+	 of the new object will be placed at the current mouse coordinate.
+
+06/11/02 Added support for objects named using unicode characters.
+
+06/11/02 It is now possible to customise the available platforms by changing the RwStudio.settings file. 
+	 Platforms such as "English PS2" or "French PS2" can now be constructed.
+
+31/10/02 Added FPSSkyDome behaviour, used to render a world as a sky dome.
+
+29/10/02 Made object edit axis/handles have three separate modes - translate, rotate and scale -
+         with additional toolbar buttons + F10 to cycle between the modes
+
+29/10/02 Added an enhancement which speeds up rendering of objects referenced multiple times in the hierarchy.
+
+29/10/02 Changed the load such that only assets that are part of the current level are loaded
+	 into memory. The remaining assets are loaded on demand.
+
+23/10/02 Fixing memory leaks in Event Visualizer and changing static arrays to dynamic vectors
+	 to allow arbitrary sized graphs.  This will enable the use of large databases with many
+	 messages if desired.
+
+23/10/02 Version incremented to 1.1 Beta
+
+23/10/02 Added an extra script into the ren file, AppSettings, to store settings. Added the option to set the time before a tooltip appears in the game view and how long it stays displayed.
+
+23/10/02 Added the "Target File Save" component into the 3 main layouts.
+
+22/10/02 Added switch to 'Drag Options' page, allow users to position edit handles either at
+         bounding box center or local origin
+
+21/10/02 Target link now reports an error to the output window when it fails to create a texture dictionary or data stream.
+
+21/10/02 Added ability for users to type into the ObjectInfo toolbar to set orientation, scale
+         and position
+
+18/10/02 Fixed duplicated assets within a file-based network stream.
+
+18/10/02 Attribute controls now handle the tab key to move to next UI element.
+
+17/10/02 Added ObjectInfo display toolbar, showing position, orientation or scale information
+         for selected object.
+
+16/10/02 Attribute controls updated to handle the undo of creation and addition of child attributes.
+
+14/10/02 Undo stack added to the undo edit menu.
+
+11/10/02 Improved the UI clarity on the target connection properties dialog.
+
+01/10/02 Introduced shared attributes so that more than one entity can share common attributes.
+
+01/10/02 Added the ability to hide parts of the game in the game view: entities, entity collections & current level.
+
+25/09/02 Added events system to Undo. Output window now displays description of undo operations.
+
+25/09/02 Introduced progress meter whilst connecting to a target.
+
+24/09/02 Changed the return type of the API functions, RWSInitialize, RWSDatabaseAttach, RWSDatabaseDetach, RWSDatabaseDestroy to be RWSBool. Changed the interface to the AttachToDatabase method on the Entity Attributes, Target Link, Event Visualizer, World Lister, Behavior Lister & Asset Lister objects to reflect the return value.
+
+19/09/02 May now abort source code parsing.
+
+18/09/02 Renamed "Remember camera Settings" to "Restore camera settings" to better reflect the option.
+
+17/09/02 Renamed "Parse Source" to "Parse All Source" throughout. Can now "Parse All Source" from the context menu of a behavior.
+
+16/09/02 Added support for attribute collections to lister. These collections will be used for attribute sharing.
+
+16/09/02 Layouts changed. 2 added (build layout & event layout) and 2 renamed (simple and scrolling, now called tabbed and stacker). Toolbars have been expanded.
+
+12/09/09 Added multi-line message capability to the output window.
+
+10/09/02 Parse errors are now sent to the output window.
+
+10/09/02 Removed showing the game properties on a new game and on loading a game with the source/resource root missing. A warning message is now sent to the output window.
+
+10/09/02 Missing assets are now checked for on load.
+
+09/09/02 Updated the output window to handle tab characters in message strings.
+
+09/09/02 Changed the icons for sending and receiving messages that is shown in the entity attributes view.
+
+09/09/02 On losing focus, the edit gizmos now sends the data.
+
+09/09/02 Maximum line length restriction of 2048 characters removed from parser. 
+
+06/09/02 Improved parser support for multi-line macros and comments.
+
+04/09/02 Added code to display debug messages sent to workspace from connected target.
+
+03/09/02 Version incremented to Release 1.01
+
+21/08/02 Fixed the initialisation of Renderware during the creation of texture dictionaries. Also textures were not deleted correctly, this has also been fixed.
+
+20/08/02 Version incremented to Release 1.0
+
+19/08/02 Toggling director's camera and pause mode only send their respective messages.
+
+19/08/02 Visual indication of alienbrain status in workspace listers
+
+19/08/02 Alienbrain integration allowing user check out when editing objects, check in of edits, undo check outs, 
+         get latest, connect to alienbrain server and import project to alienbrain.
+
+16/08/02 Texture dictionaries for DirectX and OpenGL now save out in a platform independent format. A new asset type 	         has also been added called rwID_PITEXDICTIONARY
+
+15/08/02 Added comms launch commands and platforms to settings file (rather than in registry).
+	 Added default network ports to platforms to make them configurable.
+	 Changed default network port for D3D to 5607 to stop OpenGL and D3D connections being mixed up.
+
+14/08/02 Added the ability to set an active level and an active entity collection. This becomes the new parent for all newly created entities.
+
+14/08/02 Asset types now also shows rwID_HANIMANIMATION, rwID_2DPLUGIN, and rwID_2DMAESTRO by default.
+
+12/08/02 EventViz now shows data type on event links.
+
+08/08/02 Improvements to picking & camera flight/navigation -
+            new pan, orbit and zoom camera modes
+            new 'plane-drag' mode for edit axes, allow dragging in x-y, y-z or z-x plane
+              (switch to mode with mouse double-click over axes)
+
+06/08/02 Renamed RWS Manager API RWSAsset structure's "Location" field to "Dependencies".
+
+31/07/02 Added support for hex values in color picker.
+
+29/07/02 Updated property pages to handle multiple items (e.g. editing all assets to change the dependency path).
+
+29/07/02 Removed KeyDown check in Event Viz, keys are now handled through the script.
+
+26/07/02 Added call to reload asset when message received, this signals a change and triggers
+	 the update on the console.
+
+24/07/02 Added 'Templates' feature to Workspace. A template of an entity can be created by an entities context menu. The new template can then be dragged into orthoviews to create identical copies of the original entity. 
+
+22/07/02 Fixed bug in Event Visualizer which meant only one event was being shown in the graph.
+
+19/07/02 Added 'Reload' to an assets context menu. The asset will be reloaded from disk and resent to the console.
+
+18/07/02 Made repeated load/new/reload robust.  Consequence of this is that all controls now attach/detach synchronously to the database (rather than posting messages to their window).  RWS Wizard updated to reflect this change.
+
+11/07/02 Added 'Collections' to Manager API. A collection can be created with the RWSCollectionCreate API function and can be used to group together objects of the same type. User interface updated to understand collections of assets and entities.
+
+09/07/02 Added 3D workspace user extension objects
+
+02/07/02 Code added to network layer to send name of assets in network packets.
+
+28/06/02 Added usage of tooltips into the Orthviews.
+
+27/06/02 Added RWSChildSwap to Manager API to swap the order of two child objects. This will have the effect of sending objects to the console in a different order. In the listers, Holding down ALT while pressing up/down arrow keys can be used to re-order objects.
+
+19/06/02 Corrected the spelling of the workspace tag RWSTAG_INCOMLPETE_ID to RWSTAG_INCOMPLETE_ID
+
+19/06/02 Object UIDs are now GUIDs. An object's UID is set in the call to RWSCreate and cannot be changed. 
+         An object's UID is obtained using RWSGetUID.
+
+18/06/02 Version incremented to RWSDevRel1.08
+
+11/06/02 Ini file added - RwStudio now takes global and per-game settings from xml files.
+
+10/06/02 Added support for RWS_IMPORT_COMMANDS macro, this is interpreted by the parser as a derivation from a class.
+
+05/06/02 Added a multi-line attribute editor control. Can be found at: %RenderWareStudio%/AttributeEditor/Controls/RWSTextEdit/DebugU & ReleaseU.
+
+22/05/02 Added correct support for special characters in XML which allow for any characters to be used when naming
+         objects, etc. Also allow any format of data to be stored in RWSChar type attributes though the user of CDATA wrapper.
+
+16/05/02 Added tiff file support to generate texture dictionaries.
+
+13/05/02 Added Diagnostics Tool (RWSDiag.exe)
+
+23/04/02 Fixed object deletion problem in workspace.
+
+05/04/02 Version incremented to RWSDevRel1.07.
+
+05/04/02 Help menu options added for Getting Started Guide, Tutorial, User Guide and UI Guide
+
+05/04/02 Getting Started guide replaces Installation Guide. Expanded with game edit information
+	 Readme file added with system requirements, installation notes and licensing information
+
+04/04/02 Can now 'pick through' a selected object to the edit axes
+
+03/04/02 RenderWare import filter now uses NULL RenderWare driver.
+
+02/04/02 Left-click on the splash panel to remove it.
+
+15/03/02 Version incremented to RWSDevRel1.06.
+
+15/03/02 Now place a minimum size on the axes, if auto-scaling is turned on, to prevent the axes disappearing inside the object,
+         and becoming unpickable.
+
+15/03/02 Should now be able to CTRL+Left click on a selected object to deselect it, not just on the actual axes.
+
+14/03/02 Fixed corruption in attribute editor due to unexpected tabs in source code.
+
+14/03/02 File|Save now only saves the XML files that have changed or are new, whilst File|SaveAs will attempt to save
+         the whole XML database. File|Save saves to the last loaded file name.
+
+11/03/02 New output window to provide diagnostic and progress messages.
+
+11/03/02 Changed description when there is no database for the event visualisation module, it now says
+	 - 'Event Visualization No Game Definition'.
+
+11/03/02 Added first implementation of Event Visualisation module. This includes the source and a bin folder for
+	 the GraphViz application which is used to obtain the layout for the event graph. Controls are as follows:
+	 Left mouse: drag to move graph, Mouse wheel: zoom in/ out, Right mouse: Refresh graph,
+	 W, A, S, D: Move graph, +, -: Zoom in/ out, Z: Refresh graph.
+	 You can use Menu->Edit->Refresh Event View to rebuild the graph too.
+
+08/03/02 Updates to Object dragging - now haves switch to change between dragging in local or world coordinates.
+         Global snapping working, + switch to turn off/on the auto-resizing of the axes as the camera
+         moves about the world. Axes display has altered slightly to make picking easier (especially when
+         object is half embedded in the floor or a wall.
+
+06/03/02 Added initial integration with alienbrain by using permission callbacks in API.
+         Setting of dirty flags in API for objects that are modified. Save now only saves dirty objects, whereas SaveAs will
+         save the whole game definition.
+         Now required to call RWSPermitInit and RWSPermitShutDown when opening/closing applications.
+
+28/02/02 Object lister now does not back-face cull the objects in it.
+
+27/02/02 New attribute editor.  Allows customers to write their own plug-in controls (no documentation or wizard yet).
+
+27/02/02 Comms overhaul - stream-based comms provides ability for attribute editor to create default attributes on
+         the fly.  Ability to write/read file-based comms streams (API only).
+         Ability for a target to send a stream of any size to the RWS API.
+
+26/02/02 Altered display of grid in ortho-views to not fade out + zoom in/out nicely
+         (grid in perspective remains the same). Also, linked the FOV's of the ortho-views
+         together, on an option.
+
+21/02/02 Fixed 'crazy/spikey' display of snap grid
+
+15/02/02 Version incremented to RWSDevRel1.05
+
+13/02/02 Fixed uninitialised pad data in matrices.
+
+12/02/02 Changed texture dictionary creation in workspace, on PS2 all textures are now
+	 set to rwFILTERNEARESTMIPLINEAR, all other platforms are rwFILTERLINEARMIPLINEAR.
+	 Which are the defaults renderware would normally choose.
+
+12/02/02 Updated Renderware/Realimation import filter so that light mapped BSP's are
+	 imported correctly.
+
+11/02/02 The basics of RenderWare Studio Manager API (also commonly known as "The Dog" or "The Server"). Its purpose
+	includes maintaining a list of created objects, a hierarchy of parent/child object relations and
+	providing notification events of changes to the data. The API has been implemented as an external process to
+	the Workspace, as this currently allows exporters to connect to the API and populate the scene. If this
+	process is killed, then Workspaces view of the game data is removed and its behavior becomes undefined.
+	
+	With the recent changes to support multiple game databases, there are now two different executables that are
+	created with calls to the API. When RWSInitialize is called, an instance of RWSNamespace.exe is spawned (or
+	connected to if one already exists). This provides the API with a way to create, delete and enumerate named
+	instances of game databases. RWSGameDB.exe represents a game database, and is created every time a call to
+	RWSDatabaseCreate succeeds. Before the database can be used, it must be attached to with a call to
+	RWSDatabaseAttach.
+
+8/02/02 Improved XML load times.
+
+11/02/02 The object lister has been optimised to speed up the display of the data and reduce graphics memory overhead.
+         "Small Icon", "Large Icon" and "List" viewing modes have been added to make large data sets easier to view.
+
+02/02/02 The interface to the RWS Manager API has been modified for all RWSEvent<Description> calls. The new changes
+	allow multiple callbacks in a single thread. These changes will not affect any code that doesn't use events.
+
+02/02/02 The RWS Manager API has been altered to allow multiple instances of the game database to be created.
+	Databases can now be created, enumerated and attached to. The first running database can be attached to by,
+
+		RWSDatabaseID DatabaseID = RWSDatabaseGetFirst ();
+		if (DatabaseID)
+			RWSDatabaseAttach (DatabaseID);
+		ASSERT (RWSENoError == RWSErrorGetLast ());
+
+	The RWSServer.exe process has been renamed to 
+	See the API documentation for further details.
+
+02/02/02 The interfaces for the RWS Manager API have been renamed to follow the "RWS<Object><Description>" naming
+	convention. Backwards compatibility macro's have been added to ease the change over. These will be deleted
+	before the next release.
+
+01/02/02 Version incremented to RWSDevRel1.04
+
+31/01/02 Load times improved
+
+25/01/02 Modified Enterprise Control to allow users other than administrator to load RenderWare Studio.
+
+25/01/02 Fixed bug in import code preventing Lightmapped BSP files from being displayed.
+
+24/01/02 Version number added to XML files (as "RWSDevRel1.04")
+
+24/01/02 workspace documentation now available in html help format from 
+             Start>Programs>RenderWare Studio>Documentation>Workspace Guide
+
+24/01/02 changes to install instructions to explain the new module registration wizard.
+
+24/01/02 Added support for endian conversion when communicating with consoles. This has required a change to the XML
+         attribute data format. Attribute editing and the console communications code also modified.
+
+23/01/02 Fixed problem when generating texture dictionaries, all textures in the dictionary are
+	 now set to rwFILTERLINEARMIPLINEAR.
+
+22/01/02 Added 'Flight Options' to Edit menu - controls flight sensitivity
+
+18/01/02 Grid snap options - can now base size of snap grid on object size (default) or fixed radius
+                           - also, can change grid color. 
+
+15/01/02 Deleted items are no longer saved to the files.
+
+15/01/02 Conversion from singular XML files to a hierarchy of XML files (one per object). - see readme.txt
+              accompanying the XMLSingleToMulti.exe conversion tool.
+
+11/01/02 Version incremented to RWSDevRel1.03
+
+09/01/02 Conversion to UNICODE builds
+
+13/12/01 Version incremented to RWSDevRel1.02
+
+13/12/01 changed Start>Program group to include the following documentation:
+		UI Guide
+		User Guide
+		Tutorial
+		Install Instructions
+		API Reference
+
+12/12/01 Added 'maximize/restore' boxes to orthoviews - see UI Guide for additional information.
+
+12/12/01 Added basic snap options to instance editing - see User Guide for additional information.
+
+11/12/01 The source path as specified by the game properties can now contain multiple
+	 semi-colon separated paths.
+	 i.e. "c:\game_framework;c:\projects\my_source;c:\projects\shared_source".
+
+10/12/01 Added Undo option to the RenderWare Studio Workspace - see UI Guide for additional information.
+
+10/12/01 Introduced LayoutManager controlled interface for Workspace - see UI Guide for additional information.
+
+4/12/01 Modified RenderWare Studio Manager API to include new interface. See API documentation
+	for additional information.
+
+        New Interfaces ...
+		RWSGetFirst        - Allows enumeration of all objects of a specified type.
+		RWSGetNext         - Use with RWSGetFirst to enumerate all objects of a specified type.
+		RWSGetFirstParent  - Similar to RWSGetFirstChild, except to enumerate parents.
+		RWSGetNextParent   - Similar to RWSGetNextChild, except to enumerate parents.
+
+	Modified Interfaces ...
+		RWSGetID           - Now takes an RWSIDType to restrict search to specified type.
+
+	Deleted Interfaces ...
+		RWSGetGameID       - Obsolete. Use RWSGetFirst (RWSGameID) instead.
+		RWSGetParent       - Was restrictive, now obsolete. Use RWSGetFirstParent instead.
+
+30/11/01 Changes to target code are now listed in target_changelog.txt
+
+29/11/01 RenderWare Studio Workspace, the asset type can now be modified in the asset properties box.
+
+29/11/01 RenderWare Studio Workspace, slider controlbug, due to a rounding errors if the slider was
+	 setup to use a small range of values, only certain values could be selected this has
+	 been fixed.
+
+29/11/01 RenderWare Studio Workspace, color picker RGBA color values can now be typed in.
+
+29/11/01 RenderWare Studio Workspace, bug fix in color picker HSB values were uninitialised.
+
+29/11/01 RenderWare Studio Workspace, Separators in the automatically generated forms now work.
+
+28/11/01 RenderWare Studio Workspace, console link now saves the connection timeout.
+
+28/11/01 Fixed precision problems in instance editor.
+
+28/11/01 Improved the efficiency of multiple instance edits.
+
+27/11/01 Fixed disappearing objects bugs caused by instance editor.
+
+23/11/01 Renderware Studio Workspace, Added transformation matrix editor in entity attribute form.
+           (Incomplete currently doesn't update the position of the object in the 3D view)
+
+23/11/01 Target Added particle system for pc and ps2, note need also link with archive version of renderware libs
+
+23/11/01 Target, Fixed frame synch on XBOX
+
+23/11/01 Target, Fixed bug where RpLogo wasn't being displayed when RWLOGO was defined.
+
+23/11/01 Target, Added defines (note these are currently disabled) that will enable PS2 debug station support via CwComUtil and ATWINMON.
+
+23/11/01 Target, Modified QC_func_door_secret so that both shooting and touching a secret door opens it
+
+23/11/01 Target, Modified QC_info_player_start.cpp and QC_monster.cpp, both of these behaviors use the event
+	 ACTN_PLAYER_SHOT this has been changed to be called ACTN_PLAYER_SHOOT as the event is a monster
+	 being shot by the player, i.e. player shoots monster
+
+22/11/01 RenderWare Studio Workspace, Hierarchy in World Lister allows multiple groups to be defined in the game, allowing separate levels to be created. - see User Guide (Create a New World) for additional information.
+
+
+22/11/01 Target, CRender needed to include rpworld.h in a design build this was being picked up from another
+	 header file, the include has been added to allow none design builds to work.
+
+20/11/01 Target, Fixed CEntity missing from behavior list, parser looks for RWS_MAKENEWCLASS(CEntity);
+	 which was missing.
+
+20/11/01 Target, Fixed CClumpPtr to support event visualisation
+
+20/11/01 Updated console code so that each RpWorld is owned by either the CRender or QC_Render behavior,
+ 	 this allows more than one RpWorld to be rendered (usefull for reducing renderstate changes) in 		 order to render more than one world QC_render must be used and one of the world's must be set as 		 the main world (tick box on form) also the rendering priority must be setup. i.e.
+
+	 Priority  2 -> Clear Screen/Z-buffer Render world 1
+	 Priority  1 -> Render world 2
+	 Priority  0 -> Render debug text, see DebugTools::Printf
+
+	 CEnviroment and CWorld have been removed. The functionality of these two behaviors is
+	 now done inside QC_Render, allowing it to be applied on a per world basis.
+
+
+	 Also updated sample XML files for the sample data to make use of this feature.
+
+20/11/01 Removed e1m1 from the samples folder, and e1m1.no_lights.xml
+
+16/11/01 Updates to tutorial documentation and documentation on how to connect to targets.
+
+16/11/01 Updated to RenderWare Graphics 3.20.
+
+14/11/01 Documentation updates for CAttributeHandler, factory functions, Core/World, and animations.
+
+14/11/01 Load speed improvements.
+
+13/11/01 Correct location of objects in world lister when picking.
+
+13/11/01 Bug fix for QC_monster behavour.
+
+13/11/01 Added tray icon for RWS Manager service.
+
+
+13/12/01 Version incremented to RWSDevRel1.02
+
+12/12/01 Added 'maximize/restore' boxes to orthoviews
+
+12/12/01 Added basic snap options to instance editing
+
+11/12/01 The source path as specified by the game properties can now contain multiple
+	 semi-colon separated paths.
+	 i.e. "c:\game_framework;c:\projects\my_source;c:\projects\shared_source".
+
+10/12/01 Added Undo option to the RenderWare Studio Workspace
+
+10/12/01 Introduced LayoutManager controlled interface for Workspace
+
+4/12/01 Modified RenderWare Studio Manager API to include new interface. See API documentation
+	for additional information.
+
+        New Interfaces ...
+		RWSGetFirst        - Allows enumeration of all objects of a specified type.
+		RWSGetNext         - Use with RWSGetFirst to enumerate all objects of a specified type.
+		RWSGetFirstParent  - Similar to RWSGetFirstChild, except to enumerate parents.
+		RWSGetNextParent   - Similar to RWSGetNextChild, except to enumerate parents.
+
+	Modified Interfaces ...
+		RWSGetID           - Now takes an RWSIDType to restrict search to specified type.
+
+	Deleted Interfaces ...
+		RWSGetGameID       - Obsolete. Use RWSGetFirst (RWSGameID) instead.
+		RWSGetParent       - Was restrictive, now obsolete. Use RWSGetFirstParent instead.
+
+30/11/01 Changes to target code are now listed in target_changelog.txt
+
+29/11/01 RenderWare Studio Workspace, the asset type can now be modified in the asset properties box.
+
+29/11/01 RenderWare Studio Workspace, slider controlbug, due to a rounding errors if the slider was
+	 setup to use a small range of values, only certain values could be selected this has
+	 been fixed.
+
+29/11/01 RenderWare Studio Workspace, color picker RGBA color values can now be typed in.
+
+29/11/01 RenderWare Studio Workspace, bug fix in color picker HSB values were uninitialised.
+
+29/11/01 RenderWare Studio Workspace, Separators in the automatically generated forms now work.
+
+28/11/01 RenderWare Studio Workspace, console link now saves the connection timeout.
+
+28/11/01 Fixed precision problems in instance editor.
+
+28/11/01 Improved the efficiency of multiple instance edits.
+
+27/11/01 Fixed disappearing objects bugs caused by instance editor.
+
+23/11/01 Renderware Studio Workspace, Added transformation matrix editor in entity attribute 	 	 form.(Incomplete currently dosn't update the position of the object in the 3D view
+
+23/11/01 Target Added particle system for pc and ps2, note need also link with archive version of 	 renderware libs
+
+23/11/01 Target, Fixed frame synch on XBOX
+
+23/11/01 Target, Fixed bug where RpLogo wasn't being displayed when RWLOGO was defined.
+
+23/11/01 Traget, Added defines (note these are currently disabled) that will enable PS2 debug station 	 support via CwComUtil and ATWINMON.
+
+23/11/01 Target, Modified QC_func_door_secret so that both shooting and touching a secret door opens it
+
+23/11/01 Target, Modified QC_info_player_start.cpp and QC_monster.cpp, both of these behaviors use the event
+	 ACTN_PLAYER_SHOT this has been changed to be called ACTN_PLAYER_SHOOT as the event is a monster
+	 being shot by the player, i.e. player shoots monster
+
+22/11/01 RenderWare Studio Workspace, Hierarchy in World Lister allows multiple groups to be defined in the game, allowing separate levels to be created.
+
+22/11/01 Target, CRender needed to include rpworld.h in a design build this was being picked up from another
+	 header file, the include has been added to allow none design builds to work.
+
+20/11/01 Target, Fixed CEntity missing from behavior list, parser looks for RWS_MAKENEWCLASS(CEntity);
+	 which was missing.
+
+20/11/01 Target, Fixed CClumpPtr to support event visualisation
+
+20/11/01 Updated console code so that each RpWorld is owned by either the CRender or QC_Render behavior,
+ 	 this allows more than one RpWorld to be rendered (usefull for reducing renderstate changes) in 		 order to render more than one world QC_render must be used and one of the world's must be set as 		 the main world (tick box on form) also the rendering priority must be setup. i.e.
+
+	 Priority  2 -> Clear Screen/Z-buffer Render world 1
+	 Priority  1 -> Render world 2
+	 Priority  0 -> Render debug text, see DebugTools::Printf
+
+	 CEnviroment and CWorld have been removed. The functionality of these two behaviors is
+	 now done inside QC_Render, allowing it to be applied on a per world basis.
+
+
+	 Also updated sample XML files for the sample data to make use of this feature.
+
+20/11/01 Removed e1m1 from the samples folder, and e1m1.no_lights.xml
+
+16/11/01 Updates to tutorial documentation and documentation on how to connect to targets.
+
+16/11/01 Updated to RenderWare Graphics 3.20.
+
+14/11/01 Documentation updates for CAttributeHandler, factory functions, Core/World, and animations.
+
+14/11/01 Load speed improvements.
+
+13/11/01 Correct location of objects in world lister when picking.
+
+13/11/01 Bug fix for QC_monster behavour.
+
+13/11/01 Added tray icon for RWS Manager service.
+
+

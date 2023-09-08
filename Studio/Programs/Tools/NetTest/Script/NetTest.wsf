@@ -1,0 +1,29 @@
+<job>
+<runtime>
+<description>
+Listens to an IP port for a RenderWare stream, and displays a test description of the stream as it is being sent.
+Uses the NetTest tool.
+</description>
+<named name="port" type="string" required="false" helpstring="IP port number to listen on"/>
+<named name="bigendian" type="simple" required="false" helpstring="Stream is big endian (default is little endian)"/>
+</runtime>
+<script language="VBScript">
+Option Explicit
+
+Const conDefaultPort = 5607
+
+Dim fso, intPort, WshShell
+
+Set WshShell = WScript.CreateObject("WScript.Shell")
+
+Set fso = CreateObject ("Scripting.FileSystemObject")
+
+If WScript.Arguments.Named.Exists("port") Then
+	intPort = WScript.Arguments.Named.Item("port")
+Else
+	intPort = InputBox("Port number:", "View stream", conDefaultPort)
+End If
+
+WshShell.Run """" & fso.BuildPath(fso.GetParentFolderName(WScript.ScriptFullName), "..\..\NetTest.hta") & """ " & intPort & " " & CStr(WScript.Arguments.Named.Exists("bigendian"))
+</script>
+</job>

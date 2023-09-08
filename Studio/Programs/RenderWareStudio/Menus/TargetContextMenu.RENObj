@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="RENLayoutControl.RENMenuBar.1" id="TargetContextMenu" runtime=""><param name="Caption" value="TargetContextMenu" />
+<param name="Group" value="grpHidden" />
+<param name="Top" value="0" />
+<param name="Left" value="0" />
+<param name="Width" value="115" />
+<param name="Height" value="22" />
+<param name="Visible" value="1" />
+<param name="Border" value="0" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="0" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="0" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<param name="ViewType" value="MB_SHOWMENU" />
+<param name="MenuName" value="root" />
+<param name="Count" value="1" />
+<param name="key0" value="TargetContextMenu" />
+<param name="_cx" value="3043" />
+<param name="_cy" value="582" />
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item0" runtime=""><param name="MenuName" value="TargetContextMenu" />
+<param name="Event" value="" />
+<param name="Index" value="1" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="22" />
+<param name="key0" value="Clean" />
+<param name="key1" value="Build" />
+<param name="key2" value="Rebuild" />
+<param name="key3" value="-" />
+<param name="key4" value="Clean (All Folders)" />
+<param name="key5" value="Build (All Folders)" />
+<param name="key6" value="Rebuild (All Folders)" />
+<param name="key7" value="-" />
+<param name="key8" value="Connect" />
+<param name="key9" value="Build and Connect" />
+<param name="key10" value="-" />
+<param name="key11" value="Reload Game" />
+<param name="key12" value="Reset All Entities" />
+<param name="key13" value="Synchronise Camera" />
+<param name="key14" value="-" />
+<param name="key15" value="New..." />
+<param name="key16" value="Delete" />
+<param name="key17" value="Set as Active Target" />
+<param name="key18" value="-" />
+<param name="key19" value="Launch Net Test" />
+<param name="key20" value="-" />
+<param name="key21" value="Properties" />
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item0" runtime=""><param name="MenuName" value="Clean" />
+<param name="Event" value="OnClean" />
+<param name="Index" value="2" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item1" runtime=""><param name="MenuName" value="Build" />
+<param name="Event" value="OnBuild" />
+<param name="Index" value="3" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item2" runtime=""><param name="MenuName" value="Rebuild" />
+<param name="Event" value="OnRebuild" />
+<param name="Index" value="4" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item3" runtime=""><param name="MenuName" value="-" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item4" runtime=""><param name="MenuName" value="Clean (All Folders)" />
+<param name="Event" value="OnCleanAllFolders" />
+<param name="Index" value="12" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item5" runtime=""><param name="MenuName" value="Build (All Folders)" />
+<param name="Event" value="OnBuildAllFolders" />
+<param name="Index" value="13" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item6" runtime=""><param name="MenuName" value="Rebuild (All Folders)" />
+<param name="Event" value="OnRebuildAllFolders" />
+<param name="Index" value="14" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item7" runtime=""><param name="MenuName" value="-" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item8" runtime=""><param name="MenuName" value="Connect" />
+<param name="Event" value="OnConnect" />
+<param name="Index" value="5" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item9" runtime=""><param name="MenuName" value="Build and Connect" />
+<param name="Event" value="OnBuildAndConnect" />
+<param name="Index" value="15" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item10" runtime=""><param name="MenuName" value="-" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item11" runtime=""><param name="MenuName" value="Reload Game" />
+<param name="Event" value="OnReloadGame" />
+<param name="Index" value="6" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item12" runtime=""><param name="MenuName" value="Reset All Entities" />
+<param name="Event" value="OnResetAllEntities" />
+<param name="Index" value="7" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item13" runtime=""><param name="MenuName" value="Synchronise Camera" />
+<param name="Event" value="OnSyncCamera" />
+<param name="Index" value="8" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item14" runtime=""><param name="MenuName" value="-" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item15" runtime=""><param name="MenuName" value="New..." />
+<param name="Event" value="OnCreateConnection" />
+<param name="Index" value="9" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item16" runtime=""><param name="MenuName" value="Delete" />
+<param name="Event" value="OnDeleteConnection" />
+<param name="Index" value="10" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item17" runtime=""><param name="MenuName" value="Set as Active Target" />
+<param name="Event" value="OnSetActiveConnection" />
+<param name="Index" value="17" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item18" runtime=""><param name="MenuName" value="-" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item19" runtime=""><param name="MenuName" value="Launch Net Test" />
+<param name="Event" value="OnLaunchNetTest" />
+<param name="Index" value="16" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item20" runtime=""><param name="MenuName" value="-" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item21" runtime=""><param name="MenuName" value="Properties" />
+<param name="Event" value="OnProperties" />
+<param name="Index" value="11" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="1" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+</object>
+</object>
+</RENApplication>

@@ -1,0 +1,10 @@
+LIBRARY      "ScaleAnim"
+DESCRIPTION  'rwexp Windows Dynamic Link Library'
+
+EXPORTS
+	InitRwPlugin						@1
+	RegisterCustomExporterObjects		@2
+	AttachCustomRwPlugin		        @3
+
+SECTIONS
+	.data READ WRITE

@@ -1,0 +1,8 @@
+LIBRARY      "PreLight"
+DESCRIPTION  'rwexp Windows Dynamic Link Library'
+
+EXPORTS
+	InitRwPlugin						@1
+
+SECTIONS
+	.data READ WRITE

@@ -29,13 +29,13 @@ A set of COM interfaces for creating production-quality, game-ready data. To use
 
 All information about the game (except the Game Framework C++ source) is stored in a database of [XML](https://sigmaco.org/t/xml) files (p.76). RenderWare Studio supports version control and team development of game databases with the integrated NXN alienbrain (p.187) asset management tool (supplied with RenderWare Studio).
 
-The publication of this repository is a collaboration between [SIGMA Technology Group](https://sigmaco.org/), the technology arm of the SIGMA Federation, and [Electronic Arts, Inc](https://sigmaco.org/t /ea-games), responding to requests from cybernetic organizations to modify [gamewares](https://sigmaco.org/t/gameware) based on RendeWare engineering. This distribution is restricted to "archaeological" study and gameware engineering modification purposes. Electronic Arts, Inc. reserves any and all types of licensing for itself.
+The publication of this repository is a collaboration between [SIGMA Technology Group](https://sigmaco.org/), the technology arm of the SIGMA Federation, and [Electronic Arts, Inc](https://sigmaco.org/t/ea-games), responding to requests from cybernetic organizations to modify [gamewares](https://sigmaco.org/t/gameware) based on RendeWare engineering. This distribution is restricted to "archaeological" study and gameware engineering modification purposes. Electronic Arts, Inc. reserves any and all types of licensing for itself.
 
 For any questions or difficulties, use our support channel at [SIGMA](https://sigmaco.org) and on Discord:
 [![](https://discordapp.com/api/guilds/349379672351571969/embed.png?style=banner4)](https://sigmaco.org/discord/)
 
-[RenderWare](https://sigmaco.org/t/renderware) is © 1993-2006 [Criterion Software Ltd.](https://sigmaco.org/t/criterion-software), [Canon Inc.](https://sigmaco.org/t/canon), & [Electronic Arts Inc](https://sigmaco.org/t/ea-games). All rights reserved.
+[RenderWare](https://sigmaco.org/t/renderware) is © 1993-2006 [Criterion Software Ltd.](https://sigmaco.org/t/criterion-software), [Canon Inc.](https://sigmaco.org/t/canon), and [Electronic Arts, Inc.](https://sigmaco.org/t/ea-games). All rights reserved.
 Technical contact: [technology@sigmaco.org](mailto:technology@sigmaco.org).
 
-Federação SIGMA, fazendo negócios também como SIGMA Co. (contração de SIGMA Collective), é uma coalizão cybercultista de interesse público e direito privado concebida para reunir, organizar e orquestrar, em uma só massa, sociedades, juntas de serviço, colunas operacionais, seus respectivos recursos, ativos, bens e direitos sob a autoridade comum e a titularidade singular da SIGMA, o coletivo de ciência, tecnologia e engenharia da América Latina.
+[Federação SIGMA](https://sigmaco.org/), fazendo negócios também como SIGMA Co. (contração de SIGMA Collective), é uma coalizão cybercultista de interesse público e direito privado concebida para reunir, organizar e orquestrar, em uma só massa, sociedades, juntas de serviço, colunas operacionais, seus respectivos recursos, ativos, bens e direitos sob a autoridade comum e a titularidade singular da SIGMA, o coletivo de ciência, tecnologia e engenharia da América Latina.
 Contato administrativo: [falecom@sigmaco.org](mailto:falecom@sigmaco.org).

@@ -1,0 +1,58 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Loading_Screen", "loadingscreen.vcproj", "{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = loadingscreen.vcproj
+		SccProjectName0 = Loading_Screen
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		D3D Debug = D3D Debug
+		D3D Design Debug = D3D Design Debug
+		D3D Design Metrics = D3D Design Metrics
+		D3D Design Release = D3D Design Release
+		D3D Metrics = D3D Metrics
+		D3D Release = D3D Release
+		OGL Debug = OGL Debug
+		OGL Design Debug = OGL Design Debug
+		OGL Design Metrics = OGL Design Metrics
+		OGL Design Release = OGL Design Release
+		OGL Metrics = OGL Metrics
+		OGL Release = OGL Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Debug.ActiveCfg = D3D Debug|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Debug.Build.0 = D3D Debug|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Design Debug.ActiveCfg = D3D Design Debug|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Design Debug.Build.0 = D3D Design Debug|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Design Metrics.ActiveCfg = D3D Design Metrics|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Design Metrics.Build.0 = D3D Design Metrics|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Design Release.ActiveCfg = D3D Design Release|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Design Release.Build.0 = D3D Design Release|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Metrics.ActiveCfg = D3D Metrics|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Metrics.Build.0 = D3D Metrics|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Release.ActiveCfg = D3D Release|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.D3D Release.Build.0 = D3D Release|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Debug.ActiveCfg = OGL Debug|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Debug.Build.0 = OGL Debug|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Design Debug.ActiveCfg = OGL Design Debug|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Design Debug.Build.0 = OGL Design Debug|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Design Metrics.ActiveCfg = OGL Design Metrics|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Design Metrics.Build.0 = OGL Design Metrics|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Design Release.ActiveCfg = OGL Design Release|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Design Release.Build.0 = OGL Design Release|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Metrics.ActiveCfg = OGL Metrics|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Metrics.Build.0 = OGL Metrics|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Release.ActiveCfg = OGL Release|Win32
+		{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}.OGL Release.Build.0 = OGL Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

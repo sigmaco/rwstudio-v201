@@ -1,0 +1,456 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="Entity" dependencygraph="EntityDependencies"
+                       buildcommand="EntityCommand" strictvalidation="false">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Entity.rule - Entity rule
+         '
+         ' Creates a stream file containing all descendant 
+         ' objects using a recursive dependency
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub EntityDependencies (Task, Entity, PlatformFilter, RecursionGuard)
+            Dim Behavior, Asset, AssetFolder
+
+            Task.AddDependency Entity.PersistentFilename
+
+            ' Depend on the file specifying source root
+            Task.AddDependency EntityGlobalsFile (GetParam ("DESTDIR"))
+
+            ' Depend on the behavior code.
+            Set Behavior = RWSScript.Behavior (Entity.Behavior)
+            ' While we're cleaning we don't need to output any messages or set dependencies
+            If Not GetParam ("Cleaning") Then
+               If Behavior Is Nothing Then
+                  ' It may be valid to not have a behavior. The behavior may be under construction, so
+                  ' not work yet, but a temporary behavior may have been created to test it.
+                  BuildWarning "Behavior not set or found for entity " & Entity.Name & ". " & _
+                              "This entity WILL NOT be built. " & _
+                              "Has the source been parsed or is the source root set correctly?"
+               Else
+                  If Len (Behavior.Filename) > 0 Then
+                     AddBehaviorDependencies Task, Behavior
+                  Else
+                     BuildError ("Behavior has no filename for entity " & Entity.Name)
+                  End If
+               End If
+            End If
+
+            RecursionGuard.Add Entity
+
+            ' Child asset folders must be sent before the entity
+            For Each AssetFolder In Entity.ChildAssetFolders
+               If Not RecursionGuard.Exists (AssetFolder) And PlatformFilter.IsValidPlatform (AssetFolder.Platform) Then
+                  Task.AddSubtask BuildRule (AssetFolder, "AssetFolder"), AssetFolder, PlatformFilter, RecursionGuard
+               End If
+            Next
+
+            ' Child assets must be sent before the entity
+            For Each Asset In Entity.ChildAssets
+               If Not RecursionGuard.Exists (Asset) And PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                  Task.AddSubtask BuildRule (Asset, "Asset"), Asset, PlatformFilter, RecursionGuard
+               End If
+            Next
+
+            ' If this is a volume entity, we need to build its hull asset
+            If EntityIsVolume (Entity) Then
+               Dim Subtask
+               Set Subtask = Task.AddSubtask ("VolumeEntity", Entity, PlatformFilter)
+               Task.SetParam "VOLUME_HULL_ASSET_STREAM", Subtask.GetTargets ().Item (0)
+            End If
+
+            ' Add the entity to the sent objects list.
+            If Not GetParam ("SENTOBJECTS").Exists (Entity) Then
+               GetParam ("SENTOBJECTS").Add Entity
+            End If
+
+            Task.AddTarget StreamFile (GetParam ("DESTDIR"), Entity)
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub EntityCommand (Task, Entity, PlatformFilter, RecursionGuard)
+            ' Check if behavior has been parsed
+            Dim Behavior
+            Set Behavior = RWSScript.Behavior (Entity.Behavior)
+            If Behavior Is Nothing Then
+               ' The dependency function will already have output a warning.
+               exit sub
+            End If
+            
+            BuildLog "Building " & Entity.Name
+
+            ' Create a file buffer to contain the entity stream
+            Dim EntityBuffer
+            Set EntityBuffer = RWSComms.CreateFileBuffer (StreamFile (GetParam ("DESTDIR"), Entity), faCreate)
+            If Not EntityBuffer Is Nothing Then
+               EntityBuffer.BigEndian = GetParam ("BIGENDIAN")
+               EntityBuffer.Unicode   = GetParam ("UNICODE")
+
+               ' If this is a volume entity, we need to send its hull asset before the entity
+               On Error Resume Next
+                  Dim strHullAssetFile
+                  strHullAssetFile = Task.GetParam ("VOLUME_HULL_ASSET_STREAM")
+
+                  If Err.Number = 0 Then
+                     Dim HullAssetBuffer
+                     Set HullAssetBuffer = RWSComms.CreateFileBuffer (strHullAssetFile, faRead)
+                     If Not HullAssetBuffer Is Nothing Then
+                        EntityBuffer.WriteBuffer HullAssetBuffer, AddAsNewHeader
+                     End If
+                  Else
+                     Err.Clear
+                  End If
+               On Error Goto 0
+
+               ' Append the entity creation information into the stream
+               AppendCreateEntity PlatformFilter, EntityBuffer, Entity
+            Else
+               BuildError "Could not create entity stream " & StreamFile (GetParam ("DESTDIR"), Entity)
+            End If
+         End Sub
+
+         '------------------------------------------------------------------------------
+         ' Traverses the behavior class hierarchy, adding each behavior file as a dependency of the task.
+         Sub AddBehaviorDependencies (oTask, oBehavior)
+            If Len (oBehavior.Filename) > 0 Then
+               oTask.AddDependency oBehavior.Filename
+            End If
+
+            Dim oChildBehavior
+            For Each oChildBehavior In oBehavior.ChildBehaviors
+               AddBehaviorDependencies oTask, oChildBehavior
+            Next
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="EntitySend" dependencygraph="EntitySendDependencies">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Entity.rule - EntitySend rule
+         '
+         ' Sends all descendant objects to the console using
+         ' a recursive dependency
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         ' Need to ensure that the assets and asset folders have been sent
+         Sub EntitySendDependencies (Task, Entity, PlatformFilter, Buffer)
+         
+            Dim Behavior
+
+            ' Check if behavior has been parsed
+            Set Behavior = RWSScript.Behavior (Entity.Behavior)
+            If Behavior Is Nothing Then
+               BuildWarning ("Behavior not set or not found under the source root for entity " & Entity.Name)
+               exit sub
+            End If
+            
+            Dim SentObjects, Asset, AssetFolder
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            ' Add Entitiy to the sent objects list
+            SentObjects.Add Entity
+
+            For Each AssetFolder In Entity.ChildAssetFolders
+               If Not SentObjects.Exists (AssetFolder) And _
+                      PlatformFilter.IsValidPlatform (AssetFolder.Platform) Then
+                  Task.AddSubtask "AssetFolderSend", AssetFolder, PlatformFilter, Buffer
+               End If
+            Next
+
+            For Each Asset In Entity.ChildAssets
+               If Not SentObjects.Exists (Asset) And PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                  Task.AddSubtask "AssetSend", Asset, PlatformFilter, Buffer
+               End If
+            Next
+
+            ' If this is a volume entity, we need to build and append its hull asset
+            If EntityIsVolume (Entity) Then
+               Task.AddSubtask "VolumeEntitySend", Entity, PlatformFilter, Buffer
+            End If
+
+            AppendCreateEntity PlatformFilter, Buffer, Entity
+            
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="EntityRemove" dependencygraph="EntityRemoveDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Entity.rule - EntityRemove rule
+         '
+         ' Removes all descendant objects from the console using
+         ' a recursive dependency
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         ' Need to remove any objects that are no longer required
+         Sub EntityRemoveDependencies (Task, Entity, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets)
+            Dim SentObjects, Asset, AssetFolder
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            ' Remove Entitiy from the sent objects list
+            SentObjects.Remove Entity
+
+            ' Write the command to delete the entity from the target
+            AppendDeleteEntity Buffer, Entity
+
+            ' Now remove child assets if necessary
+            If bRemoveChildAssets Then
+
+               ' If this is a volume entity, we need to remove its hull asset
+               If EntityIsVolume (Entity) Then
+                  Task.AddSubtask "VolumeEntityRemove", Entity, Buffer
+               End If
+
+               ' Reverse the contents of the container so we can remove the objects in reverse order
+               Dim oChildAssetFolders
+               Set oChildAssetFolders = Entity.ChildAssetFolders
+               oChildAssetFolders.Reverse
+
+               For Each AssetFolder In oChildAssetFolders
+                  If SentObjects.Exists (AssetFolder) Then
+                     If bForceRemoveChildren Then
+                        Task.AddSubtask "AssetFolderRemove", AssetFolder, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                     ElseIf Not IsInFolder (RWSScript.Game.ActiveFolder, AssetFolder, PlatformFilter) Then
+                        Task.AddSubtask "AssetFolderRemove", AssetFolder, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                     End If
+                  End If
+               Next
+
+               Dim oChildAssets
+               Set oChildAssets = Entity.ChildAssets
+               oChildAssets.Reverse
+
+               For Each Asset In oChildAssets
+                  If SentObjects.Exists (Asset) Then
+                     If bForceRemoveChildren Then
+                        Task.AddSubtask "AssetRemove", Asset, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                     ElseIf Not IsInFolder (RWSScript.Game.ActiveFolder, Asset, PlatformFilter) Then
+                        Task.AddSubtask "AssetRemove", Asset, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                     End If
+                  End If
+               Next
+
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="EntityReset" dependencygraph="EntityResetDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Entity.rule - EntityReset rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         ' Only add the entity attribute packet if it is valid for the current platform
+         ' filter.
+         Sub EntityResetDependencies (Task, Entity, PlatformFilter, Buffer)
+            AppendResetEntity PlatformFilter, Buffer, Entity
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Entity_OnChange" dependencygraph="EntityOnChangeDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '------------------------------------------------------------------------------
+         ' Entity.rule - Entity_OnChange rule
+         '
+         ' The Entity has changed. 
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         '  Resends the entity to the console.
+         Sub EntityOnChangeDependencies (Task, Entity, PlatformFilter, Buffer)
+            ' Always remove the entity from the target
+            If GetParam ("SENTOBJECTS").Exists (Entity) Then
+               Task.AddSubtask "EntityRemove", Entity, PlatformFilter, Buffer, False, True
+            End If
+
+            ' If the entity is currently in the active folder, then resend it
+            If IsInFolder (RWSScript.Game.ActiveFolder, Entity, PlatformFilter) Then
+               Task.AddSubtask "EntitySend", Entity, PlatformFilter, Buffer
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Entity_OnDelete" dependencygraph="EntityOnDeleteDependencies">
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Entity.rule - Entity_OnDelete rule
+         '
+         ' The Entity has been deleted. Check if it is still on the console
+         ' and remove it if so.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub EntityOnDeleteDependencies (Task, Entity, PlatformFilter, Buffer)
+            If GetParam ("SENTOBJECTS").Exists (Entity) Then
+               Task.AddSubtask "EntityRemove", Entity, PlatformFilter, Buffer, False, True
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Entity_OnAdd" dependencygraph="EntityOnAddDependencies">
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Entity.rule - Entity_OnAdd rule
+         '
+         ' An object has been added to the Entity. Add the 
+         ' object to the Entity on the console.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub EntityOnAddDependencies (Task, Entity, Child, PlatformFilter, Buffer)
+            Dim SentObjects
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If SentObjects.Exists (Entity) Then
+               If otAsset = Child.IDType Or otAssetFolder = Child.IDType Then
+                  If PlatformFilter.IsValidPlatform (Child.Platform) Then
+                     ' Delete the entity
+                     Task.AddSubtask "EntityRemove", Entity, PlatformFilter, Buffer, False, True
+
+                     ' Ensure that the assets/asset folder have been sent
+                     If otAsset = Child.IDType Then
+                        If Not SentObjects.Exists (Child) Then
+                           Task.AddSubtask "AssetSend", Child, PlatformFilter, Buffer
+                        End If
+                     ElseIf otAssetFolder = Child.IDType Then
+                        If Not SentObjects.Exists (Child) Then
+                           Task.AddSubtask "AssetFolderSend", Child, PlatformFilter, Buffer
+                        End If
+                     End If
+
+                     ' Re-create the entity
+                     Task.AddSubtask "EntitySend", Entity, PlatformFilter, Buffer
+                  End If
+
+               ElseIf otAttribute = Child.IDType Then
+
+                  ' Need to ensure that the entity uses this attribute
+                  Dim AttributeIndex
+                  AttributeIndex = GetAttributeIndex (Child)
+                  If EntityUsesAttribute (Entity, Child, AttributeIndex) Then
+                     Task.AddSubtask "AttributeSend", Child, Entity, AttributeIndex, Buffer
+                  End If
+
+               ElseIf otAttributeShare = Child.IDType Then
+                  Task.AddSubtask "AttributeSendAll", Entity, Buffer
+               End If
+            End If
+         End Sub
+      ]]></script>
+   </rule>
+
+   <rule name="Entity_OnRemove" dependencygraph="EntityOnRemoveDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Entity.rule - Entity_OnRemove rule
+         '
+         ' An object has been removed from an Entity. Remove the 
+         ' object from the Entity on the console.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub EntityOnRemoveDependencies (Task, Entity, Child, PlatformFilter, Buffer)
+            Dim SentObjects, ActiveFolder
+            Set SentObjects = GetParam ("SENTOBJECTS")
+            Set ActiveFolder = RWSScript.Game.ActiveFolder
+
+            If SentObjects.Exists (Entity) Then
+               If otAsset = Child.IDType Or otAssetFolder = Child.IDType Then
+                  If PlatformFilter.IsValidPlatform (Child.Platform) Then
+                     ' Delete the entity
+                     Task.AddSubtask "EntityRemove", Entity, PlatformFilter, Buffer, False, True
+
+                     ' Ensure that the assets/asset folders have been sent
+                     If otAsset = Child.IDType Then
+                        If SentObjects.Exists (Child) Then
+                           If Not IsInFolder (ActiveFolder, Child, PlatformFilter) Then
+                              Task.AddSubtask "AssetRemove", Child, PlatformFilter, Buffer, False, False
+                           End If
+                        End If
+                     ElseIf otAssetFolder = Child.IDType Then
+                        If SentObjects.Exists (Child) Then
+                           If Not IsInFolder (ActiveFolder, Child, PlatformFilter) Then
+                              Task.AddSubtask "AssetFolderRemove", Child, PlatformFilter, Buffer, False, False
+                           End If
+                        End If
+                     End If
+
+                     ' Re-create the entity
+                     Task.AddSubtask "EntitySend", Entity, PlatformFilter, Buffer
+                  End If
+
+               ElseIf otAttribute = Child.IDType Or otAttributeShare = Child.IDType Then
+                  Task.AddSubtask "AttributeSendAll", Entity, Buffer
+               End If
+            End If
+         End Sub
+      ]]></script>
+   </rule>
+
+</build>

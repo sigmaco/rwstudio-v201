@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="RENLayoutControl.RENPage.1" id="DBValidate" runtime=""><param name="Caption" value="Validate Database" />
+<param name="Group" value="grpDialogs" />
+<param name="Top" value="0" />
+<param name="Left" value="0" />
+<param name="Width" value="265" />
+<param name="Height" value="411" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="1" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<param name="_cx" value="7011" />
+<param name="_cy" value="10874" />
+<param name="BackColor" value="2147483663" />
+<param name="BorderStyle" value="-842150451" />
+<param name="Reserved" value="" />
+<param name="ForeColor" value="3452816845" />
+<param name="MousePointer" value="-842150451" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Objects" runtime=""><param name="Count" value="16" />
+<param name="key0" value="DBValid_OKButton" />
+<param name="key1" value="DBValid_CancelButton" />
+<param name="key2" value="Label1" />
+<param name="key3" value="Label2" />
+<param name="key4" value="Label3" />
+<param name="key5" value="DBValid_BehvLessEnts" />
+<param name="key6" value="Label4" />
+<param name="key7" value="DBValid_AttribsWithNoSource" />
+<param name="key8" value="Label5" />
+<param name="key9" value="DBValid_AttribDataTypes" />
+<param name="key10" value="DBValid_SharedPrivateAttribs" />
+<param name="key11" value="Label6" />
+<param name="key12" value="DBValid_UnusedEnts" />
+<param name="key13" value="DBValid_UnusedFolders" />
+<param name="key14" value="DBValid_UnusedAssets" />
+<param name="key15" value="DBValid_UnusedAttribShares" />
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item0" runtime=""><param name="Left" value="77" />
+<param name="Top" value="342" />
+<param name="Right" value="158" />
+<param name="Bottom" value="368" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIYACgAAAAIAACAVmFsaWRhdGVfCAAAsAIAAAACDAB0AAAApQAAAAACAwA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item1" runtime=""><param name="Left" value="162" />
+<param name="Top" value="342" />
+<param name="Right" value="243" />
+<param name="Bottom" value="368" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIYACgAAAAGAACAQ2FuY2VsdGVfCAAAsAIAAAACDAB0AAAApQAAAAACAwA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item2" runtime=""><param name="Left" value="12" />
+<param name="Top" value="22" />
+<param name="Right" value="248" />
+<param name="Bottom" value="98" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIUACECAAAAAAAAAwAAAGQYAADbBwAAAAIMADQAAAClAAAAAAIAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item3" runtime=""><param name="Left" value="12" />
+<param name="Top" value="112" />
+<param name="Right" value="248" />
+<param name="Bottom" value="193" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIUACECAAAAAAAAAwAAAGQYAABfCAAAAAIMADQAAAClAAAAAAIAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item4" runtime=""><param name="Left" value="12" />
+<param name="Top" value="212" />
+<param name="Right" value="248" />
+<param name="Bottom" value="333" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIUACECAAAAAAAAAwAAAGQYAACBDAAAAAIMADQAAAClAAAAAAIAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item5" runtime=""><param name="Left" value="17" />
+<param name="Top" value="42" />
+<param name="Right" value="223" />
+<param name="Bottom" value="63" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJQAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgCgAAIBKFQAALAIAADEAAABMb29rIGZvciBlbnRp
+dGllcyB3aXRoIG1pc3NpbmcgYmVoYXZpb3JzAAIMADQAAAClAAAAAAIAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item6" runtime=""><param name="Left" value="17" />
+<param name="Top" value="17" />
+<param name="Right" value="148" />
+<param name="Bottom" value="33" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIwACkAAAAAAAAAGQAAgENoZWNrIGZvciBtaXNzaW5nIG9iamVjdHMAAACKDQAApwEAAAACDAB0
+AAAApQAAAAACAwA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item7" runtime=""><param name="Left" value="17" />
+<param name="Top" value="67" />
+<param name="Right" value="223" />
+<param name="Bottom" value="88" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJQAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgCgAAIBKFQAALAIAADEAAABDaGVjayBhbGwgYXR0
+cmlidXRlcycgc291cmNlIGNvZGUgZXhpc3RzAAIMADQAAAClAAAAAAIAAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item8" runtime=""><param name="Left" value="17" />
+<param name="Top" value="107" />
+<param name="Right" value="98" />
+<param name="Bottom" value="123" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIkACkAAAAAAAAADwAAgFZhbGlkYXRlIHZhbHVlcwBfCAAApwEAAAACDAB0AAAApQAAAAACAwA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item9" runtime=""><param name="Left" value="17" />
+<param name="Top" value="132" />
+<param name="Right" value="173" />
+<param name="Bottom" value="153" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJIAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgB0AAIAgEAAALAIAADEAAABWYWxpZGF0ZSBhdHRy
+aWJ1dGUgZGF0YSB0eXBlcwAAAAACDAA0AAAApQAAAAACAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item10" runtime=""><param name="Left" value="17" />
+<param name="Top" value="157" />
+<param name="Right" value="243" />
+<param name="Bottom" value="183" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJUAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgCsAAIBcFwAAsAIAADEAAABDaGVjayB0aGF0IG5v
+IHByaXZhdGUgYXR0cmlidXRlcyBhcmUgc2hhcmVkAAACDAA0AAAApQAAAAACAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item11" runtime=""><param name="Left" value="17" />
+<param name="Top" value="207" />
+<param name="Right" value="143" />
+<param name="Bottom" value="218" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIsACkAAAAAAAAAGAAAgENoZWNrIGZvciB1bnVzZWQgb2JqZWN0cwYNAAAjAQAAAAIMAHQAAACl
+AAAAAAIDAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item12" runtime=""><param name="Left" value="17" />
+<param name="Top" value="232" />
+<param name="Right" value="223" />
+<param name="Bottom" value="253" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJAAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgBgAAIBKFQAALAIAADAAAABMb29rIGZvciB1bnVz
+ZWQgZW50aXRpZXMAAgwANAAAAKUAAAAAAgAA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item13" runtime=""><param name="Left" value="17" />
+<param name="Top" value="257" />
+<param name="Right" value="223" />
+<param name="Bottom" value="278" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJAAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgBcAAIBKFQAALAIAADAAAABMb29rIGZvciB1bnVz
+ZWQgZm9sZGVyc3MAAgwANAAAAKUAAAAAAgAA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item14" runtime=""><param name="Left" value="17" />
+<param name="Top" value="282" />
+<param name="Right" value="223" />
+<param name="Bottom" value="303" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJAAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgBYAAIBKFQAALAIAADAAAABMb29rIGZvciB1bnVz
+ZWQgYXNzZXRzc3MAAgwANAAAAKUAAAAAAgAA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item15" runtime=""><param name="Left" value="17" />
+<param name="Top" value="307" />
+<param name="Right" value="223" />
+<param name="Bottom" value="328" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJIAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgCAAAIBKFQAALAIAADAAAABMb29rIGZvciB1bnVz
+ZWQgYXR0cmlidXRlIHNoYXJlcwACDAA0AAAApQAAAAACAAA=
+</stream>
+</object>
+</object>
+</object>
+</RENApplication>

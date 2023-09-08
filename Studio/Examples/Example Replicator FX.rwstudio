@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Replicator FX\Games" />
+   <EntitiesLocation path="Example Replicator FX\Entities" />
+   <AssetsLocation path="Example Replicator FX\Assets" />
+   <AttributeSharesLocation path="Example Replicator FX\AttributeShares" />
+   <FoldersLocation path="Example Replicator FX\Folders" />
+
+</RenderWareStudio>
+
