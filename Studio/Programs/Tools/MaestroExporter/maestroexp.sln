@@ -1,0 +1,69 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maestroexp", "maestroexp.vcproj", "{B88EB439-74E6-4C6C-8E57-7F96074BA922}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mexpwin", "mexpwin\mexpwin.vcproj", "{1FF141F2-2A0A-4970-9A83-BF62382B398E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug D3D = Debug D3D
+		Debug GCN = Debug GCN
+		Debug OpenGL = Debug OpenGL
+		Debug PS2 = Debug PS2
+		Debug Xbox = Debug Xbox
+		Release D3D = Release D3D
+		Release GCN = Release GCN
+		Release OpenGL = Release OpenGL
+		Release PS2 = Release PS2
+		Release Xbox = Release Xbox
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug D3D.ActiveCfg = Debug Xbox|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug D3D.Build.0 = Debug Xbox|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug GCN.ActiveCfg = Debug GCN|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug GCN.Build.0 = Debug GCN|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug OpenGL.ActiveCfg = Debug Xbox|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug OpenGL.Build.0 = Debug Xbox|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug PS2.ActiveCfg = Debug PS2|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug PS2.Build.0 = Debug PS2|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug Xbox.ActiveCfg = Debug Xbox|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Debug Xbox.Build.0 = Debug Xbox|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release D3D.ActiveCfg = Release PS2|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release D3D.Build.0 = Release PS2|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release GCN.ActiveCfg = Release GCN|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release GCN.Build.0 = Release GCN|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release OpenGL.ActiveCfg = Release PS2|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release OpenGL.Build.0 = Release PS2|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release PS2.ActiveCfg = Release PS2|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release PS2.Build.0 = Release PS2|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release Xbox.ActiveCfg = Release Xbox|Win32
+		{B88EB439-74E6-4C6C-8E57-7F96074BA922}.Release Xbox.Build.0 = Release Xbox|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug D3D.ActiveCfg = Debug D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug D3D.Build.0 = Debug D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug GCN.ActiveCfg = Debug D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug GCN.Build.0 = Debug D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug OpenGL.ActiveCfg = Debug OpenGL|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug OpenGL.Build.0 = Debug OpenGL|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug PS2.ActiveCfg = Debug D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug PS2.Build.0 = Debug D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug Xbox.ActiveCfg = Debug D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Debug Xbox.Build.0 = Debug D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release D3D.ActiveCfg = Release D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release D3D.Build.0 = Release D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release GCN.ActiveCfg = Release D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release GCN.Build.0 = Release D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release OpenGL.ActiveCfg = Release OpenGL|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release OpenGL.Build.0 = Release OpenGL|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release PS2.ActiveCfg = Release D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release PS2.Build.0 = Release D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release Xbox.ActiveCfg = Release D3D|Win32
+		{1FF141F2-2A0A-4970-9A83-BF62382B398E}.Release Xbox.Build.0 = Release D3D|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

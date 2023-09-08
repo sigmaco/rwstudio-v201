@@ -1,0 +1,425 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="SequenceAsset" dependencygraph="SequenceDependencies">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference progid="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' SequenceAsset.rule - SequenceAsset rule
+         '
+         ' This rule is the default static rule for a sequence asset. Most of the work
+         ' is done by adding an "Asset" task. In addition, this rule also adds ensures
+         ' that any assets used by a template are also on the console.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         ' Dependency graph entry point.
+         Sub SequenceDependencies (oTask, oAsset, oPlatformFilter, oRecursionGuard)
+
+            ' Call the standard "Asset" rule to transform the file
+            oTask.AddSubtask "Asset", oAsset, oPlatformFilter, oRecursionGuard
+
+            ' We must ensure that all assets used by templates exist on the console.
+            Dim strSequenceRf3
+            strSequenceRf3 = GetAssetsFilename (oAsset, GetParam ("WKSRESOURCEROOT"))
+            AddTemplateDependencies oTask, strSequenceRf3, oPlatformFilter, oRecursionGuard
+         End Sub
+
+         '------------------------------------------------------------------------------
+         ' Adds a sub task to build any assets or asset folders that aren't in the
+         ' active folder but are required by a template referenced in this sequence.
+         Sub AddTemplateDependencies (oTask, strSequenceRf3, oPlatformFilter, oRecursionGuard)
+            Dim oXmlDom, oTemplateNode, oTemplate, oAssetFolder, oAsset
+            Set oXmlDom = CreateObject ("Msxml2.DOMDocument.3.0")
+            If oXmlDom.Load (strSequenceRf3) Then
+               For Each oTemplateNode In oXmlDom.SelectNodes ("/RwRf3/sequence/entity[@template='1']")
+
+                  ' Get a template object from the Manager API database.
+                  On Error Resume Next ' Turn off error handling
+                  Set oTemplate = RWSScript.Template (oTemplateNode.GetAttribute ("uid"))
+                  If Err.Number <> 0 Or oTemplate Is Nothing Then
+                     BuildError "Could not find template " & oTemplateNode.GetAttribute ("name")
+                  End If
+                  On Error Goto 0      ' Turn error handling back on
+
+                  ' Child asset folders must be sent before the template
+                  For Each oAssetFolder In oTemplate.ChildAssetFolders
+                     If Not oRecursionGuard.Exists (oAssetFolder) And oPlatformFilter.IsValidPlatform (oAssetFolder.Platform) Then
+                        oTask.AddSubtask BuildRule (oAssetFolder, "AssetFolder"), oAssetFolder, oPlatformFilter, oRecursionGuard
+                     End If
+                  Next
+
+                  ' Child assets must be sent before the template
+                  For Each oAsset In oTemplate.ChildAssets
+                     If Not oRecursionGuard.Exists (oAsset) And oPlatformFilter.IsValidPlatform (oAsset.Platform) Then
+                        oTask.AddSubtask BuildRule (oAsset, "Asset"), oAsset, oPlatformFilter, oRecursionGuard
+                     End If
+                  Next
+               Next
+            Else
+               BuildError "Could not load sequence rf3 " & strSequenceRf3
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="SequenceSend" dependencygraph="SequenceSendDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '---------------------------------------------------------------------
+         ' SequenceAsset.rule - SequenceSend rule.
+         '
+         ' This rule is called whenever a sequence is added to an active folder
+         ' whilst connected to the console. This rule is responsible for
+         ' ensuring that all assets are sent to the console.
+         ' Note: This function is only called from within the "AssetSend" rule.
+         '---------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub SequenceSendDependencies (oTask, oSequence, oPlatformFilter, oBuffer)
+            Dim oXmlDom, oTemplateNode, oTemplate, oAssetFolder, oAsset
+            Dim strSequenceRf3, oSentObjects
+            ' Open up the asset and ensure that all assets used by the sequence
+            ' exist on the console
+
+            ' Determine the sequence file name
+            strSequenceRf3 = GetAssetsFilename (oSequence, GetParam ("WKSRESOURCEROOT"))
+
+            Set oXmlDom = CreateObject ("Msxml2.DOMDocument.3.0")
+            If oXmlDom.Load (strSequenceRf3) Then
+
+               Set oSentObjects = GetParam ("SENTOBJECTS")
+               For Each oTemplateNode In oXmlDom.SelectNodes ("/RwRf3/sequence/entity[@template='1']")
+
+                  ' Get a template object from the Manager API database.
+                  On Error Resume Next ' Turn off error handling
+                  Set oTemplate = RWSScript.Template (oTemplateNode.GetAttribute ("uid"))
+                  If Err.Number <> 0 Or oTemplate Is Nothing Then
+                     BuildError "Could not find template " & oTemplateNode.GetAttribute ("name")
+                  End If
+                  On Error Goto 0      ' Turn error handling back on
+
+                  ' Child asset folders must be sent before the template
+                  For Each oAssetFolder In oTemplate.ChildAssetFolders
+                     If Not oSentObjects.Exists (oAssetFolder) And oPlatformFilter.IsValidPlatform (oAssetFolder.Platform) Then
+                        oTask.AddSubtask "AssetFolderSend", oAssetFolder, oPlatformFilter, oBuffer
+                     End If
+                  Next
+
+                  ' Child assets must be sent before the template
+                  For Each oAsset In oTemplate.ChildAssets
+                     If Not oSentObjects.Exists (oAsset) And oPlatformFilter.IsValidPlatform (oAsset.Platform) Then
+                        oTask.AddSubtask "AssetSend", oAsset, oPlatformFilter, oBuffer
+                     End If
+                  Next
+               Next
+            Else
+               BuildError "Could not load sequence rf3 " & strSequenceRf3
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="SequenceConsoleUpdate" dependencygraph="ConsoleUpdateDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSSequencerXlator.RWSSequenceTranslator"/>
+      <object id="oRWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <object id="oRWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="SequenceBufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '---------------------------------------------------------------------
+         ' SequenceAsset.rule - SequenceConsoleUpdate rule
+         '
+         ' This rule is invoked when dynamic changes occur within the
+         ' sequencer whilst connected to a console.
+         '
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' ---------------------------------------------------------------------
+         Sub ConsoleUpdateDependencies (oTask, oInstructionContainer, oPlatformFilter, oBuffer)
+            Dim oInstruction
+
+            ' Construct a memory buffer, string table and guid table to store the
+            ' compiled sequence data
+            Dim oSequenceDataBuffer, oStringTable, oGuidTable
+            Set oSequenceDataBuffer = oRWSComms.CreateMemoryBuffer ()
+            oSequenceDataBuffer.BigEndian = oBuffer.BigEndian
+            oSequenceDataBuffer.Unicode = oBuffer.Unicode
+            Set oStringTable = CreateObject ("CSL.RWSSequencerXlator.RWSStringTable")
+            Set oGuidTable = CreateObject ("CSL.RWSSequencerXlator.RWSGuidTable")
+
+            ' Iterate over each instruction adding it to the sequence data buffer
+            For Each oInstruction In oInstructionContainer
+               Select Case oInstruction.InstructionType
+               Case itTemplate
+                  Dim oTemplate, oAsset, oSentObjects
+
+                  ' Get a template object from the Manager API database.
+                  On Error Resume Next ' Turn off error handling
+                  Set oTemplate = oRWSScript.Template (oInstruction.TemplateUID)
+                  If Err.Number <> 0 Or oTemplate Is Nothing Then
+                     ' Error - Couldn't find template
+
+                     ' Turn error handling back on
+                     On Error Goto 0
+
+                     BuildWarning "Could not find template " & oInstruction.TemplateUID
+                  Else
+                     ' Success - We found a template
+
+                     ' Turn error handling back on
+                     On Error Goto 0
+
+                     ' Template Instruction - create or destroy the entity
+                     If oInstruction.Operation = toCreate Then
+                        Set oSentObjects = GetParam ("SENTOBJECTS")
+
+                        For Each oAsset In GetChildAssets (oTemplate, oPlatformFilter)
+                           If Not oSentObjects.Exists (oAsset) Then
+                              oTask.AddSubtask "AssetSend", oAsset, oPlatformFilter, oBuffer
+                           End If
+                        Next
+   
+                        ' Create the entity
+                        AppendDynamicTemplateCreate oSequenceDataBuffer, oInstruction, oPlatformFilter
+                     Else
+                        ' Destroy the entity
+                        AppendDynamicTemplateDestroy oSequenceDataBuffer, oGuidTable, oInstruction
+                     End If
+                  End If
+
+               Case itDynamicKeyframe
+
+                  ' Dynamic keyframe command
+                  AppendDynamicKeyframe oSequenceDataBuffer, oStringTable, oGuidTable, oInstruction
+
+               Case itEvent
+
+                  ' Dynamic event command
+                  AppendDynamicEvent oSequenceDataBuffer, oStringTable, oInstruction
+
+               End Select
+            Next
+
+            ' Combine the buffer, string table and guid table into the final data
+            oBuffer.WriteDataHeader strfunc_SequenceUpdate
+            AppendStringTableCommand oBuffer, oStringTable
+            AppendGuidTableCommand oBuffer, oGuidTable
+            oBuffer.WriteBuffer oSequenceDataBuffer, IncludeInData
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="SequencePreview" dependencygraph="PreviewDependencies">
+      <object id="oRWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '---------------------------------------------------------------------
+         ' SequenceAsset.rule - SequencePreview rule
+         '
+         ' This rule is invoked when the preview button is pressed within the
+         ' sequencer user interface. It is responsible for compiling the
+         ' sequence into a memory buffer and sending it to the console as a
+         ' dynamic change.
+         '
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' ---------------------------------------------------------------------
+         ' 
+         Sub PreviewDependencies (oTask, oBuffer, oSequenceTranslator, strFilename, strPlatformFlags, nOffset)
+
+            ' Create a memory buffer to store the compiled sequence
+            Dim oDataBuffer
+            Set oDataBuffer = oRWSComms.CreateMemoryBuffer ()
+            oDataBuffer.BigEndian = oBuffer.BigEndian
+            oDataBuffer.Unicode = oBuffer.Unicode
+
+            ' Translate the sequence into the memory buffer
+            oSequenceTranslator.Translate strFilename, oDataBuffer, strPlatformFlags
+
+            ' Write the compiled sequence into a sequence preview packet
+            oBuffer.WriteDataHeader strfunc_SequencePreview
+            oBuffer.Write dtUInt32, nOffset
+            oBuffer.Write dtUInt32, oDataBuffer.Size
+            oBuffer.WriteBuffer oDataBuffer, IncludeInData
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="SequenceTransform" buildcommand="TransformCommand" alwaysbuild="true">
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSSequencerXlator.RWSSequenceTranslator"/>
+      <object id="oRWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <object id="oRWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="SequenceBufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '---------------------------------------------------------------------
+         ' SequenceAsset.rule - SequenceTransform rule
+         '
+         ' This rule is invoked when a sequence RF3 is compiled by the RF3
+         ' compiler.  The Sequence object implements IRWSSequence inside
+         ' RWSSequenceXlator, and provides information about the sequence
+         ' being compiled. The FileBuffer object implements IRWSFileBuffer
+         ' and must be filled with the binary version of the sequence.
+         '
+         ' No dependencies are considered by this rule, since workspace's
+         ' RF3 build rules take care of them.
+         '
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' This must be identical to the definition on the console.
+         Const rwID_SEQUENCE        = &H80 ' MAKECHUNKID (rwVENDORID_CRITERIONRM, 0x80)
+
+         ' ---------------------------------------------------------------------
+         ' Entry point for transforming a sequence.
+         Sub TransformCommand (oTask, oSequence, oFileBuffer, strPlatformFlags)
+            Dim oSequenceDataBuffer, oStringTable, oGuidTable, oPlatformFilter
+
+            ' Create a memory buffer to contain the compiled sequence data
+            Set oSequenceDataBuffer = oRWSComms.CreateMemoryBuffer ()
+            oSequenceDataBuffer.BigEndian = oFileBuffer.BigEndian
+            oSequenceDataBuffer.Unicode = oFileBuffer.Unicode
+
+            ' Create a string table to store all used strings
+            Set oStringTable = CreateObject ("CSL.RWSSequencerXlator.RWSStringTable")
+
+            ' Create a GUID table to store all used GUIDs
+            Set oGuidTable = CreateObject ("CSL.RWSSequencerXlator.RWSGuidTable")
+
+            ' Create a platform filter to avoid sending unwanted assets
+            Set oPlatformFilter = oRWSComms.CreatePlatformFilter (strPlatformFlags)
+
+            ' Compile the sequence into a binary format
+            CompileSequence oStringTable, oGuidTable, oSequenceDataBuffer, oSequence, oPlatformFilter
+
+            ' Write the sequence into the file buffer
+            WriteSequenceBuffer oFileBuffer, oStringTable, oGuidTable, oSequenceDataBuffer
+
+         End Sub
+
+         ' ---------------------------------------------------------------------
+         ' Compiles the sequence into a series of instructions within oSequenceDataBuffer
+         Sub CompileSequence (oStringTable, oGuidTable, oSequenceDataBuffer, oSequence, oPlatformFilter)
+
+            ' We need to keep track of the changes to the time/entity/behavior
+            ' and attribute so that we only add instructions when these change.
+            Dim nCurrentTime, strCurrentEntity, strCurrentBehavior, strCurrentAttribute
+
+             ' Iterate over each instruction sending it to the console
+            Dim oInstruction
+            For Each oInstruction In oSequence
+
+               ' If we need to wait, then append the wait command
+               If Not oInstruction.Time = nCurrentTime Then
+                  AppendWaitCommand oSequenceDataBuffer, oInstruction.Time - nCurrentTime
+                  nCurrentTime = oInstruction.Time
+               End If
+
+               Select Case oInstruction.InstructionType
+               Case itEvent:
+                  ' Instruction is an event.
+                  ' Transmit events must fire an event to all entities listening
+                  ' Receive events must wait for the event to be received before continuing
+                  If oInstruction.EventType = etTransmit Then
+                     AppendTransmitEventCommand oSequenceDataBuffer, oStringTable, oInstruction.EventName
+                  ElseIf Instruction.EventType = etReceive Then
+                     AppendReceiveEventCommand oSequenceDataBuffer, oStringTable, Instruction.EventName
+                  End If
+
+               Case itTemplate:
+
+                  ' Instruction is a template - either create or destroy it.
+                  If oInstruction.Operation = toCreate Then
+                     AppendCreateTemplateCommand oSequenceDataBuffer, oInstruction, oPlatformFilter
+                  Else
+                     AppendDestroyTemplateCommand oSequenceDataBuffer, oGuidTable, oInstruction
+                  End If
+
+               Case itKeyFrame:
+
+                  ' Instruction is a key frame.
+                  ' 
+                  ' Ensure that we are set to the correct entity
+                  If Not oInstruction.EntityUID = strCurrentEntity Then
+                     AppendEntityCommand oSequenceDataBuffer, oGuidTable, oInstruction.EntityUID
+                     strCurrentEntity = oInstruction.EntityUID
+                     strCurrentBehavior = ""
+                     strCurrentAttribute = ""
+                  End If
+
+                  ' Ensure that we are processing the correct behavior
+                  If Not oInstruction.Behavior = strCurrentBehavior Then
+                     AppendBehaviorCommand oSequenceDataBuffer, oStringTable, oInstruction.Behavior
+                     strCurrentBehavior = oInstruction.Behavior
+                     strCurrentAttribute = ""
+                  End If
+
+                  ' Ensure that we are processing the correct attribute
+                  If Not oInstruction.Attribute = strCurrentAttribute Then
+                     AppendAttributeCommand oSequenceDataBuffer, strCurrentBehavior, oInstruction.Attribute
+                     strCurrentAttribute = oInstruction.Attribute
+                  End If
+
+                  ' If a start key frame was supplied, then send the data
+                  If Not oInstruction.StartData Is Nothing Then
+                     AppendKeyFrameCommand oSequenceDataBuffer, oStringTable, oInstruction.StartData, oInstruction.Type
+                  End If
+
+                  ' If an interpolator was specified, then send it
+                  If Not oInstruction.Interpolator Is Nothing Then
+                     ' If an end key frame was supplied, then send it
+                     If Not oInstruction.EndData Is Nothing Then
+                        AppendInterpolatorCommand oSequenceDataBuffer, oStringTable, oInstruction.Interpolator
+                        AppendKeyFrameCommand oSequenceDataBuffer, oStringTable, oInstruction.EndData, oInstruction.Type
+                     End If
+                  End If
+
+               Case Else:
+                  BuildError "Invalid instruction in sequence."
+               End Select
+            Next
+         End Sub
+
+         ' ---------------------------------------------------------------------
+         ' Writes the compiled sequence into an output buffer, including the string
+         ' table and the GUID table.
+         Sub WriteSequenceBuffer (oOutputBuffer, oStringTable, oGuidTable, oSequenceDataBuffer)
+            ' Append the sequence chunk id
+            oOutputBuffer.WriteDataHeader rwID_SEQUENCE
+
+            ' Write the string table
+            AppendStringTableCommand oOutputBuffer, oStringTable
+
+            ' Write the GUID table
+            AppendGuidTableCommand oOutputBuffer, oGuidTable
+
+            ' Write the sequence data
+            oOutputBuffer.WriteBuffer oSequenceDataBuffer, IncludeInData
+         End Sub
+
+      ]]></script>
+   </rule>
+</build>

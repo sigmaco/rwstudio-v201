@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="RENLayoutControl.RENPage.1" id="UndoStack" runtime=""><param name="Caption" value="Undo Stack" />
+<param name="Group" value="grpDialogs" />
+<param name="Top" value="0" />
+<param name="Left" value="0" />
+<param name="Width" value="442" />
+<param name="Height" value="453" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="1" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<param name="_cx" value="11695" />
+<param name="_cy" value="11986" />
+<param name="BackColor" value="2147483663" />
+<param name="BorderStyle" value="-842150451" />
+<param name="Reserved" value="" />
+<param name="ForeColor" value="3452816845" />
+<param name="MousePointer" value="-842150451" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Objects" runtime=""><param name="Count" value="7" />
+<param name="key0" value="CloseButton" />
+<param name="key1" value="Label3" />
+<param name="key2" value="RedoButton" />
+<param name="key3" value="UndoButton" />
+<param name="key4" value="Label4" />
+<param name="key5" value="RedoList" />
+<param name="key6" value="UndoList" />
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item0" runtime=""><param name="Left" value="337" />
+<param name="Top" value="392" />
+<param name="Right" value="413" />
+<param name="Bottom" value="418" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIYACgAAAAFAACAQ2xvc2UAdADbBwAAsAIAAAACDAB0AAAApQAAAAACAwA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item1" runtime=""><param name="Left" value="12" />
+<param name="Top" value="12" />
+<param name="Right" value="58" />
+<param name="Bottom" value="28" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIcACkAAAAAAAAABQAAgFVuZG86AHQAwQQAAKcBAAAAAgwAdAAAAKUAAAAAAgMA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item2" runtime=""><param name="Left" value="252" />
+<param name="Top" value="392" />
+<param name="Right" value="328" />
+<param name="Bottom" value="418" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIUACgAAAAEAACAUmVkb9sHAACwAgAAAAIMAHQAAAClAAAAAAIDAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item3" runtime=""><param name="Left" value="167" />
+<param name="Top" value="392" />
+<param name="Right" value="243" />
+<param name="Bottom" value="418" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIUACgAAAAEAACAVW5kb9sHAACwAgAAAAIMAHQAAAClAAAAAAIDAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item4" runtime=""><param name="Left" value="17" />
+<param name="Top" value="202" />
+<param name="Right" value="53" />
+<param name="Bottom" value="218" />
+<param name="ProgID" value="Forms.Label.1" />
+<stream encode="BASE64">AAIcACkAAAAAAAAABQAAgFJlZG86AHQAuQMAAKcBAAAAAgwAdAAAAKUAAAAAAgMA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item5" runtime=""><param name="Left" value="17" />
+<param name="Top" value="217" />
+<param name="Right" value="413" />
+<param name="Bottom" value="383" />
+<param name="ProgID" value="CSL.ListBox.1" />
+<stream encode="BASE64">EAcAAO4oAAAoEQAA/////wAAAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item6" runtime=""><param name="Left" value="17" />
+<param name="Top" value="27" />
+<param name="Right" value="413" />
+<param name="Bottom" value="193" />
+<param name="ProgID" value="CSL.ListBox.1" />
+<stream encode="BASE64">EAcAAO4oAAAoEQAA/////wAAAAA=
+</stream>
+</object>
+</object>
+</object>
+</RENApplication>

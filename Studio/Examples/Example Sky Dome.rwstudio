@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Sky Dome\Games" />
+   <EntitiesLocation path="Example Sky Dome\Entities" />
+   <AssetsLocation path="Example Sky Dome\Assets" />
+   <AttributeSharesLocation path="Example Sky Dome\AttributeShares" />
+   <FoldersLocation path="Example Sky Dome\Folders" />
+
+</RenderWareStudio>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="{DA13C73F-A153-4359-9BD5-E68967D92168}" id="Sequencer" runtime=""><param name="Caption" value="Sequencer" />
+<param name="Top" value="0" />
+<param name="Left" value="0" />
+<param name="Width" value="900" />
+<param name="Height" value="400" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="1" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<stream encode="BASE64">AAMAAHiAAAAODgAA
+</stream>
+</object>
+</RENApplication>

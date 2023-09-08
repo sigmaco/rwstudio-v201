@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Template version="3,7,0,3">
+	<ProjectTemplate description="The default RenderWare Studio project template. This template creates anm ,bsp, dff and spl files suitable for use within RenderWare Studio.">
+		<Output>
+			<param name="Export Legacy Files" type="bool" value="true"/>
+			<param name="Export RF3 File" type="bool" value="false">
+				<param name="Split By Asset" type="bool" value="false"/>
+				<param name="Texture Path Type" type="enum" value="0">
+					<param name="Relative Texture Path" type="string"/>
+				</param>
+				<param name="Wave Path Type" type="enum" value="0">
+					<param name="Relative Wave Path" type="string"/>
+				</param>
+				<param name="Real As Binary" type="bool" value="false"/>
+			</param>
+			<param name="Export RWS File" type="bool" value="false">
+				<param name="Embed TOC" type="bool" value="false"/>
+				<param name="Embed Group Chunks" type="bool" value="true"/>
+				<param name="Embed Texture Dictionary" type="bool" value="true"/>
+				<param name="Embed Effect Dictionary" type="bool" value="true"/>
+				<param name="3ds max Embed Ambient Light" type="enum" value="0"/>
+				<param name="Embed Background Color" type="bool" value="false"/>
+				<param name="Pre Instance" type="bool" value="true">
+					<param name="Pre Instance Locally Only" type="bool" value="false"/>
+				</param>
+			</param>
+			<param name="Abort On Error" type="bool" value="false"/>
+		</Output>
+		<Common/>
+		<Platform>
+			<Generic>
+				<param name="Enable" type="bool" value="true"/>
+				<param name="Tri-strip Meshes" type="bool" value="true">
+					<param name="Tri-strip Method" type="enum" value="2"/>
+					<param name="Tunnel Tri-strip Factor" type="int" value="50"/>
+				</param>
+				<param name="Limit UVs" type="enum" value="0">
+					<param name="Min Value" type="float" value="-2048"/>
+					<param name="Max Value" type="float" value="2047"/>
+				</param>
+				<param name="Enable Skin Splitting" type="bool" value="true">
+					<param name="Bone Limit" type="int" value="256"/>
+				</param>
+				<param name="Generate Darkmaps" type="bool" value="false">
+					<param name="Process Base DarkMap Texture" type="bool" value="false"/>
+				</param>
+			</Generic>
+			<PS2/>
+			<Xbox/>
+			<GameCube/>
+		</Platform>
+	</ProjectTemplate>
+</Template>

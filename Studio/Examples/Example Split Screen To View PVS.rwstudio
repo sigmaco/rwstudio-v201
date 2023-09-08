@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Split Screen To View PVS\Games" />
+   <EntitiesLocation path="Example Split Screen To View PVS\Entities" />
+   <AssetsLocation path="Example Split Screen To View PVS\Assets" />
+   <AttributeSharesLocation path="Example Split Screen To View PVS\AttributeShares" />
+   <FoldersLocation path="Example Split Screen To View PVS\Folders" />
+
+</RenderWareStudio>
+

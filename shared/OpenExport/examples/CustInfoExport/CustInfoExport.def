@@ -1,0 +1,9 @@
+LIBRARY      "CustInfoExport"
+DESCRIPTION  'CustInfoExport Windows Dynamic Link Library'
+
+EXPORTS
+	InitRwPlugin						@1
+	InitExportManager		@2
+
+SECTIONS
+	.data READ WRITE

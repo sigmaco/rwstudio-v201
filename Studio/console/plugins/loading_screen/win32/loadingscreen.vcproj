@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="Loading_Screen"
+	ProjectGUID="{08AF1B4A-40DE-463B-8D6C-7C8B770643BE}"
+	SccProjectName="Perforce Project"
+	SccAuxPath=""
+	SccLocalPath="..\..\..\.."
+	SccProvider="MSSCCI:Perforce SCM">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="OGL Debug|Win32"
+			OutputDirectory=".\bin\Win32 OGL Debug\obj"
+			IntermediateDirectory=".\bin\Win32 OGL Debug\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="0"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\opengl,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="_DEBUG;_LIB;WIN32;RW_USE_SPF;RWDEBUG"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 OGL Debug\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 OGL Debug\obj/"
+				ObjectFile=".\bin\Win32 OGL Debug\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 OGL Debug\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 OGL Debug\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="OGL Design Metrics|Win32"
+			OutputDirectory=".\bin\Win32 OGL Design Metrics\obj"
+			IntermediateDirectory=".\bin\Win32 OGL Design Metrics\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\opengl,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="NDEBUG;_LIB;WIN32;RW_USE_SPF;RWS_DESIGN"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 OGL Design Metrics\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 OGL Design Metrics\obj/"
+				ObjectFile=".\bin\Win32 OGL Design Metrics\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 OGL Design Metrics\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 OGL Design Metrics\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="OGL Design Debug|Win32"
+			OutputDirectory=".\bin\Win32 OGL Design Debug\obj"
+			IntermediateDirectory=".\bin\Win32 OGL Design Debug\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="0"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\opengl,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="_DEBUG;_LIB;WIN32;RW_USE_SPF;RWDEBUG;RWS_DESIGN"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 OGL Design Debug\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 OGL Design Debug\obj/"
+				ObjectFile=".\bin\Win32 OGL Design Debug\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 OGL Design Debug\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 OGL Design Debug\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="D3D Design Metrics|Win32"
+			OutputDirectory=".\bin\Win32 D3D Design Metrics\obj"
+			IntermediateDirectory=".\bin\Win32 D3D Design Metrics\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\d3d8,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="NDEBUG;_LIB;WIN32;RW_USE_SPF;RWS_DESIGN"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 D3D Design Metrics\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 D3D Design Metrics\obj/"
+				ObjectFile=".\bin\Win32 D3D Design Metrics\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 D3D Design Metrics\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 D3D Design Metrics\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="D3D Metrics|Win32"
+			OutputDirectory=".\bin\Win32 D3D Metrics\obj"
+			IntermediateDirectory=".\bin\Win32 D3D Metrics\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\d3d8,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="NDEBUG;_LIB;WIN32;RW_USE_SPF"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 D3D Metrics\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 D3D Metrics\obj/"
+				ObjectFile=".\bin\Win32 D3D Metrics\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 D3D Metrics\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 D3D Metrics\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="OGL Design Release|Win32"
+			OutputDirectory=".\bin\Win32 OGL Design Release\obj"
+			IntermediateDirectory=".\bin\Win32 OGL Design Release\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\opengl,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="NDEBUG;_LIB;WIN32;RW_USE_SPF;RWS_DESIGN"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 OGL Design Release\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 OGL Design Release\obj/"
+				ObjectFile=".\bin\Win32 OGL Design Release\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 OGL Design Release\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 OGL Design Release\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="D3D Debug|Win32"
+			OutputDirectory=".\bin\Win32 D3D Debug\obj"
+			IntermediateDirectory=".\bin\Win32 D3D Debug\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="0"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\d3d8,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="_DEBUG;_LIB;WIN32;RW_USE_SPF"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 D3D Debug\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 D3D Debug\obj/"
+				ObjectFile=".\bin\Win32 D3D Debug\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 D3D Debug\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 D3D Debug\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="OGL Metrics|Win32"
+			OutputDirectory=".\bin\Win32 OGL Metrics\obj"
+			IntermediateDirectory=".\bin\Win32 OGL Metrics\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\opengl,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="NDEBUG;_LIB;WIN32;RW_USE_SPF"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 OGL Metrics\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 OGL Metrics\obj/"
+				ObjectFile=".\bin\Win32 OGL Metrics\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 OGL Metrics\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 OGL Metrics\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="D3D Design Release|Win32"
+			OutputDirectory=".\bin\Win32 D3D Design Release\obj"
+			IntermediateDirectory=".\bin\Win32 D3D Design Release\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\d3d8,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="NDEBUG;_LIB;WIN32;RW_USE_SPF;RWS_DESIGN"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 D3D Design Release\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 D3D Design Release\obj/"
+				ObjectFile=".\bin\Win32 D3D Design Release\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 D3D Design Release\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 D3D Design Release\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="D3D Design Debug|Win32"
+			OutputDirectory=".\bin\Win32 D3D Design Debug\obj"
+			IntermediateDirectory=".\bin\Win32 D3D Design Debug\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="0"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\d3d8,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="_DEBUG;_LIB;WIN32;RW_USE_SPF;RWDEBUG;RWS_DESIGN"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 D3D Design Debug\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 D3D Design Debug\obj/"
+				ObjectFile=".\bin\Win32 D3D Design Debug\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 D3D Design Debug\obj/"
+				BrowseInformation="1"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 D3D Design Debug\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="D3D Release|Win32"
+			OutputDirectory=".\bin\Win32 D3D Release\obj"
+			IntermediateDirectory=".\bin\Win32 D3D Release\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\d3d8,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="NDEBUG;_LIB;WIN32;RW_USE_SPF"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 D3D Release\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 D3D Release\obj/"
+				ObjectFile=".\bin\Win32 D3D Release\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 D3D Release\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 D3D Release\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="OGL Release|Win32"
+			OutputDirectory=".\bin\Win32 OGL Release\obj"
+			IntermediateDirectory=".\bin\Win32 OGL Release\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm300 "
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="$(RWGSDK)\include\opengl,..\..\..\game_framework\source\framework\core\memoryhandler,..\..\source\"
+				PreprocessorDefinitions="NDEBUG;_LIB;WIN32;RW_USE_SPF"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin\Win32 OGL Release\obj/loadingscreen.pch"
+				AssemblerListingLocation=".\bin\Win32 OGL Release\obj/"
+				ObjectFile=".\bin\Win32 OGL Release\obj/"
+				ProgramDataBaseFileName=".\bin\Win32 OGL Release\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="bin\Win32 OGL Release\LoadingScreen.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath="..\CLoadingScreen.cpp">
+				<FileConfiguration
+					Name="OGL Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Design Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Design Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Design Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Design Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Design Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Design Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+						BrowseInformation="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath="..\CLoadingScreen.h">
+			</File>
+			<File
+				RelativePath="precomp.cpp">
+				<FileConfiguration
+					Name="OGL Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Design Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Design Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Design Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Design Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Metrics|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Design Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Design Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+						UsePrecompiledHeader="1"
+						BrowseInformation="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="D3D Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="OGL Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						AdditionalIncludeDirectories=""
+						PreprocessorDefinitions=""
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="precomp.h">
+			</File>
+			<File
+				RelativePath="..\splashtxd.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

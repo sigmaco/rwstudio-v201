@@ -1,0 +1,17 @@
+; Declare pixel shader version
+xps.1.1
+
+; c0 contains a blend value between 0.0 and 1.0f
+; c1 contains 1.0, 1.0, 1.0, 1.0
+tex t0
+
+; multiply the texture and vertex colors together
+mul r0, t0, v0
+
+; create a grey scale version of the result
+dp3 r1, r0, c1
+
+; interpolate between r0 r1 based on the blend value passed in c0.a
+lrp r0, c0.a, r0, r1
+
+           

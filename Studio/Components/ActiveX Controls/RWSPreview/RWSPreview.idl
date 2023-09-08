@@ -1,0 +1,107 @@
+// RWSPreview.idl : IDL source for RWSPreview.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (RWSPreview.tlb) and marshalling code.
+
+import "oaidl.idl";
+
+   typedef enum __PlayState
+   {
+      _psStopped = 0x0,
+      _psPlaying = 0x1,
+      _psPaused  = 0x2,
+      _psNoAnim  = 0x3
+   } ___PlayState;
+
+   [
+      object,
+      uuid(3448B292-3011-4FCD-BB6A-ED81A8C86044),
+      dual,
+      helpstring("IRWSPreview Interface"),
+      pointer_default(unique)
+   ]
+   interface IRWSPreview : IDispatch
+   {
+      [id(1)] HRESULT SetPlayState ([in] ___PlayState State);
+      [id(2), propget] HRESULT Repeat ([out, retval] VARIANT_BOOL* pbRepeat);
+      [id(2), propput] HRESULT Repeat ([in] VARIANT_BOOL bRepeat);
+      [id(3)] HRESULT Reset ();
+      [id(100), hidden] HRESULT _Ping ();
+      [id(101), hidden] HRESULT _Init ([in] IUnknown* pNotify);
+      [id(102), helpstring("method SetOrbit")] HRESULT SetOrbit();
+      [id(103), helpstring("method SetPan")] HRESULT SetPan();
+      [id(104), helpstring("method SetZoom")] HRESULT SetZoom();
+      [id(105), helpstring("method SetBackgroundColor")] HRESULT SetBackgroundColor([in] unsigned int Red, [in] unsigned int Green, [in] unsigned int Blue);
+      [id(106), helpstring("method GetAnimationTime")] HRESULT GetAnimationTime([out] float* time);
+      [id(107), helpstring("method SetAnimationPosition")] HRESULT SetAnimationPosition([in] float Time);
+      [id(108), helpstring("method LocateInView")] HRESULT LocateInView();
+      [id(109), helpstring("method DrawSkeleton")] HRESULT DrawSkeleton([in] VARIANT_BOOL draw);
+      [id(110), helpstring("method get_DrawSkeleton")] HRESULT get_DrawSkeleton([out, retval] VARIANT_BOOL* pbRepeat);
+      [id(111), helpstring("method DrawSkeletonAxis")] HRESULT DrawSkeletonAxis([in] VARIANT_BOOL draw);
+      [id(112), helpstring("method get_DrawSkeletonAxis")] HRESULT get_DrawSkeletonAxis([out, retval] VARIANT_BOOL* pbRepeat);
+      [id(113), helpstring("method DrawClump")] HRESULT DrawClump([in] VARIANT_BOOL draw);
+      [id(114), helpstring("method get_DrawClump")] HRESULT get_DrawClump([out, retval] VARIANT_BOOL* pbDrawClump);
+      [id(115), helpstring("method DrawText")] HRESULT DrawText([in] VARIANT_BOOL drawText);
+      [id(116), helpstring("method get_DrawText")] HRESULT get_DrawText([out, retval] VARIANT_BOOL* pbDrawText);
+      [id(117), helpstring("method DrawWorld")] HRESULT DrawWorld([in] VARIANT_BOOL drawWorld);
+      [id(118), helpstring("method get_DrawWorld")] HRESULT get_DrawWorld([out, retval] VARIANT_BOOL* pbDrawWorld);
+      [id(119), helpstring("method DrawSectors")] HRESULT DrawSectors([in] VARIANT_BOOL drawSectors);
+      [id(120), helpstring("method get_DrawSectors")] HRESULT get_DrawSectors([out, retval] VARIANT_BOOL* pbDrawSectors);
+      [id(121), helpstring("method DrawWireFrame")] HRESULT DrawWireFrame([in] VARIANT_BOOL drawWireFrame);
+      [id(122), helpstring("method get_DrawWireFrame")] HRESULT get_DrawWireFrame([out, retval] VARIANT_BOOL* pbDrawWireFrame);
+      [id(123), helpstring("method DrawNormals")] HRESULT DrawNormals([in] VARIANT_BOOL drawNormals);
+      [id(124), helpstring("method get_DrawNormals")] HRESULT get_DrawNormals([out, retval] VARIANT_BOOL* pbDrawNormals);
+      [id(125), helpstring("method PrevSector")] HRESULT PrevSector();
+      [id(126), helpstring("method NextSector")] HRESULT NextSector();
+      [id(127), helpstring("method ShowAllSectors")] HRESULT ShowAllSectors();
+      [id(128), helpstring("method ZTest")] HRESULT ZTest([in] VARIANT_BOOL bZTest);
+      [id(129), helpstring("method get_ZTest")] HRESULT get_ZTest([out, retval] VARIANT_BOOL* pbZTest);
+
+   };
+
+   [
+      object,
+      uuid(E6481192-B552-47F4-9B1F-86F9CE0BD1D1),
+      helpstring ("Implement this interface to get notification when the proxy crashes!"),
+      pointer_default(unique)
+   ]
+   interface IRWSPreviewNotify : IUnknown
+   {
+      HRESULT Ping ();
+      HRESULT Recreate ();
+      HRESULT StateChanged ([in] ___PlayState NewState);
+      HRESULT Error ([in] BSTR strMessage);
+      HRESULT GetAssetFile ([in] unsigned long DatabaseID, [in] unsigned long AssetID, [out, retval] BSTR* pstrName);
+      HRESULT GetAssetType ([in] unsigned long DatabaseID, [in] unsigned long AssetID, [out, retval] BSTR* pstrType);
+      HRESULT GetAssetTextures ([in] unsigned long DatabaseID, [in] unsigned long AssetID, [out, retval] BSTR* pstrTextures);
+      [helpstring("method SetAnimDuration")] HRESULT SetAnimDuration([in] float duration);
+      [helpstring("method SetCurrentAnimTime")] HRESULT SetCurrentAnimTime([in] float Position);
+      [helpstring("method SetHAnim")] HRESULT SetHAnim();
+      [helpstring("method SetMorph")] HRESULT SetMorph();
+      [helpstring("method SetHasHierarchy")] HRESULT SetHasHierarchy([in] boolean skeleton);
+      [helpstring("method SetHasWorld")] HRESULT SetHasWorld([in] boolean world);
+      [helpstring("method SetSectorTraverse")] HRESULT SetSectorTraverse([in] boolean sector);
+
+   };
+
+
+[
+   uuid(7065A848-CB1F-4D73-9C5A-8CDC36026C79),
+   version(1.0),
+   helpstring("RWSPreview 1.0 Type Library")
+]
+library RWSPREVIEWLib
+{
+   importlib("stdole32.tlb");
+   importlib("stdole2.tlb");
+
+   [
+      uuid(34AAACD1-0960-4B23-998E-D53C6B4E21C3),
+      helpstring("RWSPreview Class")
+   ]
+   coclass RWSPreview
+   {
+      [default] interface IRWSPreview;
+   };
+};

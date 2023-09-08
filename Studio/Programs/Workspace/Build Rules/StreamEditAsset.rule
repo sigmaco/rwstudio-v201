@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<build version = "1.0">
+   <rule name="StreamEditAssetExporter" dependencygraph="StreamEditAssetExporterDependencies"
+                                        buildcommand="StreamEditAssetExporterCommand"
+                                        strictvalidation="false">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <object id="StreamEditTools" progid="CSL.RWSStreamEditControl.RWSStreamEdit"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' StreamEditAsset.rule - StreamEditAssetExporter rule 
+         '
+         ' This is the rule for 'baking' stream edit data into temporary stream files.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub StreamEditAssetExporterDependencies (Task, AssetID)
+            Dim Asset, strFullAssetFilePath
+
+            Set Asset = RWSScript.Asset (AssetID)
+
+            If Asset.Type <> "RF3" Then
+
+               ' There are two dependencies -
+               '    1. The asset's xml file
+               '    2. The asset's stream file (bsp, dff, rws)
+               '  and one target
+               '    3. The target file (rws at present)
+
+               ' the XML file
+               Task.AddDependency Asset.PersistentFilename
+
+               ' Depend on the assets file
+               strFullAssetFilePath = BuildPath (GetParam ("WKSRESOURCEROOT"), Asset.File)
+               Task.AddDependency strFullAssetFilePath
+
+               ' The target
+               Task.AddTarget GetAssetsFilename(Asset, GetParam ("WKSRESOURCEROOT"))
+   
+            End If
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub StreamEditAssetExporterCommand (Task, AssetID)
+
+            Dim Asset
+            Set Asset = RWSScript.Asset (AssetID)
+
+            ' Make sure the resource root is up-to-date
+            StreamEditTools.SetResourceRoot GetParam ("WKSRESOURCEROOT")
+            
+            ' And bind the changes together into the temporary file
+            StreamEditTools.BindChanges AssetID, GetParam ("PLATFORM"), GetParam ("PLATFORMFLAGS"), GetAssetsFilenameNoStreamData(Asset, GetParam ("WKSRESOURCEROOT")), GetAssetsFilename(Asset, GetParam ("WKSRESOURCEROOT"))
+
+         End Sub
+      ]]></script>
+   </rule>
+
+</build>

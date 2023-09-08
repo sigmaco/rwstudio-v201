@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><layoutinfo id="[RENFrame]" userinterface_id="Sequencer"><param name="FrameTop" value="7" />
+<param name="FrameLeft" value="7" />
+<param name="FrameBottom" value="720" />
+<param name="FrameRight" value="927" />
+<param name="WindowState" value="0" />
+<param name="ClientContainsTabs" value="-1" />
+<param name="SelectedTab" value="0" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Tabs" runtime=""><param name="Count" value="6" />
+<param name="ContainedControlName0" value="DesignView" />
+<param name="ContainedControlName1" value="BehaviorLister" />
+<param name="ContainedControlName2" value="RWSEventList" />
+<param name="ContainedControlName3" value="AssetLister" />
+<param name="ContainedControlName4" value="EntityAttributes" />
+<param name="ContainedControlName5" value="HelpWindow" />
+</object>
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Stackers" runtime=""><param name="Count" value="3" />
+<object clsid="{65AA55E7-3DA0-457C-A6A7-1AFE45E8682A}" id="item0" runtime=""><param name="Width" value="283" />
+<param name="Open" value="-1" />
+<param name="Floating" value="0" />
+<param name="Vertical" value="-1" />
+<param name="Alignment" value="1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Holders" runtime=""><param name="Count" value="1" />
+<object clsid="{C9DF8BA5-E927-4BA0-8DC3-DD306EC0C20D}" id="item0" runtime=""><param name="Caption" value="Game Explorer" />
+<param name="ContainsTabs" value="-1" />
+<param name="SelectedTab" value="0" />
+<param name="ExpandedSize" value="277" />
+<param name="Expanded" value="-1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Tabs" runtime=""><param name="Count" value="2" />
+<param name="ContainedControlName0" value="GameDatabase" />
+<param name="ContainedControlName1" value="TemplateLister" />
+</object>
+</object>
+</object>
+</object>
+<object clsid="{65AA55E7-3DA0-457C-A6A7-1AFE45E8682A}" id="item1" runtime=""><param name="Width" value="278" />
+<param name="Open" value="-1" />
+<param name="Floating" value="0" />
+<param name="Vertical" value="0" />
+<param name="Alignment" value="-2" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Holders" runtime=""><param name="Count" value="1" />
+<object clsid="{C9DF8BA5-E927-4BA0-8DC3-DD306EC0C20D}" id="item0" runtime=""><param name="Caption" value="Sequencer" />
+<param name="ContainsTabs" value="0" />
+<param name="ContainedControlName" value="Sequencer" />
+<param name="ExpandedSize" value="260" />
+<param name="Expanded" value="-1" />
+</object>
+</object>
+</object>
+<object clsid="{65AA55E7-3DA0-457C-A6A7-1AFE45E8682A}" id="item2" runtime=""><param name="Width" value="125" />
+<param name="Open" value="0" />
+<param name="Floating" value="0" />
+<param name="Vertical" value="0" />
+<param name="Alignment" value="-1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Holders" runtime=""><param name="Count" value="1" />
+<object clsid="{C9DF8BA5-E927-4BA0-8DC3-DD306EC0C20D}" id="item0" runtime=""><param name="Caption" value="Output" />
+<param name="ContainsTabs" value="-1" />
+<param name="SelectedTab" value="0" />
+<param name="ExpandedSize" value="107" />
+<param name="Expanded" value="-1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Tabs" runtime=""><param name="Count" value="4" />
+<param name="ContainedControlName0" value="MessageLog" />
+<param name="ContainedControlName1" value="BuildLog" />
+<param name="ContainedControlName2" value="VersionControlLog" />
+<param name="ContainedControlName3" value="TargetLink" />
+</object>
+</object>
+</object>
+</object>
+</object>
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Toolbars" runtime=""><param name="Count" value="6" />
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item0" runtime=""><param name="Width" value="477" />
+<param name="NewLine" value="1" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="MainMenu" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="0" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item1" runtime=""><param name="Width" value="215" />
+<param name="NewLine" value="1" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="MainToolbar" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="1" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item2" runtime=""><param name="Width" value="364" />
+<param name="NewLine" value="0" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="SelectionToolbar" />
+<param name="Align" value="rmftbAlignRight" />
+<param name="Order" value="0" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item3" runtime=""><param name="Width" value="100" />
+<param name="NewLine" value="1" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="ObjectInformation" />
+<param name="Align" value="rmftbAlignBottom" />
+<param name="Order" value="0" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item4" runtime=""><param name="Width" value="502" />
+<param name="NewLine" value="0" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="AllTargetsToolbar" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="3" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item5" runtime=""><param name="Width" value="191" />
+<param name="NewLine" value="0" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="CurrentTargetToolbar" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="2" />
+</object>
+</object>
+</layoutinfo>
+</RENApplication>

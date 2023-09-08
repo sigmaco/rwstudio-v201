@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Alpha Sort\Games" />
+   <EntitiesLocation path="Example Alpha Sort\Entities" />
+   <AssetsLocation path="Example Alpha Sort\Assets" />
+   <AttributeSharesLocation path="Example Alpha Sort\AttributeShares" />
+   <FoldersLocation path="Example Alpha Sort\Folders" />
+
+</RenderWareStudio>
+

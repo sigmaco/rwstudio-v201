@@ -1,0 +1,79 @@
+<job>
+<runtime>
+<description>
+Displays a text description of a RenderWare stream file, in Notepad.
+Uses the NetTest tool.
+</description>
+<named name="stream" type="string" required="false" helpstring="Path of stream file"/>
+<named name="bigendian" type="simple" required="false" helpstring="Stream is big endian"/>
+<named name="unicode" type="simple" required="false" helpstring="Stream is Unicode"/>
+</runtime>
+<script language="VBScript">
+Option Explicit
+
+Const conDummyPortNumber = 0
+
+Dim fso, strLogFilePath, objDialog, NetTest, WshShell, strStreamFilePath, fileLog
+
+Set objDialog = CreateObject ("CSL.RENCommonDialog")
+
+Set NetTest = CreateObject ("CSL.RWS.NetTest")
+WScript.ConnectObject NetTest, "NetTest_"
+
+Set fso = CreateObject ("Scripting.FileSystemObject")
+
+Set WshShell = WScript.CreateObject("WScript.Shell")
+
+If WScript.Arguments.Named.Exists("stream") Then
+	strStreamFilePath = WScript.Arguments.Named.Item("stream")
+Else
+	With objDialog
+		.Filter = "RenderWare Stream Files (*.rws, *.stream)|*.rws;*.stream|" &_ 
+			   "All Files (*.*)|*.*|"
+		.MaxFileSize = 260
+		.flags = .OFN_HIDEREADONLY + .OFN_FILEMUSTEXIST
+		.DialogTitle = "Select stream file"
+		.showopen()
+		strStreamFilePath = .Filename
+	End With
+End If
+
+If fso.FileExists(strStreamFilePath) Then
+
+	' Create a temporary file for logging
+	strLogFilePath = fso.GetTempName ()
+	Set fileLog = fso.CreateTextFile (strLogFilePath, True, False)
+	
+	' Start the listener
+	NetTest.Start conDummyPortNumber, WScript.Arguments.Named.Exists("unicode"), WScript.Arguments.Named.Exists("bigendian")
+	
+	NetTest.ShowStreamContents strStreamFilePath
+	
+	WshShell.Run "%windir%\notepad " & strLogFilePath
+	
+	NetTest.Stop
+	
+	' Close and delete the log file
+	fileLog.Close
+	fso.DeleteFile strLogFilePath
+	
+Else
+
+	If strStreamFilePath <> "" Then
+
+		MsgBox "Stream file does not exist: " & vbCrLf & vbCrLf & strStreamFilePath, "File not found"
+		
+	End If
+
+End If
+
+Sub NetTest_OnMessage (strMessage)
+	' Write the message to the log file
+	If Not(fileLog) Is Nothing Then
+		fileLog.WriteLine strMessage
+	Else
+		MsgBox "Nothing: " & strMessage
+	End If
+End Sub
+</script>
+</job>

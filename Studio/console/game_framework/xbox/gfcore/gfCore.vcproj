@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="gfCore"
+	ProjectGUID="{732CEBAE-F174-4BB3-9600-18E2368DA965}"
+	SccProjectName="Perforce Project"
+	SccAuxPath=""
+	SccLocalPath="..\..\.."
+	SccProvider="MSSCCI:Perforce SCM">
+	<Platforms>
+		<Platform
+			Name="Xbox"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Xbox"
+			OutputDirectory=".\..\bin\XBOX Debug\gfCore\obj"
+			IntermediateDirectory=".\..\bin\XBOX Debug\gfCore\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="..\..\source\framework\core\MemoryHandler\,$(RWGSDK)\include\xbox,..\..\source\"
+				PreprocessorDefinitions="_DEBUG,RWDEBUG,RWS_DISABLE_MEMORY_CHECKING,WIN32,_XBOX"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\..\bin\XBOX Debug\gfCore\obj/gfCore.pch"
+				AssemblerListingLocation=".\..\bin\XBOX Debug\gfCore\obj/"
+				ObjectFile=".\..\bin\XBOX Debug\gfCore\obj/"
+				ProgramDataBaseFileName=".\..\bin\XBOX Debug\gfCore\obj/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="3"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="..\bin\XBOX Debug\gfCore.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Xbox"
+			OutputDirectory=".\..\bin\XBOX Release\gfCore\obj"
+			IntermediateDirectory=".\..\bin\XBOX Release\gfCore\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="2"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="..\..\source\framework\core\MemoryHandler\,$(RWGSDK)\include\xbox,..\..\source\"
+				PreprocessorDefinitions="NDEBUG,RWS_DISABLE_MEMORY_CHECKING,WIN32,_XBOX"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\..\bin\XBOX Release\gfCore\obj/gfCore.pch"
+				AssemblerListingLocation=".\..\bin\XBOX Release\gfCore\obj/"
+				ObjectFile=".\..\bin\XBOX Release\gfCore\obj/"
+				ProgramDataBaseFileName=".\..\bin\XBOX Release\gfCore\obj/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="..\bin\XBOX Release\gfCore.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Design Release|Xbox"
+			OutputDirectory=".\..\bin\XBOX Design Release\gfCore\obj"
+			IntermediateDirectory=".\..\bin\XBOX Design Release\gfCore\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="2"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="..\..\source\framework\core\MemoryHandler\,$(RWGSDK)\include\xbox,..\..\source\"
+				PreprocessorDefinitions="RWS_EVENTVISUALIZATION,RWS_DEBUGTOOLS,RWS_DESIGN,RWS_DEBUGSWITCHES,NDEBUG,RWS_TRACE_METRICS,RWS_DISABLE_MEMORY_CHECKING,RWS_MEMORY_PROFILING,WIN32,_XBOX,RWS_FUNCTIONPROFILE"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\..\bin\XBOX Design Release\gfCore\obj/gfCore.pch"
+				AssemblerListingLocation=".\..\bin\XBOX Design Release\gfCore\obj/"
+				ObjectFile=".\..\bin\XBOX Design Release\gfCore\obj/"
+				ProgramDataBaseFileName=".\..\bin\XBOX Design Release\gfCore\obj/"
+				WarningLevel="3"
+				WarnAsError="TRUE"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="..\bin\XBOX Design Release\gfCore.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Design Debug|Xbox"
+			OutputDirectory=".\..\bin\XBOX Design Debug\gfCore\obj"
+			IntermediateDirectory=".\..\bin\XBOX Design Debug\gfCore\obj"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="..\..\source\framework\core\MemoryHandler\,$(RWGSDK)\include\xbox,..\..\source\"
+				PreprocessorDefinitions="_DEBUG,RWDEBUG,RWS_EVENTVISUALIZATION,RWS_DEBUGTOOLS,RWS_DESIGN,RWS_DEBUGSWITCHES,RWS_TRACE_METRICS,WIN32,_XBOX,RWS_FUNCTIONPROFILE,RWS_MEMORY_PROFILING"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\..\bin\XBOX Design Debug\gfCore\obj/gfCore.pch"
+				AssemblerListingLocation=".\..\bin\XBOX Design Debug\gfCore\obj/"
+				ObjectFile=".\..\bin\XBOX Design Debug\gfCore\obj/"
+				ProgramDataBaseFileName=".\..\bin\XBOX Design Debug\gfCore\obj/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="3"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="..\bin\XBOX Design Debug\gfCore.lib"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<Filter
+				Name="AttributeHandler"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\attributehandlerstrfuncs.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\attributemacros.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\cattributehandler.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\cattributehandler.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\cclassfactory.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\cclassfactory.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\clinearmemorymanager.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\clinearmemorymanager.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\csystemcommands.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\attributehandler\csystemcommands.h">
+				</File>
+				<Filter
+					Name="Allocation Policies"
+					Filter="">
+					<File
+						RelativePath="..\..\source\framework\core\attributehandler\allocation policies\dynamicallocationpolicy.h">
+					</File>
+					<File
+						RelativePath="..\..\source\framework\core\attributehandler\allocation policies\linearallocationpolicy.h">
+					</File>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="EventHandler"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\eventhandler\ceventhandler.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\eventhandler\ceventhandler.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\eventhandler\ceventvisualisation.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\eventhandler\ceventvisualisation.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\eventhandler\eventhandlerstrfuncs.cpp">
+				</File>
+			</Filter>
+			<Filter
+				Name="Macros"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\Macros\DebugMacros.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\Macros\DebugMacros.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\macros\DebugOstream.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\macros\DebugOstream.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\Macros\IOCoercion.h">
+				</File>
+			</Filter>
+			<Filter
+				Name="StreamHandler"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\streamhandler\streamhandler.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\streamhandler\streamhandler.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\streamhandler\strfunc.h">
+				</File>
+			</Filter>
+			<Filter
+				Name="ResourceManager"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\ResourceManager\CResource.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\resourcemanager\cresourcehandler.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\ResourceManager\CResourceHandler.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\resourcemanager\cresourcemanager.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\resourcemanager\cresourcemanager.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\resourcemanager\resourcemanagerstrfunc.cpp">
+				</File>
+			</Filter>
+			<Filter
+				Name="NetStream"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\NetStream\netstrm.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\NetStream\nettools.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\NetStream\nettools.h">
+				</File>
+				<Filter
+					Name="MSC"
+					Filter="">
+					<File
+						RelativePath="..\..\source\framework\core\NetStream\MSC\netstrm.cpp">
+					</File>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="MemoryHandler"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\memoryhandler\memoryhandler.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\memoryhandler\memoryhandler.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\memoryhandler\memoryprofile.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\memoryhandler\memoryprofile.h">
+				</File>
+			</Filter>
+			<Filter
+				Name="misc"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\misc\idfromstring.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\misc\idfromstring.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\misc\rwsguid.h">
+				</File>
+			</Filter>
+			<Filter
+				Name="FunctionProfiler"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\core\FunctionProfiler\profile.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\core\FunctionProfiler\profile.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath=".\precomp.cpp">
+				<FileConfiguration
+					Name="Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Design Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Design Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\precomp.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

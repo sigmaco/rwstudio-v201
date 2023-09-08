@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Maestro\Games" />
+   <EntitiesLocation path="Example Maestro\Entities" />
+   <AssetsLocation path="Example Maestro\Assets" />
+   <AttributeSharesLocation path="Example Maestro\AttributeShares" />
+   <FoldersLocation path="Example Maestro\Folders" />
+
+</RenderWareStudio>
+

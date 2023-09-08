@@ -1,0 +1,72 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "empty_framework", "empty_framework.vcproj", "{BDD1EB07-EA28-4491-A090-723F2E8E96A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3} = {3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}
+		{732CEBAE-F174-4BB3-9600-18E2368DA965} = {732CEBAE-F174-4BB3-9600-18E2368DA965}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gfCore", "..\..\..\game_framework\xbox\gfcore\gfCore.vcproj", "{732CEBAE-F174-4BB3-9600-18E2368DA965}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadingScreen", "..\..\..\plugins\loading_screen\xbox\LoadingScreen.vcproj", "{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccProjectUniqueName0 = empty_framework.vcproj
+		SccLocalPath0 = .
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = ..\\..\\..\\game_framework\\xbox\\gfcore\\gfCore.vcproj
+		SccLocalPath1 = ..\\..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection1 = game_framework\\xbox\\gfcore\\
+		SccProjectUniqueName2 = ..\\..\\..\\plugins\\loading_screen\\xbox\\LoadingScreen.vcproj
+		SccLocalPath2 = ..\\..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection2 = plugins\\loading_screen\\xbox\\
+		SccProjectName3 = Perforce\u0020Project
+		SccLocalPath3 = .
+		SccProvider3 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SolutionUniqueID = {77662C94-C109-4068-BBD6-D2DF4C4C6A68}
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Design Debug = Design Debug
+		Design Release = Design Release
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BDD1EB07-EA28-4491-A090-723F2E8E96A1}.Debug.ActiveCfg = Debug|Xbox
+		{BDD1EB07-EA28-4491-A090-723F2E8E96A1}.Debug.Build.0 = Debug|Xbox
+		{BDD1EB07-EA28-4491-A090-723F2E8E96A1}.Design Debug.ActiveCfg = Design Debug|Xbox
+		{BDD1EB07-EA28-4491-A090-723F2E8E96A1}.Design Debug.Build.0 = Design Debug|Xbox
+		{BDD1EB07-EA28-4491-A090-723F2E8E96A1}.Design Release.ActiveCfg = Design Release|Xbox
+		{BDD1EB07-EA28-4491-A090-723F2E8E96A1}.Design Release.Build.0 = Design Release|Xbox
+		{BDD1EB07-EA28-4491-A090-723F2E8E96A1}.Release.ActiveCfg = Release|Xbox
+		{BDD1EB07-EA28-4491-A090-723F2E8E96A1}.Release.Build.0 = Release|Xbox
+		{732CEBAE-F174-4BB3-9600-18E2368DA965}.Debug.ActiveCfg = Debug|Xbox
+		{732CEBAE-F174-4BB3-9600-18E2368DA965}.Debug.Build.0 = Debug|Xbox
+		{732CEBAE-F174-4BB3-9600-18E2368DA965}.Design Debug.ActiveCfg = Design Debug|Xbox
+		{732CEBAE-F174-4BB3-9600-18E2368DA965}.Design Debug.Build.0 = Design Debug|Xbox
+		{732CEBAE-F174-4BB3-9600-18E2368DA965}.Design Release.ActiveCfg = Design Release|Xbox
+		{732CEBAE-F174-4BB3-9600-18E2368DA965}.Design Release.Build.0 = Design Release|Xbox
+		{732CEBAE-F174-4BB3-9600-18E2368DA965}.Release.ActiveCfg = Release|Xbox
+		{732CEBAE-F174-4BB3-9600-18E2368DA965}.Release.Build.0 = Release|Xbox
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}.Debug.ActiveCfg = Debug|Xbox
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}.Debug.Build.0 = Debug|Xbox
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}.Design Debug.ActiveCfg = Design Debug|Xbox
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}.Design Debug.Build.0 = Design Debug|Xbox
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}.Design Release.ActiveCfg = Design Release|Xbox
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}.Design Release.Build.0 = Design Release|Xbox
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}.Release.ActiveCfg = Release|Xbox
+		{3AAF1A7B-9D8B-4966-93E4-6CFDC4C66BE3}.Release.Build.0 = Release|Xbox
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

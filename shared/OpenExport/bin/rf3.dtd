@@ -1,0 +1,141 @@
+
+  <!ELEMENT RwRf3 (scene)>
+  <!ATTLIST RwRf3 version CDATA #REQUIRED 
+                  author CDATA #REQUIRED 
+                  time CDATA #REQUIRED
+                  date CDATA #REQUIRED> 
+
+  <!ELEMENT scene (param | shaderlist | group | asset)*>
+  <!ATTLIST scene name CDATA #IMPLIED>
+
+  <!ELEMENT param (#PCDATA | animation | param)*>
+  <!ATTLIST param name CDATA #REQUIRED 
+                  data CDATA #REQUIRED 
+                  type CDATA #IMPLIED
+                  autogen CDATA #IMPLIED
+                  inkname CDATA #IMPLIED>
+
+  <!ELEMENT animation (key)*>
+  <!ATTLIST animation channels CDATA #IMPLIED>
+
+  <!ELEMENT key (#PCDATA)>
+  <!ATTLIST key time CDATA #REQUIRED> 
+
+  <!ELEMENT group (param | patchmesh | polymesh | spline | camera | light | userdata | group)*>
+  <!ATTLIST group name ID #IMPLIED
+                  sourcename CDATA #IMPLIED
+                  ref IDREF #IMPLIED>
+
+  <!ELEMENT polymesh (param | vertexlist | primlist | morph | blendshape | skin | userdata)*>
+  <!ATTLIST polymesh name ID #IMPLIED
+                     sourcename CDATA #IMPLIED
+                     ref IDREF #IMPLIED>
+
+  <!ELEMENT patchmesh (param | vertexlist | primlist | morph | blendshape | skin | userdata)*>
+  <!ATTLIST patchmesh name ID #IMPLIED
+                      sourcename CDATA #IMPLIED
+                      ref IDREF #IMPLIED
+                      type CDATA #REQUIRED
+                      degree CDATA #REQUIRED>
+
+  <!ELEMENT spline (vertexlist | primlist | userdata)*>
+  <!ATTLIST spline name ID #IMPLIED
+                   sourcename CDATA #IMPLIED
+                   ref IDREF #IMPLIED>
+
+  <!ELEMENT camera (param | userdata)*>
+  <!ATTLIST camera name ID #IMPLIED
+                   sourcename CDATA #IMPLIED
+                   ref IDREF #IMPLIED
+                   projection (PERSPECTIVE | PARALLEL) #REQUIRED>
+
+  <!ELEMENT light (param | userdata)*>
+  <!ATTLIST light name ID #IMPLIED
+                  sourcename CDATA #IMPLIED
+                  ref IDREF #IMPLIED
+                  type (UNKNOWN | POINT | DIRECTIONAL | AMBIENT | SPOT) #REQUIRED>
+
+  <!ELEMENT hint (param)*>
+  <!ATTLIST hint name ID #IMPLIED
+                 sourcename CDATA #IMPLIED
+                 ref IDREF #IMPLIED>
+
+  <!ELEMENT vertexlist (format | v | userdata)*>
+  <!ATTLIST vertexlist count CDATA #REQUIRED>
+
+  <!ELEMENT format (param*)>
+
+  <!ELEMENT v (#PCDATA)>
+
+  <!ELEMENT primlist (p | triangulation | edges | userdata)*>
+  <!ATTLIST primlist count CDATA #REQUIRED
+                     shader CDATA #IMPLIED
+                     length CDATA #IMPLIED
+                     closed (0 | 1) #IMPLIED>
+
+  <!ELEMENT p (#PCDATA)>
+
+  <!ELEMENT edges (e*)>
+
+  <!ELEMENT e (#PCDATA)>
+
+  <!ELEMENT triangulation (t*)>
+
+  <!ELEMENT t (#PCDATA)>
+
+  <!ELEMENT userdata (param*)>
+
+  <!ELEMENT morph (target)*>
+  <!ATTLIST morph name ID #IMPLIED
+                  sourcename CDATA #IMPLIED
+                  ref IDREF #IMPLIED>
+
+  <!ELEMENT target (vertexlist)>
+  <!ATTLIST target name CDATA #IMPLIED
+                   time CDATA #IMPLIED>
+
+  <!ELEMENT blendshape (target | param)*>
+  <!ATTLIST blendshape name ID #IMPLIED
+                       sourcename CDATA #IMPLIED
+                       ref IDREF #IMPLIED>
+
+  <!ELEMENT skin (skeleton | weightlist | param)*>
+  <!ATTLIST skin name ID #IMPLIED
+                 sourcename CDATA #IMPLIED
+                 ref IDREF #IMPLIED>
+
+  <!ELEMENT skeleton (group)*>
+  <!ATTLIST skeleton bones CDATA #REQUIRED>
+
+  <!ELEMENT weightlist (w)*>
+  <!ATTLIST weightlist vertices CDATA #REQUIRED>
+
+  <!ELEMENT w (#PCDATA)>
+  <!ATTLIST w vertex CDATA #REQUIRED
+              bone CDATA #REQUIRED>
+
+  <!ELEMENT shaderlist (shader)*>
+
+  <!ELEMENT shader (shaderfunc | texture | userdata)*>
+  <!ATTLIST shader name ID #IMPLIED
+                   sourcename CDATA #IMPLIED
+                   ref IDREF #IMPLIED>
+
+  <!ELEMENT shaderfunc (param | channel)*>
+  <!ATTLIST shaderfunc type CDATA #REQUIRED>
+
+  <!ELEMENT channel (texture)*>
+  <!ATTLIST channel name CDATA #REQUIRED
+                    uvset CDATA #REQUIRED
+                    factor CDATA #IMPLIED>
+
+  <!ELEMENT texture (param | userdata)*>
+  <!ATTLIST texture name ID #IMPLIED
+                    sourcename CDATA #IMPLIED
+                    ref IDREF #IMPLIED>
+
+  <!ELEMENT asset (param | asset | selection)*>
+  <!ATTLIST asset name CDATA #REQUIRED 
+                  sourcename CDATA #IMPLIED>
+
+  <!ELEMENT selection (group)*>

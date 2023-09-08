@@ -1,0 +1,8 @@
+
+EXPORTS
+	InitRwPlugin						@1
+	RegisterCustomExporterObjects		@2
+	RegisterCustomCreatorObjects		@3
+
+SECTIONS
+	.data READ WRITE

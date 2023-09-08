@@ -1,0 +1,160 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="PlacementNew" dependencygraph="PNewDependencies"
+                             buildcommand="PNewCommand" alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' PlacementNew.rule - PlacementNew rule
+         '
+         ' This rule creates a stream file containing the placement new header information.
+         ' This header is appended to the level stream for use within the game framework.
+         ' The information contained within the header is a list of each behaviour type,
+         ' and an associated count of all occurrences of each behavior within the level.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub PNewDependencies (Task, Folder, PlatformFilter)
+            ' Specify a target for the clean process
+            Task.AddTarget PNHeaderFile (GetParam ("DESTDIR"), Folder)
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub PNewCommand (Task, Folder, PlatformFilter)
+            BuildLog "Building "
+
+            Dim Entity, PNHeaderBuffer, DestDirectory, EntityList(), EntityListCnt
+            Dim BehaviorText, FoundFlag, FoundCount
+
+            ' Reset the counter
+            EntityListCnt = 0
+
+            ' Run through all objects in the folder...
+            For Each Entity In GetChildEntities (Folder, PlatformFilter)
+
+               ' Check if we have a reference for this behavior type
+               FoundFlag = False
+
+               ' Loop through looking for this behavior
+               FoundCount = 0
+               Do While FoundCount < EntityListCnt
+                  If EntityList(0, FoundCount) = Entity.Behavior Then
+                     FoundFlag = True
+                     Exit Do
+                  End If
+                  FoundCount = FoundCount + 1
+               Loop
+
+               ' Test the foundflag for its state
+               If FoundFlag = True Then
+                  ' increment the counter
+                  EntityList(1, FoundCount) = EntityList(1, FoundCount) + 1
+               Else ' expand the array and set its count to 1!
+                  ' Increase the size of the array by one
+                  ReDim Preserve EntityList(2, EntityListCnt+1)
+                  ' Setup the new entity reference
+                  EntityList(0, EntityListCnt ) = Entity.Behavior
+                  EntityList(1, EntityListCnt ) = 1
+                  ' Increment the counter
+                  EntityListCnt = EntityListCnt + 1
+               End If
+            Next
+
+            ' Create the file buffer
+            DestDirectory = GetParam ("DESTDIR")
+            Set PNHeaderBuffer = RWSComms.CreateFileBuffer (PNHeaderFile(GetParam ("DESTDIR"), Folder), faCreate)
+
+            If EntityListCnt > 0 Then
+               ' Check the file has been created sucessfully
+               If Not PNHeaderBuffer Is Nothing Then
+                  PNHeaderBuffer.BigEndian = GetParam ("BIGENDIAN")
+                  PNHeaderBuffer.Unicode   = GetParam ("UNICODE")
+
+                  ' Send the header to the buffer
+                  AppendPlacementNew PNHeaderBuffer, EntityList, EntityListCnt
+
+               End If
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="PlacementNewSend" dependencygraph="PNewSendDependencies">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' PlacementNew.rule - PlacementNewSend rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub PNewSendDependencies (Task, Folder, PlatformFilter, Buffer)
+            Dim Entity, EntityList(), EntityListCnt
+            Dim BehaviorText, FoundFlag, FoundCount
+
+            ' Reset the counter
+            EntityListCnt = 0
+
+            ' Run through all objects in the folder...
+            For Each Entity In GetChildEntities (Folder, PlatformFilter)
+
+               ' Check if we have a reference for this behavior type
+               FoundFlag = False
+
+               ' Loop through looking for this behavior
+               FoundCount = 0
+               Do While FoundCount < EntityListCnt
+                  If EntityList(0, FoundCount) = Entity.Behavior Then
+                     FoundFlag = True
+                     Exit Do
+                  End If
+                  FoundCount = FoundCount + 1
+               Loop
+
+               ' Test the foundflag for its state
+               If FoundFlag = True Then
+                  ' increment the counter
+                  EntityList(1, FoundCount) = EntityList(1, FoundCount) + 1
+               Else ' expand the array and set its count to 1!
+                  ' Increase the size of the array by one
+                  ReDim Preserve EntityList(2, EntityListCnt+1)
+                  ' Setup the new entity reference
+                  EntityList(0, EntityListCnt ) = Entity.Behavior
+                  EntityList(1, EntityListCnt ) = 1
+                  ' Increment the counter
+                  EntityListCnt = EntityListCnt + 1
+               End If
+            Next
+
+            If EntityListCnt > 0 Then
+               ' Send the header to the buffer
+               AppendPlacementNew Buffer, EntityList, EntityListCnt
+            End If
+
+         End Sub
+
+      ]]></script>
+   </rule>
+
+</build>

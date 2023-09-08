@@ -1,0 +1,63 @@
+<job>
+<runtime>
+<description>
+Deletes RenderWare Studio game database files that contain an XML element named "Deleted".
+After running this, you need to manually remove the "server only" copies of these files from alienbrain.
+</description>
+<named name="project" type="string" required="false" helpstring="Path of RenderWare Studio project (.rwstudio) file"/>
+<named name="backup" type="string" required="false" helpstring="Copy files to this backup folder. If you specify /backup without a path, then files are backed up to a Deleted Backup folder under the project folder."/>
+</runtime>
+<script language="VBScript" src="shared.vbs"/>
+<script language="VBScript">
+Option Explicit
+
+Dim WshShell, strScriptBaseName, WshUserEnv, intAction, strHTAPath, argNamed, strBackupFolderPath, strProjectFilePath
+
+' Dummy procedure definition
+Sub LogHTML(strHTML)
+End Sub
+
+Set WshShell = WScript.CreateObject("WScript.Shell")
+
+strScriptBaseName = fso.GetBaseName(WScript.ScriptName)
+
+strProjectFilePath = ""
+strBackupFolderPath = ""
+
+intAction = conActionDelete
+
+With WScript.Arguments.Named
+	If .Exists("project") Then
+		strProjectFilePath = .Item("project")
+	End If
+	If .Exists("backup") Then
+		intAction = intAction + conActionBackup
+		strBackupFolderPath = .Item("backup")
+		If strBackupFolderPath = "" And .Exists("project") Then
+			strBackupFolderPath = GetDefaultBackupFolderPath(strProjectFilePath)
+		End If
+	End If
+End With
+
+If WScript.Interactive Then
+
+	' Build path of HTML application (HTA)
+	strHTAPath = fso.BuildPath(fso.GetParentFolderName(WScript.ScriptFullName), strScriptBaseName & ".hta")
+	
+	' Instead of passing arguments via command line, pass them via environment variables
+	Set WshUserEnv = WshShell.Environment("USER")
+	WshUserEnv(conEnvVarProject) = strProjectFilePath
+	WshUserEnv(conEnvVarBackup) = strBackupFolderPath
+	
+	WshShell.Run """" & strHTAPath & """ " & conCalledViaScript
+
+Else
+
+	' //B (batch) switch specified on command-line. Do not show user interface
+	
+	ProcessDeletedObjects strProjectFilePath, strBackupFolderPath, intAction
+
+End If
+
+</script>
+</job>

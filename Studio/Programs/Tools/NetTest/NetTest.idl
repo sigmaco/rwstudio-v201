@@ -1,0 +1,101 @@
+/*****************************************************************************
+ *
+ * File :     NetTest.idl
+ *
+ * Abstract:  Interface for the NetTest tool.
+ *
+ *****************************************************************************
+ *
+ * This file is a product of Criterion Software Ltd.
+ *
+ * This file is provided as is with no warranties of any kind and is
+ * provided without any obligation on Criterion Software Ltd. or
+ * Canon Inc. to assist in its use or modification.
+ *
+ * Criterion Software Ltd. will not, under any
+ * circumstances, be liable for any lost revenue or other damages arising
+ * from the use of this file.
+ *
+ * Copyright (c) 2004 Criterion Software Ltd.
+ * All Rights Reserved.
+ *
+ * RenderWare is a trademark of Canon Inc.
+ *
+ *****************************************************************************/
+ 
+// NetTest.idl : IDL source for NetTest.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (NetTest.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+   [
+      object,
+      uuid(9D7E74CC-C39F-447b-BF6A-199B699A9208),
+   ]
+   interface INetTestCtlUtils : IUnknown
+   {
+      HRESULT FireDisconnect ([in] long nErrorCode);
+      HRESULT FireMessage ([in] BSTR strMessage);
+      HRESULT GetPort ([out, retval] long* pPort);
+      HRESULT IsUnicode ([out, retval] VARIANT_BOOL* pbUnicode);
+      HRESULT IsBigEndian ([out, retval] VARIANT_BOOL* pbBigEndian);
+   };
+
+   [
+      object,
+      uuid(42A7F74F-EA8C-4B1D-BA64-AB2936276B36),
+      dual,
+      helpstring("INetTestCtl Interface"),
+      pointer_default(unique)
+   ]
+   interface INetTestCtl : IDispatch
+   {
+      [id(1), helpstring("Invoked to start listening to requests.")] 
+      HRESULT Start ([in] long nPort,
+                             [in, defaultvalue(0)] VARIANT_BOOL bUnicode,
+                             [in, defaultvalue(0)] VARIANT_BOOL bBigEndian);
+      [id(2), helpstring("Stop listening on the specified port.")] 
+      HRESULT Stop ();
+      [id(3), helpstring("Gets a stream of data from a given file")] 
+      HRESULT ShowStreamContents ([in] BSTR strStreamFile);
+   };
+
+[
+   uuid(FEEBE387-1F1C-47E1-90B1-A87FC967D103),
+   version(1.0),
+   helpstring("NetTest 1.0 Type Library")
+]
+library NETTESTLib
+{
+   importlib("stdole32.tlb");
+   importlib("stdole2.tlb");
+
+   [
+      uuid(3FAE65FF-AD54-41CB-B300-D84587972333),
+      helpstring("_INetTestCtlEvents Interface")
+   ]
+   dispinterface _INetTestCtlEvents
+   {
+      properties:
+      methods:
+      [id(1), helpstring("Event handler for a disconnection request")] 
+      HRESULT OnDisconnect([in] long nErrorCode);
+      [id(2), helpstring("Event handler for fired messages")] 
+      HRESULT OnMessage([in] BSTR strMessage);
+   };
+
+   [
+      uuid(D65104A9-2E62-442F-89F5-00C279888406),
+      helpstring("NetTestCtl Class")
+   ]
+   coclass NetTestCtl
+   {
+      [default] interface INetTestCtl;
+      [default, source] dispinterface _INetTestCtlEvents;
+      interface INetTestCtlUtils;
+   };
+};

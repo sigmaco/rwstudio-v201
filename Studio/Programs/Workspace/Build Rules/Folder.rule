@@ -1,0 +1,362 @@
+<?xml version="1.0" ?>
+<build version = "1.0">
+   <rule name="Folder" dependencygraph="FolderDependencies" buildcommand="FolderCommand">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Folder.rule - Folder rule
+         '
+         ' Creates a stream file containing all descendant objects with the correct 
+         ' platform using a recursive dependency
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FolderDependencies (Task, Folder, PlatformFilter, RecursionGuard)
+            Dim Entity, Asset, ChildFolder, AssetFolder
+            Task.AddDependency Folder.PersistentFilename
+
+            RecursionGuard.Add Folder
+
+            ' Only send this folder if it does not exist in the sent object list
+            For Each Asset In Folder.ChildAssets
+               If Not RecursionGuard.Exists (Asset) And PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                  Task.AddSubTask BuildRule (Asset, "Asset"), Asset, PlatformFilter, RecursionGuard
+               End If
+            Next
+
+            For Each AssetFolder In Folder.ChildAssetFolders
+               If Not RecursionGuard.Exists (AssetFolder) And PlatformFilter.IsValidPlatform (AssetFolder.Platform) Then
+                  Task.AddSubTask BuildRule (AssetFolder, "AssetFolder"), AssetFolder, PlatformFilter, RecursionGuard
+               End If
+            Next
+
+            For Each ChildFolder In Folder.ChildFolders
+               If Not RecursionGuard.Exists (ChildFolder) And PlatformFilter.IsValidPlatform (ChildFolder.Platform) Then
+                  Task.AddSubTask BuildRule (ChildFolder, "Folder"), ChildFolder, PlatformFilter, RecursionGuard
+               End If
+            Next
+
+            For Each Entity In Folder.ChildEntities
+               If Not RecursionGuard.Exists (Entity) And PlatformFilter.IsValidPlatform (Entity.Platform) Then
+                  Task.AddSubtask BuildRule (Entity, "Entity"), Entity, PlatformFilter, RecursionGuard
+               End If
+            Next
+
+            If Not GetParam ("SENTOBJECTS").Exists (Folder) Then
+               GetParam ("SENTOBJECTS").Add Folder
+            End If
+
+            Task.AddTarget StreamFile (GetParam ("DESTDIR"), Folder)
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FolderCommand (Task, Folder, PlatformFilter, RecursionGuard)
+            Dim FolderBuffer
+            Set FolderBuffer = RWSComms.CreateFileBuffer (StreamFile (GetParam ("DESTDIR"), Folder), faCreate)
+
+            If Not FolderBuffer Is Nothing Then
+               FolderBuffer.BigEndian = GetParam ("BIGENDIAN")
+               FolderBuffer.Unicode   = GetParam ("UNICODE")
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="FolderSend" dependencygraph="FolderSendDependencies">
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Folder.rule - FolderSend rule
+         '
+         ' Sends all descendant objects with the correct platform to the console using
+         ' a recursive dependency
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub FolderSendDependencies (Task, Folder, PlatformFilter, Buffer)
+            Dim SentObjects, ChildFolder, Entity, AssetFolder, Asset
+            Set SentObjects = GetParam ("SENTOBJECTS")
+            SentObjects.Add Folder
+
+            For Each ChildFolder In Folder.ChildFolders
+               If Not SentObjects.Exists (ChildFolder) Then
+                  If PlatformFilter.IsValidPlatform (ChildFolder.Platform) Then
+                     Task.AddSubtask "FolderSend", ChildFolder, PlatformFilter, Buffer
+                  End If
+               End If
+            Next
+
+            For Each AssetFolder In Folder.ChildAssetFolders
+               If Not SentObjects.Exists (AssetFolder) Then
+                  If PlatformFilter.IsValidPlatform (AssetFolder.Platform) Then
+                     Task.AddSubtask "AssetFolderSend", AssetFolder, PlatformFilter, Buffer
+                  End If
+               End If
+            Next
+
+            For Each Entity In Folder.ChildEntities
+               If Not SentObjects.Exists (Entity) Then
+                  If PlatformFilter.IsValidPlatform (Entity.Platform) Then
+                     Task.AddSubtask "EntitySend", Entity, PlatformFilter, Buffer
+                  End If
+               End If
+            Next
+
+            For Each Asset In Folder.ChildAssets
+               If Not SentObjects.Exists (Asset) Then
+                  If PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                     Task.AddSubtask "AssetSend", Asset, PlatformFilter, Buffer
+                  End If
+               End If
+            Next
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="FolderRemove" dependencygraph="FolderRemoveDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Folder.rule - FolderRemove rule
+         '
+         ' Removes all descendant objects from the console using
+         ' a recursive dependency
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub FolderRemoveDependencies (Task, Folder, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets)
+            Dim SentObjects, ActiveFolder, ChildFolder, AssetFolder, Asset, Entity
+            Set SentObjects = GetParam ("SENTOBJECTS")
+            Set ActiveFolder = RWSScript.Game.ActiveFolder
+            SentObjects.Remove Folder
+
+            ' Reverse the contents of the container so we can remove the objects in reverse order
+            Dim oChildFolders
+            Set oChildFolders = Folder.ChildFolders
+            oChildFolders.Reverse
+
+            For Each ChildFolder In oChildFolders
+               If SentObjects.Exists (ChildFolder) Then
+                  If bForceRemoveChildren Or Not IsInFolder (ActiveFolder, ChildFolder, PlatformFilter) Then
+                     Task.AddSubtask "FolderRemove", ChildFolder, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                  End If
+               End If
+            Next
+
+            Dim oChildEntities
+            Set oChildEntities = Folder.ChildEntities
+            oChildEntities.Reverse
+
+            For Each Entity In oChildEntities
+               If SentObjects.Exists (Entity) Then
+                  If bForceRemoveChildren Or Not IsInFolder (ActiveFolder, Entity, PlatformFilter) Then 
+                     Task.AddSubtask "EntityRemove", Entity, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                  End If
+               End If
+            Next
+
+            Dim oChildAssetFolders
+            Set oChildAssetFolders = Folder.ChildAssetFolders
+            oChildAssetFolders.Reverse
+
+            For Each AssetFolder In oChildAssetFolders
+               If SentObjects.Exists (AssetFolder) Then
+                  If bForceRemoveChildren Or Not IsInFolder (ActiveFolder, AssetFolder, PlatformFilter) Then
+                     Task.AddSubtask "AssetFolderRemove", AssetFolder, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                  End If
+               End If
+            Next
+
+            Dim oChildAssets
+            Set oChildAssets = Folder.ChildAssets
+            oChildAssets.Reverse
+
+            For Each Asset In oChildAssets
+               If SentObjects.Exists (Asset) Then
+                  If bForceRemoveChildren Or Not IsInFolder (ActiveFolder, Asset, PlatformFilter) Then
+                     Task.AddSubtask "AssetRemove", Asset, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                  End If
+               End If
+            Next
+
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="FolderResetEntities" dependencygraph="FolderResetEntitiesDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Folder.rule - FolderResetEntities rule
+         '
+         ' Reset all the entities in the folder. This means resending the
+         ' attribute packet, but not resending the assets.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub FolderResetEntitiesDependencies (Task, Folder, PlatformFilter, Buffer)
+            Dim Entity, ChildFolder, SentObjects
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            For Each ChildFolder In Folder.ChildFolders
+               If SentObjects.Exists (ChildFolder) Then
+                  If PlatformFilter.IsValidPlatform (ChildFolder.Platform) Then
+                     Task.AddSubtask "FolderResetEntities", ChildFolder, PlatformFilter, Buffer
+                  End If
+               End If
+            Next
+
+            For Each Entity In Folder.ChildEntities
+               If SentObjects.Exists (Entity) Then
+                  If PlatformFilter.IsValidPlatform (Entity.Platform) Then
+                     Task.AddSubtask "EntityReset", Entity, PlatformFilter, Buffer
+                  End If
+               End If
+            Next
+
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Folder_OnChange" dependencygraph="FolderOnChangeDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Folder.rule - Folder_OnChange rule
+         '
+         ' The folder has changed. We need to check whether the child entities
+         ' should be on the console
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub FolderOnChangeDependencies (Task, Folder, PlatformFilter, Buffer)
+            Dim SentObjects
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If IsInFolder (RWSScript.Game.ActiveFolder, Folder, PlatformFilter) Then
+               ' If the folder isn't on the target then send it
+               If Not SentObjects.Exists (Folder) Then
+                  Task.AddSubtask "FolderSend", Folder, PlatformFilter, Buffer
+               End If
+            Else
+               ' If the folder is on the console then remove it
+               If SentObjects.Exists (Folder) Then
+                  Task.AddSubtask "FolderRemove", Folder, PlatformFilter, Buffer, True, False
+               End If
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Folder_OnDelete" dependencygraph="FolderOnDeleteDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Folder.rule - Folder_OnDelete rule
+         '
+         ' The folder has been deleted. We need to check whether the child 
+         ' entities should be on the console
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub FolderOnDeleteDependencies (Task, Folder, PlatformFilter, Buffer)
+            If GetParam ("SENTOBJECTS").Exists (Folder) Then
+               Task.AddSubtask "FolderRemove", Folder, PlatformFilter, Buffer, True, False
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Folder_OnAdd" dependencygraph="FolderOnAddDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Folder.rule - Folder_OnAdd rule
+         '
+         ' An object has been added to the folder. Add the 
+         ' object to the folder on the console.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub FolderOnAddDependencies (Task, Folder, Child, PlatformFilter, Buffer)
+            Select Case Child.IDType
+            Case otEntity, otFolder, otAsset, otAssetFolder
+               Dim SentObjects
+               Set SentObjects = GetParam ("SENTOBJECTS")
+
+               If SentObjects.Exists (Folder) And Not SentObjects.Exists (Child) Then
+                  If PlatformFilter.IsValidPlatform (Child.Platform) Then
+                     Task.AddSubtask GetTypeString (Child) & "Send", Child, PlatformFilter, Buffer
+                  End If
+               End If
+
+            End Select
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Folder_OnRemove" dependencygraph="FolderOnRemoveDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Folder.rule - Folder_OnRemove rule
+         '
+         ' An object has been removed from a folder. Remove the 
+         ' object from the folder on the console.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub FolderOnRemoveDependencies (Task, Folder, Child, PlatformFilter, Buffer)
+            Select Case Child.IDType
+            Case otEntity, otFolder, otAsset, otAssetFolder
+               Dim SentObjects
+               Set SentObjects = GetParam ("SENTOBJECTS")
+
+               If SentObjects.Exists (Folder) And SentObjects.Exists (Child) Then
+                  If Not IsInFolder (RWSScript.Game.ActiveFolder, Child, PlatformFilter) Then
+                     Task.AddSubtask GetTypeString (Child) & "Remove", Child, PlatformFilter, Buffer, False, True
+                  End If
+               End If
+
+            End Select
+         End Sub
+
+      ]]></script>
+   </rule>
+
+</build>

@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Template version="3,7,0,3">
+	<DefaultTemplate>
+		<Output>
+			<param name="Export Legacy Files" type="bool" value="false" location="gamecube;generic;ps2;xbox" description="Controls whether to export to the legacy file formats: ANM, BSP, DFF, DMA or SPL files. The name of the exported files are based on the current scenes export path plus the asset name plus the extension for the asset type."/>
+			<param name="Export Legacy Files" type="bool" value="true" location="rwstudio" description="Controls whether to export to the legacy file formats: ANM, BSP, DFF, DMA or SPL files. The name of the exported files are based on the current scenes export path plus the asset name plus the extension for the asset type."/>
+			<param name="Export RF3 File" type="bool" value="false" location="gamecube;generic;ps2;xbox;rwstudio" description="The Export to RF3 option controls whether to export to the platform independent XML file format. The name and location of the exported file is based on the current scenes export path plus the project name plus the .rf3 extension.">
+				<param name="Split By Asset" type="bool" value="false" location="gamecube;generic;ps2;xbox;rwstudio" description="Controls whether to export a single RF3 file or an RF3 file per asset."/>
+				<param name="Texture Path Type" type="enum" value="0" location="gamecube;generic;ps2;xbox;rwstudio" enum="Absolute;Relative;Relative To Export Path" description="The RF3 Texture Path Method determines how to stream out the texture path. This option can be set to Relative, Absolute and Relative To Export Path. Set this option to Absolute to export the full path of the textures. When this option is set to Relative, all paths are streamed out relative to the given texture path specified by the Relative Texture Path option. Finally, when this option is set to Relative To Export Path, all textures paths are streamed out relative to the file export path.">
+					<param name="Relative Texture Path" type="string" value="" location="gamecube;generic;ps2;xbox;rwstudio" description="The relative texture path, which is only valid if the RF3 Texture Path Type is set to Relative."/>
+				</param>
+                <param name="Wave Path Type" type="enum" value="0" location="gamecube;generic;ps2;xbox;rwstudio" enum="Absolute;Relative;Relative To Export Path" description="The RF3 Wave Path Method determines how to stream out the wave path. This option can be set to Relative, Absolute and Relative To Export Path. Set this option to Absolute to export the full path of the waves. When this option is set to Relative, all paths are streamed out relative to the given wave path specified by the Relative Wave Path option. Finally, when this option is set to Relative To Export Path, all waves paths are streamed out relative to the file export path.">
+					<param name="Relative Wave Path" type="string" value="" location="gamecube;generic;ps2;xbox;rwstudio" description="The relative wave path, which is only valid if the RF3 Wave Path Type is set to Relative."/>
+				</param>
+				<param name="Real As Binary" type="bool" value="false" location="gamecube;generic;ps2;xbox;rwstudio" description="Determines whether to export all real numbers in  the file using a binary representation, or a text representation. (Use binary for greater accuracy)."/>
+			</param>
+			<param name="Export RWS File" type="bool" value="true" location="gamecube;generic;ps2;xbox" description="This option exports all data from all/selected RenderWare Assets into one .rws file. The name and location of the exported file are based on the current scenes export path plus the project name plus the .rws extension.">
+				<param name="Embed TOC" type="bool" value="false" location="gamecube;generic;ps2;xbox" description="The Embed Table of Contents option embeds separate chunks at the beginning of the .rws file and creates a table of contents listing all chunks. This option uses the RenderWare Graphics RtTOC toolkit."/>
+				<param name="Embed Group Chunks" type="bool" value="true" location="gamecube;generic;ps2;xbox" description="This options adds group chunks around the top level asset chunks exported to the stream."/>
+				<param name="Embed Texture Dictionary" type="bool" value="true" location="gamecube;generic;ps2;xbox" description="The Embed Texture Dictionary option controls whether we should export all used scene textures into a platform independent texture dictionary. The texture dictionary will be embedded at the start of the .rws file."/>
+				<param name="Embed Effect Dictionary" type="bool" value="true" location="gamecube;generic;ps2;xbox" description="The Embed Effect Dictionary option controls whether to generate an RpMatFX effect dictionary for all RenderWare shaders produced during export."/>
+				<param name="3ds max Embed Ambient Light" type="enum" value="0" location="gamecube;generic;ps2;xbox" enum="Smart;True;False" description="Embeds an ambient light in the RWS file. Only applies when exporting from 3ds max."/>
+				<param name="Embed Background Color" type="bool" value="false" location="gamecube;generic;ps2;xbox" born="3,7,0,0" description="Embeds a background color in the RWS file."/>
+                <param name="Pre Instance" type="bool" value="true" location="gamecube;ps2;xbox" description="The Pre Instance option controls whether to generate platform specific versions of the exported .rws file.">
+					<param name="Pre Instance Locally Only" type="bool" value="false" location="gamecube;ps2;xbox" description="Determines whether pre instancing should be performed locally only (on the local host machine) or also on remote console targets. When this option is set to TRUE, only texture dictionaries and rendering pipelines are pre instanced, but not the geometry data."/>
+				</param>
+			</param>
+			<param name="Export RWS File" type="bool" value="false" location="rwstudio" description="This option exports all data from all/selected RenderWare Assets into one .rws file. The name and location of the exported file are based on the current scenes export path plus the project name plus the .rws extension.">
+				<param name="Embed TOC" type="bool" value="false" location="rwstudio" description="The Embed Table of Contents option embeds separate chunks at the beginning of the .rws file and creates a table of contents listing all chunks. This option uses the RenderWare Graphics RtTOC toolkit."/>
+				<param name="Embed Group Chunks" type="bool" value="true" location="rwstudio" description="This options adds group chunks around the top level asset chunks exported to the stream."/>
+				<param name="Embed Texture Dictionary" type="bool" value="true" location="rwstudio" description="The Embed Texture Dictionary option controls whether we should export all used scene textures into a platform independent texture dictionary. The texture dictionary will be embedded at the start of the .rws file."/>
+				<param name="Embed Effect Dictionary" type="bool" value="true" location="rwstudio" description="The Embed Effect Dictionary option controls whether to generate an RpMatFX effect dictionary for all RenderWare shaders produced during export."/>
+				<param name="3ds max Embed Ambient Light" type="enum" value="0" location="rwstudio" enum="Smart;True;False" description="Embeds an ambient light in the RWS file. Only applies when exporting from 3ds max."/>
+                <param name="Embed Background Color" type="bool" value="false" location="rwstudio" born="3,7,0,0" description="Embeds a background color in the RWS file."/>
+				<param name="Pre Instance" type="bool" value="true" location="rwstudio" description="The Pre Instance option controls whether to generate platform specific versions of the exported .rws file.">
+					<param name="Pre Instance Locally Only" type="bool" value="false" location="rwstudio" description="Determines whether pre instancing should be performed locally only (on the local host machine) or also on remote console targets. When this option is set to TRUE, only texture dictionaries and rendering pipelines are pre instanced, but not the geometry data."/>
+				</param>
+			</param>
+            <param name="Abort On Error" type="bool" value="false" location="gamecube;generic;ps2;xbox;rwstudio" born="3,7,0,2" description="This option determines if the export will abort when an error occurs."/>
+		</Output>
+		<Common>
+			<param name="Asset Type" type="enum" value="2" location="anm;bsp;dff;spl;audiowavedict;audioeventdict;audiostream" enum="RtAnimAnimation;RpWorld;RpClump;RpSpline;RwaWaveDict;RwaEventDict;RwaStream" description="The type of asset to be exported."/>
+			<param name="Global Scale Factor" type="float" value="1.0" location="bsp;dff;spl" description="Global scale factor."/>
+			<param name="Global Scale Type" type="enum" value="0" location="bsp;dff;spl" enum="Scale By;Scale To" description="Scale by a multiplier or scale to an absolute value."/>
+			<param name="World Space" type="bool" value="true" location="dff" description="When enabled this option leaves animated hierarchies in world space rather than transforming them to a local space."/>
+			<param name="Convert Axis System" type="bool" value="true" location="dff" description="When enabled this option converts data from applications using differing axis systems to the RenderWare axis system by burning the transform into the exported geometry and transforms. When not enabled this conversion is done by using a transform on the root frame for world space exports and not at all for local space exports. This option currently only affects exports from 3ds max."/>
+			<param name="Offset X" type="float" value="0.0" location="bsp" description="The BSP Exporter X world offset."/>
+			<param name="Offset Y" type="float" value="0.0" location="bsp" description="The BSP Exporter Y world offset."/>
+			<param name="Offset Z" type="float" value="0.0" location="bsp" description="The BSP Exporter Z world offset."/>
+
+			<param name="Lighting Flag" type="bool" value="true" location="bsp;dff" description="This sets the lighting flag in the exported data. If this is set to FALSE the exported geometry is not lit by real time lights."/>
+			<param name="Vertex Normals" type="bool" value="true" location="bsp;dff" description="This option enables/disables the export of normal information."/>
+			<param name="Export Patches" type="bool" value="true" location="dff" description="This option exports Bezier Patches. If not enabled patches will be tessellated and exported as standard geometry and any skinning will not be exported in that case. If enabled, patches will be exported as RpPatchMesh objects."/>
+			<param name="Vertex Prelights" type="bool" value="true" location="bsp;dff" description="This option enables/disables the export of prelight information."/>
+
+			<param name="Max Polys Per World Sector" type="int" value="1024" location="bsp" description="This controls the maximum number of polygons in a world sector. Fewer polygons mean smaller sectors which cull more accurately but take longer to process. The default value of 1024 should be fine for most worlds."/>
+			<param name="Max Sector Size" type="float" value="1e+038" location="bsp" description="This option controls the maximum size of sectors in the world. This option should only be changed if your application has specific need to reduce the size of the generated world sectors."/>
+			<param name="Max Sector Overlap" type="float" value="25.0" location="bsp" description="This option controls the percentage of the size of the world sector that polygons are allowed to overlap when the world sector is split."/>
+
+			<param name="Partition Scheme" type="enum" value="0" location="bsp" enum="Fuzzy balanced;Quick;Closed Occluder;Maximum Extent;Open occluder;General occluder;Material boundary;Material count;Partition hints" description="This selects one of a number of partitioning schemes (and activates a set of associated parameters) that can build a scene in a variety of ways.">
+			    <param name="Max Plane Checks" type="int" value="20" location="bsp" description="This option controls the number of planes that are tested when trying to determine the best plane to divide a sector whilst generating data.  A higher figure generally generates fewer polygons or less splits.  Too high though, and it will start to falloff.  Basically it is a case of experimentation to find the optimum value."/>
+			    <param name="Max Materials Per Sector" type="int" value="10" location="bsp" description="When the BSP partition scheme is set to Material Count this option controls the maximum number of materials allowed per world sector."/>
+			    <param name="Stepup" type="float" value="1.2" location="bsp" description="When the BSP partition scheme is set to Open occluder or General occluder this option controls the stetup value used."/>
+			</param>
+
+			<param name="Weld Vertices" type="bool" value="false" location="bsp;dff" description="This option enables welding on vertex position and UV value. If two vertices differ by less than the threshold value then they are welded into a single vertex. If a vertex threshold and a UV threshold are both entered then the vertices are welded if either threshold is true.">
+				<param name="Position Weld Threshold" type="float" value="0.01" location="bsp;dff" description="The threshold value for vertex position."/>
+				<param name="UV Weld Threshold" type="float" value="0.00390625" location="bsp;dff" description="The threshold value for UV values (default = 0.5/128.0)."/>
+				<param name="Angular Weld Threshold" type="float" value="1.0" location="bsp;dff" description="The angular threshold value for vertex welding. If the normals of the vertices differ by more than this value, they are not welded."/>
+				<param name="PreLitColor Weld Threshold" type="float" value="0.0078125" location="bsp;dff" description="The pre-lit color threshold value for vertex welding. If the pre-lit colors of the vertices, in red, green or blue differ by more than this value, they are not welded (default = 2.0/256.0)."/>
+			</param>
+
+			<param name="Weld Polygons" type="bool" value="false" location="bsp" description="This runs a global conditioning algorithm over the world geometry. It will potentially optimize the geometry (i.e. reduce the numbers of polygons and vertices) but may not maintain the level of tessellation setup by the artist hence lighting may not be as required.">
+				<param name="Decimation Mode" type="enum" value="0.0" location="bsp" enum="Fewer Polygons;Smaller Polygons" description="The approach geometry conditioning takes regarding edge decimation - i.e. the algorithm adopted for polygon welding. Fewer Polygons: This minimizes the number of polygons, but some may be long and thin. Smaller Polygons: This tries to avoid long and thin polygons if possible, at the cost of less reduction in number."/>
+				<param name="Decimation Passes" type="int" value="5" location="bsp" description="Determines the number of passes through the geometry looking for opportunities to weld polygon pairs."/>
+				<param name="Convex Partitioning Mode" type="enum" value="1" location="bsp" enum="Fan;Tack;Ear" description="The approach geometry conditioning takes regarding retriangulation after polygon welding. Fan: This retriangulates in preparation for tri-fanning. Tack: This retriangulates in preparation for tri-stripping. Ear: This tries to maximize the size of the triangles most central to the primitive."/>
+				<param name="Polygon Area Threshold" type="float" value="0.0" location="bsp" description="The area below which a polygon is considered to have zero area and is therefore culled."/>
+				<param name="Polygon Normal Threshold" type="float" value="0.01" location="bsp" description="The normal threshold value for polygon welding. If the total of the weighted normal area of one polygon differs by more than this fraction to the other, they are not welded."/>
+				<param name="Polygon UV Threshold" type="float" value="0.01" location="bsp" description="The UV threshold value for polygon welding. If the total of the weighted UV area of one polygon differs by more than this fraction to the other, they are not welded. (This even accounts for mismatching two neighboring polygons which are the mirror of each other.)"/>
+				<param name="Polygon PreLitColor Threshold" type="float" value="0.01" location="bsp" description="The pre-lit color threshold value for polygon welding If the total of the weighted pre-lit color area of one polygon differ by more than this fraction to the other, they are not welded."/>
+								<param name="Texture Wrap Mode" type="bool" value="true" location="bsp" description="The BSP Exporter texture wrap option for UV realignment.">
+									<param name="Texture Wrap Mode UV0" type="bool" value="true" location="bsp" description="If TRUE, UV coordinates are aligned prior to welding. Applies to UV set 0."/>
+									<param name="Texture Wrap Mode UV1" type="bool" value="true" location="bsp" description="If TRUE, UV coordinates are aligned prior to welding. Applies to UV set 1."/>
+									<param name="Texture Wrap Mode UV2" type="bool" value="true" location="bsp" description="If TRUE, UV coordinates are aligned prior to welding. Applies to UV set 2."/>
+									<param name="Texture Wrap Mode UV3" type="bool" value="true" location="bsp" description="If TRUE, UV coordinates are aligned prior to welding. Applies to UV set 3."/>
+									<param name="Texture Wrap Mode UV4" type="bool" value="true" location="bsp" description="If TRUE, UV coordinates are aligned prior to welding. Applies to UV set 4."/>
+									<param name="Texture Wrap Mode UV5" type="bool" value="true" location="bsp" description="If TRUE, UV coordinates are aligned prior to welding. Applies to UV set 5."/>
+									<param name="Texture Wrap Mode UV6" type="bool" value="true" location="bsp" description="If TRUE, UV coordinates are aligned prior to welding. Applies to UV set 6."/>
+									<param name="Texture Wrap Mode UV7" type="bool" value="true" location="bsp" description="If TRUE, UV coordinates are aligned prior to welding. Applies to UV set 7."/>
+					</param>
+			</param>
+
+			<param name="Generate Collision" type="bool" value="true" location="bsp" description="This option tells the exporter to generate RenderWare Graphics collision data with the exported geometry. This increases the execution time of the export and increases the size of the exported file. It should only be used if you intend to use RenderWare Graphics collision testing in your application. "/>
+			<param name="Generate Collision" type="bool" value="false" location="dff" description="This option tells the exporter to generate RenderWare Graphics collision data with the exported geometry. This increases the execution time of the export and increases the size of the exported file. It should only be used if you intend to use RenderWare Graphics collision testing in your application. "/>
+			<param name="Process Lightmaps" type="enum" value="0" location="bsp;dff" enum="No Lightmaps;Generate RtLtMap UVs;Export Native Lightmaps" description="The type of lightmap support. No Lightmaps: No lightmap information is exported. Generate RtLtMap UVs: Export RtLtMap major axis information using an extra UV set. Lightmaps must be generated after export using an external tool. Export Native Lightmaps: Export 3ds max viewport extension lightmaps or Maya layered textures as RenderWare lightmaps.">
+                <param name="Default Lightmap Background" type="enum" value="0" location="bsp;dff" born="3,7,0,3" enum="Black and White Checkered;Solid Color" description="This option specifies the default background pattern of the generated lightmaps.">
+                    <param name="Default Lightmap Red" type="float" value="0.0" location="bsp;dff" description="The default red component of the solid color lightmap background pattern."/>
+                    <param name="Default Lightmap Green" type="float" value="0.0" location="bsp;dff" description="The default green component of the solid color lightmap background pattern."/>
+                    <param name="Default Lightmap Blue" type="float" value="0.0" location="bsp;dff" description="The default blue component of the solid color lightmap background pattern."/>
+                </param>
+				<param name="Default Lightmap Size" type="enum" value="5" location="bsp;dff" enum="16x16;32x32;64x64;128x128;256x256;512x512;1024x1024;2048x2048" description="This option specifies the size of the generated lightmaps"/>
+				<param name="Sampling Factor" type="float" value="2" location="bsp;dff" description="This option specifies the amount the converted lightmaps are scaled up by during the conversion process before being finally sampled back down to the correct size"/>
+				<param name="Resample Imported" type="bool" value="false" location="bsp;dff" description="If this option is set to true the native lightmaps will be resampled to the same size as the conversion lightmaps before they are converted to the exported lightmaps."/>
+				<param name="Use Greedy Rasterization" type="bool" value="false" location="bsp;dff" description="This option controls whether the edges of the lightmaps will be utilized."/>
+				<param name="Rejection Factor" type="float" value="0.0" location="bsp;dff" description="This option determines the minimum accepted area for a lightmaped region; any area smaller will be rejected."/>
+				<param name="Density Factor" type="float" value="1.0" location="bsp;dff" description="The density factor controls how densely the lightmapped surfaces are packed together in the exported lightmaps.  The lower this value is the more densely the lightmaps are packed and the lower the resolution of the lightmapped surfaces."/>
+				<param name="Dump Lightmaps" type="bool" value="false" location="bsp;dff" description="This option controls whether a png version of the generated lightmap(s) should be exported in the same directory as the export file."/>
+				<param name="Lightmap Prefix String" type="string" value="ltmp" location="bsp;dff" description="This option controls the prefix used to generate the name of lightmap textures created. Maximum string length is 4. Longer strings are truncated."/>
+
+			</param>
+			<param name="Export Toon Data" type="bool" value="false" location="bsp;dff" description="This option tells the exporter to process exported geometry for toon rendering.">
+				<param name="Generate Crease Edges from Smoothing Groups" type="bool" value="false" location="bsp;dff" description="This option tells the exporter to generate crease edges on smoothing group boundaries in the exported data."/>
+				<param name="Default Crease Ink Name" type="string" value="Default Crease Ink Name" location="bsp;dff" description="The default ink name used for crease edges in exported data."/>
+				<param name="Default Silhouette Ink Name" type="string" value="Default Silhouette Ink Name" location="bsp;dff" description="The default ink name used for silhouette edges in exported data."/>
+				<param name="Default Paint Name" type="string" value="Default Paint Name" location="bsp;dff" description="The default paint name used in exported toon data."/>
+			</param>
+			
+			<param name="Create RpHAnimHierarchy" type="bool" value="true" location="dff" description="Create the RpHAnimHierarchy, needed for animating the clump.">
+				<param name="RpHAnimHierarchy No Matrices" type="bool" value="false" location="dff" description="Controls whether the RpHAnimHierarchy created will have the rpHANIMHIERARCHYNOMATRICES flag set."/>
+				<param name="RpHAnimHierarchy Local Matrices" type="bool" value="false" location="dff" description="Controls whether the RpHAnimHierarchy created will have the rpHANIMHIERARCHYLOCALSPACEMATRICES flag set."/>
+			</param>
+
+			<param name="Traverse Order" type="enum" value="1" location="dff" enum="Unsorted;By Name;By Node Tag" description="Controls the order in which transforms are traversed."/>
+
+			<param name="Keyframe Compression" type="enum" value="0" location="anm" enum="None;Float Compression" description="Controls whether the animation generated will be compressed."/>
+
+			<param name="Optimize Hierarchy" type="bool" value="true" location="dff" description="This option will tell the exporter to try and remove unused nodes from the exported hierarchy. This is useful if you have modeled a hierarchy with non-rendering nodes such as locators and groups that you do not need in the final clump. Animation on any optimized nodes will be passed onto the node&apos;s children."/>
+
+			<param name="Export Skinning" type="bool" value="true" location="dff" description="Controls whether the DFF exporter should export RpSkin animation for any skin modifiers found in the scene.">
+				<param name="Max Skin Weights Per Vertex" type="int" value="4" location="dff" description="The maximum number of skin weights to export per vertex. Any additional weights will be ignored."/>
+			</param>
+			
+			<param name="Export RpDMorph" type="bool" value="true" location="dff" description="Controls whether the DFF exporter creates RpDMorph targets for any blend shape geometry animation found."/>
+			
+			<param name="Export RpMorph Targets" type="bool" value="true" location="dff" description="Controls whether the DFF exporter creates RpMorph targets for any geometry animation found.">
+				<param name="RpMorph Sample" type="bool" value="false" location="dff" description="Controls whether the DFF exporter should analyse the scene to decide where to create keyframes or whether to use a specificed frame interval.">
+					<param name="RpMorph Sample Interval" type="int" value="1" location="dff" description="The DFF Exporter morph animation interval"/>
+				</param>
+			</param>
+			<param name="Export UV Animation" type="bool" value="true" location="bsp;dff" description="Export texture UV animation."/>		
+			<param name="Export User Data" type="bool" value="true" location="bsp;dff" description="In 3ds max, this option allows text strings defined in an object&apos;s User Defined Properties dialog to be exported for use in an application which uses the RpUserData plugin. In Maya, this option exports Blind Data on vertices, faces and objects."/>
+			<param name="Export Object Name" type="bool" value="false" location="bsp;dff" born="3,6,0,0" description="Export object name as user data">
+				<param name="User Data Entry Name" type="string" value="name" location="bsp;dff" description="The name of the user data entry, to use with the Export Object Name option"/>
+				<param name="Export RpGeometry Name" type="bool" value="true" location="dff" description="Export object name as user data for RpGeometrys"/>
+				<param name="Export RwFrame Name" type="bool" value="true" location="dff" description="Export object name as user data for RwFrames"/>
+				<param name="Export RwCamera Name" type="bool" value="true" location="dff" description="Export object name as user data for RwCameras"/>
+				<param name="Export RpLight Name" type="bool" value="true" location="dff" description="Export object name as user data for RpLights"/>
+				<param name="Export RpMaterial Name" type="bool" value="true" location="bsp;dff" description="Export object name as user data for RpMaterials"/>
+				<param name="Export RwTexture Name" type="bool" value="true" location="bsp;dff" description="Export object name as user data for RwTextures"/>
+			</param>
+			<param name="Texture Name Case" type="enum" value="0" location="bsp;dff" enum="Unchanged;All Lower;All Upper" description="This options allow you to preserve the existing case of textures or convert the names used for textures (and hence bitmap filenames etc.) into all upper or lower case (in case your platform has restrictions)."/>			
+			<param name="3ds max Do not add extra interpolation keys" type="bool" value="false" location="anm" retired="3,6,0,1" description="Do not insert extra keyframes to try and map 3ds max TCB and Bezier controllers to the RenderWare linear interpolation scheme."/>
+			<param name="3ds max Export Two Sided Materials" type="bool" value="false" location="bsp;dff" description="Duplicate polygons to maintain 2-sided material rendering. Only used when exporting from 3ds max."/>
+			<param name="3ds max Filter Biped Keys" type="bool" value="false" location="anm" description="The DFF Exporter filter top level biped keys option. Only used when exporting from 3ds max."/>
+			<param name="3ds max User Defined Properties" type="bool" value="false" location="dff" description="When enabled the exporter will export user defined object properties as RpUserData on frames. This option is only used when exporting from 3ds max."/>
+
+			<param name="Spline Vertex Type" type="enum" value="0" location="spl" enum="Edit;Control" description="Controls the spline exported, Edit points or Control points."/>
+
+			<param name="Legacy Allocate Prelight Space" type="bool" value="false" location="dff" description="This option does not prelight the geometry. Instead it allocates space within the exported geometry for lighting values. The prelight values are initialized to white. This option is for legacy purposes only. It will be removed in a future release."/>
+
+            <!-- audio event dictionary asset template parameters -->
+            <param name="Mute" type="bool" value="false" location="audioeventdict" born="3,7,0,0" description="This option will mute all events within this event dictionary. This option is not currently used."/>
+            <param name="Gain" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option will set the global gain to be applied to each event within the event dictionary. This option is not currently used"/>
+            <param name="Pitch" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option will set the global pitch to be applied to each event within the event dictionary. This option is not currently used"/>
+            <param name="Gain Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option will enable the global gain to be applied to each event within the event dictionary. This option is not currently used"/>
+            <param name="Pitch Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option will enable the global pitch to be applied to each event within the event dictionary. This option is not currently used"/>
+
+            <!-- audio wave dictionary asset template parameters -->
+            <param name="Embed Wave Dictionary Names" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="This option will embed the wave and wave dictionary names during export."/>
+            <param name="Embed Wave Dictionary UUIDs" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="This option will embed the wave and wave dictionary uuids during export."/>
+
+            <!-- audio stream asset template parameters -->
+            <param name="Embed Stream Names" type="bool" value="true" location="audiostream" born="3,7,0,0" description="This option will embed the stream names during export."/>
+            <param name="Embed Stream UUIDs" type="bool" value="true" location="audiostream" born="3,7,0,0" description="This option will embed the stream uuids during export."/>
+
+            <!-- per asset type instancing flag -->
+            <param name="Can Pre Instance" type="bool" value="false" location="audiostream;audiowavedict;audioeventdict" born="3,7,0,1" description="This option will determine if the asset can be instanced or not."/>
+
+		</Common>
+		<Platform>
+			<Generic>
+				<param name="Enable" type="bool" value="true" location="generic;rwstudio" description="Enables specific platfom."/>
+
+				<param name="Tri-strip Meshes" type="bool" value="true" location="generic;rwstudio" description="The tri strip mesh option.">
+					<param name="Tri-strip Method" type="enum" value="2" location="generic;rwstudio" enum=" PreProccess;PreProccess ignore Winding;Tunnel;Tunnel ignore winding;Cache aware" description="The tri strip method."/>
+					<param name="Tunnel Tri-strip Factor" type="int" value="50" location="generic;rwstudio" description="The Tunnel tri strip quality (0-100)."/>
+				</param>
+
+				<param name="Limit UVs" type="enum" value="0" location="generic;rwstudio" enum="No Limit;UV Limit;Texel Limit" description="The Limit UVs option.">
+					<param name="Min Value" type="float" value="-2048" location="generic;rwstudio" description="The Limit UVs minimum range value."/>
+					<param name="Max Value" type="float" value="2047" location="generic;rwstudio" description="The Limit UVs maximum range value."/>
+				</param>
+
+				<param name="Enable Skin Splitting" type="bool" value="true" location="generic;rwstudio" description="Enables splitting of skined meshes if the number of bones is greater then the limit.">
+					<param name="Bone Limit" type="int" value="256" location="generic;rwstudio" description="Maximum number of bones per skinned mesh before mesh is split."/>
+				</param>
+
+				<param name="Generate Darkmaps" type="bool" value="false" location="generic;rwstudio" born="3,6,0,0" description="Lightmaps on the Playstation 2 are implemented differently than the other platforms and are required to be inverted to Darkmaps. This option should always be set to true for Playstation 2 exports">
+					<param name="Process Base DarkMap Texture" type="bool" value="false" location="generic;rwstudio" description="Darkmaps for the Playstation 2 require the luminance value to be stored inside the alpha channel of the base textures. This option should always be set to true for Playstation 2 exports"/>
+				</param>
+
+				<param name="Lightmap Mipmapping" type="bool" value="true" location="bsp;dff" born="3,6,0,0" description="Controls whether the lightmaps generated during the export process will be mip mapped or not."/>
+				<param name="Lightmap Color Depth" type="enum" value="1" location="bsp;dff" born="3,6,0,0" enum="8888;888;PAL8;PAL4" description="Controls the color depth of lightmaps generated during the export process."/>
+
+                <!-- audio wave dictionary asset template parameters -->
+                <param name="Default Wave 3D" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="The default 3D setting for the wave"/>
+                <param name="Default Wave Definition Name" type="enum" value="0" enum="DXAudioWave;SPU2Wave;XboxWave;AXWave" location="audiowavedict" born="3,7,0,0" description="The default wave definition type. At the moment this can only be set to DXAudioWave."/>
+                <param name="Override Source Format" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="This override will force the source format of all waves contained in this asset to be overridden with the source format given in this asset template."/>                
+                <param name="Default Source Data Type" type="enum" value="3" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiowavedict" born="3,7,0,0" description="The default source format data type."/>
+                <param name="Default Source Bit Depth" type="int" value="16" location="audiowavedict" born="3,7,0,0" description="The default source format bit depth."/>
+                <param name="Default Source Sample Rate" type="real" value="48000" location="audiowavedict" born="3,7,0,0" description="The default source format sample rate."/>
+                <param name="Default Source Num Channels" type="int" value="1" location="audiowavedict" born="3,7,0,0" description="The default number of channels for the source format."/>
+                <param name="Default Source Frame Size" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default frame size for the source format. This option is not currently used."/>
+                <param name="Default Source Samples Per Frame" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Source Signed" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="The default source signed setting for the wave format."/>
+                <param name="Override Target Format" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="This override will force the target format of all waves contained in this asset to be overridden with the target format given in this asset template."/>
+                <param name="Default Target Data Type" type="enum" value="3" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiowavedict" born="3,7,0,0" description="The default target format data type."/>
+                <param name="Default Target Bit Depth" type="int" value="16" location="audiowavedict" born="3,7,0,0" description="The default target format bit depth."/>
+                <param name="Default Target Sample Rate" type="real" value="48000" location="audiowavedict" born="3,7,0,0" description="The default target format sample rate."/>
+                <param name="Default Target Num Channels" type="int" value="1" location="audiowavedict" born="3,7,0,0" description="The default number of channels for the target format."/>
+                <param name="Default Target Frame Size" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default frame size for the target format. This option is not currently used."/>
+                <param name="Default Target Samples Per Frame" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Target Signed" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="The default target signed setting for the wave format."/>
+
+                <!-- audio event dictionary asset template paramaters -->
+                <param name="Default Mute" type="bool" value="false" location="audioeventdict" born="3,7,0,0" description="This option is the default mute setting for an audio events. This option is not currently supported."/>
+                <param name="Default Gain Range" type="real" value="0.0" location="audioeventdict" born="3,7,0,0" description="This option is the default gain range that will be used by an event."/>
+                <param name="Default Gain Offset" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option is the default gain offset that will be used by an event."/>
+                <param name="Default Gain Variation Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option is the default setting for enabling the gain variation that will be used by an event.  This option is not currently used"/>
+                <param name="Default Pitch Range" type="real" value="0.0" location="audioeventdict" born="3,7,0,0" description="This option is the default pitch range that will be used by an event."/>
+                <param name="Default Pitch Offset" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option is the default pitch offset that will be used by an event."/>
+                <param name="Default Pitch Variation Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option is the default setting for enabling the pitch variation that will be used by an event.  This option is not currently used"/>
+
+                <!-- audio stream asset template paramaters -->
+                <param name="Media Sector Size" type="int" value="2048" location="audiostream" born="3,7,0,0" description="This option is the media sector size that an audio stream will use."/>
+                <param name="Default Stream Packet Size" type="int" value="8192" location="audiostream" born="3,7,0,0" description="This option is the default packet size that an audio stream will use."/>
+
+                <param name="Override Target Format" type="bool" value="false" location="audiostream" born="3,7,0,0" description="This override will force the target format of all sub streams contained in this asset to be overridden with the target format given in this asset template."/>
+                <param name="Default Target Data Type" type="enum" value="3" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiostream" born="3,7,0,0" description="The default target format data type."/>
+                <param name="Default Target Bit Depth" type="int" value="16" location="audiostream" born="3,7,0,0" description="The default target format bit depth."/>
+                <param name="Default Target Sample Rate" type="real" value="48000" location="audiostream" born="3,7,0,0" description="The default target format sample rate."/>
+                <param name="Default Target Num Channels" type="int" value="1" location="audiostream" born="3,7,0,0" description="The default number of channels for the target format."/>
+                <param name="Default Target Frame Size" type="int" value="0" location="audiostream" born="3,7,0,0" description="The default frame size for the target format. This option is not currently used."/>
+                <param name="Default Target Samples Per Frame" type="int" value="0" location="audiostream" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Target Signed" type="bool" value="true" location="audiostream" born="3,7,0,0" description="The default target signed setting for the wave format."/>
+
+				<param name="ADC Processing" type="enum" value="0" location="bsp;dff" born="3,6,0,1" enum="Off;On;On ignore winding" description="This option controls whether RpGeometry and RpWorldSectors exported are processed to support ADC flags. This should be set when a pipe override has been used that enables an ADC render pipeline. Whether or not the the ADC processing should ignore winding order should be set to match the tristripper in use."/>
+
+			</Generic>
+			<PS2>
+				<param name="Enable" type="bool" value="true" location="ps2" description="Enables specific platfom."/>
+
+				<param name="Tri-strip Meshes" type="bool" value="true" location="ps2" description="The tri strip mesh option.">
+					<param name="Tri-strip Method" type="enum" value="2" location="ps2" enum=" PreProccess;PreProccess ignore Winding;Tunnel;Tunnel ignore winding;Cache aware" description="The tri strip method."/>
+					<param name="Tunnel Tri-strip Factor" type="int" value="50" location="ps2" description="The Tunnel tri strip quality (0-100)."/>
+				</param>
+
+				<param name="Limit UVs" type="enum" value="2" location="ps2" enum="No Limit;UV Limit;Texel Limit" description="The Limit UVs option.">
+					<param name="Min Value" type="float" value="-2048" location="ps2" description="The Limit UVs minimum range value."/>
+					<param name="Max Value" type="float" value="2047" location="ps2" description="The Limit UVs maximum range value."/>
+				</param>
+
+				<param name="Enable Skin Splitting" type="bool" value="true" location="ps2" description="Enables splitting of skined meshes if number of bones greater then the limit.">
+					<param name="Bone Limit" type="int" value="64" location="ps2" description="Maximum number of bones per skinned mesh before mesh is split."/>
+				</param>
+
+				<param name="Generate Darkmaps" type="bool" value="true" location="ps2" born="3,6,0,0" description="Lightmaps on the Playstation 2 are implemented differently than the other platforms and are required to be inverted to Darkmaps. This option should always be set to true for Playstation 2 exports">
+					<param name="Process Base DarkMap Texture" type="bool" value="true" location="ps2" description="Darkmaps for the Playstation 2 require the luminance value to be stored inside the alpha channel of the base textures. This option should always be set to true for Playstation 2 exports"/>
+				</param>
+
+				<param name="Lightmap Mipmapping" type="bool" value="false" location="bsp;dff" born="3,6,0,0" description="Controls whether the lightmaps generated during the export process will be mip mapped or not."/>
+				<param name="Lightmap Color Depth" type="enum" value="2" location="bsp;dff" born="3,6,0,0" enum="8888;888;PAL8;PAL4" description="Controls the color depth of lightmaps generated during the export process."/>
+
+				<param name="rwPDS_G3_Generic_MatPipeID" type="enumstring" value="rwPDS_G3_Generic_MatPipeID" location="bsp;dff" enum="rwPDS_G3_Generic_MatPipeID;rwPDS_G3x_APL_MatPipeID;rwPDS_G3x_A4D_MatPipeID;rwPDS_G3x_ADL_MatPipeID;rwPDS_G3xd_APL_MatPipeID;rwPDS_G3xd_A4D_MatPipeID;rwPDS_G3xd_ADL_MatPipeID" description="Override the generic material pipe."/>
+				<param name="rwPDS_G3_Gem_MatPipeID" type="enumstring" value="rwPDS_G3_Gem_MatPipeID" location="bsp;dff" enum="rwPDS_G3_Gem_MatPipeID;rwPDS_G3x_APLGem_MatPipeID;rwPDS_G3x_A4DGem_MatPipeID;rwPDS_G3x_ADLGem_MatPipeID;rwPDS_G3xd_APLGem_MatPipeID;rwPDS_G3xd_A4DGem_MatPipeID;rwPDS_G3xd_ADLGem_MatPipeID" description="Override the environment material pipe."/>
+				<param name="rwPDS_G3_Dup_MatPipeID" type="enumstring" value="rwPDS_G3_Dup_MatPipeID" location="bsp;dff" enum="rwPDS_G3_Dup_MatPipeID;rwPDS_G3x_APLDup_MatPipeID;rwPDS_G3x_A4DDup_MatPipeID;rwPDS_G3x_ADLDup_MatPipeID;rwPDS_G3xd_APLDup_MatPipeID;rwPDS_G3xd_A4DDup_MatPipeID;rwPDS_G3xd_ADLDup_MatPipeID" description="Override the dual pass material pipe."/>
+				<param name="rwPDS_G3_Uva_MatPipeID" type="enumstring" value="rwPDS_G3_Uva_MatPipeID" location="bsp;dff" enum="rwPDS_G3_Uva_MatPipeID;rwPDS_G3x_APLUva_MatPipeID;rwPDS_G3x_A4DUva_MatPipeID;rwPDS_G3x_ADLUva_MatPipeID;rwPDS_G3xd_APLUva_MatPipeID;rwPDS_G3xd_A4DUva_MatPipeID;rwPDS_G3xd_ADLUva_MatPipeID" description="Override the UV animation material pipe."/>
+				<param name="rwPDS_G3_DupUva_MatPipeID" type="enumstring" value="rwPDS_G3_DupUva_MatPipeID" location="bsp;dff" enum="rwPDS_G3_DupUva_MatPipeID;rwPDS_G3x_APLDupUva_MatPipeID;rwPDS_G3x_A4DDupUva_MatPipeID;rwPDS_G3x_ADLDupUva_MatPipeID;rwPDS_G3xd_APLDupUva_MatPipeID;rwPDS_G3xd_A4DDupUva_MatPipeID;rwPDS_G3xd_ADLDupUva_MatPipeID" description="Override the dual pass UV animation material pipe."/>
+				<param name="rwPDS_G3_Skin_MatPipeID" type="enumstring" value="rwPDS_G3_Skin_MatPipeID" location="bsp;dff" enum="rwPDS_G3_Skin_MatPipeID;rwPDS_G3x_APLSkin_MatPipeID;rwPDS_G3x_A4DSkin_MatPipeID;rwPDS_G3x_ADLSkin_MatPipeID;rwPDS_G3xd_APLSkin_MatPipeID;rwPDS_G3xd_A4DSkin_MatPipeID;rwPDS_G3xd_ADLSkin_MatPipeID" description="Override the generic skin material pipe."/>
+				<param name="rwPDS_G3_SkinGem_MatPipeID" type="enumstring" value="rwPDS_G3_SkinGem_MatPipeID" location="bsp;dff" enum="rwPDS_G3_SkinGem_MatPipeID;rwPDS_G3x_APLSkinGem_MatPipeID;rwPDS_G3x_A4DSkinGem_MatPipeID;rwPDS_G3x_ADLSkinGem_MatPipeID;rwPDS_G3xd_APLSkinGem_MatPipeID;rwPDS_G3xd_A4DSkinGem_MatPipeID;rwPDS_G3xd_ADLSkinGem_MatPipeID" description="Override the skin environment material pipe."/>
+				<param name="rwPDS_G3_SkinDup_MatPipeID" type="enumstring" value="rwPDS_G3_SkinDup_MatPipeID" location="bsp;dff" enum="rwPDS_G3_SkinDup_MatPipeID;rwPDS_G3x_APLSkinDup_MatPipeID;rwPDS_G3x_A4DSkinDup_MatPipeID;rwPDS_G3x_ADLSkinDup_MatPipeID;rwPDS_G3xd_APLSkinDup_MatPipeID;rwPDS_G3xd_A4DSkinDup_MatPipeID;rwPDS_G3xd_ADLSkinDup_MatPipeID" description="Override the skin dual pass material pipe."/>
+				<param name="rwPDS_G3_SkinUva_MatPipeID" type="enumstring" value="rwPDS_G3_SkinUva_MatPipeID" location="bsp;dff" enum="rwPDS_G3_SkinUva_MatPipeID;rwPDS_G3x_APLSkinUva_MatPipeID;rwPDS_G3x_A4DSkinUva_MatPipeID;rwPDS_G3x_ADLSkinUva_MatPipeID;rwPDS_G3xd_APLSkinUva_MatPipeID;rwPDS_G3xd_A4DSkinUva_MatPipeID;rwPDS_G3xd_ADLSkinUva_MatPipeID" description="Override the skin UV animation material pipe."/>
+				<param name="rwPDS_G3_SkinDupUva_MatPipeID" type="enumstring" value="rwPDS_G3_SkinDupUva_MatPipeID" location="bsp;dff" enum="rwPDS_G3_SkinDupUva_MatPipeID;rwPDS_G3x_APLSkDupUva_MatPipeID;rwPDS_G3x_A4DSkDupUva_MatPipeID;rwPDS_G3x_ADLSkDupUva_MatPipeID;rwPDS_G3xd_APLSkDupUva_MatPipeID;rwPDS_G3xd_A4DSkDupUva_MatPipeID;rwPDS_G3xd_ADLSkDupUva_MatPipeID" description="Override the skin UV dual pass animation material pipe."/>
+
+                <!-- audio wave dictionary asset template parameters -->
+                <param name="Default Wave 3D" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="The default 3D setting for the wave"/>
+                <param name="Default Wave Definition Name" type="enum" value="1" enum="DXAudioWave;SPU2Wave;XboxWave;AXWave" location="audiowavedict" born="3,7,0,0" description="The default wave definition type. At the moment this can only be set to SPU2Wave."/>
+                <param name="Override Source Format" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="This override will force the source format of all waves contained in this asset to be overridden with the source format given in this asset template."/>
+                <param name="Default Source Data Type" type="enum" value="2" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiowavedict" born="3,7,0,0" description="The default source format data type."/>
+                <param name="Default Source Bit Depth" type="int" value="4" location="audiowavedict" born="3,7,0,0" description="The default source format bit depth."/>
+                <param name="Default Source Sample Rate" type="real" value="48000" location="audiowavedict" born="3,7,0,0" description="The default source format sample rate."/>
+                <param name="Default Source Num Channels" type="int" value="1" location="audiowavedict" born="3,7,0,0" description="The default number of channels for the source format."/>
+                <param name="Default Source Frame Size" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default frame size for the source format. This option is not currently used."/>
+                <param name="Default Source Samples Per Frame" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Source Signed" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="The default source signed setting for the wave format."/>
+                <param name="Override Target Format" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="This override will force the target format of all waves contained in this asset to be overridden with the target format given in this asset template."/>
+                <param name="Default Target Data Type" type="enum" value="2" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiowavedict" born="3,7,0,0" description="The default target format data type."/>
+                <param name="Default Target Bit Depth" type="int" value="4" location="audiowavedict" born="3,7,0,0" description="The default target format bit depth."/>
+                <param name="Default Target Sample Rate" type="real" value="48000" location="audiowavedict" born="3,7,0,0" description="The default target format sample rate."/>
+                <param name="Default Target Num Channels" type="int" value="1" location="audiowavedict" born="3,7,0,0" description="The default number of channels for the target format."/>
+                <param name="Default Target Frame Size" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default frame size for the target format. This option is not currently used."/>
+                <param name="Default Target Samples Per Frame" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Target Signed" type="bool" value="true" location="audiowavedict" born="3,7,0,0"/>
+
+                <!-- audio event dictionary asset template paramaters -->
+                <param name="Default Mute" type="bool" value="false" location="audioeventdict" born="3,7,0,0" description="This option is the default mute setting for an audio events. This option is not currently supported."/>
+                <param name="Default Gain Range" type="real" value="0.0" location="audioeventdict" born="3,7,0,0" description="This option is the default gain range that will be used by an event."/>
+                <param name="Default Gain Offset" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option is the default gain offset that will be used by an event."/>
+                <param name="Default Gain Variation Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option is the default setting for enabling the gain variation that will be used by an event.  This option is not currently used"/>
+                <param name="Default Pitch Range" type="real" value="0.0" location="audioeventdict" born="3,7,0,0" description="This option is the default pitch range that will be used by an event."/>
+                <param name="Default Pitch Offset" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option is the default pitch offset that will be used by an event."/>
+                <param name="Default Pitch Variation Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option is the default setting for enabling the pitch variation that will be used by an event.  This option is not currently used"/>
+
+                <!-- audio stream asset template paramaters -->
+                <param name="Media Sector Size" type="int" value="2048" location="audiostream" born="3,7,0,0" description="This option is the media sector size that an audio stream will use."/>
+                <param name="Default Stream Packet Size" type="int" value="32768" location="audiostream" born="3,7,0,0" description="This option is the default packet size that an audio stream will use."/>
+
+                <param name="Override Target Format" type="bool" value="false" location="audiostream" born="3,7,0,0" description="This override will force the target format of all sub streams contained in this asset to be overridden with the target format given in this asset template."/>
+                <param name="Default Target Data Type" type="enum" value="2" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiostream" born="3,7,0,0" description="The default target format data type."/>
+                <param name="Default Target Bit Depth" type="int" value="4" location="audiostream" born="3,7,0,0" description="The default target format bit depth."/>
+                <param name="Default Target Sample Rate" type="real" value="48000" location="audiostream" born="3,7,0,0" description="The default target format sample rate."/>
+                <param name="Default Target Num Channels" type="int" value="1" location="audiostream" born="3,7,0,0" description="The default number of channels for the target format."/>
+                <param name="Default Target Frame Size" type="int" value="0" location="audiostream" born="3,7,0,0" description="The default frame size for the target format. This option is not currently used."/>
+                <param name="Default Target Samples Per Frame" type="int" value="0" location="audiostream" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Target Signed" type="bool" value="true" location="audiostream" born="3,7,0,0" description="The default target signed setting for the wave format."/>
+
+				<param name="ADC Processing" type="enum" value="0" location="bsp;dff" born="3,6,0,1" enum="Off;On;On ignore winding" description="This option controls whether RpGeometry and RpWorldSectors exported are processed to support ADC flags. This should be set when a pipe override has been used that enables an ADC render pipeline. Whether or not the the ADC processing should ignore winding order should be set to match the tristripper in use."/>
+
+			</PS2>
+			<Xbox>
+				<param name="Enable" type="bool" value="true" location="xbox" description="Enables specific platfom."/>
+
+				<param name="Tri-strip Meshes" type="bool" value="true" location="xbox" description="The tri strip mesh option.">
+					<param name="Tri-strip Method" type="enum" value="0" location="xbox" enum=" PreProccess;PreProccess ignore Winding;Tunnel;Tunnel ignore winding;Cache aware" description="The tri strip method."/>
+					<param name="Tunnel Tri-strip Factor" type="int" value="50" location="xbox" description="The Tunnel tri strip quality (0-100)."/>
+				</param>
+
+				<param name="Limit UVs" type="enum" value="0" location="xbox" enum="No Limit;UV Limit;Texel Limit" description="The Limit UVs option.">
+					<param name="Min Value" type="float" value="-2048" location="xbox" description="The Limit UVs minimum range value."/>
+					<param name="Max Value" type="float" value="2047" location="xbox" description="The Limit UVs maximum range value."/>
+				</param>
+
+				<param name="Enable Skin Splitting" type="bool" value="true" location="xbox" description="Enables splitting of skined meshes if number of bones greater then the limit.">
+					<param name="Bone Limit" type="int" value="60" location="xbox" description="Maximum number of bones per skinned mesh before mesh is split."/>
+				</param>
+
+				<param name="Generate Darkmaps" type="bool" value="false" location="xbox" born="3,6,0,0" description="Lightmaps on the Playstation 2 are implemented differently than the other platforms and are required to be inverted to Darkmaps. This option should always be set to true for Playstation 2 exports">
+					<param name="Process Base DarkMap Texture" type="bool" value="false" location="xbox" description="Darkmaps for the Playstation 2 require the luminance value to be stored inside the alpha channel of the base textures. This option should always be set to true for Playstation 2 exports"/>
+				</param>
+
+				<param name="Lightmap Mipmapping" type="bool" value="true" location="bsp;dff" born="3,6,0,0" description="Controls whether the lightmaps generated during the export process will be mip mapped or not."/>
+				<param name="Lightmap Color Depth" type="enum" value="1" location="bsp;dff" born="3,6,0,0" enum="8888;888;PAL8;PAL4" description="Controls the color depth of lightmaps generated during the export process."/>
+
+                <!-- audio wave dictionary asset template parameters -->
+                <param name="Default Wave 3D" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="The default 3D setting for the wave"/>
+                <param name="Default Wave Definition Name" type="enum" value="2" enum="DXAudioWave;SPU2Wave;XboxWave;AXWave" location="audiowavedict" born="3,7,0,0" description="The default wave definition type. At the moment this can only be set to XboxWave."/>
+                <param name="Override Source Format" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="This override will force the source format of all waves contained in this asset to be overridden with the source format given in this asset template."/>
+                <param name="Default Source Data Type" type="enum" value="3" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiowavedict" born="3,7,0,0" description="The default source format data type."/>
+                <param name="Default Source Bit Depth" type="int" value="16" location="audiowavedict" born="3,7,0,0" description="The default source format bit depth."/>
+                <param name="Default Source Sample Rate" type="real" value="48000" location="audiowavedict" born="3,7,0,0" description="The default source format sample rate."/>
+                <param name="Default Source Num Channels" type="int" value="1" location="audiowavedict" born="3,7,0,0" description="The default number of channels for the source format."/>
+                <param name="Default Source Frame Size" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default frame size for the source format. This option is not currently used."/>
+                <param name="Default Source Samples Per Frame" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Source Signed" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="The default source signed setting for the wave format."/>
+                <param name="Override Target Format" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="This override will force the target format of all waves contained in this asset to be overridden with the target format given in this asset template."/>
+                <param name="Default Target Data Type" type="enum" value="3" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiowavedict" born="3,7,0,0" description="The default target format data type."/>
+                <param name="Default Target Bit Depth" type="int" value="16" location="audiowavedict" born="3,7,0,0" description="The default target format bit depth."/>
+                <param name="Default Target Sample Rate" type="real" value="48000" location="audiowavedict" born="3,7,0,0" description="The default target format sample rate."/>
+                <param name="Default Target Num Channels" type="int" value="1" location="audiowavedict" born="3,7,0,0" description="The default number of channels for the target format."/>
+                <param name="Default Target Frame Size" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default frame size for the target format. This option is not currently used."/>
+                <param name="Default Target Samples Per Frame" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Target Signed" type="bool" value="true" location="audiowavedict" born="3,7,0,0"/>
+
+                <!-- audio event dictionary asset template paramaters -->
+                <param name="Default Mute" type="bool" value="false" location="audioeventdict" born="3,7,0,0" description="This option is the default mute setting for an audio events. This option is not currently supported."/>
+                <param name="Default Gain Range" type="real" value="0.0" location="audioeventdict" born="3,7,0,0" description="This option is the default gain range that will be used by an event."/>
+                <param name="Default Gain Offset" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option is the default gain offset that will be used by an event."/>
+                <param name="Default Gain Variation Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option is the default setting for enabling the gain variation that will be used by an event.  This option is not currently used"/>
+                <param name="Default Pitch Range" type="real" value="0.0" location="audioeventdict" born="3,7,0,0" description="This option is the default pitch range that will be used by an event."/>
+                <param name="Default Pitch Offset" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option is the default pitch offset that will be used by an event."/>
+                <param name="Default Pitch Variation Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option is the default setting for enabling the pitch variation that will be used by an event.  This option is not currently used"/>
+
+                <!-- audio stream asset template paramaters -->
+                <param name="Media Sector Size" type="int" value="2048" location="audiostream" born="3,7,0,0" description="This option is the media sector size that an audio stream will use."/>
+                <param name="Default Stream Packet Size" type="int" value="8192" location="audiostream" born="3,7,0,0" description="This option is the default packet size that an audio stream will use."/>
+
+                <param name="Override Target Format" type="bool" value="false" location="audiostream" born="3,7,0,0" description="This override will force the target format of all sub streams contained in this asset to be overridden with the target format given in this asset template."/>
+                <param name="Default Target Data Type" type="enum" value="3" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiostream" born="3,7,0,0" description="The default target format data type."/>
+                <param name="Default Target Bit Depth" type="int" value="16" location="audiostream" born="3,7,0,0" description="The default target format bit depth."/>
+                <param name="Default Target Sample Rate" type="real" value="48000" location="audiostream" born="3,7,0,0" description="The default target format sample rate."/>
+                <param name="Default Target Num Channels" type="int" value="1" location="audiostream" born="3,7,0,0" description="The default number of channels for the target format."/>
+                <param name="Default Target Frame Size" type="int" value="0" location="audiostream" born="3,7,0,0" description="The default frame size for the target format. This option is not currently used."/>
+                <param name="Default Target Samples Per Frame" type="int" value="0" location="audiostream" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Target Signed" type="bool" value="true" location="audiostream" born="3,7,0,0" description="The default target signed setting for the wave format."/>
+
+				<param name="ADC Processing" type="enum" value="0" location="bsp;dff" born="3,6,0,1" enum="Off;On;On ignore winding" description="This option controls whether RpGeometry and RpWorldSectors exported are processed to support ADC flags. This should be set when a pipe override has been used that enables an ADC render pipeline. Whether or not the the ADC processing should ignore winding order should be set to match the tristripper in use."/>
+
+			</Xbox>
+			<GameCube>
+				<param name="Enable" type="bool" value="true" location="gamecube" description="Enables specific platfom."/>
+
+				<param name="Tri-strip Meshes" type="bool" value="true" location="gamecube" description="The tri strip mesh option.">
+					<param name="Tri-strip Method" type="enum" value="2" location="gamecube" enum=" PreProccess;PreProccess ignore Winding;Tunnel;Tunnel ignore winding;Cache aware" description="The tri strip method."/>
+					<param name="Tunnel Tri-strip Factor" type="int" value="50" location="gamecube" description="The Tunnel tri strip quality (0-100)."/>
+				</param>
+
+				<param name="Limit UVs" type="enum" value="0" location="gamecube" enum="No Limit;UV Limit;Texel Limit" description="The Limit UVs option.">
+					<param name="Min Value" type="float" value="-2048" location="gamecube" description="The Limit UVs minimum range value."/>
+					<param name="Max Value" type="float" value="2047" location="gamecube" description="The Limit UVs maximum range value."/>
+				</param>
+
+				<param name="Enable Skin Splitting" type="bool" value="true" location="gamecube" description="Enables splitting of skined meshes if number of bones greater then the limit.">
+					<param name="Bone Limit" type="int" value="256" location="gamecube" description="Maximum number of bones per skinned mesh before mesh is split."/>
+				</param>
+
+				<param name="Generate Darkmaps" type="bool" value="false" location="gamecube" born="3,6,0,0" description="Lightmaps on the Playstation 2 are implemented differently than the other platforms and are required to be inverted to Darkmaps. This option should always be set to true for Playstation 2 exports">
+					<param name="Process Base DarkMap Texture" type="bool" value="false" location="gamecube" description="Darkmaps for the Playstation 2 require the luminance value to be stored inside the alpha channel of the base textures. This option should always be set to true for Playstation 2 exports"/>
+				</param>
+
+				<param name="Lightmap Mipmapping" type="bool" value="true" location="bsp;dff" born="3,6,0,0" description="Controls whether the lightmaps generated during the export process will be mip mapped or not."/>
+				<param name="Lightmap Color Depth" type="enum" value="1" location="bsp;dff" born="3,6,0,0" enum="8888;888;PAL8;PAL4" description="Controls the color depth of lightmaps generated during the export process."/>
+
+                <!-- audio wave dictionary asset template parameters -->
+                <param name="Default Wave 3D" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="The default 3D setting for the wave"/>
+                <param name="Default Wave Definition Name" type="enum" value="3" enum="DXAudioWave;SPU2Wave;XboxWave;AXWave" location="audiowavedict" born="3,7,0,0" description="The default wave definition type. At the moment this can only be set to AXWave."/>
+                <param name="Override Source Format" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="This override will force the source format of all waves contained in this asset to be overridden with the source format given in this asset template."/>
+                <param name="Default Source Data Type" type="enum" value="4" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiowavedict" born="3,7,0,0" description="The default source format data type."/>
+                <param name="Default Source Bit Depth" type="int" value="4" location="audiowavedict" born="3,7,0,0" description="The default source format bit depth."/>
+                <param name="Default Source Sample Rate" type="real" value="48000" location="audiowavedict" born="3,7,0,0" description="The default source format sample rate."/>
+                <param name="Default Source Num Channels" type="int" value="1" location="audiowavedict" born="3,7,0,0" description="The default number of channels for the source format."/>
+                <param name="Default Source Frame Size" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default frame size for the source format. This option is not currently used."/>
+                <param name="Default Source Samples Per Frame" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Source Signed" type="bool" value="true" location="audiowavedict" born="3,7,0,0" description="The default source signed setting for the wave format."/>
+                <param name="Override Target Format" type="bool" value="false" location="audiowavedict" born="3,7,0,0" description="This override will force the target format of all waves contained in this asset to be overridden with the target format given in this asset template."/>
+                <param name="Default Target Data Type" type="enum" value="4" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiowavedict" born="3,7,0,0" description="The default target format data type."/>
+                <param name="Default Target Bit Depth" type="int" value="4" location="audiowavedict" born="3,7,0,0" description="The default target format bit depth."/>
+                <param name="Default Target Sample Rate" type="real" value="48000" location="audiowavedict" born="3,7,0,0" description="The default target format sample rate."/>
+                <param name="Default Target Num Channels" type="int" value="1" location="audiowavedict" born="3,7,0,0" description="The default number of channels for the target format."/>
+                <param name="Default Target Frame Size" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default frame size for the target format. This option is not currently used."/>
+                <param name="Default Target Samples Per Frame" type="int" value="0" location="audiowavedict" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Target Signed" type="bool" value="true" location="audiowavedict" born="3,7,0,0"/>
+
+                <!-- audio event dictionary asset template paramaters -->
+                <param name="Default Mute" type="bool" value="false" location="audioeventdict" born="3,7,0,0" description="This option is the default mute setting for an audio events. This option is not currently supported."/>
+                <param name="Default Gain Range" type="real" value="0.0" location="audioeventdict" born="3,7,0,0" description="This option is the default gain range that will be used by an event."/>
+                <param name="Default Gain Offset" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option is the default gain offset that will be used by an event."/>
+                <param name="Default Gain Variation Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option is the default setting for enabling the gain variation that will be used by an event.  This option is not currently used"/>
+                <param name="Default Pitch Range" type="real" value="0.0" location="audioeventdict" born="3,7,0,0" description="This option is the default pitch range that will be used by an event."/>
+                <param name="Default Pitch Offset" type="real" value="1.0" location="audioeventdict" born="3,7,0,0" description="This option is the default pitch offset that will be used by an event."/>
+                <param name="Default Pitch Variation Enabled" type="bool" value="true" location="audioeventdict" born="3,7,0,0" description="This option is the default setting for enabling the pitch variation that will be used by an event.  This option is not currently used"/>
+
+                <!-- audio stream asset template paramaters -->
+                <param name="Media Sector Size" type="int" value="2048" location="audiostream" born="3,7,0,0" description="This option is the media sector size that an audio stream will use."/>
+                <param name="Default Stream Packet Size" type="int" value="32768" location="audiostream" born="3,7,0,0" description="This option is the default packet size that an audio stream will use."/>
+
+                <param name="Override Target Format" type="bool" value="false" location="audiostream" born="3,7,0,0" description="This override will force the target format of all sub streams contained in this asset to be overridden with the target format given in this asset template."/>
+                <param name="Default Target Data Type" type="enum" value="4" enum="AC3 (Dolby Digital 5.1);PCM (32-bit floating point);VAG (Sony ADPCM);PCM;Nintendo GameCube ADPCM;Microsoft Xbox ADPCM;IMA ADPCM;WMA (Microsoft Windows Media Audio);MP3 (MPEG-2 Audio Layer 3)" location="audiostream" born="3,7,0,0" description="The default target format data type."/>
+                <param name="Default Target Bit Depth" type="int" value="4" location="audiostream" born="3,7,0,0" description="The default target format bit depth."/>
+                <param name="Default Target Sample Rate" type="real" value="48000" location="audiostream" born="3,7,0,0" description="The default target format sample rate."/>
+                <param name="Default Target Num Channels" type="int" value="1" location="audiostream" born="3,7,0,0" description="The default number of channels for the target format."/>
+                <param name="Default Target Frame Size" type="int" value="0" location="audiostream" born="3,7,0,0" description="The default frame size for the target format. This option is not currently used."/>
+                <param name="Default Target Samples Per Frame" type="int" value="0" location="audiostream" born="3,7,0,0" description="The default number of samples per frame.  This option is not currently used."/>
+                <param name="Default Target Signed" type="bool" value="true" location="audiostream" born="3,7,0,0" description="The default target signed setting for the wave format."/>
+
+				<param name="ADC Processing" type="enum" value="0" location="bsp;dff" born="3,6,0,1" enum="Off;On;On ignore winding" description="This option controls whether RpGeometry and RpWorldSectors exported are processed to support ADC flags. This should be set when a pipe override has been used that enables an ADC render pipeline. Whether or not the the ADC processing should ignore winding order should be set to match the tristripper in use."/>
+
+			</GameCube>
+			<Series60>
+				<param name="Enable" type="bool" value="true" location="gamecube" description="Enables specific platfom."/>
+
+				<param name="Tri-strip Meshes" type="bool" value="true" location="gamecube" description="The tri strip mesh option.">
+					<param name="Tri-strip Method" type="enum" value="2" location="gamecube" enum=" PreProccess;PreProccess ignore Winding;Tunnel;Tunnel ignore winding;Cache aware" description="The tri strip method."/>
+					<param name="Tunnel Tri-strip Factor" type="int" value="50" location="gamecube" description="The Tunnel tri strip quality (0-100)."/>
+				</param>
+
+				<param name="Limit UVs" type="enum" value="0" location="gamecube" enum="No Limit;UV Limit;Texel Limit" description="The Limit UVs option.">
+					<param name="Min Value" type="float" value="-2048" location="gamecube" description="The Limit UVs minimum range value."/>
+					<param name="Max Value" type="float" value="2047" location="gamecube" description="The Limit UVs maximum range value."/>
+				</param>
+
+				<param name="Enable Skin Splitting" type="bool" value="true" location="gamecube" description="Enables splitting of skined meshes if number of bones greater then the limit.">
+					<param name="Bone Limit" type="int" value="256" location="gamecube" description="Maximum number of bones per skinned mesh before mesh is split."/>
+				</param>
+
+				<param name="Generate Darkmaps" type="bool" value="false" location="gamecube" born="3,6,0,0" description="Lightmaps on the Playstation 2 are implemented differently than the other platforms and are required to be inverted to Darkmaps. This option should always be set to true for Playstation 2 exports">
+					<param name="Process Base DarkMap Texture" type="bool" value="false" location="gamecube" description="Darkmaps for the Playstation 2 require the luminance value to be stored inside the alpha channel of the base textures. This option should always be set to true for Playstation 2 exports"/>
+				</param>
+
+				<param name="Lightmap Mipmapping" type="bool" value="true" location="bsp;dff" born="3,6,0,0" description="Controls whether the lightmaps generated during the export process will be mip mapped or not."/>
+				<param name="Lightmap Color Depth" type="enum" value="1" location="bsp;dff" born="3,6,0,0" enum="8888;888;PAL8;PAL4" description="Controls the color depth of lightmaps generated during the export process."/>
+
+				<param name="FVF Control" type="bool" value="true" location="series60" description="The FVF control option.">
+					<param name="Position Format" type="enum" value="3" location="series60" enum="BYTE;SHORT;FLOAT;FIXED" description="The position format."/>
+					<param name="PreLight Format" type="enum" value="0" location="series60" enum="UBYTE;FLOAT" description="The prelight format."/>
+					<param name="Normal Format" type="enum" value="0" location="series60" enum="BYTE;SHORT;FLOAT;FIXED" description="The normal format."/>
+					<param name="TexCoord Format" type="enum" value="3" location="series60" enum="BYTE;SHORT;FLOAT;FIXED" description="The texcoord format."/>
+				</param>
+			</Series60>
+			<NGAGE>
+				<param name="Enable" type="bool" value="true" location="gamecube" description="Enables specific platfom."/>
+
+				<param name="Tri-strip Meshes" type="bool" value="true" location="gamecube" description="The tri strip mesh option.">
+					<param name="Tri-strip Method" type="enum" value="2" location="gamecube" enum=" PreProccess;PreProccess ignore Winding;Tunnel;Tunnel ignore winding;Cache aware" description="The tri strip method."/>
+					<param name="Tunnel Tri-strip Factor" type="int" value="50" location="gamecube" description="The Tunnel tri strip quality (0-100)."/>
+				</param>
+
+				<param name="Limit UVs" type="enum" value="0" location="gamecube" enum="No Limit;UV Limit;Texel Limit" description="The Limit UVs option.">
+					<param name="Min Value" type="float" value="-2048" location="gamecube" description="The Limit UVs minimum range value."/>
+					<param name="Max Value" type="float" value="2047" location="gamecube" description="The Limit UVs maximum range value."/>
+				</param>
+
+				<param name="Enable Skin Splitting" type="bool" value="true" location="gamecube" description="Enables splitting of skined meshes if number of bones greater then the limit.">
+					<param name="Bone Limit" type="int" value="256" location="gamecube" description="Maximum number of bones per skinned mesh before mesh is split."/>
+				</param>
+
+				<param name="Generate Darkmaps" type="bool" value="false" location="gamecube" born="3,6,0,0" description="Lightmaps on the Playstation 2 are implemented differently than the other platforms and are required to be inverted to Darkmaps. This option should always be set to true for Playstation 2 exports">
+					<param name="Process Base DarkMap Texture" type="bool" value="false" location="gamecube" description="Darkmaps for the Playstation 2 require the luminance value to be stored inside the alpha channel of the base textures. This option should always be set to true for Playstation 2 exports"/>
+				</param>
+
+				<param name="Lightmap Mipmapping" type="bool" value="true" location="bsp;dff" born="3,6,0,0" description="Controls whether the lightmaps generated during the export process will be mip mapped or not."/>
+				<param name="Lightmap Color Depth" type="enum" value="1" location="bsp;dff" born="3,6,0,0" enum="8888;888;PAL8;PAL4" description="Controls the color depth of lightmaps generated during the export process."/>
+
+				<param name="FVF Control" type="bool" value="true" location="series60" description="The FVF control option.">
+					<param name="Position Format" type="enum" value="3" location="series60" enum="BYTE;SHORT;FLOAT;FIXED" description="The position format."/>
+					<param name="PreLight Format" type="enum" value="0" location="series60" enum="UBYTE;FLOAT" description="The prelight format."/>
+					<param name="Normal Format" type="enum" value="0" location="series60" enum="BYTE;SHORT;FLOAT;FIXED" description="The normal format."/>
+					<param name="TexCoord Format" type="enum" value="3" location="series60" enum="BYTE;SHORT;FLOAT;FIXED" description="The texcoord format."/>
+				</param>
+			</NGAGE>
+		</Platform>
+	</DefaultTemplate>
+	<Description>
+        <param name="Template Description" type="string" value="The default Audio Wave Dictionary asset template." location="audiowavedict"/>
+        <param name="Template Description" type="string" value="The default Audio Event Dictionary asset template." location="audioeventdict"/>
+        <param name="Template Description" type="string" value="The default Audio Stream asset template." location="audiostream"/>
+		<param name="Template Description" type="string" value="The default Animation asset template. Creates an uncompressed animation asset. Animation assets must always be children of Animated Hierarchies." location="anm"/>
+		<param name="Template Description" type="string" value="The default Static World asset template. This should be used for parts of a scene that are not animated such as scenery and backgrounds.. The data will be converted to a format suited to fast rendering at run time." location="bsp"/>
+		<param name="Template Description" type="string" value="The default Animated Hierarchy asset template. This should be used for hierarchies within the scene that need to be animated at run time (through skinning, morphing, rigid animation etc) or that contain cameras or lights." location="dff"/>
+		<param name="Template Description" type="string" value="The default Spline asset template. This should be used for individual spline objects within the scene." location="spl"/>
+		<param name="Template Description" type="string" value="The default Generic project template. This template creates an rws file that is not targeted to any platform. It may be viewed on all RenderWare platforms. Platform optimized files should be used for final game assets." location="generic"/>
+		<param name="Template Description" type="string" value="The default RenderWare Studio project template. This template creates anm ,bsp, dff and spl files suitable for use within RenderWare Studio." location="rwstudio"/>
+		<param name="Template Description" type="string" value="The default Playstation 2 project template. This template creates a Playstation 2 optimized rp2 file. The exported file may not be viewed on other RenderWare platforms." location="ps2"/>
+		<param name="Template Description" type="string" value="The default Xbox project template. This template creates an Xbox optimized rx1 file. The exported file may not be viewed on other RenderWare platforms." location="xbox"/>
+		<param name="Template Description" type="string" value="The default GameCube project template. This template creates a GameCube optimized rg1 file. The exported file may not be viewed on other RenderWare platforms." location="gamecube"/>
+	</Description>
+</Template>

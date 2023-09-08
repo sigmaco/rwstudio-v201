@@ -1,0 +1,286 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="AssetFolder" dependencygraph="AssetFolderDependencies"
+                            buildcommand="AssetFolderCommand">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AssetFolder.rule - AssetFolder rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub AssetFolderDependencies (Task, AssetFolder, PlatformFilter, RecursionGuard)
+            Dim Asset, ChildAssetFolder
+            Dim blnMetrics
+
+            Task.AddDependency AssetFolder.PersistentFilename
+
+            RecursionGuard.Add AssetFolder
+
+            For Each ChildAssetFolder In AssetFolder.ChildAssetFolders
+               If Not RecursionGuard.Exists (ChildAssetFolder) And PlatformFilter.IsValidPlatform (ChildAssetFolder.Platform) Then
+                  Task.AddSubtask BuildRule (ChildAssetFolder, "AssetFolder"), ChildAssetFolder, PlatformFilter, RecursionGuard
+               End If
+            Next
+
+            blnMetrics = False
+
+            ' Check for font metrics asset
+            For Each Asset In AssetFolder.ChildAssets
+               If Not RecursionGuard.Exists (Asset) And PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                  
+                  If AssetIsFontMetrics (Asset) Then
+                     Task.AddSubTask "Font", AssetFolder, PlatformFilter, RecursionGuard
+                     blnMetrics = True
+                     Exit For
+                  End If
+               End If
+            Next
+
+            If Not blnMetrics Then
+               For Each Asset In AssetFolder.ChildAssets
+                  If Not RecursionGuard.Exists (Asset) And PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                     Task.AddSubtask BuildRule (Asset, "Asset"), Asset, PlatformFilter, RecursionGuard
+                  End If
+               Next
+            End If
+
+            If Not GetParam ("SENTOBJECTS").Exists (AssetFolder) Then
+               GetParam ("SENTOBJECTS").Add AssetFolder
+            End If
+
+            Task.AddTarget StreamFile (GetParam ("DESTDIR"), AssetFolder)
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub AssetFolderCommand (Task, AssetFolder, PlatformFilter, RecursionGuard)
+            Dim AssetFolderBuffer
+            Set AssetFolderBuffer = RWSComms.CreateFileBuffer (StreamFile (GetParam ("DESTDIR"), AssetFolder), faCreate)
+
+            If Not AssetFolderBuffer Is Nothing Then
+               AssetFolderBuffer.BigEndian = GetParam ("BIGENDIAN")
+               AssetFolderBuffer.Unicode   = GetParam ("UNICODE")
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="AssetFolderSend" dependencygraph="AssetFolderSendDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AssetFolder.rule - AssetFolderSend rule
+         '
+         ' Sends all assets with the correct platform to the console using a recursive
+         ' dependency
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AssetFolderSendDependencies (Task, AssetFolder, PlatformFilter, Buffer)
+            Dim SentObjects, Asset, blnMetrics
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            blnMetrics = False
+            ' Check for font metrics asset
+            For Each Asset In AssetFolder.ChildAssets
+               If PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                  If AssetIsFontMetrics (Asset) Then
+                     Task.AddSubTask "FontSend", AssetFolder, PlatformFilter, Buffer
+                     blnMetrics = True
+                     Exit For
+                  End If
+               End If
+            Next
+
+            If Not blnMetrics Then
+               For Each Asset In GetChildAssets (AssetFolder, PlatformFilter)
+                  If Not SentObjects.Exists (Asset) Then
+                     If PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                        Task.AddSubtask "AssetSend", Asset, PlatformFilter, Buffer
+                     End If
+                  End If
+               Next
+            End If
+
+            SentObjects.Add AssetFolder
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AssetFolderRemove" dependencygraph="AssetFolderRemoveDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AssetFolder.rule - AssetFolderRemove rule
+         '
+         ' Removes all assets within the given asset folder.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AssetFolderRemoveDependencies (Task, AssetFolder, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets)
+            Dim SentObjects, Asset, oChildAssets
+            Set SentObjects = GetParam ("SENTOBJECTS")
+            Set oChildAssets = GetChildAssets (AssetFolder, PlatformFilter)
+
+            ' Reverse the contents of the container so we can remove the objects in reverse order
+            oChildAssets.Reverse
+
+            For Each Asset In oChildAssets
+               If SentObjects.Exists (Asset) Then
+                  If bForceRemoveChildren Then
+                     Task.AddSubtask "AssetRemove", Asset, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                  ElseIf Not IsInFolder (RWSScript.Game.ActiveFolder, Asset, PlatformFilter) Then
+                     Task.AddSubtask "AssetRemove", Asset, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+                  End If
+               End If
+            Next
+
+            SentObjects.Remove AssetFolder
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AssetFolder_OnChange" dependencygraph="AssetFolderOnChangeDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AssetFolder.rule - AssetFolder_OnChange rule
+         '
+         ' The asset folder has changed. We need to check whether the child assets
+         ' should be on the console
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AssetFolderOnChangeDependencies (Task, AssetFolder, PlatformFilter, Buffer)
+            Dim SentObjects
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If IsInFolder (RWSScript.Game.ActiveFolder, AssetFolder, PlatformFilter) Then
+               ' If the asset folder isn't on the target then send it
+               If Not SentObjects.Exists (AssetFolder) Then
+                  Task.AddSubtask "AssetFolderSend", AssetFolder, PlatformFilter, Buffer
+               End If
+            Else
+               ' If the asset folder is on the console then remove it
+               If SentObjects.Exists (AssetFolder) Then
+                  Task.AddSubtask "AssetFolderRemove", AssetFolder, PlatformFilter, Buffer, False, False
+               End If
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AssetFolder_OnDelete" dependencygraph="AssetFolderOnDeleteDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AssetFolder.rule - AssetFolder_OnDelete rule
+         '
+         ' The asset folder has been deleted. We need to check whether the child assets
+         ' should be on the console
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AssetFolderOnDeleteDependencies (Task, AssetFolder, PlatformFilter, Buffer)
+            If GetParam ("SENTOBJECTS").Exists (AssetFolder) Then
+               Task.AddSubtask "AssetFolderRemove", AssetFolder, PlatformFilter, Buffer, False, False
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AssetFolder_OnAdd" dependencygraph="AssetFolderOnAddDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AssetFolder.rule - AssetFolder_OnAdd rule
+         '
+         ' An object has been removed from an asset folder. We need to check whether the 
+         ' child assets should be on the console
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AssetFolderOnAddDependencies (Task, AssetFolder, Child, PlatformFilter, Buffer)
+            Dim SentObjects
+            If otAsset = Child.IDType Then
+               Set SentObjects = GetParam ("SENTOBJECTS")
+
+               If SentObjects.Exists (AssetFolder) And Not SentObjects.Exists (Child) Then
+                  If PlatformFilter.IsValidPlatform (Child.Platform) Then
+                     Task.AddSubtask "AssetSend", Child, PlatformFilter, Buffer
+                  End If
+               End If
+            ElseIf otAssetFolder = Child.IDType Then
+               Set SentObjects = GetParam ("SENTOBJECTS")
+
+               If SentObjects.Exists (AssetFolder) And Not SentObjects.Exists (Child) Then
+                  If PlatformFilter.IsValidPlatform (Child.Platform) Then
+                     Task.AddSubtask "AssetFolderSend", Child, PlatformFilter, Buffer
+                  End If
+               End If
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AssetFolder_OnRemove" dependencygraph="AssetFolderOnRemoveDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' AssetFolder.rule - AssetFolder_OnRemove rule
+         '
+         ' The asset folder has been deleted. We need to check whether the child assets
+         ' should be on the console
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AssetFolderOnRemoveDependencies (Task, AssetFolder, Child, PlatformFilter, Buffer)
+            If otAsset = Child.IDType Then
+               Dim SentObjects
+               Set SentObjects = GetParam ("SENTOBJECTS")
+
+               If SentObjects.Exists (AssetFolder) And SentObjects.Exists (Child) Then
+                  If Not IsInFolder (RWSScript.Game.ActiveFolder, Child, PlatformFilter) Then
+                     Task.AddSubtask "AssetRemove", Child, PlatformFilter, Buffer, False, False
+                  End If                 
+               End If
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+</build>

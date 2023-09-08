@@ -1,0 +1,374 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="Font" dependencygraph="FontDependencies"
+                     buildcommand="FontCommand">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '------------------------------------------------------------------------------
+         ' Font.rule - Font rule
+         '
+         ' This rule creates a stream file containing a font asset and a font texture 
+         ' dictionary asset..
+         ' The asset's font file is created by "FontGenFile" rule.
+         ' The asset's font texture dictionary file is created by "FontTexDictGenFile" rule.
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FontDependencies (objTask, objFolder, objPlatformFilter, objRecursionGuard)
+            Dim strFontTargetPath, strFontTexDictTargetPath 
+            Dim fontGenSubTask, fontTexDictGenSubTask
+            Dim fontGenSubtaskTargets, fontTexDictGenSubtaskTargets
+
+            objRecursionGuard.Add objFolder
+
+            ' Dependent files
+
+            ' Depend on the file specifying resource roots and "embed assets" flag
+            objTask.AddDependency AssetGlobalsFile (GetParam ("DESTDIR"))
+
+            ' Target files
+
+            ' Target is a buffer containing commands to upload the font on the console
+            strFontTargetPath = StreamFile (GetParam ("DESTDIR"), objFolder)
+            ' Share path to target font file that is sent to the console
+            objTask.SetParam "FONTTARGETFILE", strFontTargetPath
+            objTask.AddTarget strFontTargetPath
+
+            ' Sub Tasks
+
+            ' Dependency on the rule to generate the font texture dictionary file
+            Set fontTexDictGenSubTask = objTask.AddSubTask ("FontTexDictGenFile", objFolder, objPlatformFilter)
+            Set fontTexDictGenSubtaskTargets = fontTexDictGenSubTask.GetTargets ()
+            ' Share path to generated font texture dictionary file
+            objTask.SetParam "GENFONTTEXDICTFILE", fontTexDictGenSubtaskTargets.Item (0)
+
+            ' Dependency on the rule to generate the font file
+            Set fontGenSubTask = objTask.AddSubTask ("FontGenFile", objFolder, objPlatformFilter)
+            Set fontGenSubtaskTargets = fontGenSubTask.GetTargets ()
+            ' Share path to generated font file
+            objTask.SetParam "GENFONTFILE", fontGenSubtaskTargets.Item (0)
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FontCommand (objTask, objFolder, objPlatformFilter, objRecursionGuard)
+            Dim strFontTargetPath, strFontTexDictTargetPath
+            Dim objAssetBuffer, strAssetUID
+            Dim objGlobalFolder, blnIsGlobal
+            Dim strAssetName, objFontName
+
+            ' Determine if the folder is in the global folder
+            blnIsGlobal = False
+            Set objGlobalFolder = RWSScript.Game.GlobalFolder
+            If Not objGlobalFolder Is Nothing Then
+               If objGlobalFolder.UID = objFolder.UID Then
+                  blnIsGlobal = True
+               End If
+            End If
+
+            ' Create the file containing the font texture dictionary to be sent to the console
+            strFontTexDictTargetPath = objTask.GetParam ("FONTTARGETFILE")
+            
+            Set objAssetBuffer = RWSComms.CreateFileBuffer (strFontTexDictTargetPath, faCreate)
+
+            If Not objAssetBuffer Is Nothing Then
+               objAssetBuffer.BigEndian = GetParam ("BIGENDIAN")
+               objAssetBuffer.Unicode   = GetParam ("UNICODE")
+
+               ' Generate a UID
+               strAssetUID = RWSScript.GenerateUID ()
+
+               ' Create data to be sent to the console
+               AppendCreateAssetData objAssetBuffer, "Font Texture Dictionary", strAssetUID, _
+                                     "rwID_TEXDICTIONARY", objTask.GetParam ("GENFONTTEXDICTFILE"), _
+                                     "", blnIsGlobal
+
+               ' Generate a UID
+               strAssetUID = RWSScript.GenerateUID ()
+
+               strAssetName = GetParam ("ASSETNAME")
+
+               ' Get the Font Name (font) from the Asset Nane (font.met)
+               objFontName = Split(strAssetName, ".", -1, 1)
+
+               ' Create data to be sent to the console
+               AppendCreateAssetData objAssetBuffer, objFontName(0), strAssetUID, _
+                                     "rwID_2DFONT", objTask.GetParam ("GENFONTFILE"), _
+                                     "", blnIsGlobal
+            Else
+               BuildError "Could not create font texture dictionary asset stream " & strFontTexDictTargetPath
+            End If
+            
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+
+      ]]></script>
+   </rule>
+
+   <rule name="FontTexDictGenFile" dependencygraph="FontTexDictGeneratorDependencies"
+                                   buildcommand="FontTexDictGeneratorCommand"
+                                   strictvalidation="false">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>      
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '------------------------------------------------------------------------------
+         ' Font.rule - FontTexDictGenFile rule
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FontTexDictGeneratorDependencies (objTask, objFolder, objPlatformFilter)
+            Dim strTargetPath
+            Dim strWksResourceRoot
+            Dim objAsset, objProcessedAssets, strAssetFile
+
+            ' Get global resource root
+            strWksResourceRoot = GetParam ("WKSRESOURCEROOT")
+
+            Set objProcessedAssets = RWSScript.CreateContainer ()
+
+            ' Search through all assets in the folder and depend on each
+            For Each objAsset In GetChildAssets (objFolder, objPlatformFilter)
+               If Len (objAsset.File) > 0 Then
+                  If Not objProcessedAssets.Exists (objAsset) Then
+                     If Not AssetIsRootRF3 (objAsset) Then
+                        ' Retrieve the Asset's file name
+                        strAssetFile = GetAssetsFilename (objAsset, strWksResourceRoot)
+
+                        ' Share the path to the font metrics asset file
+                        If AssetIsFontMetrics (objAsset) Then
+                           objTask.SetParam "FONTTEXDICTASSETFILE", strAssetFile
+
+                           ' Target is the font texture dictionary file
+                           strTargetPath = FontOutputLocation (GetParam ("DESTDIR"))
+                           strTargetPath = BuildPath (strTargetPath , objAsset.UID & ".txd")
+                           objTask.AddTarget strTargetPath
+
+                           ' Share path to the target's file name
+                           objTask.SetParam "FONTTEXDICTTARGETFILE", strTargetPath
+
+                           SetParam "ASSETNAME", objAsset.Name
+                        End If
+
+                        ' Depend on asset file
+                        objTask.AddDependency strAssetFile
+
+                        objProcessedAssets.Add objAsset
+                     End If
+                  End If
+               End If
+            Next
+
+            ' Add a dependency on the tool
+            objTask.AddDependency GetFontGeneratorExe ()
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FontTexDictGeneratorCommand (objTask, objFolder, objPlatformFilter)
+            Dim strTargetPath
+            Dim objOutputList, objOutput
+            Dim strAssetFile
+            
+            ' Output is the font texture dictionary file
+            strTargetPath = objTask.GetParam ("FONTTEXDICTTARGETFILE")
+            BuildLog "Building " & strTargetPath
+
+            ' Run the font generator tool
+            BuildLog "Using " & GetFontGeneratorExe () 
+
+            strAssetFile = objTask.GetParam ("FONTTEXDICTASSETFILE")
+
+            ' Execute the font generation tool to generate the target files
+            Set objOutputList = ExecuteShellCommand ( """" & GetFontGeneratorExe () & """" _
+                                                      & " -txd" _
+                                                      & " " _
+                                                      & """" & strAssetFile & """" _
+                                                      & " " _
+                                                      & """" & strTargetPath & """" )
+
+            ' Display the results in the output panel
+            ' comment out the lines below to remove info
+            For Each objOutput In objOutputList
+               BuildWarning objOutput
+            Next
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+
+      ]]></script>
+   </rule>
+
+   <rule name="FontGenFile" dependencygraph="FontGeneratorDependencies"
+                            buildcommand="FontGeneratorCommand"
+                            strictvalidation="false">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '------------------------------------------------------------------------------
+         ' Font.rule - FontGenFile rule
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FontGeneratorDependencies (objTask, objFolder, objPlatformFilter)
+            Dim strTargetPath
+            Dim strWksResourceRoot
+            Dim objAsset, objProcessedAssets, strAssetFile            
+
+            ' Get global resource root
+            strWksResourceRoot = GetParam ("WKSRESOURCEROOT")
+
+            Set objProcessedAssets = RWSScript.CreateContainer ()
+
+            ' Search through all assets in the folder and depend on each
+            For Each objAsset In GetChildAssets (objFolder, objPlatformFilter)
+               If Len (objAsset.File) > 0 Then
+                  If Not objProcessedAssets.Exists (objAsset) Then
+                     If Not AssetIsRootRF3 (objAsset) Then
+                        ' Retrieve the Asset's file name
+                        strAssetFile = GetAssetsFilename (objAsset, strWksResourceRoot)
+
+                        ' Share the path to the font metrics asset file
+                        If AssetIsFontMetrics (objAsset) Then
+                           objTask.SetParam "FONTASSETFILE", strAssetFile
+
+                           ' Target is the font file using the Asset ID
+                           strTargetPath = FontOutputLocation (GetParam ("DESTDIR"))
+                           strTargetPath = BuildPath (strTargetPath , objAsset.UID & ".fnt")
+                           ' Add the target
+                           objTask.AddTarget strTargetPath
+
+                           ' Share path to the target's file name
+                           objTask.SetParam "FONTTARGETFILE", strTargetPath
+                        End If
+
+                        ' Depend on asset file
+                        objTask.AddDependency strAssetFile
+
+                        objProcessedAssets.Add objAsset
+                     End If
+                  End If
+               End If
+            Next
+
+            ' Add a dependency on the tool
+            objTask.AddDependency GetFontGeneratorExe ()
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FontGeneratorCommand (objTask, objFolder, objPlatformFilter)
+            Dim strTargetPath
+            Dim objOutputList, objOutput
+            Dim strAssetFile
+            
+            ' Output is the font file
+            strTargetPath = objTask.GetParam ("FONTTARGETFILE")
+            BuildLog "Building " & strTargetPath
+
+            ' Run the font generator tool
+            BuildLog "Using " & GetFontGeneratorExe ()
+         
+            strAssetFile = objTask.GetParam ("FONTASSETFILE") 
+
+            ' Execute the font generation tool to generate the target files
+            Set objOutputList = ExecuteShellCommand ( """" & GetFontGeneratorExe () & """" _
+                                                      & " -fnt" _
+                                                      & " " _
+                                                      & """" & strAssetFile & """" _
+                                                      & " " _
+                                                      & """" & strTargetPath & """" )
+
+            ' Display the results in the output panel
+            ' comment out the lines below to remove info
+            For Each objOutput In objOutputList
+               BuildWarning objOutput
+            Next
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+
+      ]]></script>
+   </rule>   
+   <rule name="FontSend" dependencygraph="FontSendDependencies">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RecursionGuard" progid="CSL.RWSScript.RWSContainer"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Font.rule - FontSend rule
+         '
+         ' This rule creates a stream file containing a font asset and a font texture 
+         ' dictionary asset..
+         ' The asset's font file is created by "FontGenFile" rule.
+         ' The asset's font texture dictionary file is created by "FontTexDictGenFile" rule.
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub FontSendDependencies (Task, AssetFolder, PlatformFilter, Buffer)
+            Dim strTargetPath, Subtask, SubtaskTargets
+
+            ' Build the task that generates the font streams.
+            Dim SubMake
+            Set SubMake = CloneMake ()
+            If Not SubMake Is Nothing Then
+               Set Subtask = SubMake.AddTask ("Font", AssetFolder, PlatformFilter, RecursionGuard)
+               Set SubtaskTargets = Subtask.GetTargets ()
+               strTargetPath = SubtaskTargets.Item (0)
+
+               SubMake.Clean
+               SubMake.AddTask "Font", AssetFolder, PlatformFilter, RecursionGuard
+               If SubMake.Build () Then
+                  Dim FontAssetBuffer
+                  Set FontAssetBuffer = RWSComms.CreateFileBuffer (strTargetPath, faRead)
+                  If Not FontAssetBuffer Is Nothing Then
+                     Buffer.WriteBuffer FontAssetBuffer, AddAsNewHeader
+                  End If
+               End If
+            Else
+               BuildError "Could not create a cloned make object"
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+</build>

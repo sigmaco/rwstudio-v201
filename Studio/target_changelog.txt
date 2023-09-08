@@ -1,0 +1,2601 @@
+04/06/04 Integrating misc fixes / enhancements from GE1 game framework core.
+
+	CTextResource modified to provide implementation of UpdateResource.
+
+	CRwSplineResource modified to provide implementation of Update.
+
+	CRenderwareResource modified to provide implementation of Update.
+
+	Removed try/catch exception handling from resourcemanagerstrfunc.cpp
+
+	Added support for UpdateAsset to resourcemanagerstrfunc.cpp
+
+	Removed try/catch exception handling from attributehandlerstrfuncs.cpp
+
+	Fixed _DEBUG / NDEBUG conflict in ceventhandler
+
+	Modified RWS_DEFINE_EVENT
+
+	#define RWS_DEFINE_EVENT(name, type, desc) const char name##Str[] = #name; extern CEventId name
+
+	changed to 
+
+	#define RWS_DEFINE_EVENT(name, type, desc) const char * const name##Str = #name; extern CEventId name
+
+	allows linker to remove duplicate strings correctly.
+
+	Fixed some problems with memory profiling, the memory profile cannot send back data if the reason
+	the memory profiler needs to send back data is that data is being sent back.
+
+	Minor debug output improvements in memoryhandler.cpp
+
+	Improvements to memory profiling, some targets now report code info as allocated memory, this is done with a new
+	function       void ReportCodeMetrics();
+
+	misc improvements to netstrm code.
+
+	Additional method inc CResourceHandler used to allow real time editing of assets.
+
+         /**
+         *  
+         *  \ref CResourceHandler::Update
+         *  
+         *  \param pResData A pointer to the resource data.
+         *  \param pData A pointer to the data used to update the resource.
+         * 
+         */
+         virtual void Update(const void *pResData,
+                             const void *pData,
+                             const RwChar *pStrType) = 0;
+
+06/07/04 Fixed direct-set functionality so it will work without corruption on multiple inheritance. See changelist
+         for explanation.
+
+01/06/04 BugFix 9696 rf3 example - using preinstancing
+
+	 Added missing pipelines to skyregisterpipes.cpp
+
+------------------------------------Version incremented to Release 2.0---------------------------
+
+24/02/04 Fixed bug 8190. Moved RpWorldRemoveCamera to outside the begin/end camera update pair.
+
+06/02/04 The projects files for game_framework, empty_framework, gfcore and the LoadingScreen have been updated
+         to support the Visual Studio .NET 2003 environment.  The original .dsp and .dsw files are no longer included.
+
+07/01/04 Added 'CSeqCamera' behaviour. This is inherited from CSeqPos and adds the ability to render a view from
+         the object being sequenced. Also adds camera related functions, such as Field-Of-View (FOV), rendering
+         order, etc.
+
+05/01/04 Modified CAttributeHandler so that in addition to the map of GUID's to CAttributeHanlders
+			a list of CAttributeHandlers is maintained. This is used by the Purge and PurgeAll methods
+			to ensure that the destruction order is the reverse of the construction order.
+
+         Note: CAttributeHandler::instanceId_ has been renamed m_InstanceId
+
+         Added: CAttributeHandler::InqInstanceId() to return the instance Id of a CAttributeHandler.
+
+08/12/03 Fixed the following bugL
+	 #6249 May need to modify how ZBuffers are created RpSkySelectDeepZBuffer.
+	 #7712 Removed SkyFs.cpp and .h from projects.  No longer needed as we now use RenderWares File system.
+
+05/12/03 Fixed the following bug:
+         #7574 if CREATETXD is defined and the texture cannot be loaded, the loading screen now asserts.
+	
+04/12/03 Fixed the following bugs:
+	 #7239 #if defined (DVDROM) was missing from some places in the framework.
+
+03/12/03 Fixed the following bugs:
+	 #6308 File system IRX file on PS2 was always being loaded from host0. This is wrong for cdrom/dvdrom builds
+         #7008 Test station running out of memory. Changed max number of open files (MAX_NB_FILES_PER_FS) from 20 to 5
+	 #7554 psInstallFileSystem broken under Win98. Moved code in psInstallFileSystem function from skeleton over to the game framework.
+
+	 Above bug fixes have been integrated into the empty framework.
+
+17/11/03 Added a new stream function - strfunc_UpdateAsset. This updates a resource and typically calls
+	 CResourceHandler::Update. It can be used by appending the resource's ID and a block of
+	 data to be used on the console. This data can be anything that is required to update the relevant
+	 resource.
+
+
+06/11/03 BugFix CEventHandler::ReplaceRegisteredMsg has been made static.
+
+------------------------------------Version incremented to Release 1.2.1---------------------------
+
+19/09/03 Changed Doxygen comment for the return value from CSystemCommands::FindFirstResourceOfType
+
+	 Was:
+	 Returns a pointer to a string containing the ID of the resource
+
+	 Should be:
+	 Returns a pointer to the resource's data.
+	 
+	 The function FindFirstResourceOfType does not return the resource ID but returns a pointer to the data.
+
+17/09/03 For the prodg projects turned the warning level up to maximum and fixed all warnings except for 
+	 one. Going forward we will keep the projects at the max warning level.
+
+------------------------------------Version incremented to Release 1.2---------------------------
+
+13/08/03 Added support for compressed animation keyframes which requires the compressed animation toolkit to be
+	 initialized, RtCompressedKeyFrameRegister in attachplugins.cpp
+
+11/07/03 Added a new resource handler for spline assets.
+			 If a spline asset has no data, the resource returned is -1, this can then
+			 be detected in any behaviour that uses this spline asset and the spline resource
+			 can be ignored.
+
+30/07/03 RWSpline support on console.
+			Changed resource handler to enable the loading of RWSPLINE data.
+			Added new CCameraSpline behaviour to move a camera around using RWSPLINE data.	 
+
+23/07/03 Updated resource handler to change font IDs from rwID_2DPLUGIN to rwID_2DFONT.
+
+23/07/03 The RwStream format for assets and entities has changed to accommodate extra data
+			for flagging global entities / assets.
+
+			For entities, a RwUInt32 is appended before the attribute packet in the stream.
+			This affects the following functions:
+
+			CreateEntity() in attributehandlerstrfuncs.cpp
+
+			For assets, a RwUInt32 has been appended to the end of the data header sent for each
+			asset. The functions affected are:
+
+			LoadAsset()
+			LoadEmbeddedAsset(), both in resourcemanagerstrfunc.cpp
+
+23/07/03 Changed the auto-deletion function of CEventHandlers to be an 'opt-in' scheme
+			instead of 'opt-out'. A CEventHandler must now explicitly register itself to
+			be auto-deleted by calling the (new) function CEventHandler::RegisterForAutoDelete().
+
+			Related changes:
+
+			-iMsgFindEventHandler renamed iMsgDeleteEventHandler to better reflect what it is 
+			 used for.
+			-CEventHandlers do not link to iMsgDeleteEventHandler in the constructor anymore.
+			-CEventHandler::DoNotAutoDelete() renamed to CEventHandler::UnRegisterForAutoDelete().
+
+23/07/03 CAttributeHandler::m_Debug variable has been replaced with CAttributeHandler::m_Flags.
+			m_Flags now stores a couple of bit flags relevant to CAttributeHandlers:
+
+			uATTRIBUTEHANDLER_FLAG_DEBUG : replaces the m_Debug variable, check for this flag to
+													 see if the state of the Debug attribute.
+			uATTRIBUTEHANDLER_FLAG_LOCKED : used by global entities to stop the attribute handler
+													  being deleted by CAttributeHandler::Purge.
+
+			There are new functions for setting and querying the state of the locked flag:
+
+			CAttributeHandler::Lock()
+			CAttributeHandler::UnLock()
+			CAttributeHandler::IsLocked()
+
+17/07/03 Added code for always on top to PC version of game framework. Defaults to not on top user
+			 has to comment in the following code...look for 
+
+			// To force the window to be always on top comment in the line
+			// below.
+
+			//InsertAfter = HWND_TOPMOST;
+
+	 in win.cpp
+
+16/07/03 Removed karma code from game framework.
+
+14/07/03 Removed #include <rwplcore.h> from render.h, it should not be included at all.
+
+03/07/03 Added new memory system functionality.
+
+			RWS_MEMORY_USER_TYPE - will cause user types in RWS_NEW_TYPE & RWS_OP_NEW_TYPE to be stored and reported
+										  on leaks / boundary tests. Also on usage when RWS_MEMORY_LINE_METRICS are used.
+										  Values reported via CheckAndReport mechanism.
+
+			RWS_MEMORY_USER_PEAK - will cause user types to be logged (per type) for peak, total, num allocs, etc.
+										  Values reported via CheckAndReport mechanism.
+
+			RWS_MEMORY_INIT_VALUE - causes the memory system to initialise the memory to a specific value on
+											allocation (RWS_MEMORY_ALLOC_INIT) and just before freeing
+											(RWS_MEMORY_FREE_INIT). This is obviously costly and should only be used
+											for debugging of pointers, etc.
+
+			MemHandlerCheckBounds - calls the new CMemHandler::CheckAllocatedBounds function and will check the
+											allocated memory blocks for any boundary violations. This allows this check
+											to be performed BEFORE the memory is freed and therefore as the program is
+											running.
+
+			MemHandlerClearErrLog - calls the new CMemHandler::ClearErrorLog and removes error items from the
+											memory log. These are returned to the system for use on new errors / allocations.
+
+			By default the RWS_MEMORY_USER_TYPE and RWS_MEMORY_USER_PEAK options are enabled (the former increases
+			the allocation headers by 4 bytes each, the later allocates a small array of objects for it's use). The
+			RWS_MEMORY_INIT_VALUE functionality is off (0) by default because of it's cost.
+
+03/07/03 Updated SendTransform in Nettools to take an entity RWSGUID to send back to workspace.
+
+30/05/03 Added Linear memory manager. Behaviors now use an allocation policy to allow easy switching of allocation stratagies.
+			This allows behaviors to use a placement new allocation policy rather than a dynamic allocation policy. This should 
+			cut down on memory fragmentation within behaviors. 
+		
+		To apply an allocation policy to an existing behavior, the user needs to add one of the allocation policy header files
+		and attach an allocation policy class to the behavior. An example of this is given below...
+
+		FROM:
+
+					class CTutorial1 : public CSystemCommands, public CAttributeHandler , public CEventHandler
+
+		TO:	
+
+			class CTutorial1 : public CSystemCommands, public CAttributeHandler , public CEventHandler, public LinearAllocationPolicy
+
+
+30/05/03 The GUID for an entity or asset is now sent to the console as an array of four integer numbers,
+			instead of as a string. This gives a number of advantages:
+
+			- The GUID does not need to be converted to a number from a string on the console anymore.
+			- Finding a particular asset or entity on the console is more efficient, as it avoids
+				having to convert a string into a number.
+			- The GUID of an entity in the workspace is now also the GUID used on the console, making
+				identifying a particular asset or entity easier.
+
+			A new type, RWSGUID, has been added to the core (in the file misc\rwsguid.h). This represents
+			the integer version of a string GUID.
+
+			Changes have been made to the attribute handler related classes and stream functions
+			and the resource manager related class and stream functions. Other code that makes use of
+			resource or attribute handler Id's has also been changed to use the new RWSGUID.
+
+			Note: Some of the functions in RWS::CResource have changed as a result of the above changes:
+
+			- RWS::CResource::GetUIntId() no longer exists (it has been superceded by the new GUID id).
+			- RWS::CResource::GetId()/SetId() now return and accept a RWSGUID instead of the string
+			  version of the GUID.
+
+21/5/03 Added a new stream function, strfunc_ResetEntity. It is meant to be used when an entity is to
+		  be reset back to the state it was in when it was first created. The data sent with the
+		  strfunc_ResetEntity command is exactly the same as that sent for strfunc_CreateEntity - a
+		  complete attribute packet for the entity in question.
+
+		  The default handler for strfunc_ResetEntity is set to CreateEntity(), the function
+		  used by strfunc_CreateEntity. This will first destroy an entity if it already exists,
+		  then creates a new one to replace it. 
+
+		  The reset function for entities is exposed in the workspace in the context menu for entities,
+		  entity collections and levels in the game database. 		 
+
+19/5/03 Added function profiling which enables profiling of functions within the game framework. To eneable the profiler you need to have RWS_FUNCTIONPROFILE defined in gfcore.dsp and game_framework.dsp.
+
+13/5/03 Added memory profiling API which enabled dynamic memory usage to be tracked and analyzed in the workspace. To enable memory
+			profiling RWS_MEMORY_PROFILING must be enabled in the gfCore project. For more information look for "Memory Profiling" in the framework
+			help.
+
+12/5/03 The NetStream OpenForWrite function has been changed to remove the message name parameter.  This is to enable network data 
+			received by the Workspace to be opened as a RenderWare stream.  A new "strfunc" enumeration has been created to allow custom
+			data to be sent to the Workspace.  The first entry in this enumeration (strfuncsend_NamedData) can be used as a chunk-header
+			command to instruct Workspace that the data that follows in the packet is identified by name.
+
+			An example of a code-change to apply this implementation change follows:
+
+				const RwChar MetricsData[] = "RWS::MetricsData";
+
+				outputbuffer[uiIndex] = 0;   // Terminate packet with 0,0
+				uiIndex++;
+
+				if (RwStream *pStream = NetStream::OpenForWrite (MetricsData, uiIndex))
+				{
+					RwStreamWrite (pStream, outputbuffer, uiIndex);
+					RwStreamClose (pStream, 0);
+				}
+
+	The above code to send metrics data to the workspace now looks like:
+
+				const RwChar MetricsData[] = RWSTRING ("RWS::MetricsData");
+				RwUInt32 nMessageSize = (rwstrlen (MetricsData) + 1) * sizeof (RwChar);
+
+				outputbuffer[uiIndex] = 0;   // Terminate packet with 0,0
+				uiIndex++;
+
+				if (RwStream *pStream = NetStream::OpenForWrite (
+													  nMessageSize + uiIndex + ChunkHeaderSize))
+				{
+					RwStreamWriteChunkHeader (pStream, strfuncsend_NamedData,
+													  nMessageSize + uiIndex);
+					RwStreamWrite (pStream, MetricsData, nMessageSize);
+					RwStreamWrite (pStream, outputbuffer, uiIndex);
+					RwStreamClose (pStream, 0);
+				}
+
+	This new code now uses the "strfuncsend_NamedData" enumeration, and the metrics data following the RwChunkHeader is now
+	preceded by the "RWS::MetricsData" string.
+
+------------------------------------Version incremented to Release 1.11---------------------------
+
+27/3/03 The docs for the xbox audio integration instructed the user to add the debug dsound and dmusic libs to the project, even for the release build, this is wrong. Now the libs are included at the top of the audio.h file using the #pragma lib directive.
+
+25/3/03 Removed 'Go to Frame' and 'Set Current Animation' controls from Maestro behaviour.
+
+25/3/03 ckcullingtable.h ckcullingtable.cpp and ckphysicsparams.cpp added to PS2 CW project.
+
+24/3/03 Change memory system so that it asserts (by default when memory system is enabled) if any errors are found - leaks or
+		  boundary violations.
+
+21/3/03 When compiling the framework using visual studio.net the XBox vertex shader assembler xsasm is passed file names
+		that are incorrect due to their case being changed (By Visual Studio.NET). Because the arrays name 	which is inside
+		the header file that xsasm generates is built from the file name of the shader the framework will not build. This is
+		because C++ is case sensitive. To fix this problem the argument /hname is passed to xsasm as part of the custom build
+		process on each of the shaders. /hname allows the name of the array to be specified.
+
+20/3/03 Modified network code in core so it is not dependent on the gftime code in the framework. The 'get time'	function
+		  is now passed into the network code via a pointer. A user function could be used, but the code just uses the,
+		  previously hard coded, RWS::Time::GetTime() function.
+
+17/3/03 Added exception handling to load asset, create entity, update entity attributes. Current version displays
+	debug text identifying the asset/entity in the workspace. Future version will be more integrated with the
+	workspace enabling entities which cause the console to crash to be highlighted in the workspace.
+
+17/3/03 Extended SKY pipeline behavior/base class to support attaching pipelines to world sectors.
+
+17/3/03 Modified CMorphAnimate to work with clumps rather than atomics.
+
+17/3/03 Minor performance improvements to FPSRender, also exposed render order debugging in workspace, by
+	enabling/disabling m_debug attribute within CAttributeHandler.
+
+
+17/3/03 Renamed CSetCRpLevelHint as CSetCLevelHint, use validate database to convert behaviors of type		CSetCRpLevelHint to CSetCLevelHint.
+
+17/3/03 RenderWare Gfx uses tolerance value to optimize matrix operations, default values for these tolerances may
+	not be suitable when editing with studio, code to set these tolerances has been added to startup. Code to		check that the matrix of an editable object is valid has been added to csystemcommands.
+
+17/3/03 Performance improvement to GetTime for PS2 in gfTime toolkit. BugFix, where NDEBUG and _DEBUG had been
+	mixed.
+
+14/3/03 Updated LightMapping behavior to allow user to set super sample value.
+
+10/2/03 Refactoring of debugtools, core/debugtools is now considered a toolkit and has been moved
+	to toolkits/debugtools.
+
+	Upgrading
+
+	Replace
+
+	#include "framework/core/debugtools/debugtools.h"
+	#include "framework/core/debugtools/debugswitches.h"
+
+	With
+
+	#include "framework/toolkits/debugtools/debugtools.h"
+	#include "framework/toolkits/debugtools/debugswitches.h"
+
+	Created new helper framehelper
+
+		  RwBool FrameDestroy(RwFrame *pFrame);
+		  RwFrame* RemoveChildFrame(RwFrame* pFrame, void*);
+
+	Are now implemented by framehelper.h rather than factory.h
+
+	Upgrading
+
+	Replace
+
+	RWS::FrameDestroy with FrameHelper::FrameDestroy
+
+	or 
+
+	RWS::RemoveChildFrame with FrameHelper::RemoveChildFrame 
+
+	Updated Tutorial9 so that it will work with event visualiZation without using the smart pointers.
+
+7/2/03: Refactoring of event visualization.
+
+	Event visualization is now event driven, this means that an event handler can be written (sample provided)
+	that listens to these events and uses the data provided to visualize the events in real time on the
+	console.
+
+	class CEventVisualisation
+
+	renamed to 
+
+	class CEventVisualization
+
+	Method
+
+		  virtual bool Get3DPos(RwV3d &v) {return false;}
+
+	renamed to
+
+	virtual RwV3d *GetWorldPos(void) {return 0;}
+
+
+	The destructor of CEventHandler now broadcasts iMsgOnDeleteEntity with a pointer to
+	the event handler thats about to be deleted.
+
+		CEventHandler::~CEventHandler(void)
+		{
+			RWS_FUNCTION("RWS::CEventHandler::~CEventHandler");
+
+			CMsg Msg(iMsgOnDeleteEntity, static_cast<CEventHandler*>(this));
+
+			SendMsg(Msg);
+
+	The following events are available for tracking events:
+
+		iMsgEventSend
+		iMsgEventReceived
+		iMsgEventSent
+
+		iMsgEventUnRegistered
+
+	Visualisation renamed as Visualization
+
+	Get_m_pCEventVisualisation
+	Set_m_pCEventVisualisation
+
+	Renamed as
+
+	Get_m_pCEventVisualization
+	Set_m_pCEventVisualization
+
+7/2/03: Refactoring of stream handler.
+
+	Stream handler has been re-written so that clients register an interest in specific stream functions see
+	strfunc. The stream handler parses the stream and calls the chunk handler for each strfunc registered.
+
+	strfunc_SetCameraMatrix,			 /**<  Positions Camera at new position defined by
+
+	Renamed to
+
+		  strfunc_SetDirectorsCameraMatrix = 3,  /**<  Positions Camera at new position defined by
+
+
+		  strfunc_UpdateEntityParams, 		/**<	Update entity parameters */
+
+	Renamed to
+
+		  strfunc_UpdateEntityAttributes = 5,	  /**<  Update entity attributes, typically calls
+
+	
+	strfunc_SetPauseMode,				 /**<  Pause Game */
+
+	Renamed to
+
+		  strfunc_SetFrozenMode = 6,				  /**<  Pause Game */
+
+
+		  strfunc_DeleteAsset,					/**<	Delete an asset */
+
+	Renamed to
+
+		  strfunc_UnLoadAsset = 15,				  /**<  Delete an asset */
+
+
+		  strfunc_LoadResources,				/**<	Specifies a resource to be loaded via the
+
+	Renamed to 
+
+		  strfunc_LoadAsset = 21,					  /**<  Specifies a resource to be loaded via the
+
+
+		  strfunc_UpLoadResources, 			/**<	UpLoad a resource, same as strfunc_LoadResources
+
+	Renamed to 
+
+		  strfunc_LoadEmbeddedAsset = 22,		  /**<  UpLoad a resource, same as strfunc_LoadResources
+
+
+		  strfunc_GetEntityTransform, 		/**<	Returns an entities transformation matrix
+
+	Rename to
+
+		  strfunc_GetEntityMatrix = 24,			  /**<  Workspace request for an entities transformation matrix
+
+
+	CAttributeHandler now has the following methods to register the chunk handlers it implements.
+
+			static void RegisterStreamChunkHandlers(void);
+
+			static void UnRegisterStreamChunkHandlers(void);
+
+
+	CEventHandler now has the following methods to register the chunk handlers it implements.
+
+			static void RegisterStreamChunkHandlers(void);
+
+			static void UnRegisterStreamChunkHandlers(void);
+
+
+	CResourceManager now has the following methods to register the chunk handlers it implements.
+
+			static void RegisterStreamChunkHandlers(void);
+
+			static void UnRegisterStreamChunkHandlers(void);
+
+
+	MainLoop::MainLoop now has the following methods to register the chunk handlers it implements.
+
+			static void RegisterStreamChunkHandlers(void);
+
+			static void UnRegisterStreamChunkHandlers(void);
+
+
+	MainLoop::Logic now has the following methods to register the chunk handlers it implements.
+
+			static void RegisterStreamChunkHandlers(void);
+
+			static void UnRegisterStreamChunkHandlers(void);
+
+
+	MainLoop::Render now has the following methods to register the chunk handlers it implements.
+
+			static void RegisterStreamChunkHandlers(void);
+
+			static void UnRegisterStreamChunkHandlers(void);
+
+	MainLoop::Network now has the following methods to register the chunk handlers it implements.
+
+			static void RegisterStreamChunkHandlers(void);
+
+			static void UnRegisterStreamChunkHandlers(void);
+
+
+		  CStreamHandler::ParseMessage (...);
+
+	Renamed to 
+
+		  CStreamHandler::ProcessStream (...);
+
+
+	CLevel no longer contains the pointer to the global camera, this has been moved into
+	MainLoop::Render therefore 
+
+		  CLevel::GetCamera()
+		  CLevel::SetCamera()
+
+	Become
+
+	MainLoop::Render::SetCamera()
+	MainLoop::Render::GetCamera()
+
+	Many changes to MainLoop::Open/Close
+
+		MainLoop open now calls RegisterStreamChunkHandlers(void);
+	
+		for each of the sub modules that provides handlers for strfuncs
+
+		Similarly UnRegisterStreamChunkHandlers(void); is called from
+
+		MainLoop::Close
+
+7/2/03:	Implemented Gamecube broadband adapter netstream code.  Defaults to DHCP configuration unless a file exists
+	 on the root of the DVD (emulator) drive, called "rwsipcfg.txt".	The first word of the first line in this file
+	 contains the static IP address to be used if no DHCP server is available.
+
+	 Two new build configurations are provided : "design debug broadband" and "design release broadband".
+
+27/1/03: Renamed strfunc_s
+
+	 strfunc_NewCameraMatrix
+	 strfunc_SetEnableDirectorsCamera
+	 strfunc_SetDisableDirectorsCamera
+
+	 to
+
+	 strfunc_SetCameraMatrix
+	 strfunc_EnableDirectorsCamera
+	 strfunc_DisableDirectorsCamera
+
+	 Similarly in streamhandler.h renamed
+
+			virtual void On_strfunc_NewCameraMatrix (void) = 0;
+			virtual void On_strfunc_SetEnableDirectorsCamera (void) = 0;
+			virtual void On_strfunc_SetDisableDirectorsCamera (void) = 0;
+
+	 to
+
+			virtual void On_strfunc_SetCameraMatrix (void) = 0;
+			virtual void On_strfunc_EnableDirectorsCamera (void) = 0;
+			virtual void On_strfunc_DisableDirectorsCamera (void) = 0;
+
+24/1/03: Refactored CLightPtr, CAtomicPtr, CClumpPtr, CCameraPtr. To give developers the choice of using
+	 the safe destruction of RpLights, RpClumps, RpCameras and RpAtomics without using the smart pointers. The
+	 Destroy code has been moved from the smart pointers into the helpers.
+
+	 In detail RenderWare Gfx provides the following functions for destroying clump, atomics etc
+
+	 RpClumpDestroy
+	 RpAtomicDestroy
+	 RpLightDestroy
+	 RwCameraDestroy
+
+	 The equivalent safe functions, i.e. they remove the atomic from any world and remove the object
+	 from any hierarchy they may have been attached to, are:
+
+	 ClumpHelper::Destroy - defined in toolkits\world\helpers\ClumpHelper.h
+	 AtomicHelper::Destroy - defined in toolkits\world\helpers\AtomicHelper.h
+	 LightHelper::Destroy - defined in toolkits\world\helpers\LightHelper.h
+	 CameraHelper::Destroy - defined in toolkits\world\helpers\CameraHelper.h
+
+	 Similarly HandleSystem commands for each of these types is also now available in the helper code.
+
+	 The event iMsgPreCClumpPtrDestroy is no longer generated by CClumpPtr when the clump is destroyed,
+	 this is now handled by the clump helper and has been renamed to iMsgPreRpClumpDestroy.
+
+	 iMsgPreCClumpPtrDestroy 
+
+	 Renamed as
+
+	 iMsgPreRpClumpDestroy
+
+23/1/03: Refactored startup code to clearly define where hardware, RenderWare and the game
+	 framework startup and shutdown occurs.
+
+	 Hardware layer is done in platform specific files i.e. win.cpp, gcn.cpp, sky.cpp
+
+	 RenderWare Gfx is done in startup.cpp
+
+	 And the Game Framework is done in mainloop.cpp
+
+
+22/1/03: Tidied up Audio integration code,  re-written documentation.
+	 - Toolkit is now a namespace instead of a class.
+	 - WaveDictStreamRead() has now been moved into the resource handler.
+	 - SetEnvironment() no lives in the AudioReverb behavior and not the toolkit.
+	 - SetSampleRate now lives in the AudioSound3D behavior and not the toolkit.
+	 - SetSpeakerConfig now lives in AudioGlobalMixer and not in the toolkit.
+	 - PlaySoundFromDictionary() now called Play() and moved into AudioSound3D.
+	 - Removed unnecessary atomic references from Audio behaviors except AudioSound3DInterface.
+	 - Removed GetGroupId() from AudioGroup behavior.
+	 - Audio core now starts up in mainloop.cpp and shuts down in mainloop.cpp
+	 - Removed camera message priority from AudioGlobalMixer.
+	 - AudioSound3DInterface now maintains a pointer to its virtual voice instead of a group Id.
+	 - Removed GetNumGroups()
+	 - Set frequency now uses a lookup table instead of a large switch statement.
+	 - SetSpeakerConfig now uses a lookup table instead of a large switch statement.
+	 - Added assertion to RWS:RWSAudio::FadeOutputObject() parameters.
+
+20/1/03: Removed RwUtils namespace, GenerateUIntIdFromString is now in the RWS namespace only.
+
+	RWS::RwUtils::GenerateUIntIdFromString(...);
+
+	moved to.
+
+	RWS::GenerateUIntIdFromString(...);
+
+
+16/1/03: Renamed method of debugtools
+
+	static DisplayDebugTools* GetDisplayDebugToolsInstance(void) { return pDisplayDebugToolsInstance;}
+
+	renamed to:
+
+	static DisplayDebugTools* GetInstance(void) {return pDisplayDebugToolsInstance;}
+
+15/1/03: Renamed CRpLevel to CLevel,
+
+	The following methods of CLevel have been renamed and extended...
+
+	static void SetPreferredWorld(RpAtomic *pAtomic,CRpLevelHint Hint);
+
+	renamed to:
+
+	static void SetPreferredWorldHint(RpAtomic * const pAtomic, CLevelHint Hint);
+
+
+	static void SetPreferredWorld(RpClump *pClump,CRpLevelHint Hint);
+
+	renamed to:
+
+	static void SetPreferredWorldHint(RpClump * const pClump, CLevelHint Hint);
+
+
+	static RpWorld *GetPreferredWorld(RpAtomic *pAtomic);
+
+	renamed to:
+
+	static RpWorld *GetPreferredWorldPtr(const RpAtomic * const pAtomic);
+
+
+	static RpWorld *GetPreferredWorld(RpClump *pClump);
+
+	renamed to:
+
+	static RpWorld *GetPreferredWorldPtr(const RpClump * const pClump);
+
+
+	Two new methods added.
+
+	static CLevelHint GetPreferredWorldHint(const RpAtomic * const pAtomic);
+	static CLevelHint GetPreferredWorldHint(const RpClump * const pClump);
+
+9/1/03: Removed workaround for Maestro font dictionaries, replaced with callback - MaestroFontReaderCB
+	which is used to load the fonts instead of the default method used by RenderWare.  No longer
+	need fontutils.cpp so this has been removed.
+
+	Added an assert to CResourceManager::Remove which will fail if the resource cannot be removed.
+	
+	Changed CRenderwareResource::FontStreamRead from:
+	
+	Rt2dFont *CRenderwareResource::FontStreamRead (RwStream *stream, const RwChar *fontName)	
+	to
+	Rt2dFont *CRenderwareResource::FontStreamRead (RwStream *stream)
+	
+	since the font name is no longer needed, the name is passed when the callback is called from RenderWare.
+
+
+6/1/03: Corrected spelling of functions within CRpLevel
+
+		  static void SetPreferedWorld(RpAtomic *pAtomic,CRpLevelHint Hint);
+		  static void SetPreferedWorld(RpClump *pClump,CRpLevelHint Hint);
+		  static RpWorld *GetPreferedWorld(RpAtomic *pAtomic);
+		  static RpWorld *GetPreferedWorld(RpClump *pClump);
+
+
+	renamed as...
+
+		  static void SetPreferredWorld(RpAtomic *pAtomic,CRpLevelHint Hint);
+		  static void SetPreferredWorld(RpClump *pClump,CRpLevelHint Hint);
+		  static RpWorld *GetPreferredWorld(RpAtomic *pAtomic);
+		  static RpWorld *GetPreferredWorld(RpClump *pClump);
+
+3/1/03: The namespace Startup has been renamed StartUp
+
+3/1/03: rwsmemory.h and rwsmemory.cpp have been renamed memoryhandler.h and memoryhandler.cpp
+
+	Upgrading
+
+	precomp.h includes rwsmemory.h this will need to be modified.
+
+3/1/03: Refactored mainloop/render by moving the code which displays the connection screen into a separate file.
+
+	Upgrading
+
+	The functionality is the same but split into more files, to upgrade add the new files to the project.
+
+3/1/03: Moved mainloop and startup out of the core folder.
+
+	Upgrading
+
+	Mainloop and startup are no longer compiled as part of the gfcore lib, these must be added to the game framework project.
+
+3/1/03: Refactor of startup folder into more folders and simpler files.
+
+	Upgrading
+
+	The functionality is the same but split into more files, to upgrade add the new files to the project.
+
+3/1/03: Renamed core\rwutils to core\misc
+
+	Upgrading
+
+	#include "../rwutils/idfromstring.h"
+
+	Changes to
+
+	#include "../misc/idfromstring.h"
+
+3/1/03: Removed RWS_DEFINE_UNCONST defined in unconst.h these seemed like a good idea but have proved to be of little value.
+
+3/1/03: Create world/smartptrs, moved code for smartptrs this folder.
+
+	Upgrading
+
+	#include "../../../framework/core/world/catomicptr.h"
+	#include "../../../framework/core/world/cclumpptr.h"
+
+	Changes to
+
+	#include "framework/toolkits/world/smartptrs/catomicptr.h"
+	#include "framework/toolkits/world/smartptrs/cclumpptr.h"
+
+	The following files are now within the smartpointers folder
+
+	catomicptr.cpp
+	catomicptr.h
+	ccameraptr.cpp
+	ccameraptr.h
+	cclumpptr.cpp
+	cclumpptr.h
+	clightptr.cpp
+	clightptr.h
+	crwobjectptr.h
+
+3/1/03: Create world/helpers folders, moved code for helpers into relevant folders.
+
+	Upgrading 
+
+	#include "../../../framework/core/world/worldhelper.h"
+	#include "../../../framework/core/world/skinhelper.h"
+
+	Changes to
+
+	#include "framework/toolkits/world/helpers/worldhelper.h"
+	#include "framework/toolkits/world/helpers/skinhelper.h"
+
+	The following files are now within the world/helpers folder:
+
+	atomichelper.cpp
+	atomichelper.h
+	camerahelper.cpp
+	camerahelper.h
+	clumphelper.cpp
+	clumphelper.h
+	lighthelper.cpp
+	lighthelper.h
+	skinhelper.cpp
+	skinhelper.h
+	worldhelper.cpp
+	worldhelper.h
+
+3/1/03: Split Cresource.h into Cresource.h and CresouceManager.h. Renamed Cresource.cpp CresourceManager.cpp
+
+	Upgrading
+
+	CResource.h should no longer be included directly as it is included by CresourceManager.h. If it is the following error will be generated
+
+	“cresource.h should no longer be included directly, please include cresourcemanager.h instead”
+
+	To fix this change 
+
+	#include "../../../framework/core/resourcemanager/cresource.h"
+
+	To
+
+	#include "framework/core/resourcemanager/cresourcemanager.h"
+
+3/1/03: Moved files with cclassfactory folder into attributehandler folder, removed cclassfactory folder.
+
+	Upgrading, no need to change anything as this file is included from CAtrributeHandler
+
+3/1/03: Rename CattributeHandler and CeventHandler folders to AttributeHandler and EventHandler
+
+	Upgrading
+
+	#include "../../framework/core/cattributehandler/cattributehandler.h"
+	#include "../../framework/core/ceventhandler/ceventhandler.h"
+
+	Changes to
+
+	#include "framework/core/attributehandler/cattributehandler.h"
+	#include "framework/core/eventhandler/ceventhandler.h"
+
+3/1/03:	Renamed core/world as toolkits/world
+
+	Upgrading
+
+	#include "../../../framework/core/world/factory.h"
+	#include "../../../framework/core/world/camerahelper.h"
+	#include "../../../framework/core/world/atomichelper.h"
+
+	Changes to
+
+	#include "framework/toolkits/world/factory.h"
+	#include "framework/toolkits/world/helpers/camerahelper.h"
+	#include "framework/toolkits/world/helpers/atomichelper.h"
+
+3/1/03: Renamed files rwsTime.h and rwsTime.cpp to gftime.cpp and gftime.h. Moved the folder core\time to toolkits\time.
+
+	#include "../../time/rwstime.h"
+
+	Change to
+
+	#include "framework/toolkits/time/gftime.h"
+
+3/1/03: include files are now relative to the source\core folder which makes adding behaviors to other projects much simpler.
+
+	Upgrading
+
+	#include "../../../framework/core/macros/debugmacros.h"
+	#include "../../../framework/core/world/factory.h"
+
+	Changes to
+
+	#include "framework/core/macros/debugmacros.h"
+	#include "framework/toolkits/world/factory.h"
+
+	also need to add a path in your project to the source folders.
+
+03/1/03 fixed bug #3388 Crash if number of voices reaches MAXVVOICES in FreeVoiceFind.
+
+11/12/02 Added '#pragma exceptions off' to all files which require it after updating to CW 3.04.
+	 There is a bug logged with Metrowerks (WB1-41640) - a bug with the dwarf generator when
+	 exception handling is switched on.
+	 This only happens for release builds.
+	 This is a workaround until the next release of CW which will fix this problem.
+
+	 Also, added '#pragma force_active on' to FPSSkyDome.cpp since it was missing.
+	 
+	 Also, removed RWAudio libs from MW game_framework project.
+
+------------------------------------Version incremented to Release 1.1---------------------------
+
+5/12/02 Added support for multiplatform RenderWare Audio.  There are still some issue in this release with some of the 
+	RwAudio libraries which stop the audio functionality from working properly, but these will be resolved within RenderWare Audio. On
+	the win32 platform the project files have been updated to compile with the Multithreaded run time libraries instead of the single
+	threaded libraries a requirement of RenderWare Audio.
+
+28/11/02 Added RWS_WARNING macro to debugmacros.
+
+28/11/02 The startup folder in core now has platform specific code within sub-folders i.e.
+
+	startup/win32
+	startup/gcn
+	startup/xbox
+	startup/sky
+
+28/11/02 Modified ClassFactory to generate a warning if a behaviour is requested that is unavailable on the target platform.
+
+27/11/02 GameCube CommsServer update.
+
+			- CommsServer now resets the connection to the GameCube when the workspace disconnects.
+			- CommsServer has a system tray icon.
+			- Can reset and exit the CommServer via the tray icon.
+			- Double left-clicking on the tray icon also resets the CommsServer.
+
+26/11/02 Created CFXFlagShader as an example of how to use the CFXXBoxVertexShaderBase base class in order to create a vertex shader that can be applied to
+	 atomics. Atomics are associated with the shader by dragging their asset onto an instance of CFXFlagShader in studio. The shader will animate the
+	 geometry by applying a sine wave to each vertex. Vertex alpha is used as a weight value so that if for example vertex alpha is set to zero on the flagpole
+	 then the flagpole will not be affected by the sine wave. However setting a range of vertex alpha values on the vertices in the flag cloth will vary the
+	 amount the sine waves will animate the cloth vertices.
+
+26/11/02 Removed CFXVertexShader and CFXTreeShader and replaced with CFXXBoxVertexShader and CFXXBoxFlagShader.
+
+25/11/02 Removed logical.h, RWS_implies and RWS_iff are no longer defined.
+
+20/11/02 The order attribute of the CFXPartSpray behavior has a data type of RwUint32 but was calling
+	 GetAs_unsigned_short() to get its value from workspace. GetAs_RwUInt32() is now called so the correct data
+	 is now retrieved from the attribute packet.
+
+20/11/02 Created a behaviour that can be used to apply motion blur effects on GameCube, PS2 and XBox. The XBox and PS2 versions blend the front buffer with
+	 the back buffer and so do not need to allocate any extra memory, however the GameCube version allocates a texture in system memory to store a copy
+	 of the previous frame. The behaviour allows you to specify a transformation to be applied to the polygon being used to blend the front buffer (or
+	 copy of previous frame) with the back buffer. This allows a great deal of interesting effects to be created.
+
+
+19/11/02 Moved core/macros/macros.h into core/CAttributeHandler/attributemacros.h. CAttributeHandler.h includes attributemacros.h so there should
+	 be no need for a behavior to include it specifically.
+
+19/11/02 Refactored CAtomicPtr, CClumpPtr, and CLightPtr moving implementation of HandlerSystemCommands into the AtomicHelper, ClumpHelper and LightHelper
+	 files. This makes it easier to reuse the HandleSystemCommands functions when not using the smart pointers, i.e.
+
+	 CAtomicPtr pAtomic = RpAtomicCreate();
+
+	 pAtomic.HandleSystemCommands(attr);
+
+	 Is equivalent to...
+
+	 RpAtomic *pAtomic = RpAtomicCreate();
+
+	 HandleSystemCommands(*pAtomic,attr);
+
+
+19/11/02 Renamed function,
+
+	 void ClumpHelper::ClumpRenderVisible(RpClump * clump);
+
+	 As 
+	 
+	 void ClumpHelper::RenderAllVisibleAtomics(RpClump * pClump);
+
+
+18/11/02 Created a Pixel Shader base class for XBox only called CFXXBoxPixelShader. This provides helper functions that apply a pixel shader
+	 to atomics and clumps. An example behavior called CFXXBoxExamplePS has also been created which fades an atomic between its base texture
+	 and a over bright red shade.
+
+18/11/02 Added support for material effects dictionaries. XBox and GameCube specific.
+
+08/11/02 String comparison optimization in Resource Manager and Event Handler.
+
+05/11/02 CKWorldObject::SetWorld() method added to enable you to set up the collision world for Karma
+			once the world is loaded.
+			This was done in the constructor for CKWorldObject but this is called before the world is loaded.
+			SetWorld is now called from CKarmaParams.
+			Use the CKarmaParams behaviour with a world asset to specify the collision world to use with Karma.
+
+05/11/02 Removed FPSPlayerGun behaviour, this is incomplete and will be replaced but a better example in the future.
+
+04/11/02 Added tbe following code before any call to RwCameraBeginUpdate, RwCameraBeginUpdate will assert if the matrix isn't 
+	 rwMATRIXTYPEORTHOGONAL some RenderWare matrix operations don't preserve this information. RwMatrixOptimise can be used to
+	 calculate these flags but is expensive and can set the identity flag in correctly ( i.e. if the threshold is too low ) this
+	 then causes RwCameraBeginUpdate,  to calculate the projection matrix incorrectly.
+
+	 // Matrix flags are sometimes discarded, RwCameraBeginUpdate will assert if these are not set
+	 //
+	 rwMatrixSetFlags(RwFrameGetMatrix(RwCameraGetFrame(pRwCamera)), rwMATRIXTYPENORMAL | rwMATRIXTYPEORTHOGONAL);
+
+31/10/02 BugFix, in AtomicBoundryIntersectCB...
+
+	 AtomicBoundryIntersectCB() in ellipse.cpp calls
+
+	 nc->norm_matrix = RwMatrixCreate()
+
+	 but there does not seem to be a RwMatrixDestroy(nc->norm_matrix)
+
+28/10/02 AudioGLobalMixer behavior was not setting correct orientation for listener.
+
+
+28/10/02 Altered CFXEnvironmentMap and CFXBaseEnvironmentMap to make use of CmaterialEvent this fixes a problem
+	 whereby deleting environment behaviors in workspace caused the framework to assert.
+
+28/10/02 Created a material helper class called CMaterialEvent which can be used to track the creation, deletion and
+	 copying of materials.	Classes deriving from CMaterialEvent can receive a callback when any of the events occur.
+	 An example of how this can be used is the CFXEnvironmentMap behavior.	When an asset that is associated with the
+	 behavior is deleted the behavior is informed that the materials belonging to the asset no longer exist. This means
+	 that the behavior can remove the relevant materials from its list of materials that make us of the behavior.
+
+28/10/02 Created a vertex shader base class for the Xbox only, called CFXVertexShaderBase, which can be used to derive a vertex shader behavior.
+	 An example vertex shader behavior called CFXTreeShader making use of CFXVertexShaderBase has been created which applies animations to trees.
+
+
+23/10/02 Changed spelling from British to US versions
+
+			  Spelling changes in comments...
+				behaviour -> behavior
+				colour -> color
+				centre -> center
+
+			  Spelling changes in code...
+				behaviour -> behavior:
+				 CAnimSet enum EndBehavior { LOOP, HOLD };
+				 void SetEndBehavior( RwUInt32 animIndex, EndBehavior behavior );
+				 EndBehavior GetEndBehavior( RwUInt32 animIndex ) const;
+				 EndBehavior endBehavior_;
+
+				colour -> color:
+				 CKDebugTools void ParseColor(RwRGBAReal* t_color, RwUInt32 color);
+				 CFXReplicator void EvaluateColor(const RwRGBAReal &c0, const RwRGBAReal &c1, const RwRGBAReal &c2, 
+															 const RwRGBAReal &c3, const RwRGBAReal &c4, const RwReal t, RwRGBAReal &cr);
+
+				centre -> center:
+				 DebugTools RwV3d m_ElipseCenter[MAXELIPSOIDS];
+
+22/10/02 - Added support for Sound Groups.  If a dictionary is attached to an AudioGroup behavior,  it will add the
+		dictionary into a sub group,	therefore it is possible to fade/(enable-disable) any sounds in that group,  
+		so you may for example want to just fade all the sounds in the ambient group.
+
+	 - Added iMsgAudioDictionaryDelete system event. If you delete a wave dictionary from a group while the 
+		framework is running the AudioSound3D behaviors have to disassociate themselves with the dictionary 
+		in question.  So when a dictionary is deleted the resource manager sends out this event,	and the 
+		AudioSound3D behaviors can unattach from the dictionary.
+
+	 - Tidied up HandleEvents functions in most of the Audio behaviors as they were getting rather long and
+		unreadable. Most of HandleEvents functionality has been moved into separate member functions which HandleEvents calls.
+
+17/10/02 Changed CFX_PartSpray to support new features of the modified particle system.
+			That is, textures, animation of sub-textures, rendering modes, blend modes.
+
+17/10/02 Checked in new textured particle system. Basically, rewritten the particle system
+			to allow more code reuse on derived systems (ie the textured system). Supports
+			various rendering modes (to remove interparticle and or intersystem problems)
+			and now allows blend modes to be modified. Texturing is animatable using sub-
+			textures.
+
+16/10/02 BugFix, resizing the window/display area doesn't maintain the aspect ratio of the directors camera.
+
+16/10/02 BugFix/Enhancement in CResourceHandler,
+
+			virtual void *Load(const RwChar *psName, const RwChar *psType, const RwChar *psResourcePath, RwStream* pStream, RwUInt32 uiStreamSize) = 0;
+
+	 Changed to...
+
+			virtual void *Load(const RwChar *psName, const RwChar *psType, const RwChar *psResourcePath, RwStream* pStream, RwUInt32 uiStreamSize, RwUInt32 &uiResourceSize) = 0;
+
+	 This enables a ResourceHandler to "return" the size of the resource that has been loaded which is stored by the Resource Manager within the CResource
+	 class for each resource.
+
+15/10/02 Removed support for RWLOGO
+
+15/10/02 Added RemoveAtomic, RemoveClump, RemoveLight inline funcs to CRpLevel for consistency.
+
+15/10/02 BugFix/Enhancement, bug report relates to booting from a file, and using a DVD rather than a CD with PS2...
+
+	[Problem...]
+
+	Studio doesn't initialize the CD drive unless CDROM is defined. 
+	Unfortunately CDROM also causes Studio to load everything from the 
+	CD.  This means you can only load assets from one or the other.  You 
+	might want to stream video, for example, while downloading assets 
+	from the workspace.
+
+	Also, Studio initializes the CD drive as CD and not DVD. If you 
+	create a DVD Studio disk, you will not be able to load from it unless 
+	you change the call sceCdMmode from 
+
+	sceCdMmode(SCECdCD); to sceCdMmode(SCECdDVD);
+
+	in the skeleton, there is a flag to toggle DVD/CD mode.	Maybe this 
+	could be put into studio.
+
+
+	[Solution...]
+
+	I've added a second defined DVDROM which calls...
+
+	sceCDMmode(SCECdDVD) as suggested.
+
+	Booting from file is done if RWS_DESIGN is not defined.
+
+	See doc's "Build Configurations" for more details.
+
+
+14/10/02 Improved documentation of CEllipsoid::CalcCollision renamed some of the parameters to make it clearer.
+
+			void CalcCollision(
+				CEventHandler *pCEventHandler,
+				CMsg *CMsg,
+				RwFrame *frame,
+				RwV3d *center_offset,
+				RwReal gndradius,
+				RwBool *onground,
+				RwV3d *E);
+
+	Becomes...
+
+			void CalcCollision(
+				CEventHandler *pCEventHandler,
+				CMsg *CMsg,
+				RwFrame *CollidingObjectFrame,
+				RwV3d *CenterOffset,
+				RwReal GndHeight,
+				RwBool *OnGround,
+				RwV3d *EllipseDimension);
+
+
+14/10/02 added following support to audio toolkits and behaviors
+	 - Fade up/down on output device,  sends out 'end' message when fade completes.
+	 - Fade up/down on voices,  sends out 'end' message when fade completes.
+	 - Factored out reverb from globalmixer into separate behavior.  You can override default reverbs and create your
+		own by modifying the I3DL2 parameters.
+	 - Added fade to reverb so you can fade up and down the 'room' element of the I3DL2 structure.	This is effective used as the reverb gain.
+	 - Added debug metrics to audio behaviors,  now you can display mixer settings,	reverb setting and individual vouice channel parameters.
+	 - Added Sliders to AudioSound3d for Min/Max voice attenuation.
+	 - Added Sliders to AudioSound3d for voice bias.
+	 - Added slider for changing sample rate of a voice,	you can either select standard sample rates from a drop down box or hit an override button
+		and set any sample rate.
+	 - Added fade controls to AudioSound3d behaviour so you can send an event to fade individual voices.
+	
+		
+
+14/10/02 BugFix, iCMaestro wasn't restoring the render states it changed when rendering.
+
+11/10/02 Removed code in CEntity to move objects from one world into the new world, because of the changes to CRpLevel is will no longer work, worlds
+	must now be created before objects are added to them.
+
+11/10/02 BugFix, Debug lines sometimes drawn in wrong colours.
+
+	 Added DebugTools::PrintfRenderState which can be used to print the current renderstate to the screen.
+
+11/10/02 BugFix, Loading screen modifies the default renderstate without restoring it.
+
+10/10/02 Playstation2 game framework can now be run via AtWinMon, with some small modifications. Instructions for
+		 compiling and running the game framework are in the help file, in the Build Configurations module.
+
+10/10/02 Added behaviors to support custom pipelines on PS2, see CPipeLines, CPipeLinesBase and SkyRegister pipes, see documentation for additional 
+	 information.
+
+10/10/02 Added code to send PS2 specific metrics back to the workspace via RWS_TRACE_METRIC
+
+10/10/02 Added display of port number to waiting for connection screen.
+
+03/10/02 BugFix, FPSSpinningPickup, interface is badly named, i.e. the bounce rate attribute actually modifies the bounce height. This has been 
+	 fixed and a separate attribute for modifying the bounce rate added.
+
+03/10/02 BugFix, FPSBouncyPickup objects shrink over time as they concatenate matrices, this has been fixed by normalizing the matrix every
+	 128 frames.
+
+26/09/02 FPSRender now supports depth soring of atomics, this is useful for sorting translucent atomics. CRpLevel has been extended
+	 to contain by default two RpWorld, an opaque world and a translucent world. CRpLevel also provides functionality for attaching
+	 a hint to an atomic or clump which indicates which world they should be added to. A new behaviour CSetCRpLevelHint is provided which
+	 can set this hint value. In order for CRpLevel to add atomics/clumps to the correct world CRpLevel provides the following RpWorld 
+	 equivalent functions AddAtomic, AddClump, AddLight. For a detailed description of CRpLevel please refer to the help files.
+
+	 A new example "Example Alpha Sort" has been provided which demonstrates three ways to setup a world and make use of the depth sorting
+	 functionality of FPSRender, and RpWorld management of CRpLevel.
+
+	 IMPORTANT NOTE: Entities which need to be added to the world must be created after the world is created, i.e. FPSRender should typically
+	 be the first entity in the hierarchy list shown in the workspace.
+
+24/09/02 Extended CAnimSet to store the name of the animation.
+
+	 CAnimSet::AnimData structure now has an extra member:
+	 
+		const RwChar *pName_;
+		
+	 The constructor for AnimData now takes an extra param which is the name of the animation.
+	 
+		AnimData( const RpHAnimAnimation* pRawData, const RwChar* pName );
+		
+	 CAnimSet::AddAnimation gets this name from the animation resource.
+	 
+	 To use the animation name with CAnimSet call CAnimSet::GetDstAnimationByName:
+	 
+		RwBool GetDstAnimationByName(const RwChar *animName, RwInt32 *animIndex);
+		
+	 This method searches CAnimSet::animData_ and if the name is found returns TRUE, otherwise FALSE.
+	 animIndex stores the index of the animation if found.  The index can then be used to set the desired
+	 animation in the usual way via CAnimSet::SetDstAnimation.
+		
+	 The animation asset in RenderWare Studio needs to have the 'Send Name to Target' check box ticked
+	 in order to send the name with the Resource which is picked up in CAnimSet::AddAnimation
+
+24/09/02 Added end target event to sound3d behaviour.  When a sound finishes playing,	an event is triggered.	This can be used for 
+	 when a series of actions need to be chained together in a game,	for example when an explosion goes off.
+	 It is useful to know when the bang sound has finished playing before progressing to the next stage in the animation.
+
+24/09/02 Implemented 'No Restart On Play' option in sound behaviour.  when this is turned off,	every time you receive a play event,  the sound will re start,  
+	but when this is turned on,  the sound will not restart until the current sound has finished playing.
+
+23/09/02 fixed bug #1853, Audio example can only connect once without resetting the target.	Code now destroys dictionary correctly and resets virtual voices and hardware voice pool.
+
+23/09/02 Fixed bug #1849 AudioSound3D doesn't play the sound where it is triggered.
+	 When new RwFrame was coming in,  it was not being set correctly by play routine and was being	 overwritten by atomics position.
+
+16/09/02 Created a behaviour called CFXBaseEnvironmentMap which can be used to control environment maps on assets that use materials containing an
+		  environment map texture. RenderWare running on the PS2 requires a default environment map frame, this gets created in startup.cpp. and is assigned to			 atomics, clumps and worlds as	they are loaded.
+
+16/09/02 Commented back in the loading of dev9.irx and smap.irx to enable the use of the broadband adapter on the ps2.
+
+16/09/02 Refactored DebugTools.h and DebugTools.cpp, extracted code from DisplayDebugTools::Poll to create
+
+		  void DrawLines(void);
+		  void DrawEllipses(void);
+		  void DrawPolys(void);
+		  void Draw3DText(RwCamera *pCamera);
+
+	extern RpLight *Show_Light (RpLight * light, void *data);
+	extern RpWorldSector *Show_Sector(RpWorldSector *worldSector, void *data);
+
+	Renamed as...
+
+	extern RpLight ShowLightCB (RpLight * light, void *data);
+	extern RpWorldSector *ShowSectorCB(RpWorldSector *worldSector, void *data);
+
+	Improved documentation.
+
+13/09/02 Changed the Maestro code to load in the fonts before the Maestro animation to get round a change
+	 in RW 3.4 which meant the fonts in the Maestro behaviour didn't work.
+	 _rt2dFontDictionaryNodePreload now gets used in CRenderwareResource::FontStreamRead to load the
+	 font data in before the Maestro animation is loaded.
+	 
+	 Changed all Resource::Load functions to take an extra parameter (psName - 1st param) to enable
+	 the name of the font to be passed on to the resource handler.
+	 
+	 class CResourceHandler
+	 {
+		virtual void *Load(const RwChar *psType, const RwChar *psResourcePath, RwStream* pStream, RwUInt32 uiStreamSize) = 0;
+	 }
+
+	 Changed to...
+
+	 class CResourceHandler
+	 {
+		virtual void *Load(const RwChar *psName, const RwChar *psType, const RwChar *psResourcePath, RwStream* pStream, RwUInt32 uiStreamSize) = 0;
+	 }
+
+13/09/02 Changed Maestro Exporter to allow more than one font to be exported from the Maestro animation.
+	 Also, added support to export a texture dictionary for each platform to use textures with
+	 Maestro animations.
+
+12/09/02 Refactored CEventHandler to only use RenderWare types, i.e. RwUInt32 rather than unsigned int.
+
+11/09/02 CDebugTools has been extended to provide an interface in the workspace to enable/disable various metrics values (using RWS_TRACE_METRIC), note these values
+	 are only available if RwEngineGetMetrics returns valid data, i.e. the target is being built as a metrics build.
+
+11/09/02 Added RWS_TRACE_METRIC and RWS_SEND_TRACE_METRICS macros, these are enabled by defining RWS_TRACE_METRICS for each of the projects. By default they
+	are enabled for all Design Builds...These macros allow data to be sent back to the workspace and displayed as a graph, data is captured using
+
+	RWS_TRACE_METRIC(rate,name,var)
+
+	for example;
+
+	void myfunc(void)
+	{
+		static int myvar = 0;
+
+		myvar += 1;
+
+		RWS_TRACE_METRIC(5,"MyValue",myvar)
+	}
+
+	This causes the data myvar to be added to the trace called MyValue every 5 times this macro is processed, i.e. every 5 times myfunc is called.
+
+	RWS_SEND_TRACE_METRICS(rate) is called from within mainloop.cpp and is used to force the captured data to be sent to the workspace, note data is also
+	sent if the captured data buffer is full. Again rate defines the number of times this macro is processed before the buffer is purged, i.e. RWS_SEND_TRACE_METRICS(60) 
+	will purge the buffer every 60 times RWS_SEND_TRACE_METRICS is processed/called.
+
+	Note: Because the metrics data is sent back across the network connection to the workspace in realtime, the frequency with which the data is sent and the amount
+	of data i.e. the number of streams or data elements within each stream may affect the performance of the target (the capability/bandwidth of each of network 
+	connection also varies depending on the target platform).
+	
+
+02/09/02 Bugfix, uninitialized data when not using event visualization in CEventHandler.
+
+		CEventHandler(void)
+		{
+#ifndef NDEBUG
+			refCountEventHandlersCreated++;
+#endif
+			LinkMsg(iMsgFindEventHandler,0);
+		};
+
+		should be,
+
+		CEventHandler(void) : m_Active(true)
+		{
+#ifndef NDEBUG
+			refCountEventHandlersCreated++;
+#endif
+			LinkMsg(iMsgFindEventHandler,0);
+		};
+
+
+02/09/02 BugFix, Karma base classes now have virtual destructors.
+
+02/09/02 Custom data packets sent from workspace are now wrapped in a strFunc_CustomData chunk.
+
+21/08/02 BugFix, FPSTriggerCounter hasn't been unlinked from iMgsRunningTick if a delay is specified.
+
+21/08/02 Modified CEventhandler so that once the safe CEventHandler::Delete has been called no more events will be received by that event handler
+	 while waiting for the actual delete operation to occur.
+
+21/08/02 Added ProDG for GameCube project (SN_GCN) and setup the compiler. Works on GDEV at this point. Confirmed as working
+			for design builds and non-design builds.
+
+21/08/02 Updated project on Metrowerks GCN so it works with the latest SDK (dated 12dec01, patch 4). This SDK is now
+			REQUIRED for use with the project. It can be downloaded from the Nintendo website.
+
+20/08/02 Improved error trapping (implemented by RWS_ASSERT + RWS_ASSERTFAIL) for illegal asset types, missing files, missing resource handlers.
+
+19/08/02 Changed CRenderwareResource.cpp to assert if a platform independent texture dictionary is loaded onto the	 PS2, XBOX or GameCube
+
+16/08/02 The OpenGL and DirectX targets can now load platform independent texture dictionaries. These behaviors use the event system to send a CEventHandle*,
+	 the code was missing the static_cast operator...
+
+			CMsg CMsg(m_msg_response_tx,this);
+
+	 Should be...
+
+			CMsg Msg(m_msg_response_tx, static_cast<CEventHandler*>(this) );
+
+
+15/08/02 Changed default network port for D3D to 5607 to stop OpenGL and D3D connections being mixed up.
+	 Made changes (to win32 window class name) to allow a single D3D console to run simultaneously with a single OpenGl console.
+
+14/08/02 bug fix to audio integration.  
+	 - When selecting voices,	behaviors were over writing voice numbers,  this is fixed now.
+
+	 - 2d voices now play correctly.
+
+	 - Added Panning control to voices
+
+13/08/02 FPSTrain, jumps to the first pathnode when the level loads.
+
+13/08/02 BigFix, void FPSToggleInterface::GenerateTransformationMatrices(RwV3d &m_velocity,RwV3d &m_angvelocity) can generate illegal matrix if
+	 m_frame_count_off_to_on or m_frame_count_on_to_off are 0.
+
+09/08/02 Fixed bugs in bouncing pickup. Rotation value was static so was changing all bouncing pickups, plus removed reference counter.
+	 New bounce delta was being calculated every time sliders moved which is wrong,	changed it so it only calculates when object moved in studio.
+
+09/08/02 Fixed bugs in bouncing pickup. Rotation value was static so was changing all bouncing pickups, plus removed reference counter.
+
+09/08/02 Refactored ClumpHelper, AtomicHelper, by creating SkinHelper and moved clump collision flag code
+	 into CSystemCommands.
+
+09/08/02 BugFix, CRenderwareResource can cause conflicts with other resource handlers due to
+	 isHandler func not checking full resource type ID, this has been fixed.
+
+09/08/02 Fixed platform position being incorrect after the game state is loaded or reset.
+
+09/08/02 Fixed teleported code teleport to the correct destination position.
+
+08/08/02 Bugfix, pressing Reload on the bsp in the scene now works as expected reloading the world.
+
+08/08/02 Updated CClumpPtr to handle lights and camera's, note until RpClumpClone handles lights and cameras this is redundant.
+
+08/08/02 Fixed bug in wave dictionary stream read.  After dictionary was loaded,  it carried on looking for the wave dictionary chunk id and therefore
+	 skipped to the end of the stream.	Therefore all assets after the dictionary were skipped.
+
+07/08/02 To cut down on duplicated code, CFXBaseLight class now has some attributes that were previously shared
+			between its derived classes. 
+
+			Unfortunately, any game entities using CFXColorLight, CFXLight_2Stage, CFXLight_Spline, 
+			CFXSpinLight or CFXWaveLight will have to have the behaviour replaced on the entity and
+			have its attributes set again. (Otherwise the shared attributes in CFXBaseLight will be ignored).
+
+06/08/02 Added light mapping flags to FPSRender, if the world attached to FPSRender has been lightmapped then these
+	 flags can be used to enable/disable base and/or lightmap textures aswell as control the texture sampling mode.
+
+06/08/02 Fixed, FPSPlayer, CameraLookAtPoint and CSubRasterCamera so that the filed of view is calculated, from
+	 the attribute in FPSPlayer and CameraLookAtPoint.
+
+06/08/02 Added attributes to spinning and bouncing pickups.
+
+05/08/02 Number of modules was increased from 6 to 8 but the array was still initialized for 6 elements
+	 causing the ps2 exe to crash after loading the modules.
+
+02/08/02 Added BB Ethernet adapter support (DTL-H20400) via ifc001.cnf and dev001.cnf files.
+	 To switch to this configuration, simply edit net000.cnf, and uncomment the relevant section.
+
+01/08/02 Removed Mat FX xbox toolkit and behaviors from projects.
+
+01/08/02 CRpWorld and CRwCamera which store a global world and camera respectively have been replaced with
+	 CRpLevel. The code on the right replaces that on the left.
+
+	 CRpWorld::GetCurrent() -> CRpLevel::GetOpaqueWorld();
+	 CRpWorld::SetCurrent() -> CRpLevel::SetOpaqueWorld(world);
+
+	 CRwCamera::GetCurrent() -> CRpLevel::GetCamera();
+	 CRwCamera::SetCurrent() -> CRpLevel::SetCamera();
+
+	 The intention being for CRpLevel to contain any global data specific to a "game level".
+	
+
+01/08/02 Removed CRender behaviour moving its functionality into CrpWorldEntity in CEntity.cpp
+
+01/08/02 fixed bug#1072  Tutorial 7 wasn't printing debug trace messages.
+
+01/08/02 fixed bug #1035  CAnimSet::Update can return a uninitialized bool value.
+
+01/08/02 Submitted new audio integration for RenderWare Audio 2 beta.  RWAudio2 is still in beta and there are still some issues which stops
+			the integration working correctly,	see API ref for more details.  When RWAudio 2 finally ships these issues will be addressed.
+
+	 To enable audio to be build you must add in WITH_AUDIO to your projects preprocessor.  the default is to not compile with RWAudio.
+
+31/07/02 Added Debug_ListAvailableResources to CResource this checks that FindById and FindByName are working
+	 on a debug build.
+
+31/07/02 Modified FindById so that it can return the optional name of the resource.
+
+29/07/02 Added iMsgRequestCurrentCameraMatrix event, and SendTransformToWorkspace method. The workspace can
+	 request a camera matrix from the console, this is used to locate the editor when the camera on the
+	 workspace is being controlled by the game. In order to extend this so that multiple views can be used
+	 on the console the iMsgRequestCurrentCameraMatrix event has been created so that any behaviour
+	 can choose to send its transform back to the workspace using the SendTransformToWorkspace.
+
+	 FPSPlayer and CCameraLookAtPoint have been modified to take advantage of this facility.
+
+26/07/02 Extended CEventHandler by adding 		int GetLinkedPriority(CEventId &Id); method, this
+	 can be used to determine the priority with which an event has been linked to a specific 
+	 event handler.
+
+26/07/02 Fixed problem with elipse collision test and scaled objects, also reinstated the frame
+	 linking code, allowing collision detection to link to moving objects such as platforms.
+
+26/07/02 Fix for removing resources, iterator remove method was getting called twice when you
+	 purged an item.
+
+23/07/02 Changing all framework projects to use RWGSDK and RWASDK for the environment variables
+	 for RenderWare Graphics and RenderWare Audio respectively.
+
+23/07/02 Changed output directories to replace spaces with underscores since ProDG doesn't like
+	 spaces.  Bug #992 & #1025 in bugzilla.  Also, not using precompiled header in ProDG
+	 since it rebuilds the whole project from scratch each time.
+
+23/07/02 Changing IOP and module paths so the Audio IRXs don't get loaded from the LoadPadIRXs
+	 function and changed IOP path in project settings to use environment variable.	Bug
+	 #1025 in Bugzilla.
+
+23/07/02 Changed IOP_PATH in Project settings to use the RENDERWARESTUDIO environment variable
+	 instead of a hard-coded path.  Bug #993 in Bugzilla.  Also, changed output directories
+	 to replace spaces with underscores since ProDG doesn't like spaces.  Bug #992 & #1025
+	 in bugzilla.	Also, not using precompiled header in ProDG since it rebuilds the whole
+	 project from scratch each time.
+
+23/07/02 Tidying projects to sort out Access Paths, Loading Screen libs, RenderWare
+	 libs and Prefix libs - Bug #997 in Bugzilla.
+	 
+22/07/02 Added memory handling functionality. System now tracks allocations and frees. Reports leaks, boundary violations and
+			total/peak usage. The code is included via the preprocessor headers and is therefore in all files. Only requirement
+			for use is that the 'RWS_NEW' macro is used instead of 'new' and 'RWS_OP_NEW' is used instead of 'operator new' or
+			'RwMalloc'. Data is written to the debug console log.
+
+22/07/02 Maestro changes for Gamecube.
+
+22/07/02 Refactored CClassFactory, following functions are now internal to CClassFactory
+
+<			MakeNewPtr GetMakeNew(const char* pClassName);
+<	
+<			bool ClassIsRegistered(const char* pClassName);
+<	
+<			void RegisterClass(const char* pClassName, MakeNewPtr makeNewFn);
+
+	 New function MakeNew has been added that creates a class from the name of the class.
+
+
+22/07/02 Refactored CAttributeHandler, following methods have been renamed.
+
+<			void AddToMap(unsigned int instanceId);
+<			static void RemoveFromMap(unsigned int instanceId);
+<			static CAttributeHandler* FindInMap(unsigned int instanceId);
+<			static void DeleteAllInMap();
+
+	 Replaced with...
+
+>			void Add(unsigned int instanceId);
+>			static void Remove(unsigned int instanceId);
+>			static CAttributeHandler* Find(unsigned int instanceId);
+>			static void Purge();
+
+
+22/07/02 Refactored CEventHandler, main change renamed class CEventHandlerRegisteredMsg as CLinkedMsg.
+
+22/07/02 Refactored Resource Manager, CResource class has been split into CResource, CResourceIterator, and
+	 CResourceManager. CResource is responsible for storing the mapping of ID's and names to a resource. 
+	 CResourceIterator is responsible for traversing the global list of CResource objects. CResourceManager
+	 is responsible for creating and deleting CResource objects.
+
+	 Access to the resource manager is now via the CResourceManager class...
+
+	 For example...
+
+				 RwChar* pResourceType = 0;
+				 const void* pObject = CResource::Find(pFirstResource, &pResourceType);
+
+			Changed to...
+
+				 const RwChar* pResourceType = 0;
+				 const void* pObject = CResourceManager::FindById(pFirstResource, &pResourceType);
+
+
+
+	 The following class's/member names have been modified
+
+	 CResource::Find	 -> CResourceManager::FindById
+			CResource::Purge	-> CResourceManager::Purge
+			CResource::Remove -> CResourceManager::Remove
+
+
+19/07/02 Fixed project settings so precomp.h file gets built from precomp.cpp
+
+10/07/02 Updated the GameCube projects to support the GDEV as well as GameOptix (DDH).  Library files
+	 have been rejigged. Also, in Codewarrior the 'GCN Debugger Settings' have changed in the
+	 game_framework.mcp to take the target settings from the global preferences - 'GCN Debugger Global Settings'
+	 so you can switch between the two targets when necessary.	Both projects have had their access paths
+	 tidied up too.
+
+10/07/02 Update for streaming code on PSX to increase the delay to make sure connection is maintained
+	 when sending data using RWSHOST.
+
+03/07/02 Fix for the names of functions from LightCreate and LightDestroy to Create and
+	 Destroy, bug #778 in Bugzilla.
+
+03/07/02 Fix to change 'BOOL' to 'BOOLEAN' in RWS_ATTRIBUTE command, bug #736 in Bugzilla.
+
+03/07/02 Removed references to Karma libs from OpenGL/Release project. Bug #719 in Bugzilla.
+
+03/07/02 Fixed bug with Maestro behavior where the camera was not being set properly, camera is now stored
+	 from the camera passed into Render(). 
+
+02/07/02 Dynamic memory allocations removed from network code by reimplementing as custom RwStreams to read or
+	 write network data.  Gamecube RWSHOST, two-way comms and IP address display implemented too.
+
+02/07/02 Code added to resource handler and network layer to receive name of assets in network packets.
+	 Added FindByName to resource handler as a helper.
+
+02/07/02 Change for Maestro documentation and include paths - see changelist #07145.
+
+02/07/02 Maestro files moved for Gamecube and rt2dOpen and rt2dClose #ifdef'd out for Gamecube project.
+
+02/07/02 Moving Maestro behavior to its own folder under modules instead of inside the Examples folder.
+	 Also, changed docs to include Maestro group and changed name of Network group from CommsServer
+	 to NetStream.
+
+02/07/02 Renaming methods and variables to take out 'Maestro', since they are part of CMaestro or iCMaestro
+	 the explicit 'Maestro' is not required.
+	 
+	 ***** CRITICAL CHANGE ****
+	 ***** If you have used the Maestro behavior prior to this checkin you will notice that the ids for the
+	 ***** Maestro RWS commands (see CMaestro.h) e.g. CMD_Maestro_Start_Render have been changed to remove
+	 ***** the word 'Maestro'.  This means your .xml files will be out of date and need to be updated to
+	 ***** removed the Maestro part of these commands.
+
+02/07/02 Removed CRt2dOpen and put Rt2DOpen in Startup::Open and Rt2DClose in Startup::Close which means that
+	 the 2d engine will be opened even if there are no 2d objects used.
+	 
+02/07/02 Updated XML files containing references to CLight, to use CFXColorLight instead (same params, same names,
+	 same order). Needed as CLight has been deleted from the example behaviors.
+	 
+	 ***** CRITICAL CHANGE ****
+			***** If you are already using the CLight behavior in your game your .xml files will need to be
+			***** updated to use a different light e.g. CFXColorLight. Otherwise there will be no light in the game.
+
+01/07/02 Removed CLight, iCLight, CToggle, CEntityLoD examples and move tutorials form modules\examples\tutorials
+	 to modules\tutorials and move the file's directory to match.
+
+01/07/02 Refactored collision toolkit, this is still in development, however I have removed the redundant classes and wrapped
+	 the code in namespaces instead. This changes the way the toolkit is referenced. See changes to FPSPlayer and FPSMonster for details...
+
+	  Contained class no longer exists...
+
+			 m_CCollide.CalcCollision(this,CMsg,frame,&m_center_offset,m_height_when_on_ground,&m_onground,&E);
+
+	  Changed to use namespace...
+	  
+			 CCollide::CEllipsoid::CalcCollision(this,CMsg,frame,&m_center_offset,m_height_when_on_ground,&m_onground,&E);
+
+
+28/06/02 The camera used for the 2d Maestro rendering is now updated when the window is resized using
+	 Startup::iMsgResizeCameraRasters, Rt2dDeviceSetCamera() sets the camera to the one which has
+	 been updated by Startup::Resize()
+
+28/06/02 Added, iMsgDoRenderDirectorsCamera. Instead of camera/rendering behaviors checking whether the directors camera is enabled,
+	 using if(DebugSwitches::GetSwitch(DebugSwitches::m_enable_DirectorsCamera) == true) this is done once within render.cpp. The decision
+	 as to when to render is made by either linking to iMsgDoRender or iMsgDoRenderDirectorsCamera. For example...
+
+	 If FPSRender is dropped into the scene its default is to hook onto iMsgDoRender, if the directors camera is disabled then 
+	 iMsgDoRender is sent and FPSRender renders the scene. If the directors camera is enabled then iMsgDoRenderDirectorsCamera is sent,
+	 if nothing responds to iMsgDoRenderDirectorsCamera then iMsgDoRender is sent and FPSRender renders the scene.
+
+	 Now if the FPSRender is attached to a custom rendering event i.e iMsgDoMyRender then CDirectorsCamera should be used
+	 to hook the iMsgDoRenderDirectorsCamera event to the custom iMsgDoMyRender event.
+
+
+28/06/02 Bug Fix, CSubRasterCamera will assert/crash if the width or height of the sub-raster is 0.
+
+27/06/02 Bug fix to window shutdown in Win32 Target, win.cpp.
+
+26/06/02 Changed FPSPlayer so it no longer derives from SubRasterCamera. It has its own functionality for this now and can take in any
+			rendering message (RwCamera* as data) and send out any message (non-destructively modified RwCamera* as data). This modifies the
+	 way FPSPlayer can be used to display split screens...before changes to FPSPlayer (4 player split screen)
+
+	 (iMsgDoRender)->FPSPlayer->(MyRenderEvent)->FPSRender
+				 ->FPSPlayer->
+				 ->FPSPlayer->
+				 ->FPSPlayer->
+
+	 After changes either...
+
+	 (iMsgDoRender)->FPSPlayer->(RenderPlayer1)->CSubRasterCamera->(MyRender)->FPSRender
+				 ->FPSPlayer->(RenderPlayer2)->CSubRasterCamera->
+				 ->FPSPlayer->(RenderPlayer3)->CSubRasterCamera->
+				 ->FPSPlayer->(RenderPlayer4)->CSubRasterCamera->
+
+	or
+
+	 (iMsgDoRender)->CSubRasterCamera->(RenderPlayer1)->FPSPlayer->(MyRender)->FPSRender
+				 ->CSubRasterCamera->(RenderPlayer2)->FPSPlayer->
+				 ->CSubRasterCamera->(RenderPlayer3)->FPSPlayer->
+				 ->CSubRasterCamera->(RenderPlayer4)->FPSPlayer->
+
+26/06/02 Removed the CRespondToEvent and iCRespondToEvent classes & files. Modified the project files so they are not included. This
+			was performed as the example as deemed 'bad'.
+
+25/06/02 Changed the CCameraLookAtPoint class so that it uses the new DegAngDiffAndRange function. With this, it will correctly work at
+			the angular extremes of -180 and +180 degrees with +- 180 degrees (ie total range of say 0 to 360 degrees with a preferred
+			angle of 180 degrees).
+19/06/02 Removed the TriggerPush.h & .cpp file, plus removed from all target projects.
+
+18/06/02 Added CFXPartSpray behaviour and toolkit classes for use with it - CycPartBuff, CPB_BasePart,
+			CPB_Marker, CPB_Node, etc.
+
+18/06/02 Refactored CAtomicPtr, CCameraPtr, CClumpPtr, CLightPtr each of these no longer derive from CSystemCommands as they made
+	 no use of this base class.
+
+18/06/02 Added attribute to CDirectorsCamera that allows toggling of directors camera to be reversed with respect to the workspace.
+
+18/06/02 Removed unimplemented func Retarget from CAttributeHandler.
+
+18/06/02 Added RWS_CATEGORY, and RWS_DESCRIPTION macros to behaviour classes.
+
+18/06/02 Version incremented to RWSDevRel1.08
+
+13/06/02 Added 2 new build targets to the codewarrior and prodg projects files.	These build targets are 'Design Release CDROM' and 'Release CDROM'.	These 
+	 are needed when building bootable cd's of levels using the Push Button Make Game Process.
+
+13/06/02 Removed Shadow toolkit and behaviors from release branch of the game framework as there still under development and not ready for release.
+	 All project files have also been updated to remove the files from the build
+
+11/06/02 Refactored RWSTime, removed IsInited func from RWSTime. Also renamed Init/Term funcs as Open/Close for consistency.
+
+11/06/02 Modified RWS_ASSERT macros, if an assert occurs then double clicking in the IDE will jump to the correct file/line
+	number. Note this also works for RenderWare graphics asserts if the source is available.
+
+11/06/02 Modified object placement i.e. CSystemCommands::UpdateFrame to use RwMatrixOptimize rather than RwMatrixUpdate,
+	 in theory this should provide performance improvements where further matrix operations are performed.
+
+10/06/02 Added RWS_IMPORT_COMMANDS macro, this is interpreted by the parser as a derivation from a class and should
+	 prove useful for creating class factory's or aggregating classes.
+
+06/06/02 Fixes for Maestro code & reformatting code removing tabs etc. The Maestro animations now run
+	 inside RWStudio after a fix from Greg B, the callback used is now automatically determining if
+	 the Maestro animation is visible or not.
+
+16/05/02 Removed CKarmaRagDoll, CKarmaTowTractor, CKStewardess, CKTractorChasis, stewardess and tractor chassis
+	 from codewarrior, prodg, win32, and xbox projects.
+
+16/05/02 Removed old project files and related files from console/game_framework
+
+16/05/02 Modified startup.cpp improvements in comms means we can now run the debug station with an 8 Meg resource arena.
+
+14/05/02 Refactored CLinkPriority so that it displays the address of the instance and the priority, should be easy to
+	understand.
+
+14/05/02 Added Update AttributePacket functions, these can be used with the Clone function to
+	create and maintain a CAttributePacket packet that can be used as a template for the creation of
+	behaviors on the console. An example of this will follow.
+
+	CAttributePacket *CAttributePacket::Update(const CAttributePacket &rAttr)
+
+13/05/02 Removed defined that enables RpLogo from startup.cpp
+
+13/05/02 Improved documentation in CResourceHandler
+
+13/05/02 Fixed bug in CEventHandler which caused the following code to fail,
+
+	 void func(void)
+	 {
+		CEventId a,b;
+
+		RegisterMsg(a,...);
+
+		b = a;
+
+		UnRegisterMsg(a);
+		UnRegisterMsg(b);
+	 }
+
+09/05/02 Updates to audio system.
+	- Added support for virtual voices.  this allows you to have hundreds of voicesin a scene,  but only mapping to a few hardware 
+	  voices. Audio streams can not use virtual voices,  so stream voices are mapped to the last 16 voices in the real voice list.
+
+	- Voice manipulation functions in VoiceManager.cpp have been modified to take an extra boolean parameter to identify between 
+	  waves and streams.  this is because of the difference between virtual voices and real voices for waves and streams.
+
+	- Fixed bug that was making framework crash when you stopped a stream playing.
+
+07/05/02 Split gamecube project into gfcore.lib and gameframwork.
+
+07/05/02 Modified RWS_IMPLEMENT_CLASSID client must end command with a semicolon.
+
+03/05/02 Updated new game framework projects to include loading screen and tidied up the loading screen
+	 projects for all platforms. The loading screen libraries are built for all d3d8, opengl, xbox
+	 and ps2 platforms. GCN projects will be similar.
+
+03/05/02 Split code into a core.lib and game_framework project for each of the target platforms, 
+
+	 Win32 contains MSVC project for D3d+OpenGl
+	 SN_SKY contains MSVC project for PS2 ProDG
+	 MW_SKY contains code warrior project for PS2
+	 XBOX contains MSVC project for XBox
+	 GCN will contain codewarrior project for GameCube
+
+03/05/02 Update of lightmap code, removed redundant code that provided work around to lightmap toolkit.
+
+03/05/02 Refactored CReplicator added more control over blend state, also restores renderatate, added checks around
+	 SendMsg's so that if the event hasn't been registered the setup of the Msg is skipped.
+
+03/05/02 CAttributeHandler now contains a clone function which can be use to make a copy of a CAttributePacket. i.e.
+	 CAttributePacket& attr;CAttributePacket *pattr = attr.Clone();
+
+03/05/02 Modified CRender,FPSRender and DebugTools to restore the Renderstate after they have modified it. This will
+	 be the general rule for all behaviors provided with the game framework.
+
+03/05/02 Modified FPSTrigger and FPSRelay to SendMsg their RwFrame so that they can be hooked to lights, partial effects.
+
+01/05/02 Loading screen for all platforms as a separate library. Framework has been updated to call the
+	 loading screen functions (from render.cpp).
+
+01/05/02 Updates to audio system.
+	- Added rendering event to AudioGlobalMixer behaviour to receive camera positions from FPSRender.
+
+	- Sounds can now be played 3D and non 3D.
+
+	- Added channel number to AudioSound3D so that user has more control on channel allocation.
+
+	- Added control to AudioSound3D to change voice frequency.
+
+	- When calling the start playing event for a 3d sound,  you can send a position with the event.  so for example,	
+	  if a  bullet ricochets of a wall you can send an event with the bullets position to get the 'ricochet' sound in the place.
+
+	- When calling the start playing event for a stream,	you can send a position with the event. 
+
+	- Audio streams can now be played 3D and non 3D.
+
+	- Added channel number to AudioStream behavior so that user has more control on channel allocation.
+
+	- Removed overriding of file system from the audio engine start up routines.	this was causing the file system 
+	  to block when playing back audio streams.	unfortunately there is a bug in the audio libs (when the file system is not overridden) which 
+	  mean adding assets to a scene when the audio engine is running can cause the framework to crash.
+
+	  To get around this if you are not intending to use audio streams,	modify the AudioInit() function to read as follows, and this will 
+	  stop the framework from crashing.
+
+			 RwBool RwsAudio::AudioInit( void )
+			 {
+				  RWS_FUNCTION("RwsAudio::AudioInit")
+					 
+				  RwFileFunctions 	  *tempfileFuncs = 0;
+				
+				  RWS_PRE(!_CoreOpen);
+
+				  sm_fileFuncs = RwOsGetFileInterface();
+				  tempfileFuncs = (RwFileFunctions*)RwMalloc(sizeof(RwFileFunctions));
+				
+				  tempfileFuncs->rwfexist = sm_fileFuncs->rwfexist;
+				  tempfileFuncs->rwfopen = sm_fileFuncs->rwfopen;
+				  tempfileFuncs->rwfclose = sm_fileFuncs->rwfclose;
+				  tempfileFuncs->rwfread = sm_fileFuncs->rwfread;
+				  tempfileFuncs->rwfwrite = sm_fileFuncs->rwfwrite;
+				  tempfileFuncs->rwfgets = sm_fileFuncs->rwfgets;
+				  tempfileFuncs->rwfputs = sm_fileFuncs->rwfputs;
+				  tempfileFuncs->rwfeof = sm_fileFuncs->rwfeof;
+				  tempfileFuncs->rwfseek = sm_fileFuncs->rwfseek;
+				  tempfileFuncs->rwfflush = sm_fileFuncs->rwfflush;
+				  tempfileFuncs->rwftell = sm_fileFuncs->rwftell;
+				
+				  sm_memfuncs.rwmalloc	= malloc;
+				  sm_memfuncs.rwfree 	= free;
+				  sm_memfuncs.rwrealloc = realloc;
+				  sm_memfuncs.rwcalloc	= calloc;
+				
+				  if (RwaCoreOpen(&sm_memfuncs, TRUE))
+				  {
+						_CoreOpen = TRUE;
+					 
+						RwaInstallFileSystem(0);
+					 
+						sm_fileFuncs->rwfexist = tempfileFuncs->rwfexist;
+						sm_fileFuncs->rwfopen = tempfileFuncs->rwfopen;
+						sm_fileFuncs->rwfclose = tempfileFuncs->rwfclose;
+						sm_fileFuncs->rwfread = tempfileFuncs->rwfread;
+						sm_fileFuncs->rwfwrite = tempfileFuncs->rwfwrite;
+						sm_fileFuncs->rwfgets = tempfileFuncs->rwfgets;
+						sm_fileFuncs->rwfputs = tempfileFuncs->rwfputs;
+						sm_fileFuncs->rwfeof = tempfileFuncs->rwfeof;
+						sm_fileFuncs->rwfseek = tempfileFuncs->rwfseek;
+						sm_fileFuncs->rwfflush = tempfileFuncs->rwfflush;
+						sm_fileFuncs->rwftell = tempfileFuncs->rwftell;
+					 
+					 
+						RWS_RETURN( TRUE) 						
+				  }
+				  else				
+				  {
+						_CoreOpen = FALSE;
+						RWS_RETURN (FALSE)
+				  }
+				  
+				  RWS_RETURN (TRUE)
+			 }
+
+	  
+	  If you are intending to use streams,  then make sure the audio beaviours/assets are the last ones to get sent to the console.	this crash problem should be fixed by the next
+	  major revision of RenderWare Audio.
+
+24/04/02 Updated source so that when RWS_DESIGN isn't defined i.e. debug/metrics/release build the network comms and associated editing
+		  behaviors are excluded.
+
+24/04/02 Modified CEventHandlerRegisteredMsg and CRegisteredMsgs so they use the RwFreeList system for
+			memory allocation and deallocation. Added 'InitMemHandler', 'CloseMemHandler' and 'PurgeMem'
+			static functions to both classes. The Init and Close function are now called from
+			CEventHandler::Open and ::Close functions respectively. A 'Purge' static function has been
+			added to CEventHandler to allow cleanup of unneeded memory (ie at level change over, etc) which
+			calls the PurgeMem functions of the other two classes. Changes should hopefully result in higher
+			performance for event system, both in terms of memory usage and speed. CEventHandler::Open now
+			has two parameters (both defaulted to zero) to set the block size for linked and registered
+			messages. Zero indicates the the default values will be used for both block sizes. Also added
+			ref count to the CEventHandler, which is check on Open and Close to ensure it is zero (as it
+			must be to stop errors).
+
+24/04/02 Fixed bug in split screen behaviour, if sub raster width or height is 0 then it would crash. Also if the right hand edge was less than
+	 the left hand edge the behaviour was incorrect and could crash. Similar for top and bottom.
+
+24/04/02 Modified doc's to explain usage of different build targets.
+
+24/04/02 Refactored Startup.cpp functions init and term have been renamed open and close which is more consistent with the rest of the code.
+	 BootFromFile has been renamed LoadGameDatabaseFile, which is used to load a game from a file i.e. running standalone without the
+	 workspace.
+
+24/04/02 Refactored CEventHandler. SendMsg was performing a check that wasn't required this has been removed, event firing will be quicker.
+	 
+
+23/04/02 Stream now keeps track of start / stop status of system and on creation of a new behaviour (if
+			system is started) will broadcast the 'iMsgStartSystem' event to all behaviors, including the
+			newly added one.
+
+15/04/02 GCN compiler updates.
+
+12/04/02 Tidied up Tutorial code.
+
+12/04/02 Changed Tutorial2 to rotate the same way as Tutorial3, Tutorial8 now scales the object as well
+	as stopping/ starting rotation and inheriting from Tutorial2.
+
+10/4/02	Codewarrior project has been setup to use either 2.9 or 2.96 version of toolchain by changing the SCE_TC var in preferences.
+
+	Karma has been built against an older version of the PS2 toolchain i.e. so use
+
+	SCE_TC = C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.9-ee-991111
+
+	rather than 
+
+	SCE_TC = C:\usr\local\sce\ee\gcc\lib\gcc-lib\ee\2.96-ee-001003-1 
+
+10/4/02	(ID109)	In voice managager there was the line 'RwaVoiceSetFreq(voice[VOICE], frequency-RwaVoiceGetFreq(voice[VOICE]));'  this
+	should be RwaVoiceSetFreq(voice[VOICE], frequency);
+
+10/4/02	(ID123) Fixed bug with the default range in AudioSound3D.  range was incorrect 0.0 to 100.f.  has been changed to 0.0 to 1.0
+
+10/04/02 Improved the formatting of the audio toolkit.  took out explicit checks to see if the core is open  ( if (_CoreOpen)  )and replaced 	with asserts.
+
+10/04/02 FPSPickup and FPSMonster can only be used if derived from, these have been changed so that they don't appear in the behaviour lister.
+
+10/04/02 Found several occurrences of strlen and strcpy which should have been rwstrlen and rwstrcpy as we were using RwChar.
+	Also Xbox project had the wrong path for the RenderWare libs i.e. used to be rwsdk\lib\xbox now rwsdk\lib\xbox\release
+
+05/04/02 Fixed IP address bug that was stopping reconnection to PS2 framework (RwSComms.irx).
+
+05/04/02 Version incremented to RWSDevRel1.07 - To be used with RenderWare Graphics 3.3 (Build date 27/03/02)
+
+02/04/02 Xbox IP address on framework "waiting for connection" screen.
+	Code added to allow for differences in winsock functionality on xbox.
+
+28/03/02 Put a conditional in for all remaining RwCameraBeginUpdate calls, this function may fail momentarily under D3D8.
+	Request from David Geleano after problems with the ATI Radeon 8500. Also, tidied up formatting in CFX_Shaddow.
+
+28/03/02 Fixed PS2 Launch code to call close once finished with polling
+
+28/03/02 Removed CFX_Particles/Particles/CFXParticle files from projects
+
+
+15/03/02 Version incremented to RWSDevRel1.06 - To be used with RenderWare Graphics 3.3
+
+12/03/02 Quake Module removed from all pc/xbox/ps2 projects.
+
+12/03/02 Submitted code for demoing pixel shaders on the xbox.  this is for the GDC tech demo's
+
+12/03/02 Submitted initial implementation of parallel projection shadows for ps2, xbox, pc
+
+11/03/02 Upgraded framework to use March 1st dev release of Rederware 3.3
+
+8/03/02 Changed RECEIVE to TRANSMIT in attribute list for SubRasterCamera
+
+5/03/02 Added LOD example code, in modules/examples/CEntityLOD. As part of this I've had to add a call to the LOD plugin
+	within FPSRender.
+
+5/03/02 Moved code for QC_func_train into FPSTrain and updated events/pointers from QC_path_corner to FPSPathNode.
+
+5/03/02	Bug Fix, PAL/NTSC compiler switch wasn't working (always selects a PAL video mode). To simplify compilation
+	on the different targets and to allow for a default frequency, i.e. a PC monitor is neither NTSC or PAL. The
+	single VIDEO_MODE define has been replaced with two, VIDEO_MODE_PAL and VIDEO_MODE_NTSC
+
+15/02/02 Version incremented to RWSDevRel1.05
+
+14/02/02 Removed bebug access path from Metrics and Design Release builds.
+
+13/02/02 Fixed some compiler warnings by adding some static_casts.  also added #pragma warning (disable: 4786) 
+	 to qc_light, qc_light_reg, qc_render in the pc build targets.
+
+13/02/02 Added Initial RenderWare Audio integration.
+
+	This comes in the form of a toolkit and set of behaviors.  To build the audio code you will need to install
+	RenderWare Audio version 1.0 to the default directory ("c:\rw\audio")
+
+	3D Sound
+	To use 3D audio in RenderWare Studio Workspace drag an object into the scene and place a AudioGlobalMixer behaviour
+	onto it.  Then right click on this in the world lister and select 'new->asset'.	Set the asset type to be rwaID_WAVEDICT,
+	and point it to a .rws file.	There is one of these in the data examples folder.
+
+	Then you can drop a AudioSound3D behaviour onto an object and tweak its parameters.  If you want to add 3dSound
+	functionality to you own behaviors then you can either derive from AudioSound3DInterface,  or you can contain
+	the Audio toolkit class in your code 
+		eg "RwsAudio 	audio;"
+
+	Streamed Audio
+	To play streamed you currently need to specify the .vag file in the AudioStreamInterface.cpp file.  the reason for this
+	is because currently we can't send the streamed file from the workspace.  this should be	resolved in future releases.
+
+			if (!m_streamLoaded)
+			{
+				OpenStream("host0:c:/data/example/music.vag");
+			}
+
+	Once the stream is loaded you can then start and stop the stream from the behaviour.
+
+	In Skyiop.h there are some defines which point to the irx files needed for RenderWare audio.  these point to c:\rw\audio and the relevant build
+		  directories contained within.	if you install RenderWare audio to any other directory you will need to modify these defines.
+
+
+
+13/02/02 Updated Karma integration, Note there is a bug that generates an assert during shutdown
+	 which I'm trying to resolve with the MathEngine guys. Fixed linker problems when using
+	 ProDG compiler. (order of libs is critical, this is the correct order)
+
+	libMcdConvexCreateHull.a libMcdConvex.a libMcdPrimitives.a libMst.a libMdt.a libMdtBcl.a
+	libMdtKea.a libMcdFrame.a libMeGlobals.a libMcdCommon.a libpc.a
+
+	Note: metrics/release won't work with ProDG + Karma ( Trying to get this fixed)
+
+	Karma integration still needs a CKarmaParams object in the scene before you can do anything with it.
+	The way it works is CSystemCommands is now itself derived from a Karma class. This means that every object
+	you put in the game that derives from CSystemCommands is potentially a karma object.
+
+	There's also currently a shutdown problem that I'm trying to resolve.
+
+
+12/02/02 rpcriter.h not needed now in Resource, ids taken from rwcore.
+
+12/02/02 Set blend mode removed from Render() in Maestro since it does nothing on OpenGL/ PS2 and crashes on DX8/ xbox.
+
+12/02/02 Bug Fix's to sky.cpp PAL/NTSC video mode was wrong way around, RebootIOP() was defined out
+	on a CDROM build.
+
+12/02/02 Default start camera to iMsgDoRender so non-split screen mode is the default, change to RenderScene for 
+	split-screen version to work.
+
+12/02/02 CMaestro added to all Codewarior projects.
+
+12/02/02 m_msg_tx_finished_on_to_off and m_msg_tx_finished_off_to_on events were not being unlinked, now fixed.
+
+12/02/02 Init doesn't now use the debug handler in parameter 1, removed now.
+
+12/02/02 Maestro behaviour added to game framework, added CMaestro and the main implementation iCMaestro.
+
+	A Maestro animation is a 2D flash 3 animation which is converted to a .anm file using the 2dconvert utility.
+	All the data required is contained in these .anm files except for the font data if the Maestro animation uses
+	a font.	This font data needs to be exported to a .fnt file to be added as a separate resource in RenderWare Studio.
+	This can be done using Rt2dFontStreamWrite by looking up the font in the font dictionary but each font file must be
+	saved from the platform you are using it for (PC, PS2, Xbox, GC).
+
+	If the Maestro animation (.anm) file requires a font then add a font asset (.fnt) first so that the font
+	resource gets loaded before the Maestro resource as follows:
+	
+	Entity 1
+	  CMaestro
+		 Asset 1 -> Font (e.g. t14.fnt)
+		 Asset 2 -> Maestro (e.g. mainmenu.anm)
+	
+	At the moment you can only have one font per Maestro object.
+	
+	Use rwID_2DMAESTRO as the type id for the Maestro asset in RWStudio, this type is not recognized from the .anm
+	file at the moment but will be fixed in future versions.
+	
+	CRenderwareResource has been changed to load Maestro and Font objects for use in the Maestro class.  It also
+	contains a singleton class CRt2dOpen which is used to open and close the 2D lib only when needed (when a 2D
+	object has been added to RenderWare Studio as a resource/ asset.
+	
+	A source file fontutils.c has been created as a temporary solution to the problem of adding a font to a font
+	dictionary in RenderWare.	This will be replaced with the correct RenderWare call when the code has been updated.
+	
+	At the moment the MaestroForAllAnimations callback is called for all the animations even if they are not visible which
+	may cause problems with some situations.	This will be fixed in a future version of RenderWare.
+	
+	iCMaestro::AddFont manually sets the font name to 't14' at the moment since it should take the name from the asset
+	but this is not working and will be fixed in a future version of RenderWare Studio.  For the time being set this to
+	the name of the font your Maestro animation file uses.  (t14 is times size 14)
+
+08/02/02 Adding split screen support to game framework, added CSubRasterCamera which is a class that can
+	be used to define a sub-raster. These can be derived eg FPSPlayer and CDirectors camera.
+
+	CSubRasters control the rendering behaviour by substituting another event (Arbitrary event name ) for the
+	iMsgDoRender event, imsgDoRender sends the default camera (default camera owns the main raster i.e. the screen)
+		  sending the camera from a CSubRaster to the renderer tells the rendering behaviour to render into the sub-raster.
+
+	You can then derive your player from this which allows each player to have his own subratser...you
+	can then hook each of these subrasters to one or many renderers which render each of the BSP/Worlds/or anything
+	else i.e. RpParticles and my Atomic particles (have some questions about improving performance of these)
+	are added to a clump and rendered at the end all together. ( I hope that makes sense )
+
+	i.e.
+
+	iMsgDoRender -> PL1 - Sends An RwCamera -> Render World -> Render Effects World -> Render Particles
+						^
+						|
+	iMsgDoRender -> PL2 - Sends An RwCamera ->
+						^
+						|
+	iMsgDoRender -> PL2 - Sends An RwCamera ->
+						^
+						|
+	iMsgDoRender -> PL2 - Sends An RwCamera ->
+
+
+	Also you can do this...
+
+
+	(Left Side Of Screen) 
+
+	iMsgDoRender -> PL1 -> Sends An RwCamera -> CSubRaster (Use Left Side Of Screen ) -> Render World Normal -------------------> 
+				 ^ 																	|
+				 | 																	~
+				 -> Sends An RwCamera -> CSubRaster (Use Right Side Of Screen ) -> Render World Special i.e. Wireframe --> Render Effects World -> Render Particles
+
+
+	I've created a couple of example databases that demonstrate the above.
+
+	Note: While doing this I've also updated the FXCPartcle behaviour and the FXReplicator behaviour, these handle
+	there own rendering for efficiency and to force the order in which the scene is rendered i.e. effects are often 
+	translucent and so need to be rendered last. These also now also receive an event telling them when to render 
+	( default iMsgDoRender ) with the camera. (See examples of how these events are linked to these behaviors in the 
+	example database.
+
+	ToDo: Make CSubRaster relative to input camera not global camera...would allow SubRaster's within SubRaster's without
+	changing the dimensions of the camera.
+
+	ToDo: CDirectors camera isn't really needed as CSubRaster can be used to do the same. I've left it in as
+	we may decide to do Director camera type things with a behaviour. i.e. interpolation of transformation etc
+
+
+08/02/02 Updated 2 Stage Lights to allow the position to be updated, added a flag that tells the 
+	behaviour whether to reset the animation of the light when the trigger enable event is sent.
+	Trigger enable event also acts as a position update if a RwFrame* is sent.
+
+08/02/02 Added Logical OR behaviour, two input events A and B generate an output event C, the data from
+	event A or B is copied into the output event C. Found Useful for joining camera related events
+	to a shared renderer.
+
+08/02/02 Fixed Bouncy pickups and Spinnning pickups being ignored when built with codewarrior.
+
+08/02/02 Update to CEventHandler Added ReRegisterMsg function which can be used to Re-Register and event
+	that has all ready been registered, much quicker that a true RegisterMsg as it only updates the
+	reference counts. I've used this later when updating the FXReplicator behaviour.
+
+08/02/02 Changed DebugTools to use immediate mode line drawing when displaying sectors/lights rather than
+	storing the lines in the line list and then drawing them later.
+
+08/02/02 Added a generic, improved debug handler that will assert when a RenderWare gfx assert occurs
+	rather than just print the message.
+
+07/02/02 CParticle and CReplicator have been removed, they should be replaced with CFX_Particle
+	and CFX_Replicator which have been improved and updated to work when using split screen rendering.
+
+29/01/02 Version incremented to RWSDevRel1.04
+
+29/01/02 Removed IOP defines from PREFIX header file as this is not used on ProDG, added a skyiop.h
+	file in core/startup with these defines.
+
+	These defines are needed when building a DebugStation version of the framework see below...
+
+25/01/02 Added ActiveX project files, which allows the gameframework to be built as
+	ActiveX component, this can then be used with an alternative layout for RenderWare
+	Studio allowing the game to be hosted within RenderWare Studio.
+
+25/01/02 Modified behaviors as a step towards split screen rendering
+
+	game_framework/game_framework.dsp#110 edit
+	game_framework/game_framework.mcp#79 edit
+	game_framework/source/framework/core/DebugTools/DebugTools.cpp#6 edit
+	game_framework/source/framework/core/mainloop/render.cpp#16 edit
+	game_framework/source/framework/core/mainloop/render.h#8 edit
+	game_framework/source/framework/core/StartUp/StartUp.cpp#19 edit
+	game_framework/source/framework/core/StartUp/StartUp.h#5 edit
+	game_framework/source/framework/core/StartUp/Win.cpp#3 edit
+	game_framework/source/framework/core/stream/stream.cpp#24 edit
+	game_framework/source/framework/core/World/Factory.cpp#20 edit
+	game_framework/source/modules/Examples/CPartical/CPartical.cpp#6 edit
+	game_framework/source/modules/FPS/FPSRenderer/FPSRender.cpp#2 edit
+	game_framework/source/modules/FPS/FPSRenderer/FPSRender.h#2 edit
+	game_framework/source/modules/FX/CFX_Particles/Particles/CFXParticle.cpp#5 edit
+	game_framework/source/modules/FX/CFX_Particles/Replicator/CFXReplicator.cpp#4 edit
+	game_framework/source/modules/Generic/CRender/CRender.cpp#17 edit
+	game_framework/source/modules/Quake/QC_Render.cpp#21 edit
+
+25/01/02 Added support for generating lightmaps on the target console
+
+	game_framework/source/framework/core/StartUp/StartUp.cpp#19 edit
+	game_framework/source/modules/ToolBox/TBLightMapper/TBLightMapper.cpp#1 add
+	game_framework/source/modules/ToolBox/TBLightMapper/TBLightMapper.h#1 add
+
+	To use this the BSP and or Atomics (currently requires a mod to the code if you want to lightmap atomics )
+	need to be exported with the extra lightmap UV's.
+
+	You can then use any point light source's or directional lights within the scene. I've been using
+	the CLight behaviour (you may want to click the no collisions tick box otherwise the geometry of the
+	light will cast shadows)
+
+	Add the TBLightmapper as a behaviour and test fire the generate lightmap event. There should be 
+	a fairly long pause before you see anything happening the first time you do this. You should
+	then see some progress text something like 50 of 74 sectors complete, as it lightmaps the scene.
+
+	If you change the density setting expect the same large delay before the lightmaps are re-generated and
+	the progress info comes up again.
+
+	I'd leave the size setting at 512 as its used to set the size of the texture maps that store the lightmap
+	textures. (There are probably optimum sizes for each platform but need to get this info from the Guildford teams)
+
+	I've also added some jitter settings, this treats lights as a volume, dimensions specified by the jitter size
+	rather than a single poing and produces some nice results at the expense of longer calculation times.
+
+24/01/02 Modifications to FPSPickup code...general pickup code would be too slow so have created a simpler
+	 general pickup and derived from this to do the spinning and bouncy pickup types.
+
+	game_framework/source/modules/FPS/FPSPickups/FPSBouncyPickup.cpp#1 add
+	game_framework/source/modules/FPS/FPSPickups/FPSBouncyPickup.h#1 add
+	game_framework/source/modules/FPS/FPSPickups/FPSPickup.cpp#3 edit
+	game_framework/source/modules/FPS/FPSPickups/FPSPickup.h#2 edit
+	game_framework/source/modules/FPS/FPSPickups/FPSSpinningPickup.cpp#1 add
+	game_framework/source/modules/FPS/FPSPickups/FPSSpinningPickup.h#1 add
+	game_framework/source/modules/Quake/QC_pickup.h#8 edit
+
+24/01/02 Added CLightPtr class which allows lights to visualize events.
+
+	Noticed that the "smart" pointer methodology doesn't work in the following case i.e. it crashes 	when the smart pointer destructor is called...
+
+	func
+	{
+		CAtomicPtr ptr = RpAtomicCreate();
+		RpAtomicDestroy(ptr);
+	}
+
+	I've added overload functions for RpAtomicDestroy etc which fixes this problem.
+
+	game_framework/source/framework/core/World/CAtomicPtr.cpp#1 add
+	game_framework/source/framework/core/World/CAtomicPtr.h#12 edit
+	game_framework/source/framework/core/World/CCameraPtr.h#1 add
+	game_framework/source/framework/core/World/CClumpPtr.cpp#1 add
+	game_framework/source/framework/core/World/CClumpPtr.h#14 edit
+	game_framework/source/framework/core/World/CLightPtr.cpp#1 add
+	game_framework/source/framework/core/World/CLightPtr.h#1 add
+	game_framework/source/framework/core/World/CRwObjectPtr.h#9 edit
+	game_framework/source/framework/core/World/Factory.h#11 edit
+	game_framework/source/modules/Examples/CLight/CLight.cpp#6 edit
+	game_framework/source/modules/Examples/CLight/CLight.h#5 edit
+	game_framework/source/modules/Examples/CLight/iCLight.cpp#6 edit
+	game_framework/source/modules/Examples/CLight/iCLight.h#5 edit
+	game_framework/source/modules/FX/CFX_Lights/CFXColorLight.cpp#2 edit
+	game_framework/source/modules/FX/CFX_Lights/CFXColorLight.h#4 edit
+	game_framework/source/modules/FX/CFX_Lights/CFXPlainLight.cpp#2 edit
+	game_framework/source/modules/FX/CFX_Lights/CFXPlainLight.h#3 edit
+	game_framework/source/modules/FX/CFX_Lights/CFXSpinLight.cpp#2 edit
+	game_framework/source/modules/FX/CFX_Lights/CFXSpinLight.h#3 edit
+	game_framework/source/modules/FX/CFX_Lights/Transition Lights/CFXLight_2Stage.cpp#3 edit
+	game_framework/source/modules/FX/CFX_Lights/Transition Lights/CFXLight_2Stage.h#4 edit
+	game_framework/source/modules/FX/CFX_Lights/Transition Lights/CFXLight_Spline.cpp#3 edit
+	game_framework/source/modules/FX/CFX_Lights/Transition Lights/CFXLight_Spline.h#4 edit
+	game_framework/source/modules/FX/CFX_Lights/Wave Lights/CFX_WaveLight.cpp#5 edit
+	game_framework/source/modules/FX/CFX_Lights/Wave Lights/CFX_WaveLight.h#5 edit
+	game_framework/source/modules/Quake/QC_light.cpp#24 edit
+	game_framework/source/modules/Quake/QC_light.h#24 edit
+	game_framework/source/modules/Quake/QC_light_flame_large_yellow.h#16 edit
+	game_framework/source/modules/Quake/QC_light_flame_small_yellow.h#16 edit
+	game_framework/source/modules/Quake/QC_light_fluoro.h#16 edit
+	game_framework/source/modules/Quake/QC_light_fluorospark.h#15 edit
+	game_framework/source/modules/Quake/QC_light_torch_small_walltorch.h#16 edit
+
+24/01/02 Added API functions to CEventHandler to access the name and format of an event.
+
+//Derby/vssmain/RenderWare Studio/Console/game_framework/source/framework/core/CEventHandler/CEventHandler.h#37 edit
+
+16/01/02 The PS2 projects can now be easily built to run on a CDROM with a debug station. Add the "#define CDROM"
+	preprocessor to the project (see PREFIX_PS2_RW.h) to use this feature. Other files that are required to 
+	run on the CDROM include (and must be placed in the root directory of the CDROM),
+
+	- IOPRP214.IMG, AN986.IRX, INET.IRX, INETCTL.IRX, NETCNF.IRX, PADMAN.IRX, SIO2MAN.IRX, USBD.IRX,
+	  ICON.SYS, SYS_NET.ICO. All these files can be found in the Sony Libraries. (usr\local\sce\iop\modules)
+
+	- DEV000.CNF, IFC000.CNF, NET000.CNF. These configuration files are part of the RenderWare Studio install.
+	  The file 'NET000.CNF' must be updated to include valid file names for the PS2 cdrom. For example,
+
+		interface "ifc000.cnf + dev000.cnf" "cdrom0:\\IFC000.CNF;1" "cdrom0:\\DEV000.CNF;1"
+
+	- RWSCOMMS.IRX. The result of building the 'CommsModule' project.
+
+	- SLES_000.00. The main 'ELF' executable file, renamed.
+
+	- SYSTEM.CNF. A text file specifying how the system should start up. An example of this is,
+
+		BOOT2 = cdrom0:\SLES_000.00;1
+		VER = 1.00
+		VMODE = PAL
+
+	Files changed,
+	game_framework/source/framework/core/CommsServer/PSX/commsserver.cpp
+	game_framework/source/framework/core/StartUp/Sky.cpp
+	game_framework/source/prefix/PREFIX_PS2_RW.h
+
+16/01/02 Bug Fix, QC_trigger_relay / FPSTriggerRelay wasn't initializing its state in the constructor, this has
+	been fixed.
+
+16/01/02 Created First Person Shooter module to source tree.
+	 game_framework/source/modules/FPS/FPSPlatforms/*.*
+	 game_framework/source/modules/FPS/FPSDoors/*.*
+	 game_framework/source/modules/FPS/FPSButton/*.*
+	 game_framework/source/modules/FPS/FPSPickups/*.*
+	 game_framework/source/modules/FPS/FPSPlayer/*.*
+	 game_framework/source/modules/FPS/FPSRenderer/*.*
+	 game_framework/source/modules/FPS/FPSToggle/*.*
+	 game_framework/source/modules/FPS/FPSTriggers/*.*
+	 game_framework/source/modules/FPS/FPSTeleporters/*.*
+	 game_framework/source/modules/FPS/FPSTimer/*.*
+	 game_framework/source/modules/FPS/FPSPath/*.*
+	 game_framework/source/modules/FPS/FPSMonsters/*.*
+
+
+11/01/02 Version incremented to RWSDevRel1.03
+
+11/01/02 Creation of CResourceHandler, the resource manager has been modified to make use of a class
+	called CResourceHandler. This is an abstract base class from which custom resource handlers can be
+	created and added to the system without modifying the framework code. I've also added a textresource
+	class as an example of a custom resource handler which loads text files, (use "TEXT") as the resource
+	type. The RenderWare resource loader has also been modified to use this system.
+
+	CResourceHandler receives a pointer to a RwStream, effectively a FILE* which can be used to access
+	the resource. RwStream has been used as the source of the file can then be either a standalone file
+	on a disc, a file that is in memory (useful for sending data over network) or a file embedded within
+	a larger file, (code will be the same when loading data from game database saved as single binary
+	file).
+
+	Finally the Resource class has been renamed CResource to indicate that it is a class.
+
+	game_framework/game_framework.dsp#105 edit
+	game_framework/game_framework.mcp#76 edit
+	game_framework/game_framework_xbox.dsp#47 edit
+	game_framework/source/framework/core/CAttributeHandler/CAttributeHandler.cpp#31 edit
+	game_framework/source/framework/core/CAttributeHandler/CSystemCommands.cpp#10 edit
+	game_framework/source/framework/core/ResourceManager/CResourceHandler.cpp#1 add
+	game_framework/source/framework/core/ResourceManager/CResourceHandler.h#1 add
+	game_framework/source/framework/core/ResourceManager/resourcemngr.cpp#16 edit
+	game_framework/source/framework/core/ResourceManager/resourcemngr.h#12 edit
+	game_framework/source/framework/core/ResourceManager/rwresource.cpp#15 edit
+	game_framework/source/framework/core/ResourceManager/rwresource.h#9 edit
+	game_framework/source/framework/core/ResourceManager/textresource.cpp#1 add
+	game_framework/source/framework/core/ResourceManager/textresource.h#1 add
+	game_framework/source/framework/core/StartUp/StartUp.cpp#17 edit
+	game_framework/source/framework/core/StartUp/Win.cpp#2 edit
+	game_framework/source/framework/core/stream/stream.cpp#21 edit
+	game_framework/source/framework/core/stream/strfunc.h#7 edit
+	game_framework/source/framework/core/World/Factory.cpp#18 edit
+	game_framework/source/framework/toolkits/Animation/CAnimSet.cpp#11 edit
+	game_framework/source/modules/Generic/CEntity/CEntity.cpp#28 edit
+	game_framework/source/modules/RenderwareAudio/CSfx.cpp#19 edit
+
+
+07/01/02 Bug Fix to CAnimSet
+
+	game_framework/source/framework/toolkits/Animation/CAnimSet.cpp#10 edit
+
+
+07/01/02 Creation of CMorphAnimate behaviour, this behaviour can playback exported morpth data, two
+	test objects have been added to the tutorial\objects\ folder maxmorph.dff and maxmorph2.dff
+
+	game_framework/game_framework.dsp#103 edit
+	game_framework/game_framework.mcp#73 edit
+	game_framework/game_framework_xbox.dsp#45 edit
+	game_framework/source/framework/core/StartUp/StartUp.cpp#15 edit
+	game_framework/source/framework/core/World/Factory.cpp#17 edit
+	game_framework/source/modules/Examples/CMorphAnimate/CMorphAnimate.cpp#1 add
+	game_framework/source/modules/Examples/CMorphAnimate/CMorphAnimate.h#1 add
+
+
+03/01/02 Creation of Escalator behaviour, required changes to Factory in order
+	to enable safe cleanup of frame hierarchies created programmatically. Fixed bug in CClumpPtr
+	which would cause a crash if GetPos was called before the clump was initialized.
+
+	game_framework/game_framework.dsp#102 edit
+	game_framework/game_framework.mcp#72 edit
+	game_framework/game_framework_xbox.dsp#44 edit
+	game_framework/source/framework/core/World/CClumpPtr.h#13 edit
+	game_framework/source/framework/core/World/Factory.cpp#16 edit
+	game_framework/source/framework/core/World/Factory.h#10 edit
+	game_framework/source/modules/FPS/FPSPlatforms/CEscalator.cpp#1 add
+	game_framework/source/modules/FPS/FPSPlatforms/CEscalator.h#1 add
+
+
+03/01/02 Bug fix to stream.cpp which affected CDebugTools
+
+	game_framework/source/framework/core/stream/stream.cpp#20 edit
+
+
+03/01/02 Many Updates to DOXYGEN tags used to generate help file.
+
+	Many Files changed
+
+
+03/01/02 RWS_END_COMMANDS has been changed to generate an error if the trailing ; is omitted
+
+	Again this has been done because the doxygen tool we use to generate the help files doesn't work if the
+	; is missing.	
+
+	Many Files changed
+
+
+03/01/02 RWS_DECLARE_CLASSID has been changed to generate an error if the trailing ; is omitted,
+
+	This has been done because the doxygen tool we use to generate the help files doesn't work if the
+	; is missing.	
+
+	Many Files changed
+
+
+18/12/01 The following functions in factory.h and factory.cpp have been removed...
+
+	RpAtomic* CreateAtomicFromFirstResource( const CAttributePacket& attr );
+	RpAtomic* CreateAtomicFromFirstResource( const CAttributePacket& attr, CEventHandler& eventHandler );
+	RpClump* CreateClumpFromFirstResource( const CAttributePacket& attr );
+	RpClump* CreateClumpFromFirstResource( const CAttributePacket& attr, CEventHandler& eventHandler );
+
+	RpClump* CreateClump( const RwChar* resourceID );
+	RpAtomic* CreateAtomic( const RwChar* resourceID );
+	RpClump* CloneAndPlaceInWorld( const RpClump& cloneMe );
+	RpAtomic* CloneAndPlaceInWorld( const RpAtomic& cloneMe );
+
+	From the feedback on the supportal creating an atomic/clump without adding it to the world is causing problems. The new functions which replace the above are
+
+	RpAtomic *CreateAtomicInWorldFromResource( const CAttributePacket& attr, CEventHandler* eventHandler = 0);
+	RpAtomic *CreateAtomicFromResource( const CAttributePacket& attr, CEventHandler* eventHandler = 0);
+
+	RpClump *CreateClumpInWorldFromResource( const CAttributePacket& attr, CEventHandler* eventHandler = 0);
+	RpClump *CreateClumpFromResource( const CAttributePacket& attr, CEventHandler* eventHandler = 0);
+
+	It should be clearer from the names what each of them does. The createatomic functions can now cope with clumps containing a single atomic, (i.e. create an object in MAX/MAYA
+	export as a dff using default settings should then be usable by any behaviour expecting an atomic). Similarly the createclump functions can cope if the asset is an atomic, by creating
+	a clump and adding the atomic into it before returning the clump.
+
+
+17/12/01 Modifications to collision code...it was recognized that we needed a way to disable the collision
+	tests with specific objects. An extra flag has been added to user interface exposed 	by CSystemCommands that enables collision tests to be enabled/disabled for the object.
+	Also if the object has collision tests enabled but solid collision disabled the collision
+	code exits at the first polygon intersection (generating the collide event if specified). Overall
+	this improves the performance of the collision code.
+
+	Affected files ...
+
+		game_framework/source/framework/core/CAttributeHandler/CSystemCommands.h#12 edit
+		game_framework/source/framework/core/World/AtomicHelper.h#7 edit
+		game_framework/source/framework/core/World/AtomicPlugin.cpp#11 edit
+		game_framework/source/framework/core/World/CAtomicPtr.h#11 edit
+		game_framework/source/framework/core/World/CClumpPtr.h#12 edit
+		game_framework/source/framework/core/World/ClumpHelper.cpp#9 edit
+		game_framework/source/framework/core/World/ClumpHelper.h#8 edit
+		game_framework/source/framework/toolkits/Collision/collide.h#18 edit
+		game_framework/source/framework/toolkits/Collision/elipse.cpp#27 edit
+
+
+17/12/01 Removed skeleton code from gameframework, the entire skeleton folder + sub-folders has been removed. This has been replaced by platform specific boot-up files within the
+	startup folder in the framework core. Their is also a Time folder which provides a platform independent GetTime function.
+
+	Selecting the screen-res bit-depth etc is now done by changing the code, we intend to extend the functionality of the startup code to cope with dynamic resizing of the
+	display area. 
+
+	The PS2 screen res has been defaulted to 640x480 (fast Anti Aliasing) 32 bit colour 16 bit Z buffer, ( I have been assured that this is a sensible trade off between 
+	performance/memory/quality by our games teams. )
+
+	Affected files
+
+		game_framework/game_framework.dsp#100 edit
+		game_framework/game_framework.mcp#70 edit
+		game_framework/game_framework_xbox.dsp#42 edit
+		game_framework/source/framework/core/DebugTools/DebugTools.cpp#5 integrate
+		game_framework/source/framework/core/mainloop/render.cpp#15 edit
+		game_framework/source/framework/core/StartUp/Sky.cpp#1 add
+		game_framework/source/framework/core/StartUp/SkyFS.cpp#1 branch
+		game_framework/source/framework/core/StartUp/SkyFS.h#1 branch
+		game_framework/source/framework/core/StartUp/StartUp.cpp#13 edit
+		game_framework/source/framework/core/StartUp/StartUp.h#3 edit
+		game_framework/source/framework/core/StartUp/Win.cpp#1 add
+		game_framework/source/framework/core/StartUp/Win.h#1 branch
+		game_framework/source/framework/core/StartUp/Xbox.cpp#1 add
+		game_framework/source/framework/core/Time/RWSTime.cpp#1 add
+		game_framework/source/framework/core/Time/RWSTime.h#1 add
+		game_framework/source/framework/core/World/CameraHelper.cpp#4 edit
+		game_framework/source/framework/core/World/CameraHelper.h#5 edit
+		game_framework/source/framework/core/World/ClumpHelper.cpp#8 edit
+		game_framework/source/modules/Generic/CRender/CRender.cpp#15 edit
+		game_framework/source/modules/InputDevices/CPSX2StandardController/CPSX2controller.cpp#28 integrate
+		game_framework/source/modules/Quake/QC_Render.cpp#20 integrate
+		game_framework/source/prefix/PREFIX_PS2_RW.h#16 edit
+		game_framework/source/skeleton/events.h#12 delete
+		game_framework/source/skeleton/metrics.c#12 delete
+		game_framework/source/skeleton/metrics.h#12 delete
+		game_framework/source/skeleton/mouse.c#12 delete
+		game_framework/source/skeleton/mouse.h#12 delete
+		game_framework/source/skeleton/mousedat.h#12 delete
+		game_framework/source/skeleton/platform.h#12 delete
+		game_framework/source/skeleton/skeleton.c#16 delete
+		game_framework/source/skeleton/skeleton.h#13 delete
+		game_framework/source/skeleton/sky/camera.c#13 delete
+		game_framework/source/skeleton/sky/camera.h#12 delete
+		game_framework/source/skeleton/sky/mpeg/audiodec.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/audiodec.h#12 delete
+		game_framework/source/skeleton/sky/mpeg/defs.h#12 delete
+		game_framework/source/skeleton/sky/mpeg/disp.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/disp.h#12 delete
+		game_framework/source/skeleton/sky/mpeg/mpegmain.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/read.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/readbuf.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/readbuf.h#12 delete
+		game_framework/source/skeleton/sky/mpeg/strfile.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/strfile.h#12 delete
+		game_framework/source/skeleton/sky/mpeg/util.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/vibuf.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/vibuf.h#12 delete
+		game_framework/source/skeleton/sky/mpeg/videodec.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/videodec.h#12 delete
+		game_framework/source/skeleton/sky/mpeg/vobuf.c#12 delete
+		game_framework/source/skeleton/sky/mpeg/vobuf.h#12 delete
+		game_framework/source/skeleton/sky/ptrdata.h#12 delete
+		game_framework/source/skeleton/sky/sky.c#18 delete
+		game_framework/source/skeleton/sky/skyfs.c#12 delete
+		game_framework/source/skeleton/sky/skyfs.h#12 delete
+		game_framework/source/skeleton/terminal.c#12 delete
+		game_framework/source/skeleton/terminal.h#13 delete
+		game_framework/source/skeleton/vecfont.c#12 delete
+		game_framework/source/skeleton/vecfont.h#12 delete
+		game_framework/source/skeleton/win/resource.h#12 delete
+		game_framework/source/skeleton/win/splash.c#12 delete
+		game_framework/source/skeleton/win/splash.h#12 delete
+		game_framework/source/skeleton/win/win.c#13 delete
+		game_framework/source/skeleton/win/win.h#12 delete
+		game_framework/source/skeleton/win/win.rc#12 delete
+		game_framework/source/skeleton/xbox/xbox.c#13 delete
+
+
+13/12/01 Added KARMA integration.  adds simple physics,	no joints  as yet,  just single objects, to use need to add CKarmaParams object and then the karma behaviour objects
+	 currently karmacrate karmabarrel karmaball. see example XML file \Data\Quake 1 Levels\e1m1-KARMA.xml
+
+	 Integration Notes:
+
+		To add KARMA functionality to an existing project, you need to add the toolkit files and the karma module files to the project...no changes to any existing
+		files is required as the event system is used to provide all the hooks.
+
+
+		Added WITH_KARMA preprocessor
+
+		Added $(Karma)\include path
+
+		Added $(KARMA)\lib.chk\win32_single_libc path
+		Need to add lib.rel path for release and metrics
+
+		Added files
+		MeGlobals.lib McdCommon.lib Mst.lib Mdt.lib MdtBcl.lib MdtKea.lib McdFrame.lib McdPrimitives.lib
+
+		Affected files
+
+		game_framework/game_framework.dsp#99 edit
+		game_framework/source/framework/toolkits/KARMA/CKarma.cpp#1 add
+		game_framework/source/framework/toolkits/KARMA/CKarma.h#1 add
+		game_framework/source/framework/toolkits/KARMA/CKarmaParams.cpp#1 add
+		game_framework/source/framework/toolkits/KARMA/CKarmaParams.h#1 add
+		game_framework/source/framework/toolkits/KARMA/Karma.cpp#1 add
+		game_framework/source/framework/toolkits/KARMA/Karma.h#1 add
+		game_framework/source/modules/KARMA/C_karma_ball.cpp#1 add
+		game_framework/source/modules/KARMA/C_karma_ball.h#1 add
+		game_framework/source/modules/KARMA/C_karma_barrel.cpp#1 add
+		game_framework/source/modules/KARMA/C_karma_barrel.h#1 add
+		game_framework/source/modules/KARMA/C_karma_crate.cpp#1 add
+		game_framework/source/modules/KARMA/C_karma_crate.h#1 add
+		game_framework/source/modules/KARMA/C_karma_object.cpp#1 add
+		game_framework/source/modules/KARMA/C_karma_object.h#1 add
+
+------------------------------------Version incremented to RWSDevRel1.02---------------------------
+
+11/12/01 Added new FX module to console.	
+		PARTICLES
+		~~~~~~~~~
+		CFXParticles -  This is a standard particle system which can be triggered by an event.  You can also set blending modes to the particle system.  CFXParticle does not use the atomics				geometry to define the shape and size of the particles,	CFXParticle only uses the position and orientation of the atomic.  the current texture used by CFXParticle					is taken from the first material encountered bt the particle generator.  CFXParticle should be used instead of CParticle
+
+		CFXReplicatorGenerator/CFXReplicator - Creates a particle system based on the generators atomic. CFXReplicatorGenerator/CFXReplicator shouldbe used instead of 										 CReplicatorGenerator/CReplicator 
+
+		LIGHTING
+		~~~~~~~~
+
+		CFXPlainLight - An entity wrapper for the RpLight type.	CFXPlainLight replaces iCLight
+
+		CFXColorLight - Adds color control to CFXPlainLight. CFXColorLight replaces CLight
+
+		CFXSpinLight  - Implementation of CFXSpinLight class. This type of light can be triggered to turn on and off by triggering an event.  This can be useful if you need 
+			  to trigger a warning light within a game for example.
+
+		CFXLight_2Stage - Implementation of CFXLight_2Stage class.CFXLight_2Stage	fades between	source and destination colors. Is triggered by an event.
+
+		CFXLight_Spline - Implementation of CFXLight_Spline class.	CFXLight_Spline colors are set by using a spline. Is triggered by an event.
+
+		CFXWaveLight - Creates light that uses a text string to animate color intensities. Is triggered by an event.
+
+
+3/12/01 Added some extra trace info to particle behaviour on the console, this was done while debugging		the separator control. The trace info can be disabled by commenting out the defines at the top of
+	the file.
+
+
+	Affected files ...
+
+
+	game_framework/source/modules/Examples/CPartical/CPartical.cpp#3 edit
+
+
+30/11/01 Migration from RenderWare Studio Packets to RenderWare Stream's, comms layer now sends RenderWare	 streams which can be concatenated into larger RenderWare streams. This is the first	 steps towards a deliverable game file.
+
+	Affected files ...
+
+		game_framework/source/framework/core/CommsServer/MSC/CommsServer.cpp#8 edit
+		game_framework/source/framework/core/CommsServer/PSX/commsserver.cpp#11 edit
+		game_framework/source/framework/core/mainloop/network.cpp#11 edit
+		game_framework/source/framework/core/stream/stream.cpp#18 edit
+		game_framework/source/framework/core/stream/stream.h#10 edit
+
+30/11/01 Changes to target code previous to this date are listed in changelog.txt

@@ -1,0 +1,407 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="Asset" dependencygraph="AssetDependencies"
+                      buildcommand="AssetCommand" strictvalidation="false">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="StreamEditTools" progid="CSL.RWSStreamEditControl.RWSStreamEdit"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <reference object="Scripting.FileSystemObject"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Asset.rule - Asset rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub AssetDependencies (Task, Asset, PlatformFilter, RecursionGuard)
+            Dim strFilePath, bIsDynamicAsset, ParentRF3Asset, ChildAsset
+            Dim SentObjects, SubMake
+
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            Task.AddDependency Asset.PersistentFilename
+
+            ' Depend on the file specifying resource roots and "embed assets" flag
+            Task.AddDependency AssetGlobalsFile (GetParam ("DESTDIR"))
+
+            ' If this asset has a parent asset whose type is RF3, then make sure, the
+            ' rf3 pre-process rule has been invoked on it.
+            If Not AssetIsRootRF3 (Asset) Then
+               ' Depend on its parent rf3 asset being built.
+               ' This MUST be completed before we continue with this rule. The texture dictionary
+               ' dependency function relies on all RF3 assets being exported to create its texture
+               ' list and these are exported in a command function in the RF3 rule.
+               Set ParentRF3Asset = GetRootRF3Asset (Asset)
+               If Left (ParentRF3Asset.Type, 3) = "RF3" Then
+                  Set SubMake = CloneMake ()
+                  If Not SubMake Is Nothing Then
+                     SubMake.AddTask "RF3AssetExporter", ParentRF3Asset.ID
+
+                     If GetParam ("Cleaning") Then
+                        SubMake.Clean
+                     Else
+                        SubMake.Build
+                     End If
+                  Else
+                     BuildError "Could not create a cloned make object"
+                  End If
+               End If
+            End If
+
+            ' Check for the presence of stream edit data, and setup a subtask
+            '  to bind the data into a temporary asset if so
+            If Left (Asset.type, 3) <> "RF3" Then
+               If StreamEditTools.AssetHasStreamData (Asset.ID) Then
+                  Set SubMake = CloneMake ()
+                  If Not SubMake Is Nothing Then
+                     SubMake.AddTask "StreamEditAssetExporter", Asset.ID
+                     If GetParam ("Cleaning") Then
+                        SubMake.Clean
+                     Else
+                        SubMake.Build
+                     End If
+                  Else
+                     BuildError "Could not create a cloned make object"
+                  End If
+               End if
+            End If
+
+            ' Depend on the asset's file
+            strFilePath = GetAssetsFilename (Asset, GetParam ("WKSRESOURCEROOT"))
+            Task.AddDependency strFilePath
+
+            ' Child assets must be sent before this asset
+            RecursionGuard.Add Asset
+            For Each ChildAsset In Asset.ChildAssets
+               If Not RecursionGuard.Exists (ChildAsset) And PlatformFilter.IsValidPlatform (ChildAsset.Platform) Then
+                  Task.AddSubTask BuildRule (ChildAsset, "Asset"), ChildAsset, PlatformFilter, RecursionGuard
+               End If
+            Next
+          
+            ' Strip out the RWSIdentifiers, and replace with rpID plugin
+            If Left (Asset.type, 3) <> "RF3" Then            
+                Task.AddSubTask "ReplaceRWSIdentifiers", Asset
+            End If
+
+            ' Add the asset to the sent objects list if it hasn't been added yet
+            If Not SentObjects.Exists (Asset) Then
+               SentObjects.Add Asset
+            End If
+
+            ' Specify targets
+            If Not AssetIsRootRF3 (Asset) Then
+               If Not AssetIsTextureFile (Asset) Then
+                  Task.AddTarget StreamFile (GetParam ("DESTDIR"), Asset)
+               End If
+            End If
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub AssetCommand (Task, Asset, PlatformFilter, RecursionGuard)
+            ' There is no command to run on a root RF3 asset. The root asset doesn't get built to a
+            ' stream, but its children do. These will be built and sent (specified in dependencies).
+            If AssetIsRootRF3 (Asset) Then
+               Exit Sub
+            End If
+
+            ' Textures are added as part of a texture dictionary, so don't add it here.
+            If AssetIsTextureFile (Asset) Then
+               Exit Sub
+            End If
+
+            ' Sanity check the asset is properly defined
+            If Len(Asset.Type) = 0 Then
+               BuildError ("Asset " & Asset.Name & " has no Type defined, the console will be unable to process this asset.")
+            End If
+
+            Dim AssetBuffer
+
+            Set AssetBuffer = RWSComms.CreateFileBuffer (StreamFile (GetParam ("DESTDIR"), Asset), faCreate)
+            If Not AssetBuffer Is Nothing Then
+               AssetBuffer.BigEndian = GetParam ("BIGENDIAN")
+               AssetBuffer.Unicode   = GetParam ("UNICODE")
+
+               AppendCreateAsset AssetBuffer, Asset, PlatformFilter
+            Else
+               BuildError ("Could not create stream for asset " & Asset.Name & StreamFile (GetParam ("DESTDIR"), Asset))
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="AssetSend" dependencygraph="AssetSendDependencies">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="StreamEditTools" progid="CSL.RWSStreamEditControl.RWSStreamEdit"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Asset.rule - AssetSend rule
+         '
+         ' Send asset to the console. Sends all child assets 
+         ' before appending to the buffer
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         ' 
+         Sub AssetSendDependencies (Task, Asset, PlatformFilter, Buffer)
+            Dim SubMake, ChildAsset, RootRF3Asset
+
+            ' If this asset has a parent asset whose type is RF3, then make sure, the
+            ' rf3 pre-process rule has been invoked on it.
+            If Not AssetIsRootRF3 (Asset) Then
+               ' Depend on its parent rf3 asset being built.
+               ' This MUST be completed before we continue with this rule. The texture dictionary
+               ' dependency function relies on all RF3 assets being exported to create its texture
+               ' list and these are exported in a command function in the RF3 rule.
+               Set RootRF3Asset = GetRootRF3Asset (Asset)
+               If Left (RootRF3Asset.Type, 3) = "RF3" Then
+                  Set SubMake = CloneMake ()
+                  If Not SubMake Is Nothing Then
+                     SubMake.AddTask "RF3AssetExporter", RootRF3Asset.ID
+
+                     If GetParam ("Cleaning") Then
+                        SubMake.Clean
+                     Else
+                        SubMake.Build
+                     End If
+                  Else
+                     BuildError "Could not create a cloned make object"
+                  End If
+               End If
+            End If
+
+            ' Check for the presence of stream edit data, and setup a subtask
+            '  to bind the data into a temporary asset if so
+            If Left (Asset.type, 3) <> "RF3" Then
+               If StreamEditTools.AssetHasStreamData (Asset.ID) Then
+                  Set SubMake = CloneMake ()
+                  If Not SubMake Is Nothing Then
+                     SubMake.AddTask "StreamEditAssetExporter", Asset.ID
+                     If GetParam ("Cleaning") Then
+                        SubMake.Clean
+                     Else
+                        SubMake.Build
+                     End If
+                  Else
+                     BuildError "Could not create a cloned make object"
+                  End If
+               End if
+            End If
+
+            ' Child assets must be sent before this asset
+            For Each ChildAsset In Asset.ChildAssets
+               If PlatformFilter.IsValidPlatform (ChildAsset.Platform) Then
+                  Task.AddSubTask "AssetSend", ChildAsset, PlatformFilter, Buffer
+               End If
+            Next
+
+            ' Strip out the RWSIdentifiers, and replace with rpID plugin
+            If Left (Asset.type, 3) <> "RF3" Then
+                Set SubMake = CloneMake ()
+                If Not SubMake Is Nothing Then
+                  SubMake.AddTask "ReplaceRWSIdentifiers", Asset
+                  SubMake.Build
+                End If
+            End If
+
+            ' Call "SequenceSend" rule to send any assets used by templates.
+            If Asset.BuildCommand = "SequenceAsset" Then
+               Task.AddSubtask "SequenceSend", Asset, PlatformFilter, Buffer
+            End If
+
+            ' Textures will be added as part of a texture dictionary, so don't send texture assets
+            If Not AssetIsTextureFile (Asset) Then
+               ' Apply the command to create the asset if it's not been sent yet
+               If Not GetParam ("SENTOBJECTS").Exists (Asset) Then
+                  GetParam ("SENTOBJECTS").Add Asset
+
+                  ' Build the texture dictionary and send the asset if it's not a root RF3
+                  If Not AssetIsRootRF3 (Asset) Then
+                     Task.AddSubTask "DynamicTextureDictionary", Asset, Buffer
+
+                     ' Send the command to create the asset
+                     AppendCreateAsset Buffer, Asset, PlatformFilter
+                  End If
+               End If
+            End If
+
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AssetRemove" dependencygraph="AssetRemoveDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>      
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Asset.rule - AssetRemove rule
+         '
+         ' Remove asset from the console.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         ' 
+         Sub AssetRemoveDependencies (Task, Asset, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets)
+            ' Remove any child assets
+            Dim oChildAssets, oChildAsset
+            Set oChildAssets = Asset.ChildAssets
+            oChildAssets.Reverse ' Remove children in reverse-order
+            For Each oChildAsset In oChildAssets
+               Task.AddSubtask "AssetRemove", oChildAsset, PlatformFilter, Buffer, bForceRemoveChildren, bRemoveChildAssets
+            Next
+
+            ' Remove Asset from the sent objects list
+            GetParam ("SENTOBJECTS").Remove Asset
+            
+            ' If this is a root RF3 asset, we only want to remove the children from target
+            If Not AssetIsRootRF3 (Asset) Then
+               AppendUnloadAsset Buffer, Asset.UID
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Asset_OnChange" dependencygraph="AssetOnChangeDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Asset.rule - Asset_OnChange rule
+         ' 
+         ' The asset has changed. Check if it should still be on the console.
+         ' Resend any entities that use this asset.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         ' 
+         Sub AssetOnChangeDependencies (Task, Asset, PlatformFilter, Buffer)
+            Dim SentObjects, Entity
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If SentObjects.Exists (Asset) Then
+
+               ' Remove any entities that use this asset
+               Dim oParentEntities
+               Set oParentEntities = GetParentEntities (Asset)
+               For Each Entity In oParentEntities
+                  If SentObjects.Exists (Entity) Then
+                     Task.AddSubtask "EntityRemove", Entity, PlatformFilter, Buffer, False, True
+                  Else
+                     ' Remove from container so we can use the contents to repopulate later
+                     oParentEntities.Remove Entity
+                  End If
+               Next
+
+               ' Remove the asset
+               Task.AddSubtask "AssetRemove", Asset, PlatformFilter, Buffer, False, False
+
+               ' If the asset should be on the console, then send it
+               If PlatformFilter.IsValidPlatform (Asset.Platform) Then
+                  Task.AddSubtask "AssetSend", Asset, PlatformFilter, Buffer
+               End If
+
+               ' Resend any entities that use this asset
+               For Each Entity In oParentEntities
+                  Task.AddSubtask "EntitySend", Entity, PlatformFilter, Buffer
+               Next
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Asset_OnDelete" dependencygraph="AssetOnDeleteDependencies">
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Asset.rule - Asset_OnDelete rule
+         '
+         ' The asset has been deleted. Remove it from the console.
+         ' Resend any entities that use this asset.
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         ' 
+         Sub AssetOnDeleteDependencies (Task, Asset, PlatformFilter, Buffer)
+            Dim SentObjects, Entity
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If SentObjects.Exists (Asset) Then
+               ' Remove any entities that use this asset
+               Dim oParentEntities
+               Set oParentEntities = GetParentEntities (Asset)
+               For Each Entity In oParentEntities
+                  If SentObjects.Exists (Entity) Then
+                     Task.AddSubtask "EntityRemove", Entity, PlatformFilter, Buffer, False, True
+                  Else
+                     ' Remove from container so we can use the contents to repopulate later
+                     oParentEntities.Remove Entity
+                  End If
+               Next
+
+               Task.AddSubtask "AssetRemove", Asset, PlatformFilter, Buffer, False, False
+
+               ' Resend any entities that use this asset
+               For Each Entity In oParentEntities
+                  Task.AddSubtask "EntitySend", Entity, PlatformFilter, Buffer
+               Next
+            End If               
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Asset_OnAdd">
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Asset.rule - Asset_OnAdd rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         BuildWarning ("No database objects should exist as a child of an asset")
+      ]]></script>
+   </rule>
+
+   <rule name="Asset_OnRemove" buildcommand="AssetOnRemoveCommand">
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Asset.rule - Asset_OnRemove rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         BuildWarning ("No database objects should exist as a child of an asset")
+      ]]></script>
+   </rule>
+
+</build>

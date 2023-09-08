@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="RENLayoutControl.RENPage.1" id="GetLatest" runtime=""><param name="Caption" value="Get Latest" />
+<param name="Group" value="grpDialogs" />
+<param name="Top" value="0" />
+<param name="Left" value="0" />
+<param name="Width" value="309" />
+<param name="Height" value="178" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="1" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<param name="_cx" value="8176" />
+<param name="_cy" value="5530" />
+<param name="BackColor" value="2147483663" />
+<param name="BorderStyle" value="-842150451" />
+<param name="Reserved" value="" />
+<param name="ForeColor" value="3452816845" />
+<param name="MousePointer" value="-842150451" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Objects" runtime=""><param name="Count" value="6" />
+<param name="key0" value="GetLatestProject" />
+<param name="key1" value="GetLatestResources" />
+<param name="key2" value="OkButton" />
+<param name="key3" value="CancelButton" />
+<param name="key4" value="ProjectName" />
+<param name="key5" value="ResourceRoot" />
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item0" runtime=""><param name="Left" value="12" />
+<param name="Top" value="12" />
+<param name="Right" value="218" />
+<param name="Bottom" value="33" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJIAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgB8AAIBKFQAALAIAADAAAABHZXQgbGF0ZXN0IG9m
+IGN1cnJlbnQgcHJvamVjdCA6AAACDAA0AAAApQAAAAACAAA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item1" runtime=""><param name="Left" value="12" />
+<param name="Top" value="77" />
+<param name="Right" value="203" />
+<param name="Bottom" value="98" />
+<param name="ProgID" value="Forms.CheckBox.1" />
+<stream encode="BASE64">AAJAAEYBwIAAAAAADwAAgAAAAAAEAAAAAQAAgBYAAIC+EwAALAIAADAAAABHZXQgbGF0ZXN0IHJl
+c291cmNlcyA6AAAAAgwANAAAAKUAAAAAAgAA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item2" runtime=""><param name="Left" value="102" />
+<param name="Top" value="147" />
+<param name="Right" value="188" />
+<param name="Bottom" value="173" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIUACgAAAACAACAT0uMC+MIAACwAgAAAAIMAHQAAAClAAAAAAIDAA==
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item3" runtime=""><param name="Left" value="202" />
+<param name="Top" value="147" />
+<param name="Right" value="288" />
+<param name="Bottom" value="173" />
+<param name="ProgID" value="Forms.CommandButton.1" />
+<stream encode="BASE64">AAIYACgAAAAGAACAQ2FuY2VsAADjCAAAsAIAAAACDAB0AAAApQAAAAACAwA=
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item4" runtime=""><param name="Left" value="32" />
+<param name="Top" value="42" />
+<param name="Right" value="288" />
+<param name="Bottom" value="63" />
+<param name="ProgID" value="Forms.TextBox.1" />
+<stream encode="BASE64">AAIoAAMBQIAAAAAAH0iALA8AAIAMAACAdRoAACwCAAA8bm8gcHJvamVjdD4AAgwANAAAAKUAAAAA
+AgAA
+</stream>
+</object>
+<object clsid="{85C0CDFF-7C29-461F-B47D-40E8E3DAD1CA}" id="item5" runtime=""><param name="Left" value="32" />
+<param name="Top" value="107" />
+<param name="Right" value="288" />
+<param name="Bottom" value="128" />
+<param name="ProgID" value="Forms.TextBox.1" />
+<stream encode="BASE64">AAI0AAMBQIAAAAAAH0iALA8AAIAWAACAdRoAACwCAAA8bm8gcmVzb3VyY2Ugcm9vdCBzZXQ+AAAA
+AgwANAAAAKUAAAAAAgAA
+</stream>
+</object>
+</object>
+</object>
+</RENApplication>

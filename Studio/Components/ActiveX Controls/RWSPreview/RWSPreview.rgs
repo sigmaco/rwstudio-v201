@@ -1,0 +1,30 @@
+HKCR
+{
+   CSL.RWSPreview.RWSPreview.1 = s 'RWSPreview Class'
+   {
+      CLSID = s '{34AAACD1-0960-4B23-998E-D53C6B4E21C3}'
+   }
+   CSL.RWSPreview.RWSPreview = s 'RWSPreview Class'
+   {
+      CLSID = s '{34AAACD1-0960-4B23-998E-D53C6B4E21C3}'
+      CurVer = s 'CSL.RWSPreview.RWSPreview.1'
+   }
+   NoRemove CLSID
+   {
+      ForceRemove {34AAACD1-0960-4B23-998E-D53C6B4E21C3} = s 'RWSPreview Class'
+      {
+         ProgID = s 'CSL.RWSPreview.RWSPreview.1'
+         VersionIndependentProgID = s 'CSL.RWSPreview.RWSPreview'
+         ForceRemove 'Programmable'
+         LocalServer32 = s '%MODULE%'
+         val AppID = s '{982E3D91-9E34-4108-942D-8B17203DB567}'
+         ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 101'
+         'MiscStatus' = s '0'
+         {
+             '1' = s '131473'
+         }
+         'TypeLib' = s '{7065A848-CB1F-4D73-9C5A-8CDC36026C79}'
+         'Version' = s '1.0'
+      }
+   }
+}

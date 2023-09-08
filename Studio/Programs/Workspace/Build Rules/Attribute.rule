@@ -1,0 +1,159 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="AttributeSend" dependencygraph="AttributeSendDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Attribute.rule - AttributeSend rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         Sub AttributeSendDependencies (Task, Attribute, Entity, Index, Buffer)
+            ' If this is a matrix attribute on a volume entity, we need to rebuild hull
+            Dim LoadMatrixTag, nLoadMatrix
+            Set LoadMatrixTag = RWSScript.RegisterTag ("RWSTAG_MATRIX_ATTRIB_ID")
+
+            nLoadMatrix = LoadMatrixTag.Get (Attribute)
+            If nLoadMatrix <> 0 Then
+               If EntityIsVolume (Entity) Then
+                  Task.AddSubtask "VolumeEntityUpdate", Entity, Buffer
+               End If
+            End If
+
+            ' Send the update command
+            AppendUpdateEntityAttributes Buffer, Entity, Attribute, Index
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="AttributeSendAll" dependencygraph="AttributeSendAllDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Attribute.rule - AttributeSendAll rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' -----------------------------------------------------------------------------
+         Sub AttributeSendAllDependencies (Task, Entity, Buffer)
+            AppendAllEntityAttributes Buffer, Entity
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Attribute_OnChange" dependencygraph="AttributeOnChangeDependencies">
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Attribute.rule - Attribute_OnChange rule
+         '
+         ' Called whenever an attribute is changed while connected to a target
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AttributeOnChangeDependencies (Task, Attribute, PlatformFilter, Buffer)
+            Dim SentObjects, Index, Entity
+
+            ' Send the attribute to the entity on the target
+            Set SentObjects = GetParam ("SENTOBJECTS")
+            Index           = GetAttributeIndex (Attribute)
+
+            For Each Entity In GetParentEntities (Attribute)
+               If SentObjects.Exists (Entity) Then
+                  ' We need to determine whether the entity uses this attribute. It
+                  ' could be overridden by another attribute of the same type
+                  If EntityUsesAttribute (Entity, Attribute, Index) Then
+                     Task.AddSubtask "AttributeSend", Attribute, Entity, Index, Buffer
+                  End If
+               End If
+            Next
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Attribute_OnDelete" dependencygraph="AttributeOnDeleteDependencies">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Attribute.rule - Attribute_OnDelete rule
+         '
+         ' Called whenever an attribute is deleted while connected to a target
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub AttributeOnDeleteDependencies (Task, Attribute, PlatformFilter, Buffer)
+            Dim SentObjects, Index, Entity
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If IsInFolder (RWSScript.Game.ActiveFolder, Attribute, PlatformFilter) Then
+               Index = GetAttributeIndex (Attribute)
+
+               ' Re-send all entities that use this attribute.
+               For Each Entity In GetParentEntities (Attribute)
+                  If SentObjects.Exists (Entity) Then
+                     If EntityUsesAttribute (Entity, Attribute, Index) Then
+                        Task.AddSubtask "AttributeSendAll", Entity, PlatformFilter, Buffer
+                     End If
+                  End If
+               Next
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Attribute_OnAdd">
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Attribute.rule - Attribute_OnAdd rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         BuildWarning ("No database objects should exist as a child of an attribute")
+
+      ]]></script>
+   </rule>
+
+   <rule name="Attribute_OnRemove">
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Attribute.rule - Attribute_OnRemove rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         BuildWarning ("No database objects should exist as a child of an attribute")
+
+      ]]></script>
+   </rule>
+
+</build>

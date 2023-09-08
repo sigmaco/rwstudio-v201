@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example FX Particle Spray\Games" />
+   <EntitiesLocation path="Example FX Particle Spray\Entities" />
+   <AssetsLocation path="Example FX Particle Spray\Assets" />
+   <AttributeSharesLocation path="Example FX Particle Spray\AttributeShares" />
+   <FoldersLocation path="Example FX Particle Spray\Folders" />
+
+</RenderWareStudio>
+

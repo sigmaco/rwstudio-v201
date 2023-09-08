@@ -1,0 +1,202 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CustInfoExport", "CustInfoExport\CustInfoExport.vcproj", "{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CustPrtPropComm", "CustPrtProp\common\CustPrtPropComm.vcproj", "{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CustPrtPropMax", "CustPrtProp\max\CustPrtPropMax.vcproj", "{6328FDFF-A34E-4006-899E-A69FDED20080}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FurShader", "Shader\common\FurShader.vcproj", "{060AAC63-1062-4A78-835E-78DE0FFF6596}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GeomFilter", "TravAction\GeomFilter.vcproj", "{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MaxFurShader", "Shader\max\MaxFurShader.vcproj", "{95D9044C-AC2A-4BBD-B67D-594FC401B633}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MaxSimple", "MaxSimple\MaxSimple.vcproj", "{5999FF13-4C30-48BE-B35E-DF2C0F52D631}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OptTex", "ExportObject\OptTex.vcproj", "{EB15E85D-68E2-40D6-A894-D2CA410890B5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PreLight", "VertexFilter\PreLight.vcproj", "{76A56814-D418-436C-8F32-9BE467BD2976}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScaleAnim", "ScaleAnim\ScaleAnim.vcproj", "{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stream", "PostProcess\Stream.vcproj", "{B6872418-290A-478E-AC53-E48D95D2EA03}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 11
+		SccProjectUniqueName0 = CustInfoExport\\CustInfoExport.vcproj
+		SccProjectName0 = Perforce\u0020Project
+		SccLocalPath0 = CustInfoExport
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = CustPrtProp\\common\\CustPrtPropComm.vcproj
+		SccProjectName1 = Perforce\u0020Project
+		SccLocalPath1 = CustPrtProp\\common
+		SccProvider1 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName2 = CustPrtProp\\max\\CustPrtPropMax.vcproj
+		SccProjectName2 = Perforce\u0020Project
+		SccLocalPath2 = CustPrtProp\\max
+		SccProvider2 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = Shader\\common\\FurShader.vcproj
+		SccProjectName3 = Perforce\u0020Project
+		SccLocalPath3 = Shader\\common
+		SccProvider3 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = TravAction\\GeomFilter.vcproj
+		SccProjectName4 = Perforce\u0020Project
+		SccLocalPath4 = TravAction
+		SccProvider4 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName5 = Shader\\max\\MaxFurShader.vcproj
+		SccProjectName5 = Perforce\u0020Project
+		SccLocalPath5 = Shader\\max
+		SccProvider5 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName6 = MaxSimple\\MaxSimple.vcproj
+		SccProjectName6 = Perforce\u0020Project
+		SccLocalPath6 = MaxSimple
+		SccProvider6 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName7 = ExportObject\\OptTex.vcproj
+		SccProjectName7 = Perforce\u0020Project
+		SccLocalPath7 = ExportObject
+		SccProvider7 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName8 = VertexFilter\\PreLight.vcproj
+		SccProjectName8 = Perforce\u0020Project
+		SccLocalPath8 = VertexFilter
+		SccProvider8 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName9 = ScaleAnim\\ScaleAnim.vcproj
+		SccProjectName9 = Perforce\u0020Project
+		SccLocalPath9 = ScaleAnim
+		SccProvider9 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName10 = PostProcess\\Stream.vcproj
+		SccProjectName10 = Perforce\u0020Project
+		SccLocalPath10 = PostProcess
+		SccProvider10 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Common - Debug
+		ConfigName.1 = Common - Debug with Debug OpenExport
+		ConfigName.2 = Common - Release
+		ConfigName.3 = Max 6 - Debug
+		ConfigName.4 = Max 6 - Debug with Debug OpenExport
+		ConfigName.5 = Max 6 - Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.0 = {B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Common - Debug.ActiveCfg = Debug|Win32
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Common - Debug.Build.0 = Debug|Win32
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Common - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Common - Debug with Debug OpenExport.Build.0 = Debug with Debug OpenExport|Win32
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Common - Release.ActiveCfg = Release|Win32
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Common - Release.Build.0 = Release|Win32
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Max 6 - Debug.ActiveCfg = Debug|Win32
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{47C6E9C8-CC4C-4EB2-9223-5729AD6C1DD1}.Max 6 - Release.ActiveCfg = Release|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Common - Debug.ActiveCfg = Debug|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Common - Debug.Build.0 = Debug|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Common - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Common - Debug with Debug OpenExport.Build.0 = Debug with Debug OpenExport|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Common - Release.ActiveCfg = Release|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Common - Release.Build.0 = Release|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Max 6 - Debug.ActiveCfg = Debug|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{B60AC2A3-DDEE-4E1C-8526-225EF4F4EA98}.Max 6 - Release.ActiveCfg = Release|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Common - Debug.ActiveCfg = Debug Max 6|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Common - Debug with Debug OpenExport.ActiveCfg = Debug Max 6 with Debug OpenExport|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Common - Release.ActiveCfg = Release Max 6|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Max 6 - Debug.ActiveCfg = Debug Max 6|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Max 6 - Debug.Build.0 = Debug Max 6|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug Max 6 with Debug OpenExport|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Max 6 - Debug with Debug OpenExport.Build.0 = Debug Max 6 with Debug OpenExport|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Max 6 - Release.ActiveCfg = Release Max 6|Win32
+		{6328FDFF-A34E-4006-899E-A69FDED20080}.Max 6 - Release.Build.0 = Release Max 6|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Common - Debug.ActiveCfg = Debug|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Common - Debug.Build.0 = Debug|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Common - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Common - Debug with Debug OpenExport.Build.0 = Debug with Debug OpenExport|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Common - Release.ActiveCfg = Release|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Common - Release.Build.0 = Release|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Max 6 - Debug.ActiveCfg = Debug|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{060AAC63-1062-4A78-835E-78DE0FFF6596}.Max 6 - Release.ActiveCfg = Release|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Common - Debug.ActiveCfg = Debug|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Common - Debug.Build.0 = Debug|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Common - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Common - Debug with Debug OpenExport.Build.0 = Debug with Debug OpenExport|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Common - Release.ActiveCfg = Release|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Common - Release.Build.0 = Release|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Max 6 - Debug.ActiveCfg = Debug|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{E5A325A7-3717-4992-AD5D-D3E9ED1D05E2}.Max 6 - Release.ActiveCfg = Release|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Common - Debug.ActiveCfg = Debug Max6|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Common - Debug with Debug OpenExport.ActiveCfg = Debug Max6|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Common - Release.ActiveCfg = Release Max6|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Max 6 - Debug.ActiveCfg = Debug Max6|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Max 6 - Debug.Build.0 = Debug Max6|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug Max6 with Debug OpenExport|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Max 6 - Debug with Debug OpenExport.Build.0 = Debug Max6 with Debug OpenExport|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Max 6 - Release.ActiveCfg = Release Max6|Win32
+		{95D9044C-AC2A-4BBD-B67D-594FC401B633}.Max 6 - Release.Build.0 = Release Max6|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Common - Debug.ActiveCfg = Debug Max6|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Common - Debug with Debug OpenExport.ActiveCfg = Debug Max6|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Common - Release.ActiveCfg = Release Max6|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Max 6 - Debug.ActiveCfg = Debug Max6|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Max 6 - Debug.Build.0 = Debug Max6|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug Max6 with Debug OpenExport|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Max 6 - Debug with Debug OpenExport.Build.0 = Debug Max6 with Debug OpenExport|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Max 6 - Release.ActiveCfg = Release Max6|Win32
+		{5999FF13-4C30-48BE-B35E-DF2C0F52D631}.Max 6 - Release.Build.0 = Release Max6|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Common - Debug.ActiveCfg = Debug|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Common - Debug.Build.0 = Debug|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Common - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Common - Debug with Debug OpenExport.Build.0 = Debug with Debug OpenExport|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Common - Release.ActiveCfg = Release|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Common - Release.Build.0 = Release|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Max 6 - Debug.ActiveCfg = Debug|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{EB15E85D-68E2-40D6-A894-D2CA410890B5}.Max 6 - Release.ActiveCfg = Release|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Common - Debug.ActiveCfg = Debug|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Common - Debug.Build.0 = Debug|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Common - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Common - Debug with Debug OpenExport.Build.0 = Debug with Debug OpenExport|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Common - Release.ActiveCfg = Release|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Common - Release.Build.0 = Release|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Max 6 - Debug.ActiveCfg = Debug|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{76A56814-D418-436C-8F32-9BE467BD2976}.Max 6 - Release.ActiveCfg = Release|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Common - Debug.ActiveCfg = Debug|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Common - Debug.Build.0 = Debug|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Common - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Common - Debug with Debug OpenExport.Build.0 = Debug with Debug OpenExport|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Common - Release.ActiveCfg = Release|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Common - Release.Build.0 = Release|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Max 6 - Debug.ActiveCfg = Debug|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{3F76B984-32FA-4CF7-9DFB-00F7B70E5530}.Max 6 - Release.ActiveCfg = Release|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Common - Debug.ActiveCfg = Debug|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Common - Debug.Build.0 = Debug|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Common - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Common - Debug with Debug OpenExport.Build.0 = Debug with Debug OpenExport|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Common - Release.ActiveCfg = Release|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Common - Release.Build.0 = Release|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Max 6 - Debug.ActiveCfg = Debug|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Max 6 - Debug with Debug OpenExport.ActiveCfg = Debug with Debug OpenExport|Win32
+		{B6872418-290A-478E-AC53-E48D95D2EA03}.Max 6 - Release.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

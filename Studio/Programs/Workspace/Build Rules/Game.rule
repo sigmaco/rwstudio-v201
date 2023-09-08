@@ -1,0 +1,290 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="BuildGame" dependencygraph="BuildGameDependencies"
+                          buildcommand="BuildGameCommand" alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="RecursionGuard" progid="CSL.RWSScript.RWSContainer"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Game.rule - BuildGame rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         ' Currently to build a game, we only depend on the active folder being built, so
+         ' add the active folder's build command as the dependency.
+         Sub BuildGameDependencies (Task, Game, PlatformFilter)
+            Dim Folder, GlobalFolder
+
+            ' The recursion guard prevents objects being recursed into multiple times
+            RecursionGuard.Clear
+
+            If Game.ActiveFolder Is Nothing Then
+               BuildError "Unable to determine active folder."
+            Else
+               ' Build the global folder first
+               Set GlobalFolder = Game.GlobalFolder
+               If Not GlobalFolder Is Nothing Then
+                  If PlatformFilter.IsValidPlatform (GlobalFolder.Platform) Then
+                     Task.AddSubtask "RootFolder", GlobalFolder, PlatformFilter, RecursionGuard
+                  End If
+               End If
+
+               ' Build the active folder
+               If PlatformFilter.IsValidPlatform (Game.ActiveFolder.Platform) Then
+                  If Game.GlobalFolder.UID <> Game.ActiveFolder.UID Then
+                     Task.AddSubtask "RootFolder", Game.ActiveFolder, PlatformFilter, RecursionGuard
+                  End If
+               End If
+            End If
+         End Sub
+
+         '------------------------------------------------------------------------------
+         Sub BuildGameCommand (Task, Game, PlatformFilter)
+            Beep ()
+         End Sub
+      ]]></script>
+   </rule>
+
+   <rule name="BuildAllFolders" dependencygraph="BuildAllFolderDependencies"
+                                buildcommand="BuildAllFolderCommand"
+                                alwaysbuild="true">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="RecursionGuard" progid="CSL.RWSScript.RWSContainer"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Game.rule - BuildAllFolders rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         ' Build all of the folders appropriate for this platform filter.
+         Sub BuildAllFolderDependencies (Task, Game, PlatformFilter)
+            Dim Folder
+            For Each Folder in Game.ChildFolders
+               ' The recursion guard prevents objects being recursed into multiple times
+               RecursionGuard.Clear
+
+               If PlatformFilter.IsValidPlatform (Folder.Platform) Then
+                  Task.AddSubtask "RootFolder", Folder, PlatformFilter, RecursionGuard
+               End If
+            Next
+         End Sub
+
+         '------------------------------------------------------------------------------
+         Sub BuildAllFolderCommand (Task, Game, PlatformFilter)
+            Beep ()
+         End Sub
+      ]]></script>
+   </rule>
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="ResetGame" dependencygraph="ResetGameDependencies">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Game.rule - ResetGame rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+
+         Dim RemoveObjectsBuffer, AddObjectsBuffer
+
+         Sub ResetGameDependencies (Task, Connection, Game, PlatformFilter, bResendAssets)
+            Dim ActiveFolder, GlobalFolder
+            Dim SentObjects
+
+            Set GlobalFolder = Game.GlobalFolder
+            Set ActiveFolder = Game.ActiveFolder
+
+            Set SentObjects               = GetParam ("SENTOBJECTS")
+            Set RemoveObjectsBuffer       = RWSComms.CreateMemoryBuffer ()
+            Set AddObjectsBuffer          = RWSComms.CreateMemoryBuffer ()
+            RemoveObjectsBuffer.BigEndian = Connection.BigEndian
+            RemoveObjectsBuffer.Unicode   = Connection.Unicode
+            AddObjectsBuffer.BigEndian    = Connection.BigEndian
+            AddObjectsBuffer.Unicode      = Connection.Unicode
+
+            ' Remove the active folder
+            If PlatformFilter.IsValidPlatform (ActiveFolder.Platform) Then
+               Task.AddSubtask "FolderRemove", ActiveFolder, PlatformFilter, RemoveObjectsBuffer, True, bResendAssets
+            End If
+
+            ' Remove the global folder
+            If Not GlobalFolder Is Nothing Then
+               If PlatformFilter.IsValidPlatform (GlobalFolder.Platform) Then
+                  Task.AddSubtask "FolderRemove", GlobalFolder, PlatformFilter, RemoveObjectsBuffer, True, bResendAssets
+               End If
+            End If
+
+            ' Send the global folder
+            If Not GlobalFolder Is Nothing Then
+               If PlatformFilter.IsValidPlatform (GlobalFolder.Platform) Then
+                  Task.AddSubtask "RootFolderSend", GlobalFolder, PlatformFilter, AddObjectsBuffer
+               End If
+            End If
+
+            ' Send the active folder
+            If PlatformFilter.IsValidPlatform (ActiveFolder.Platform) Then
+               Task.AddSubtask "RootFolderSend", ActiveFolder, PlatformFilter, AddObjectsBuffer
+
+               ' Build the pre-send stream and send it
+               Dim StopBuffer, StartBuffer
+               Set StopBuffer = RWSComms.CreateMemoryBuffer ()
+               StopBuffer.BigEndian = Connection.BigEndian
+               StopBuffer.Unicode   = Connection.Unicode
+               If bResendAssets Then
+                  AppendReset     StopBuffer
+               End If
+               AppendStopSystem   StopBuffer
+               AppendFreezeSystem StopBuffer
+               Connection.SendBuffer StopBuffer
+
+               ' Send the remove, send folder buffer
+               Connection.SendBuffer RemoveObjectsBuffer
+               Connection.SendBuffer AddObjectsBuffer
+
+               ' Build the post-send stream and send it
+               Set StartBuffer = RWSComms.CreateMemoryBuffer ()
+               StartBuffer.BigEndian = Connection.BigEndian
+               StartBuffer.Unicode   = Connection.Unicode
+               AppendStartSystem StartBuffer
+               AppendRunSystem   StartBuffer
+               Connection.SendBuffer StartBuffer
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="ChangeActiveFolder" dependencygraph="ChangeActiveFolderDependencies">
+         <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+         <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+         <reference object="CSL.RWSTarget.RWSComms"/>
+         <reference object="CSL.RWSScript.RWSScript"/>
+         <script language="VBScript" src="BufferTools.vbs"/>
+         <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Game.rule - ChangeActiveFolder rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Dim RemoveObjectsBuffer, AddObjectsBuffer
+
+         ' -----------------------------------------------------------------------------
+         ' Remove any previous folder, then send the currently active folder
+
+         Sub ChangeActiveFolderDependencies (Task, Connection, Game, PlatformFilter, PreviousFolderID)
+            Dim SentObjects
+            Set SentObjects = GetParam ("SENTOBJECTS")
+            Set RemoveObjectsBuffer = Nothing
+
+            ' Remove previous folder
+            If Not PreviousFolderID = 0 Then
+               Dim OldFolder
+               Set OldFolder = RWSScript.Folder (PreviousFolderID)
+
+               If Not OldFolder Is Nothing Then
+                  If PlatformFilter.IsValidPlatform (OldFolder.Platform) Then
+                     Set RemoveObjectsBuffer       = RWSComms.CreateMemoryBuffer ()
+                     RemoveObjectsBuffer.BigEndian = Connection.BigEndian
+                     RemoveObjectsBuffer.Unicode   = Connection.Unicode
+
+                     Task.AddSubtask "FolderRemove", Oldfolder, PlatformFilter, RemoveObjectsBuffer, True, True
+                  End If
+               End If
+            End If
+
+            ' Send new folder
+            Dim ActiveFolder
+            Set ActiveFolder = Game.ActiveFolder
+            If Not ActiveFolder Is Nothing Then
+               If PlatformFilter.IsValidPlatform (ActiveFolder.Platform) Then
+                  Set AddObjectsBuffer          = RWSComms.CreateMemoryBuffer ()
+                  AddObjectsBuffer.BigEndian    = Connection.BigEndian
+                  AddObjectsBuffer.Unicode      = Connection.Unicode
+
+                  Task.AddSubtask "RootFolderSend", ActiveFolder, PlatformFilter, AddObjectsBuffer
+               End If
+            End If
+
+            Dim StopBuffer, StartBuffer
+
+            Set StopBuffer = RWSComms.CreateMemoryBuffer ()
+            StopBuffer.BigEndian = Connection.BigEndian
+            StopBuffer.Unicode   = Connection.Unicode
+
+            ' Send command to clear out all objects
+            If Not RemoveObjectsBuffer Is Nothing Then
+               AppendReset StopBuffer
+            End If
+
+            ' Build the pre-send stream and send it
+            AppendStopSystem   StopBuffer
+            AppendFreezeSystem StopBuffer
+            Connection.SendBuffer StopBuffer
+
+            ' Send the added objects
+            If Not AddObjectsBuffer Is Nothing Then
+               Connection.SendBuffer AddObjectsBuffer
+            End If
+
+            ' Build the post-send stream and send it
+            Set StartBuffer = RWSComms.CreateMemoryBuffer ()
+            StartBuffer.BigEndian = Connection.BigEndian
+            StartBuffer.Unicode   = Connection.Unicode
+            AppendStartSystem StartBuffer
+            AppendRunSystem   StartBuffer
+            Connection.SendBuffer StartBuffer
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="Game_OnChange"/>
+
+   <rule name="Game_OnDelete"/>
+
+   <rule name="Game_OnAdd"/>
+
+   <rule name="Game_OnRemove" dependencygraph="GameOnRemoveDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Game.rule - Game_OnRemove rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         ' --------------------------------------------------------------------
+         ' If the folder is removed from the game then remove it from the console
+         Sub GameOnRemoveDependencies (Task, Game, Child, PlatformFilter, Buffer)
+            If otFolder = Child.IDType And GetParam ("SENTOBJECTS").Exists (Child) Then
+               Task.AddSubtask "FolderRemove", Child, PlatformFilter, Buffer, True, True
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+</build>

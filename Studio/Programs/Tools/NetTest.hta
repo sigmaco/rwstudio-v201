@@ -1,0 +1,123 @@
+<HTML>
+<HEAD>
+<TITLE> NetTest - RenderWare Studio Network Testing Application </TITLE>
+
+<HTA:APPLICATION ID="oNetTest"
+    APPLICATIONNAME="RWSTestRig"
+    ICON="../../common/rwstudio.ico"
+    SINGLEINSTANCE="no"
+    WINDOWSTATE="normal"
+    INNERBORDER="no"
+    CONTEXTMENU="no"
+    SCROLL="no"/>
+</HEAD>
+
+<BODY onload="OnLoad()" onbeforeunload="OnBeforeUnload()" onresize="OnSize()">
+
+   <OBJECT ID="NetTest" CLASSID="CLSID:D65104A9-2E62-442F-89F5-00C279888406"></OBJECT>
+   <div id=divPanels style="position:absolute">
+      <table border=0 cellpadding=0 cellspacing=0>
+      <tr><td>
+         <OBJECT ID="MessageLog" CLASSID="CLSID:1A19857D-9E69-4460-9D33-3D089BB16E9F"> RWSOutputWindow not loaded </OBJECT>
+      </td></tr>
+      </table>
+   </div>
+
+</BODY>
+
+<SCRIPT LANGUAGE="VBSCRIPT">
+
+Dim CommandLine, nArgEnd, nPort, bBigEndian
+CommandLine = oNetTest.commandLine
+nArgEnd = Len (CommandLine)
+
+' --------------------------------------------------------------------
+' Window Resize
+Sub OnSize ()
+
+   ScreenWidth  = document.body.offsetWidth
+   ScreenHeight = document.body.offsetHeight
+
+   If ScreenWidth < 1 Then
+      ScreenWidth = 1
+   End If
+
+   If ScreenHeight < 1 Then
+      ScreenHeight = 1
+   End If
+
+   MessageLog.width   = ScreenWidth
+   MessageLog.height  = ScreenHeight
+
+   divPanels.style.top  = 0
+   divPanels.style.left = 0
+End Sub
+
+' --------------------------------------------------------------------
+' Main entry point
+' --------------------------------------------------------------------
+Sub OnLoad ()
+   OnSize
+   
+   ' Launch NetTest using the port No. defined on the command line.
+   Dim strBigEndian
+
+   bBigEndian = False
+
+   strBigEndian = GetNextArg ()
+   nPort = GetNextArg ()
+
+   If strBigEndian = "True" Then
+      bBigEndian = True
+      strBigEndian = " (Big Endian)"
+   Else
+      strBigEndian = " (Little Endian)"
+   End If
+   
+   MessageLog.AddMessage 0, "Launching NetTest on port " & nPort & strBigEndian
+   NetTest.Start nPort, False, bBigEndian
+End Sub
+
+' --------------------------------------------------------------------
+Function GetNextArg ()
+   GetNextArg = 0
+
+   Dim nArgBegin, CurrentArg
+   For nArgBegin = nArgEnd To 1 Step -1
+      If Mid (CommandLine, nArgBegin, 1) = " " Then
+         Exit For
+      End If
+   Next
+
+   CurrentArg = Mid (CommandLine, nArgBegin + 1, nArgEnd - nArgBegin)
+   If Len (CurrentArg) > 0 Then
+      GetNextArg = CurrentArg
+   End If
+
+   nArgEnd = nArgBegin - 1
+End Function
+
+' --------------------------------------------------------------------
+' Main exit point
+' --------------------------------------------------------------------
+Sub OnBeforeUnload ()
+   NetTest.Stop
+End Sub
+
+'------------------------------------------------------------------------------ 
+Sub NetTest_OnMessage (strMessage)
+   If strMessage = "Network failed to initialise! - Aborting." Then
+      MessageLog.AddMessage 2, strMessage 
+   Else
+      MessageLog.AddMessage 0, strMessage 
+   End If
+End Sub
+
+'------------------------------------------------------------------------------ 
+Sub NetTest_OnDisconnect (nErrorCode)
+   NetTest.Start nPort, False, bBigEndian
+End Sub
+
+</SCRIPT>
+
+</HTML>

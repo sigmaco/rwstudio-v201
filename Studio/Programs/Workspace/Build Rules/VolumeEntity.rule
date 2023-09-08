@@ -1,0 +1,395 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="VolumeEntity" dependencygraph="VolumeEntityDependencies"
+                             buildcommand="VolumeEntityCommand">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' VolumeEntity.rule - VolumeEntity rule
+         '
+         ' This rule creates a stream file containing an asset.
+         ' The asset's file is an RpHull stream created by "HullGenerator" rule.
+         ' The asset file is named "<entity UID>Hull.rws"
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub VolumeEntityDependencies (Task, Entity, PlatformFilter)
+
+            Dim strTargetPath, Subtask, SubtaskTargets
+
+            ' Depend on the file specifying resource roots and "embed assets" flag
+            Task.AddDependency AssetGlobalsFile (GetParam ("DESTDIR"))
+
+            ' Dependency on the task that generates the RpHull stream
+            Set Subtask = Task.AddSubtask ("HullGenerator", Entity)
+            Set SubtaskTargets = Subtask.GetTargets ()
+
+            Task.SetParam "HULL_ASSET_FILE", SubtaskTargets.Item (0)
+
+            ' Target is a buffer containing commands to upload the asset on the console
+            strTargetPath = BuildPath (GetParam ("DESTDIR"), "Asset")
+            strTargetPath = BuildPath (strTargetPath, Entity.UID & "Hull.rws")
+            Task.SetParam "TARGETFILE", strTargetPath
+            Task.AddTarget strTargetPath
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub VolumeEntityCommand (Task, Entity, PlatformFilter)
+            Dim strTargetPath
+            strTargetPath = Task.GetParam ("TARGETFILE")
+
+            ' Concatenate the RpHull file into an asset for uploading to console
+            Dim HullAssetBuffer
+            Set HullAssetBuffer = RWSComms.CreateFileBuffer (strTargetPath, faCreate)
+
+            If Not HullAssetBuffer Is Nothing Then
+               HullAssetBuffer.BigEndian = GetParam ("BIGENDIAN")
+               HullAssetBuffer.Unicode   = GetParam ("UNICODE")
+
+               ' Use the entity's UID for the asset's UID
+               AppendCreateAssetData HullAssetBuffer, "", Entity.UID, _
+                        "rwID_HULLPLUGIN", Task.GetParam ("HULL_ASSET_FILE"), _
+                        "", False
+            Else
+               BuildError "Could not create RpHull asset stream " & strTargetPath
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+
+   <rule name="HullGenerator" dependencygraph="HullGenDependencies"
+                              buildcommand="HullGenCommand">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' VolumeEntity.rule - HullGenerator rule
+         '
+         ' This rule writes out an XML file containing the hull data.
+         ' The build command uses the HullGen.exe tool to write out an RpHull
+         ' based on the XML file contents.
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub HullGenDependencies (Task, Entity)
+
+            ' Depend on the hull-building tool
+            Task.AddDependency GetHullGeneratorExe ()
+
+            ' Declare XML intermediate file
+            Dim strXMLPath
+            strXMLPath = BuildPath (GetParam ("DESTDIR"), "Hull")
+            strXMLPath = BuildPath (strXMLPath, Entity.UID & "Hull.xml")
+            DeclareTemporaryFile strXMLPath
+            Task.SetParam "HULL_XML_FILE", strXMLPath
+
+            ' Target is an RpHull stream in the Hull directory
+            Dim strTargetPath
+            strTargetPath = BuildPath (GetParam ("DESTDIR"), "Hull")
+            strTargetPath = BuildPath (strTargetPath, Entity.UID & ".rws")
+            Task.AddTarget strTargetPath
+            Task.SetParam "TARGETFILE", strTargetPath
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub HullGenCommand (Task, Entity)
+
+            ' First write out an XML file containing the hull data
+            Const XML_NODE_ELEMENT   = 1
+            Const XML_NODE_ATTRIBUTE = 2
+
+            ' Create doc and root node
+            Dim HullXMLDoc, RootNode
+            Set HullXMLDoc = CreateObject ("Msxml2.DOMDocument")
+            Set RootNode = HullXMLDoc.createNode (XML_NODE_ELEMENT, "hulldata", "")
+            Set HullXMLDoc.documentElement = RootNode
+
+            ' Add hull ID
+            Dim HullNode, NodeAttribute, NodeAttributes
+            Set HullNode = HullXMLDoc.createNode (XML_NODE_ELEMENT, "hull", "")
+            Set NodeAttributes = HullNode.Attributes
+            Set NodeAttribute  = HullXMLDoc.createNode (XML_NODE_ATTRIBUTE, "id", "")
+            NodeAttribute.text = Entity.UID
+            NodeAttributes.SetNamedItem NodeAttribute
+
+            ' Add shape node
+            Dim ShapeNode
+            Set ShapeNode = HullXMLDoc.createNode (XML_NODE_ELEMENT, "shape", "")
+            Set NodeAttributes = ShapeNode.Attributes
+            Set NodeAttribute  = HullXMLDoc.createNode (XML_NODE_ATTRIBUTE, "type", "")
+
+            NodeAttribute.text = "smBox"
+            NodeAttributes.SetNamedItem NodeAttribute
+            HullNode.appendChild ShapeNode
+
+            ' Add transform node
+            Dim XFormNode
+            Set XFormNode = HullXMLDoc.createNode (XML_NODE_ELEMENT, "xform", "")
+            XFormNode.text = GetXFormText (Entity)
+            HullNode.appendChild XFormNode
+
+            ' Append data and save doc
+            RootNode.appendChild HullNode
+            HullXMLDoc.Save Task.GetParam ("HULL_XML_FILE")
+
+            ' Now use the hull generator tool to build the asset file
+            ' Command is: hullgen.exe xml_filename output_filename
+            Dim OutputList, Output, RetVal
+            RetVal = 0
+            Set OutputList = ExecuteShellCommand ("""" & GetHullGeneratorExe () & """ """ _
+                                & Task.GetParam ("HULL_XML_FILE") & """ """ _
+                                & Task.GetParam ("TARGETFILE") & """" , RetVal)
+                                
+            ' Display the results in the output panel
+            For Each Output In OutputList
+               BuildLog " " & Output
+            Next
+                                   
+            If Not RetVal = 0 Then
+               BuildError "Error building hull (" & GetHullGeneratorExe () & "), " _
+                          & "Return code was " & CStr (RetVal)
+            End If
+
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Function GetXFormText (Entity)
+            Dim LoadMatrixTag, nLoadMatrix
+            Dim Attribute, Attributes
+
+            ' Find the entity's CMD_LoadMatrix attribute tag
+            Set LoadMatrixTag = RWSScript.RegisterTag ("RWSTAG_MATRIX_ATTRIB_ID")
+
+            ' Search for the matrix attribute
+            Dim bFound
+            bFound = false
+            Set Attributes = Entity.ChildAttributes
+            For Each Attribute In Attributes
+               nLoadMatrix = LoadMatrixTag.Get (Attribute)
+               If nLoadMatrix <> 0 Then
+                  ' Quit out of the loop if we found the attribute
+                  bFound = true
+                  Exit For
+               End If
+            Next
+
+            ' If we didn't find matrix attribute tag, look for attribute text
+            If Not bFound Then
+               For Each Attribute In Attributes
+                  If Attribute.Member = "CMD_LoadMatrix" Then
+                     ' Quit out of the loop if we found the attribute
+                     bFound = true
+                     Exit For
+                  End If
+               Next
+            End If
+
+            Dim strXForm
+            strXForm = ""
+            If bFound Then
+
+               ' Extract the floats and add to the string
+               Dim AttributeData
+               Set AttributeData = Attribute.Data
+
+               If Not AttributeData Is Nothing Then
+                  If AttributeData.Count > 0 Then
+                     Dim DataSection
+                     Set DataSection = AttributeData.Item (1)
+                     If DataSection.Type = dtReal Then
+                        Dim fElement
+                        For Each fElement In DataSection
+                           strXForm = strXForm + RWSScript.FloatToHexString (fElement) & chr(13)
+                        Next
+                     End If
+                  End If
+               End If
+            End If
+
+            ' If we didn't find matrix attribute, use unit matrix
+            If Len (strXForm) = 0 Then
+            
+               BuildLog "Matrix Attribute Not Found For Entity"
+
+               Dim strOne, strZero
+               strOne  = RWSScript.FloatToHexString (1.0)
+               strZero = RWSScript.FloatToHexString (0)
+
+               strXForm = strXForm + strOne  & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strOne  & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strOne  & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+               strXForm = strXForm + strZero & chr(13)
+            End If
+
+            GetXFormText = strXForm
+         End Function
+
+      ]]></script>
+   </rule>
+
+   <!-- ============================================================================ -->
+   <!--                                                                              -->
+   <!--        The following rules are called while connected to a console           -->
+   <!--                                                                              -->
+   <!-- ============================================================================ -->
+
+   <rule name="VolumeEntityUpdate" dependencygraph="VolumeEntityUpdateDependencies">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+
+         '------------------------------------------------------------------------------
+         ' VolumeEntity.rule - VolumeEntityUpdate rule
+         '
+         ' This rule creates a stream file containing an asset.
+         ' The asset's file is an RpHull stream created by "HullGenerator" rule.
+         ' The asset file is named "<entity UID>Hull.rws"
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub VolumeEntityUpdateDependencies (Task, Entity, Buffer)
+
+            ' Build the task that generates the RpHull stream
+            Dim SubMake
+            Set SubMake = CloneMake ()
+            If Not SubMake Is Nothing Then
+               Dim Subtask, SubtaskTargets, strHullFilePath
+
+               Set Subtask = SubMake.AddTask ("HullGenerator", Entity)
+               Set SubtaskTargets = Subtask.GetTargets ()
+               strHullFilePath = SubtaskTargets.Item (0)
+
+               SubMake.Clean
+               SubMake.AddTask "HullGenerator", Entity
+               If SubMake.Build () Then
+                  ' Use the entity's UID for the asset's UID
+                  AppendUpdateHullAsset Buffer, strHullFilePath, Entity.UID
+               End If
+
+               ' Force the stream to be destroyed so the hull is regenerated next time
+               DeclareTemporaryFile strHullFilePath
+            Else
+               BuildError "Could not create a cloned make object"
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+
+   <rule name="VolumeEntitySend" dependencygraph="VolumeEntitySendDependencies">
+      <object id="RWSComms" progid="CSL.RWSTarget.RWSComms"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <reference object="CSL.RWSTarget.RWSComms"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' VolumeEntity.rule - VolumeEntitySend rule
+         '
+         ' This rule creates a stream file containing an asset.
+         ' The asset's file is an RpHull stream created by "HullGenerator" rule.
+         ' The asset file is named "<entity UID>Hull.rws"
+         '
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub VolumeEntitySendDependencies (Task, Entity, PlatformFilter, Buffer)
+
+            Dim strTargetPath, Subtask, SubtaskTargets
+
+            ' Build the task that generates the RpHull stream
+            Dim SubMake
+            Set SubMake = CloneMake ()
+            If Not SubMake Is Nothing Then
+               Dim strHullFilePath
+               Set Subtask = SubMake.AddTask ("HullGenerator", Entity)
+               Set SubtaskTargets = Subtask.GetTargets ()
+               strHullFilePath = SubtaskTargets.Item (0)
+
+               SubMake.Clean
+               SubMake.AddTask "HullGenerator", Entity
+               If SubMake.Build () Then
+                  ' Use the entity's UID for the asset's UID
+                  AppendCreateAssetData Buffer, "", Entity.UID, _
+                                                "rwID_HULLPLUGIN", strHullFilePath, "", False
+               End If
+
+               ' Force the stream to be destroyed so the hull is regenerated next time
+               DeclareTemporaryFile strHullFilePath
+            Else
+               BuildError "Could not create a cloned make object"
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+   <rule name="VolumeEntityRemove" dependencygraph="VolumeEntityRemoveDependencies">
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BufferTools.vbs"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' VolumeEntity.rule - VolumeEntityRemove rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         Sub VolumeEntityRemoveDependencies (Task, Entity, Buffer)
+            ' Delete the hull asset (identified by the entity's uid)
+            AppendUnloadAsset Buffer, Entity.UID
+         End Sub
+
+      ]]></script>
+   </rule>
+
+</build>

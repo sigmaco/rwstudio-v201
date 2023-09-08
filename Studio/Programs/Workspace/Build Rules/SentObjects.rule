@@ -1,0 +1,162 @@
+<?xml version="1.0" ?> 
+<build version = "1.0">
+   <rule name="SaveSentObjects" dependencygraph="SaveSODependencies"
+                                buildcommand="SaveSOCommand" alwaysbuild="true">
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <reference object="CSL.RWSScript.RWSScript"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - SaveSentObjects rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub SaveSODependencies (Task, Folder)
+            ' Specify a target for the clean process
+            Task.AddTarget SentObjectsFile (GetParam ("DESTDIR"), Folder)
+         End Sub
+
+         '------------------------------------------------------------------------------
+         '
+         Sub SaveSOCommand (Task, Folder)
+            Dim SentObjects, SentObject, XmlDom, SentObjectsElement, ObjectElement
+
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            ' We only want to write out the file if something has changed
+            If SentObjectsChanged (SentObjects, Folder) Then
+
+               Set XmlDom = CreateObject ("MSXML2.DomDocument") 
+               Set SentObjectsElement = XmlDom.CreateElement ("SentObjects") 
+ 
+               For Each SentObject In SentObjects
+                  Set ObjectElement = XmlDom.CreateElement ("Object")
+                  ObjectElement.SetAttribute "Type", GetTypeString (SentObject)
+                  ObjectElement.SetAttribute "UID", SentObject.UID 
+                  SentObjectsElement.AppendChild ObjectElement
+               Next 
+
+               BuildLog "Saving the sent objects list for " & Folder.Name & " to: " & SentObjectsFile (GetParam ("DESTDIR"), Folder)
+
+               XmlDom.AppendChild SentObjectsElement
+               XmlDom.Save SentObjectsFile (GetParam ("DESTDIR"), Folder)
+            End If
+         End Sub
+
+         '------------------------------------------------------------------------------
+         ' Determine whether any items in the sent objects are different
+         Function SentObjectsChanged (SentObjects, Folder)
+            ' Does the target file exist?
+            If Not FileSystem.FileExists (SentObjectsFile (GetParam ("DESTDIR"), Folder)) Then
+               ' No file - list is different
+               SentObjectsChanged = True
+               Exit Function
+            End If
+
+            ' Load the xml doc
+            Dim XmlDom
+            Set XmlDom = CreateObject ("MSXML2.DomDocument")
+            If Not XmlDom.Load (SentObjectsFile (GetParam ("DESTDIR"), Folder)) Then
+               ' Failed to parse doc correctly - force a save
+               SentObjectsChanged = True
+               Exit Function
+            End If
+
+            ' First check the item count
+            Dim SentObjectsNodes
+            Set SentObjectsNodes = XmlDom.SelectNodes ("/SentObjects/Object")
+            If Not SentObjectsNodes.length = SentObjects.Count Then
+               ' Different number of objects - list is different
+               SentObjectsChanged = True
+               Exit Function
+            End If
+
+            ' Now check the items' UIDs
+            Dim SentObject, Index
+            Index = 0
+            For Each SentObject In SentObjectsNodes
+               Index = Index + 1
+               If Not SentObject.GetAttribute ("UID") = SentObjects (Index).UID Then
+                  ' Different UID - list is different
+                  SentObjectsChanged = True
+                  Exit Function
+               End If
+            Next
+
+            SentObjectsChanged = False
+         End Function
+      ]]></script>
+   </rule>
+
+   <rule name="LoadSentObjects" buildcommand="LoadSOCommand" alwaysbuild="true">
+      <object id="RWSScript" progid="CSL.RWSScript.RWSScript"/>
+      <object id="FileSystem" progid="Scripting.FileSystemObject"/>
+      <script language="VBScript" src="BuildTools.vbs"/>
+      <script language="VBScript"><![CDATA[
+         '------------------------------------------------------------------------------
+         ' Workspace.rule - LoadSentObjects rule
+         '------------------------------------------------------------------------------
+
+         Option Explicit ' All variables must be explicitly declared (with Dim)
+
+         '------------------------------------------------------------------------------
+         '
+         Sub LoadSOCommand (Task, Folder)
+            Dim XmlDom, SentObjects, SentObject, APIObject
+
+            Set XmlDom      = CreateObject ("MSXML2.DomDocument")
+            Set SentObjects = GetParam ("SENTOBJECTS")
+
+            If XmlDom.Load (SentObjectsFile (GetParam ("DESTDIR"), Folder)) Then
+               BuildLog "Loading the sent objects list for " & Folder.Name & " from: " & SentObjectsFile (GetParam ("DESTDIR"), Folder)
+               For Each SentObject In XmlDom.SelectNodes ("/SentObjects/Object")
+                  Set APIObject = Nothing
+
+                  Select Case SentObject.GetAttribute ("Type")
+                  Case "Game"
+                     Set APIObject = RWSScript.Game ()
+                  Case "Entity"
+                     Set APIObject = RWSScript.Entity (SentObject.GetAttribute ("UID"))
+                  Case "Folder"
+                     Set APIObject = RWSScript.Folder (SentObject.GetAttribute ("UID"))
+                  Case "Asset"
+                     Set APIObject = RWSScript.Asset (SentObject.GetAttribute ("UID"))
+                  Case "AssetFolder"
+                     Set APIObject = RWSScript.AssetFolder (SentObject.GetAttribute ("UID"))
+                  Case "Template"
+                     Set APIObject = RWSScript.Template (SentObject.GetAttribute ("UID"))
+                  Case "TemplateFolder"
+                     Set APIObject = RWSScript.TemplateFolder (SentObject.GetAttribute ("UID"))
+                  Case "Behavior"
+                     Set APIObject = RWSScript.Behavior (SentObject.GetAttribute ("UID"))
+                  Case "BehaviorFolder"
+                     Set APIObject = RWSScript.BehaviorFolder (SentObject.GetAttribute ("UID"))
+                  Case "Command"
+                     Set APIObject = RWSScript.Command (SentObject.GetAttribute ("UID"))
+                  Case "Attribute"
+                     Set APIObject = RWSScript.Attribute (SentObject.GetAttribute ("UID"))
+                  Case "AttributeShare"
+                     Set APIObject = RWSScript.AttributeShare (SentObject.GetAttribute ("UID"))
+                  Case "AttributeShareFolder"
+                     Set APIObject = RWSScript.AttributeShareFolder (SentObject.GetAttribute ("UID"))
+                  Case "Event"
+                     Set APIObject = RWSScript.Event (SentObject.GetAttribute ("UID"))
+                  Case Else
+                  End Select
+
+                  If Not APIObject Is Nothing Then
+                     SentObjects.Add APIObject
+                  End If
+               Next
+            Else
+               BuildWarning "Cannot load the sent objects list from: " & SentObjectsFile (GetParam ("DESTDIR"), Folder)
+            End If
+         End Sub
+
+      ]]></script>
+   </rule>
+
+</build>

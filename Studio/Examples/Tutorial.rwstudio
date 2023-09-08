@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Tutorial\Games" />
+   <EntitiesLocation path="Tutorial\Entities" />
+   <AssetsLocation path="Tutorial\Assets" />
+   <AttributeSharesLocation path="Tutorial\AttributeShares" />
+   <FoldersLocation path="Tutorial\Folders" />
+
+</RenderWareStudio>
+

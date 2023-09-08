@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="empty_framework"
+	SccProjectName="Perforce Project"
+	SccAuxPath=""
+	SccLocalPath="..\..\..\"
+	SccProvider="MSSCCI:Perforce SCM">
+	<Platforms>
+		<Platform
+			Name="Xbox"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Xbox"
+			OutputDirectory=".\../bin/XBOX Debug/empty_framework/obj"
+			IntermediateDirectory=".\../bin/XBOX Debug/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="..\..\game_framework\source\,..\..\..\game_framework\source\framework\core\MemoryHandler\,$(RWGSDK)\include\xbox,..\..\source\,..\..\..\game_framework\source\"
+				PreprocessorDefinitions="RWDEBUG,_DEBUG,RW_USE_SPF,RWS_DEBUGSWITCHES,WIN32,_XBOX,RWS_DISABLE_MEMORY_CHECKING"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\../bin/XBOX Debug/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/XBOX Debug/empty_framework/obj/"
+				ObjectFile=".\../bin/XBOX Debug/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/XBOX Debug/empty_framework/obj/"
+				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="3"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386 /FIXED:NO"
+				AdditionalDependencies="xapilibd.lib d3d8d.lib d3dx8d.lib xgraphicsd.lib dsoundd.lib dmusicd.lib xnetd.lib rt2d.lib rt2danim.lib xboxkrnl.lib  rtfsyst.lib"
+				OutputFile="../bin/XBOX Debug/empty_framework.exe"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)/lib/xbox/debug"
+				IgnoreDefaultLibraryNames="libc.lib"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\../bin/XBOX Debug/empty_framework/obj/empty_framework.pdb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"
+				StackSize="0x10000"
+				IncludeDebugInfo="TRUE"
+				SuppressStartupBanner="TRUE"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Xbox"
+			OutputDirectory=".\../bin/XBOX Release/empty_framework/obj"
+			IntermediateDirectory=".\../bin/XBOX Release/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="..\..\game_framework\source\,..\..\..\game_framework\source\framework\core\MemoryHandler\,$(RWGSDK)\include\xbox,..\..\source\,..\..\..\game_framework\source\"
+				PreprocessorDefinitions="NDEBUG,RW_USE_SPF,RWS_DEBUGSWITCHES,WIN32,_XBOX, RWS_DISABLE_MEMORY_CHECKING"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\../bin/XBOX Release/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/XBOX Release/empty_framework/obj/"
+				ObjectFile=".\../bin/XBOX Release/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/XBOX Release/empty_framework/obj/"
+				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386 /FIXED:NO"
+				AdditionalDependencies="xapilib.lib d3d8.lib d3dx8.lib xgraphics.lib dsound.lib dmusic.lib xnet.lib rt2d.lib rt2danim.lib xboxkrnl.lib  rtfsyst.lib"
+				OutputFile="../bin/XBOX Release/empty_framework.exe"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)/lib/xbox/release"
+				IgnoreDefaultLibraryNames="libc.lib"
+				ProgramDatabaseFile=".\../bin/XBOX Release/empty_framework/obj/empty_framework.pdb"
+				OptimizeReferences="2"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"
+				StackSize="0x10000"
+				SuppressStartupBanner="TRUE"/>
+		</Configuration>
+		<Configuration
+			Name="Design Debug|Xbox"
+			OutputDirectory=".\../bin/XBOX Design Debug/empty_framework/obj"
+			IntermediateDirectory=".\../bin/XBOX Design Debug/empty_framework/obj"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="..\..\game_framework\source\,..\..\..\game_framework\source\framework\core\MemoryHandler\,$(RWGSDK)\include\xbox,..\..\source\,..\..\..\game_framework\source\"
+				PreprocessorDefinitions="_DEBUG,RWDEBUG,RWS_EVENTVISUALIZATION,RWS_DEBUGTOOLS,RWS_DESIGN,RWS_TRACE_METRICS,RWS_MEMORY_PROFILING,RW_USE_SPF,RWS_DEBUGSWITCHES,WIN32,_XBOX,RWS_FUNCTIONPROFILE"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\../bin/XBOX Design Debug/empty_framework/obj/empty_framework.pch"
+				AssemblerListingLocation=".\../bin/XBOX Design Debug/empty_framework/obj/"
+				ObjectFile=".\../bin/XBOX Design Debug/empty_framework/obj/"
+				ProgramDataBaseFileName=".\../bin/XBOX Design Debug/empty_framework/obj/"
+				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="3"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386 /FIXED:NO"
+				AdditionalDependencies="rtpitexd.lib xapilibd.lib d3d8d.lib d3dx8d.lib xgraphicsd.lib dsoundd.lib dmusicd.lib xnetd.lib rt2d.lib rt2danim.lib rpmatfx.lib rpskinmatfx.lib xboxkrnl.lib rpltmap.lib  rtfsyst.lib"
+				OutputFile="../bin/XBOX Design Debug/empty_framework.exe"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)/lib/xbox/debug"
+				IgnoreDefaultLibraryNames="libc.lib"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\../bin/XBOX Design Debug/empty_framework/obj/empty_framework.pdb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"
+				StackSize="0x10000"
+				IncludeDebugInfo="TRUE"
+				SuppressStartupBanner="TRUE"
+				TitleName="FRAME_WORK_DD"/>
+		</Configuration>
+		<Configuration
+			Name="Design Release|Xbox"
+			OutputDirectory=".\bin/XBOX/Design/Release"
+			IntermediateDirectory=".\bin/XBOX/Design/Release"
+			ConfigurationType="1"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				OptimizeForProcessor="2"
+				AdditionalIncludeDirectories="..\..\..\game_framework\source\,..\..\..\game_framework\source\framework\core\MemoryHandler\,$(RWGSDK)\include\xbox,..\..\source\"
+				PreprocessorDefinitions="NDEBUG,RWS_EVENTVISUALIZATION,RWS_DEBUGTOOLS,RWS_DESIGN,RWS_TRACE_METRICS,RWS_MEMORY_PROFILING,RW_USE_SPF,RWS_DEBUGSWITCHES,WIN32,_XBOX,RWS_FUNCTIONPROFILE,RWS_DISABLE_MEMORY_CHECKING"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="precomp.h"
+				PrecompiledHeaderFile=".\bin/XBOX/Design/Release/empty_framework.pch"
+				AssemblerListingLocation=".\bin/XBOX/Design/Release/"
+				ObjectFile=".\bin/XBOX/Design/Release/"
+				ProgramDataBaseFileName=".\bin/XBOX/Design/Release/"
+				BrowseInformation="1"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386 /FIXED:NO"
+				AdditionalDependencies="rtpitexd.lib xapilib.lib d3d8.lib d3dx8.lib xgraphics.lib dsound.lib dmusic.lib xnet.lib rt2d.lib rt2danim.lib xboxkrnl.lib  rtfsyst.lib"
+				OutputFile="bin/XBOX/Design Release/empty_framework.exe"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="$(RWGSDK)/lib/xbox/release"
+				IgnoreDefaultLibraryNames="libc.lib"
+				ProgramDatabaseFile=".\bin/XBOX/Design/Release/empty_framework.pdb"
+				OptimizeReferences="2"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="XboxDeploymentTool"/>
+			<Tool
+				Name="XboxImageTool"
+				StackSize="0x10000"
+				SuppressStartupBanner="TRUE"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<Filter
+				Name="Modules"
+				Filter="">
+				<Filter
+					Name="Generic"
+					Filter="">
+					<Filter
+						Name="CEntity"
+						Filter="">
+						<File
+							RelativePath="..\..\source\modules\generic\CEntity\CEntity.cpp">
+						</File>
+						<File
+							RelativePath="..\..\source\modules\generic\CEntity\CEntity.h">
+						</File>
+					</Filter>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="toolkits"
+				Filter="">
+				<Filter
+					Name="RwGfxResource"
+					Filter="">
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\rwgfxresource\rwgfxresource.cpp">
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\rwgfxresource\rwgfxresource.h">
+					</File>
+				</Filter>
+				<Filter
+					Name="Time"
+					Filter="">
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\time\gftime.cpp">
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\time\gftime.h">
+					</File>
+				</Filter>
+				<Filter
+					Name="World"
+					Filter="">
+					<Filter
+						Name="Helpers"
+						Filter="">
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\helpers\camerahelper.cpp">
+						</File>
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\helpers\camerahelper.h">
+						</File>
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\helpers\framehelper.cpp">
+						</File>
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\helpers\framehelper.h">
+						</File>
+					</Filter>
+					<Filter
+						Name="SmartPtrs"
+						Filter="">
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\smartptrs\ccameraptr.cpp">
+						</File>
+						<File
+							RelativePath="..\..\..\game_framework\source\framework\toolkits\world\smartptrs\ccameraptr.h">
+						</File>
+					</Filter>
+				</Filter>
+				<Filter
+					Name="EventVisualization"
+					Filter="">
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\eventvisualization\eventvisualization.cpp">
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\eventvisualization\eventvisualization.h">
+					</File>
+				</Filter>
+				<Filter
+					Name="DebugTools"
+					Filter="">
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\debugtools\debugswitches.cpp">
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\debugtools\debugswitches.h">
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\debugtools\debugtools.cpp">
+					</File>
+					<File
+						RelativePath="..\..\..\game_framework\source\framework\toolkits\debugtools\debugtools.h">
+					</File>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="MainLoop"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\mainloop\connectionscreen.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\connectionscreen.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\logic.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\logic.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\mainloop.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\mainloop.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\network.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\network.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\render.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\mainloop\render.h">
+				</File>
+			</Filter>
+			<Filter
+				Name="StartUp"
+				Filter="">
+				<File
+					RelativePath="..\..\source\framework\startup\attachplugins.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\attachplugins.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\debugmsghandler.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\debugmsghandler.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\loadgamedatabase.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\loadgamedatabase.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\registerimageloaders.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\registerimageloaders.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\startup.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\startup.h">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\videomode.cpp">
+				</File>
+				<File
+					RelativePath="..\..\source\framework\startup\videomode.h">
+				</File>
+				<Filter
+					Name="Xbox bootup"
+					Filter="">
+					<File
+						RelativePath="..\..\source\framework\startup\xbox\xbox.cpp">
+					</File>
+					<File
+						RelativePath="..\..\source\framework\startup\xbox\xbox.h">
+					</File>
+				</Filter>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath=".\precomp.cpp">
+				<FileConfiguration
+					Name="Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Design Debug|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Design Release|Xbox">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\precomp.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

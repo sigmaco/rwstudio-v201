@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="StyleSheet" href="PurgeDeleted.css"/>
+</head>
+<body>
+<h1>About this tool</h1>
+<p>The PurgeDeleted tool lists the XML files in a RenderWare Studio game database that contain a <code>&lt;Deleted/&gt;</code> element, indicating that the corresponding object has been deleted.</p>
+<p>We recommend that you run this tool periodically to clean up these files.</p>
+<p><strong>If you are using NXN alienbrain:</strong> This tool only deletes files on your PC. After running this tool, remember to remove the copies of the files on the server.</p>
+<p>You can run this tool via either:</p>
+<ul>
+<li><code>PurgeDeleted.wsf</code> (a Windows script file)
+<p>or</p>
+</li>
+<li><code>PurgeDeleted.hta</code> (an HTML application)</li>
+</ul>
+<h2>Windows script command-line options</h2>
+<p>The Windows script file offers several command-line options. To see these options, open a command prompt window, change to the directory containing the script, and then enter:</p>
+<pre>
+PurgeDeleted.wsf /?
+</pre>
+<p>For example, if you run the Windows script file with the <code>/project:<var>myproject</var>.rwstudio</code> option, then the tool immediately scans for deleted objects in that game database, rather than prompting you to select a project. This is especially useful if you typically work on the same project all of the time. You might even want to create a shortcut that invokes this tool for your project. Here is the Target property from such a shortcut (shown here split over several lines, for clarity):</p>
+<pre class="code">
+C:\WINDOWS\SYSTEM32\WSCRIPT.EXE
+"C:\RW\Studio\Programs\Tools\PurgeDeleted\PurgeDeleted.wsf"
+/project:"C:\Studio Projects\ProjectX.rwstudio"
+</pre>
+<h2>Running in batch mode</h2>
+<p>To run this tool without displaying a window, append a <code>//B</code> switch to the Windows script file command line.</p>
+</body>
+</html>

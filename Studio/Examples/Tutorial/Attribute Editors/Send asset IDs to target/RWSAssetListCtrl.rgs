@@ -1,0 +1,47 @@
+HKCR
+{
+	RWSAssetList.RWSAssetListCtrl.1 = s 'RWSAssetListCtrl Class'
+	{
+		CLSID = s '{42A5BEC2-9867-492C-BAD3-5C938DB5F5F1}'
+   }
+	RWSAssetList.RWSAssetListCtrl = s 'RWSAssetListCtrl Class'
+	{
+		CLSID = s '{42A5BEC2-9867-492C-BAD3-5C938DB5F5F1}'
+		CurVer = s 'RWSAssetList.RWSAssetListCtrl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {42A5BEC2-9867-492C-BAD3-5C938DB5F5F1} = s 'RWSAssetListCtrl Class'
+		{
+			ProgID = s 'RWSAssetList.RWSAssetListCtrl.1'
+			VersionIndependentProgID = s 'RWSAssetList.RWSAssetListCtrl'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 101'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '131473'
+			}
+			'Version' = s '1.0'
+		}
+	}
+}
+
+HKLM
+{
+   Software
+   {
+      CSL
+      {
+         RWSAttribute Plugins
+         {
+            42A5BEC2-9867-492C-BAD3-5C938DB5F5F1 = s 'RWSAssetList.RWSAssetListCtrl'
+         }
+      }
+   }
+}

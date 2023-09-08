@@ -1,0 +1,17 @@
+# <Sony Computer Entertainment Inc.>
+#
+# interface configuration sample for USB-Ethenet
+#
+# $Id: ifc000.cnf,v 1.1 2000/12/23 05:09:36 tetsu Exp $
+
+type eth	# only USB-Ethernet I/F
+
+dhcp            # use dhcp
+#-address        # do not specify IP address
+#-netmask        # do not specify Subnet Mask
+
+#-dhcp					# do not use dhcp
+#address 0.0.0.247                    # set IP address
+#netmask 255.255.255.0                  # set Subnet Mask
+#route add default gw 0.0.0.1           # set default gateway
+#nameserver add 0.0.0.1                 # set primary name server

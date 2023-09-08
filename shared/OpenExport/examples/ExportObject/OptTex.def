@@ -1,0 +1,9 @@
+LIBRARY      "OptTex"
+DESCRIPTION  'rwexp Windows Dynamic Link Library'
+
+EXPORTS
+	InitRwPlugin						@1
+	RegisterCustomExporterObjects		@2
+
+SECTIONS
+	.data READ WRITE

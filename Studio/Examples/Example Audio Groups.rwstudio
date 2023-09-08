@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example Audio Groups\Games" />
+   <EntitiesLocation path="Example Audio Groups\Entities" />
+   <AssetsLocation path="Example Audio Groups\Assets" />
+   <AttributeSharesLocation path="Example Audio Groups\AttributeShares" />
+   <FoldersLocation path="Example Audio Groups\Folders" />
+
+</RenderWareStudio>
+

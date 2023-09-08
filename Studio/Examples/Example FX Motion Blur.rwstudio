@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example FX Motion Blur\Games" />
+   <EntitiesLocation path="Example FX Motion Blur\Entities" />
+   <AssetsLocation path="Example FX Motion Blur\Assets" />
+   <AttributeSharesLocation path="Example FX Motion Blur\AttributeShares" />
+   <FoldersLocation path="Example FX Motion Blur\Folders" />
+
+</RenderWareStudio>
+

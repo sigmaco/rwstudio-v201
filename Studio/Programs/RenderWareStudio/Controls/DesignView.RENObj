@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="{FE90AE60-E3E9-48BA-84BB-DBCA7300936D}" id="DesignView" runtime=""><param name="Caption" value="Design View" />
+<param name="Top" value="264" />
+<param name="Left" value="276" />
+<param name="Width" value="288" />
+<param name="Height" value="260" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="1" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="1" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<param name="MINORVERSION" value="3" />
+<param name="MODULECOUNT" value="10" />
+<param name="MODULEIID_0" value="{D14719EA-F116-11D3-8DA5-00A0C96EEDF3}" />
+<param name="MODULEBUFLEN_0" value="172" />
+<param name="MODULESTRBUFLEN_0" value="361" />
+<param name="MODULEBUFDATA_0" value="HEXSTRING;1;172;0A00000000000000CDCCCC3D010000003200000001000000140000004F7274686F677261706869632056696577657200010000000C00000053000000580000004100000044000000BC000000BE000000540000004700000056000000460000005100000045000000260000002800000025000000270000004E0000004D0000005400000047000000560000004600000051000000450000000100000000000000000000003200000000000000" />
+<param name="MODULEIID_1" value="{D1471A06-F116-11D3-8DA5-00A0C96EEDF3}" />
+<param name="MODULEBUFLEN_1" value="16" />
+<param name="MODULESTRBUFLEN_1" value="48" />
+<param name="MODULEBUFDATA_1" value="HEXSTRING;1;16;03000000010000000100000001000000" />
+<param name="MODULEIID_2" value="{D14719E9-F116-11D3-8DA5-00A0C96EEDF3}" />
+<param name="MODULEBUFLEN_2" value="36" />
+<param name="MODULESTRBUFLEN_2" value="88" />
+<param name="MODULEBUFDATA_2" value="HEXSTRING;1;36;020000000100000000000000140000004F7274686F677261706869632056696577657200" />
+<param name="MODULEIID_3" value="{D1471A0E-F116-11D3-8DA5-00A0C96EEDF3}" />
+<param name="MODULEBUFLEN_3" value="0" />
+<param name="MODULEIID_4" value="{D1471A05-F116-11D3-8DA5-00A0C96EEDF3}" />
+<param name="MODULEBUFLEN_4" value="0" />
+<param name="MODULEIID_5" value="{D14719E6-F116-11D3-8DA5-00A0C96EEDF3}" />
+<param name="MODULEBUFLEN_5" value="72" />
+<param name="MODULESTRBUFLEN_5" value="160" />
+<param name="MODULEBUFDATA_5" value="HEXSTRING;1;72;030000000000000000000000020000000000000000000000000000000000803F0000803F0000803F6060603F0000803F140000004F7274686F677261706869632056696577657200" />
+<param name="MODULEIID_6" value="{C9017937-65D0-4C13-AD46-D85E9CEF9B8B}" />
+<param name="MODULEBUFLEN_6" value="28" />
+<param name="MODULESTRBUFLEN_6" value="72" />
+<param name="MODULEBUFDATA_6" value="HEXSTRING;1;28;01000000140000004F7274686F677261706869632056696577657200" />
+<param name="MODULEIID_7" value="{D14719F3-F116-11D3-8DA5-00A0C96EEDF3}" />
+<param name="MODULEBUFLEN_7" value="0" />
+<param name="MODULEIID_8" value="{F6750DD3-F269-43BC-B835-8D9B784220C1}" />
+<param name="MODULEBUFLEN_8" value="12" />
+<param name="MODULESTRBUFLEN_8" value="40" />
+<param name="MODULEBUFDATA_8" value="HEXSTRING;1;12;010000000000000000000000" />
+<param name="MODULEIID_9" value="{F235E317-D4BE-4987-A073-5E1EF5F8F37F}" />
+<param name="MODULEBUFLEN_9" value="0" />
+<param name="MODULEMOUSEFOCUSLEN" value="18" />
+<param name="MODULEMOUSEFOCUS" value="Camera Controller" />
+<param name="MODULEMOUSEWHEELFOCUSLEN" value="23" />
+<param name="MODULEMOUSEWHEELFOCUS" value="Drag Camera Controller" />
+<param name="RUNSIMULATION" value="-1" />
+</object>
+</RENApplication>

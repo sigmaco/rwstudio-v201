@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <GamesLocation path="Example RF3\Games" />
+   <EntitiesLocation path="Example RF3\Entities" />
+   <AssetsLocation path="Example RF3\Assets" />
+   <AttributeSharesLocation path="Example RF3\AttributeShares" />
+   <FoldersLocation path="Example RF3\Folders" />
+
+</RenderWareStudio>
+

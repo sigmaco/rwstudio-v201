@@ -1,0 +1,10 @@
+<OBJECT NAME="Settings">
+	<OBJECT NAME="Game Settings">
+		<PARAM NAME="SourceRoot" VALUE="G:\rwgsdk_pc_v3.7_eval\Studio\Console\game_framework\source"/>
+		<PARAM NAME="ResourceRoot" VALUE="G:\rwgsdk_pc_v3.7_eval\Studio\Examples"/>
+		<PARAM NAME="RF3ProjectTemplate" VALUE="G:\rwgsdk_pc_v3.7_eval\Studio\Examples\Export Templates\Project\Generic.rwt"/>
+	</OBJECT>
+	<OBJECT NAME="EditOptions Settings">
+		<PARAM NAME="Camera" VALUE="1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 1.000000 0.000000 59.285107 0.000000 0.741765"/>
+	</OBJECT>
+</OBJECT>

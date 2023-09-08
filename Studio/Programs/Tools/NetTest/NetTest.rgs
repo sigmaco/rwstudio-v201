@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{BAB399F6-0521-42CE-95C6-208E58C22393} = s 'NetTest'
+		'NetTest.EXE'
+		{
+			val AppID = s {BAB399F6-0521-42CE-95C6-208E58C22393}
+		}
+	}
+}

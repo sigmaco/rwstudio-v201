@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="RwRf3">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="scene"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:string" use="required"/>
+			<xs:attribute name="author" type="xs:string" use="required"/>
+			<xs:attribute name="time" type="xs:string" use="required"/>
+			<xs:attribute name="date" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="animation">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="key"/>
+			</xs:sequence>
+			<xs:attribute name="channels" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="asset">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="asset"/>
+				<xs:element ref="selection"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="blendshape">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="target"/>
+				<xs:element ref="param"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="camera">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+			<xs:attribute name="projection" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="PERSPECTIVE"/>
+						<xs:enumeration value="PARALLEL"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="channel">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="texture"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="uvset" type="xs:string" use="required"/>
+			<xs:attribute name="factor" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="e" type="xs:string"/>
+	<xs:element name="edges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="e" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="format">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="group">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="patchmesh"/>
+				<xs:element ref="polymesh"/>
+				<xs:element ref="spline"/>
+				<xs:element ref="camera"/>
+				<xs:element ref="light"/>
+				<xs:element ref="userdata"/>
+				<xs:element ref="group"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hint">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="key">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="time" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="light">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="UNKNOWN"/>
+						<xs:enumeration value="POINT"/>
+						<xs:enumeration value="DIRECTIONAL"/>
+						<xs:enumeration value="AMBIENT"/>
+						<xs:enumeration value="SPOT"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="morph">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="target"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="p" type="xs:string"/>
+	<xs:element name="param">
+		<xs:complexType mixed="true">
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="animation"/>
+				<xs:element ref="param"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attribute name="data" type="xs:string" use="required"/>
+			<xs:attribute name="type" type="xs:string"/>
+			<xs:attribute name="autogen" type="xs:string"/>
+			<xs:attribute name="inkname" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="patchmesh">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="vertexlist"/>
+				<xs:element ref="primlist"/>
+				<xs:element ref="morph"/>
+				<xs:element ref="blendshape"/>
+				<xs:element ref="skin"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+			<xs:attribute name="type" type="xs:string" use="required"/>
+			<xs:attribute name="degree" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="polymesh">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="vertexlist"/>
+				<xs:element ref="primlist"/>
+				<xs:element ref="morph"/>
+				<xs:element ref="blendshape"/>
+				<xs:element ref="skin"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="primlist">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="p"/>
+				<xs:element ref="triangulation"/>
+				<xs:element ref="edges"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="count" type="xs:string" use="required"/>
+			<xs:attribute name="shader" type="xs:string"/>
+			<xs:attribute name="length" type="xs:string"/>
+			<xs:attribute name="closed">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="scene">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="shaderlist"/>
+				<xs:element ref="group"/>
+				<xs:element ref="asset"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="selection">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="group"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="shader">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="shaderfunc"/>
+				<xs:element ref="texture"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="shaderfunc">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="channel"/>
+			</xs:choice>
+			<xs:attribute name="type" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="shaderlist">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="shader"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="skeleton">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="group"/>
+			</xs:sequence>
+			<xs:attribute name="bones" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="skin">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="skeleton"/>
+				<xs:element ref="weightlist"/>
+				<xs:element ref="param"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spline">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="vertexlist"/>
+				<xs:element ref="primlist"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="t" type="xs:string"/>
+	<xs:element name="target">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="vertexlist"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="time" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="texture">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="param"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="name" type="xs:ID"/>
+			<xs:attribute name="sourcename" type="xs:string"/>
+			<xs:attribute name="ref" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="triangulation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="t" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="userdata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="v" type="xs:string"/>
+	<xs:element name="vertexlist">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="format"/>
+				<xs:element ref="v"/>
+				<xs:element ref="userdata"/>
+			</xs:choice>
+			<xs:attribute name="count" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="w">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="vertex" type="xs:string" use="required"/>
+					<xs:attribute name="bone" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="weightlist">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="w"/>
+			</xs:sequence>
+			<xs:attribute name="vertices" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

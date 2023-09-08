@@ -1,0 +1,13 @@
+DESCRIPTION  'rwexp Windows Dynamic Link Library'
+
+EXPORTS
+    LibDescription                  @1
+    LibNumberClasses                @2
+    LibClassDesc                    @3
+    LibVersion                      @4
+    
+    InitRwPlugin                    @5
+    RegisterCustomCreatorObjects    @6
+
+SECTIONS
+    .data READ WRITE

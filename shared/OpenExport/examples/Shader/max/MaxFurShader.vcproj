@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding = "Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="MaxFurShader"
+	SccProjectName="Perforce Project"
+	SccAuxPath=""
+	SccLocalPath="."
+	SccProvider="MSSCCI:Perforce SCM">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Release Max6|Win32"
+			OutputDirectory=".\Release Max6"
+			IntermediateDirectory=".\Release Max6"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				AdditionalIncludeDirectories="..\..\..\include\RwComm;..\..\..\include\common;..\..\..\include\RwMax;..\common;..\..\..\include\RwUtil;&quot;..\..\..\STLport-4.6\stlport&quot;;c:\3dsmax6\maxsdk\include;&quot;$(RWGSDK)\include\null&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;MAXFURSHADER_EXPORTS"
+				StringPooling="TRUE"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="TRUE"
+				RuntimeTypeInfo="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\Release Max6\MaxFurShader.pch"
+				AssemblerListingLocation=".\Release Max6\"
+				ObjectFile=".\Release Max6\"
+				ProgramDataBaseFileName=".\Release Max6\"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="RwMax6.lib gfx.lib RwUtil.lib RwComm.lib core.lib geom.lib mesh.lib maxutil.lib paramblk2.lib particle.lib maxscrpt.lib comctl32.lib odbc32.lib odbccp32.lib"
+				OutputFile="$(OutDir)/MaxFurShader.dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="c:\3dsmax6\maxsdk\lib,..\..\..\lib\"
+				ModuleDefinitionFile=".\MaxFurShader.def"
+				ProgramDatabaseFile=".\Release Max6\MaxFurShader.pdb"
+				ImportLibrary=".\Release Max6\MaxFurShader.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Release Max5/MaxFurShader.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Debug Max6 with Debug OpenExport|Win32"
+			OutputDirectory=".\Debug_Max6_with_Debug_OpenExport"
+			IntermediateDirectory=".\Debug_Max6_with_Debug_OpenExport"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="..\..\..\include\RwComm;..\..\..\include\common;..\..\..\include\RwMax;..\common;..\..\..\include\RwUtil;&quot;..\..\..\STLport-4.6\stlport&quot;;c:\3dsmax6\maxsdk\include;&quot;$(RWGSDK)\include\null&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;MAXFURSHADER_EXPORTS"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				RuntimeTypeInfo="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\Debug_Max6_with_Debug_OpenExport\MaxFurShader.pch"
+				AssemblerListingLocation=".\Debug_Max6_with_Debug_OpenExport\"
+				ObjectFile=".\Debug_Max6_with_Debug_OpenExport\"
+				ProgramDataBaseFileName=".\Debug_Max6_with_Debug_OpenExport\"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="RwMax6d.lib gfx.lib RwUtild.lib RwCommd.lib core.lib geom.lib mesh.lib maxutil.lib paramblk2.lib particle.lib maxscrpt.lib comctl32.lib odbc32.lib odbccp32.lib"
+				OutputFile="$(OutDir)/MaxFurShader.dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="c:\3dsmax6\maxsdk\lib,..\..\..\lib\"
+				ModuleDefinitionFile=".\MaxFurShader.def"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\Debug_Max6_with_Debug_OpenExport\MaxFurShader.pdb"
+				ImportLibrary=".\Debug_Max6_with_Debug_OpenExport\MaxFurShader.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Debug_Max5_with_Debug_OpenExport/MaxFurShader.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Debug Max6|Win32"
+			OutputDirectory=".\Debug Max6"
+			IntermediateDirectory=".\Debug Max6"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="..\..\..\include\RwComm;..\..\..\include\common;..\..\..\include\RwMax;..\common;..\..\..\include\RwUtil;&quot;..\..\..\STLport-4.6\stlport&quot;;c:\3dsmax6\maxsdk\include;&quot;$(RWGSDK)\include\null&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;MAXFURSHADER_EXPORTS"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				RuntimeTypeInfo="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\Debug Max6\MaxFurShader.pch"
+				AssemblerListingLocation=".\Debug Max6\"
+				ObjectFile=".\Debug Max6\"
+				ProgramDataBaseFileName=".\Debug Max6\"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="RwUtil.lib RwMax6.lib gfx.lib RwComm.lib core.lib geom.lib mesh.lib maxutil.lib paramblk2.lib particle.lib maxscrpt.lib comctl32.lib odbc32.lib odbccp32.lib"
+				OutputFile="$(OutDir)/MaxFurShader.dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				AdditionalLibraryDirectories="c:\3dsmax6\maxsdk\lib,..\..\..\lib\"
+				ModuleDefinitionFile=".\MaxFurShader.def"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\Debug Max6\MaxFurShader.pdb"
+				ImportLibrary=".\Debug Max6\MaxFurShader.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Debug Max5/MaxFurShader.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="2057"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath=".\MaxFurShader.cpp">
+			</File>
+			<File
+				RelativePath=".\MaxFurShader.def">
+			</File>
+			<File
+				RelativePath=".\MaxFurShaderMain.cpp">
+			</File>
+			<File
+				RelativePath=".\MaxMaterial.cpp">
+			</File>
+			<File
+				RelativePath=".\StdAfx.cpp">
+				<FileConfiguration
+					Name="Release Max6|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug Max6 with Debug OpenExport|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug Max6|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath=".\MaxFurShader.h">
+			</File>
+			<File
+				RelativePath=".\MaxFurShaderMain.h">
+			</File>
+			<File
+				RelativePath=".\MaxMaterial.h">
+			</File>
+			<File
+				RelativePath=".\StdAfx.h">
+			</File>
+			<File
+				RelativePath=".\resource.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File
+				RelativePath=".\MaxFurShader.rc">
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

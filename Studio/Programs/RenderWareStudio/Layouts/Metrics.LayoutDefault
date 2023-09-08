@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><layoutinfo id="[RENFrame]" userinterface_id="Metrics"><param name="FrameTop" value="7" />
+<param name="FrameLeft" value="7" />
+<param name="FrameBottom" value="713" />
+<param name="FrameRight" value="927" />
+<param name="WindowState" value="0" />
+<param name="ClientContainsTabs" value="-1" />
+<param name="SelectedTab" value="0" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Tabs" runtime=""><param name="Count" value="3" />
+<param name="ContainedControlName0" value="DesignView" />
+<param name="ContainedControlName1" value="EventVisualizer" />
+<param name="ContainedControlName2" value="HelpWindow" />
+</object>
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Stackers" runtime=""><param name="Count" value="3" />
+<object clsid="{65AA55E7-3DA0-457C-A6A7-1AFE45E8682A}" id="item0" runtime=""><param name="Width" value="235" />
+<param name="Open" value="-1" />
+<param name="Floating" value="0" />
+<param name="Vertical" value="-1" />
+<param name="Alignment" value="1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Holders" runtime=""><param name="Count" value="1" />
+<object clsid="{C9DF8BA5-E927-4BA0-8DC3-DD306EC0C20D}" id="item0" runtime=""><param name="Caption" value="Game Explorer" />
+<param name="ContainsTabs" value="0" />
+<param name="ContainedControlName" value="GameDatabase" />
+<param name="ExpandedSize" value="430" />
+<param name="Expanded" value="-1" />
+</object>
+</object>
+</object>
+<object clsid="{65AA55E7-3DA0-457C-A6A7-1AFE45E8682A}" id="item1" runtime=""><param name="Width" value="255" />
+<param name="Open" value="-1" />
+<param name="Floating" value="0" />
+<param name="Vertical" value="-1" />
+<param name="Alignment" value="2" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Holders" runtime=""><param name="Count" value="2" />
+<object clsid="{C9DF8BA5-E927-4BA0-8DC3-DD306EC0C20D}" id="item0" runtime=""><param name="Caption" value="Profiling Tools" />
+<param name="ContainsTabs" value="-1" />
+<param name="SelectedTab" value="0" />
+<param name="ExpandedSize" value="206" />
+<param name="Expanded" value="-1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Tabs" runtime=""><param name="Count" value="3" />
+<param name="ContainedControlName0" value="MetricsCtrl" />
+<param name="ContainedControlName1" value="RWSProfileViewerCtrl" />
+<param name="ContainedControlName2" value="MemoryCtrl" />
+</object>
+</object>
+<object clsid="{C9DF8BA5-E927-4BA0-8DC3-DD306EC0C20D}" id="item1" runtime=""><param name="Caption" value="Target Tools" />
+<param name="ContainsTabs" value="-1" />
+<param name="SelectedTab" value="0" />
+<param name="ExpandedSize" value="206" />
+<param name="Expanded" value="-1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Tabs" runtime=""><param name="Count" value="2" />
+<param name="ContainedControlName0" value="TargetLink" />
+<param name="ContainedControlName1" value="RWSFileSaver" />
+</object>
+</object>
+</object>
+</object>
+<object clsid="{65AA55E7-3DA0-457C-A6A7-1AFE45E8682A}" id="item2" runtime=""><param name="Width" value="127" />
+<param name="Open" value="-1" />
+<param name="Floating" value="0" />
+<param name="Vertical" value="0" />
+<param name="Alignment" value="-1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Holders" runtime=""><param name="Count" value="1" />
+<object clsid="{C9DF8BA5-E927-4BA0-8DC3-DD306EC0C20D}" id="item0" runtime=""><param name="Caption" value="Output" />
+<param name="ContainsTabs" value="-1" />
+<param name="SelectedTab" value="0" />
+<param name="ExpandedSize" value="109" />
+<param name="Expanded" value="-1" />
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Tabs" runtime=""><param name="Count" value="3" />
+<param name="ContainedControlName0" value="MessageLog" />
+<param name="ContainedControlName1" value="BuildLog" />
+<param name="ContainedControlName2" value="VersionControlLog" />
+</object>
+</object>
+</object>
+</object>
+</object>
+<object clsid="{B0F397E4-0303-4292-B29F-2C21D45DECCD}" id="Toolbars" runtime=""><param name="Count" value="8" />
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item0" runtime=""><param name="Width" value="477" />
+<param name="NewLine" value="1" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="MainMenu" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="0" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item1" runtime=""><param name="Width" value="172" />
+<param name="NewLine" value="1" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="MainToolbar" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="1" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item2" runtime=""><param name="Width" value="364" />
+<param name="NewLine" value="0" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="SelectionToolbar" />
+<param name="Align" value="rmftbAlignRight" />
+<param name="Order" value="0" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item3" runtime=""><param name="Width" value="139" />
+<param name="NewLine" value="0" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="SplineToolbar" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="2" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item4" runtime=""><param name="Width" value="137" />
+<param name="NewLine" value="0" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="VolumeToolbar" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="3" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item5" runtime=""><param name="Width" value="100" />
+<param name="NewLine" value="1" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="ObjectInformation" />
+<param name="Align" value="rmftbAlignBottom" />
+<param name="Order" value="0" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item6" runtime=""><param name="Width" value="222" />
+<param name="NewLine" value="0" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="AllTargetsToolbar" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="5" />
+</object>
+<object clsid="{D3E34D0B-B2C5-45C5-A9CB-77C3008280EC}" id="item7" runtime=""><param name="Width" value="191" />
+<param name="NewLine" value="0" />
+<param name="Visible" value="1" />
+<param name="ShowTitle" value="1" />
+<param name="ContainedControlName" value="CurrentTargetToolbar" />
+<param name="Align" value="rmftbAlignTop" />
+<param name="Order" value="4" />
+</object>
+</object>
+</layoutinfo>
+</RENApplication>

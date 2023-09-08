@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RENApplication version="2.0"><object clsid="RENLayoutControl.RENMenuBar.1" id="SplineToolbar" runtime=""><param name="Caption" value="Spline" />
+<param name="Group" value="grpToolbars" />
+<param name="Top" value="0" />
+<param name="Left" value="0" />
+<param name="Width" value="126" />
+<param name="Height" value="22" />
+<param name="Visible" value="1" />
+<param name="Border" value="1" />
+<param name="ShowCaptionBar" value="1" />
+<param name="WindowSizeable" value="1" />
+<param name="ShowInClientArea" value="0" />
+<param name="Maximized" value="0" />
+<param name="WindowControls" value="0" />
+<param name="HideWindowOnClose" value="0" />
+<param name="OverrideWithNodeProperties" value="0" />
+<param name="ShowFocusDisplay" value="0" />
+<param name="FocusDisplaySize" value="0" />
+<param name="FocusDisplayStyle" value="0" />
+<param name="FocusDisplayColor" value="-2147483627" />
+<param name="ViewType" value="MB_SHOWTOOLBAR" />
+<param name="MenuName" value="root" />
+<param name="Count" value="5" />
+<param name="key0" value="New Nodes" />
+<param name="key1" value="Insert Node" />
+<param name="key2" value="Delete Nodes" />
+<param name="key3" value="Open" />
+<param name="key4" value="Close" />
+<param name="_cx" value="3334" />
+<param name="_cy" value="582" />
+<object clsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" id="Toolbar" runtime=""><stream encode="BASE64">bHQAADgJAABCTTgJAAAAAAAANgQAACgAAABQAAAAEAAAAAEACAAAAAAAAgUAAMIOAADCDgAAAAAA
+AAAAAAAEANgAAQDVAAEAzgABAMEABAC0AAIAmwADAowABwXpABsanwAaGJUAIR+QACUjnwAmJZUA
+HBthACQjcgAyMIsALCtkAERDkgBVVJYACQDcAAYBhAAMBM8ADAS7AAkDlwAJBmcAEAqpABQNuAAQ
+Co4AGxWpABcTlQAgGroAGRaVABMQaAAiHZkALCewABsZaQAtKYwAQT6WAD47iQBEQY8ASklsAF5d
+ggCAf5gAAwA8ACcgqABranoAiIeXAHx7hgA7NmcAaWd8AH59hgCinr4AFgdvAGtmhQA2JUwAgGif
+AHxpigC4rr4Ag2+NAMi9yABtam0AwsHCAKalpgA2GDUAiXuCAF1RVgAyDAAATRoAAF4iAABLMyQA
+UiMAAJlFAACDPAAAeDUAAEUfAACWkY0ArlQAAKBLAABZKgAAr1YAAKtVAACWSwAAhEIAAGc0AACu
+WgAAq1cAAJlPAABYOxsAnFUAAJNPAACYVQMAWTMGAHpgQACNemMAnJeRAIpNAACUWQkAkVkRAJBc
+FgBNMxIAlGQnAHBVMwBwXEIAlX9hAI96XgCckIEAe3JmAJRYAQB3RwEAmFsGAJNvOwA3KxoAm4BZ
+AI12VgCAcFoAhHhnAIl9bACekX4ApHk4AJOHdACXfEwApJ6UAJyZlACDf3cAopZ1AGZiVwCpppoA
+NzYxAP389gDHx7kAk5OKAEJCPgCLi4MATExLAPb29ADl5eMAWVlYANDQzwDCwsEAtLSzALa4tACd
+oJsAcotqAGJ1XQAWUBUAIGUeAABYAAAAVwAAAFIAAABIAAAAPQAAC5kLAApsCgAVzhUAEI8PAB2n
+HQAakxoAI8AjABmEGQAYeBgALs0uACaiJQApiykALV4tAFmaWQBqkmoAeJx4AISihAB5inkAoaOh
+AAp3CwAPcxAAPnlAAMfKyQDDxsUAQbiuAAD9/wDExcUAwcLCAAD5/wAA1dwAANPbAAq4vAAQtbkA
+QaSoABWyvAAZs7sAIq62ACeSlwAUsLsAHK23AACtxgCWqq0AAK7JAACgvAAQh6EACYaiAD2JmwAW
+f5wAGn6YAACd0QAAfakAHHWUACJjewADdqIAMGd8AJCfpQAAhL8AKl53AABbkABxdnkAfX5/AL/A
+wQC9vr8AlZidAMPGywBqbHAAh4mNALa3uQCqq7AAV1mhAHJ0nQBmZ30AAADKAAAAxgAAALkAAACu
+AAAAqAAAAKMAAACBAAAAfAAAAHsAAAB5AAAAagAAAF8ABASUAAMDcwBHSHYAZmaSAIKCoAB3d4kA
+fn6LAJGRkwD///8A3NzcAMLCwgDBwcEAwMDAAKurqwCWlpYAjY2NAIiIiACDg4MAdXV1AHJycgBa
+WloA9/f39/f39/f39/f39/f39/f39/f39/f39/f39/cgIPf39yMj9/f39/f39/f39/f3UFr39/f3
+95WU9/f39/f391Ba9/f39/f39/f39/f39/f39/f39/f3y8v39/f39/f39/f39/f3PmdkbVhUPwLh
+CvcPA+Mq9/f39/f39/f39/d3UFp+9/ePlZSY9/f39/f3d1Bafvf39yvq6ij39/f39/f3wMv39/e1
+tff398vA9/f39/f3911RTVZrZHY2CwoK9yMs6yn39/f39/f39/f39/d3VV/cM4+Tnpia95r39/f3
+d1Vf3Pf36hvr7vf39/f39/e8s7r397S09/e7sLz39/f39/ddUVld2/f39/cyMvf38jxB2vf9/fL3
+9/39/fL39/d8NAHkOY6qoZuamvf39/f3fDQB5PkYBhrj7vf39/f39/e+sLn3r6/3vrC59/f39/f3
+91JfS/f39/f39/f39/f3blb39/2Hian3/fT08vf39/fsIugu95OboJ2d9/f39/f37CLm8TEqBQcC
+Evf39/f39/e+tvc3N/e3vff39/f39/f6iIj39/f39/f39/f39/d1R2n3/fPzifKG84f49/f39y/w
+Lff3l5edmab39/f39/cv8C339/cqAwcl9/f39/f39/f3LAAALPf39/f39/f391P61YiI9/f39/f3
+9/f39/dZYvf31/OHroCAqff39/f39/f39/f3jaekpvf39/f39/f39/f39/fdEff39/f3y8vLyzri
+GhriOMvLy8v39/dzRHL61dWI9/f39/f39/f393FHbnl0rQgE3IE+9/f39/f39/f39/f39/f39/f3
+9/f39/f39/f39/f39/f39/fCv8G4OuchIec4uMG/wvf3c2ZDS/eNsfWIiPf39/f39/f392VISWze
+BRbmgvf39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f3MDMzMPf39/f39/dm
+V0r39/f62j77g/n39/f39/f393p1e9nt3SiC+Pf39/f396Wnqff394vvjPf39/f39/ccC/f39/f3
+7/f39/f39/f3y8T3QED3w8v39/f391dKY/f39/n6+f789/f39/f39/f39/dvjYRvevr99/f39/f3
+oZmbn6n3HeAJ9/f39/f3DwcTJPf39x/gCff39/f398vIxvfFxffHyMv39/f3QkJl9/f39zw8iIX3
+9/f39/f39/f3b9jT0n1v0/+p9/f39/ekoJ2i9/foHuXW9/f39/f3CBUEDxD35R7l1vf39/fNz8r3
+98nJ9/fKz8v39/cmK2r39/f3/P33g38gIPf3NidsSU5/b29FU29vb4X39/f396SXoZyR9zXdRWD3
+9/f39/f3ChkX6ffe3UVg9/f398DQ9/f3zMz39/fQzvf3JgPfEvf39/f39/f3IN/jIArh4DZ4XFtG
+RkZKe/f39/f39/f3qKisqquQ9/dwTGH39/f39/f35hTq9/f3cExh9/f39/f39/fR0ff39/f39/cm
+DArt9/f39/f39/cOLAYgCgwK7ff31V50anr39/f39/f39/f39zujkpb39/doT2H39/f39y0wDSv3
+9/f3aE9h9/f39/f39/f39/f39/f39/cmJvf39/f39/f39/cgIPf34eH39/f39/f39/f39/f39/f3
+9/f39/eW9/f39/doT/f39/f39/f39/f39/f3aE8AAA==
+</stream>
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item0" runtime=""><param name="MenuName" value="New Nodes" />
+<param name="Event" value="OnNewNodes" />
+<param name="Index" value="1" />
+<param name="PictureIndex" value="0" />
+<param name="Enabled" value="0" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item1" runtime=""><param name="MenuName" value="Insert Node" />
+<param name="Event" value="OnInsertNode" />
+<param name="Index" value="2" />
+<param name="PictureIndex" value="1" />
+<param name="Enabled" value="0" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item2" runtime=""><param name="MenuName" value="Delete Nodes" />
+<param name="Event" value="OnDeleteNodes" />
+<param name="Index" value="3" />
+<param name="PictureIndex" value="2" />
+<param name="Enabled" value="0" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item3" runtime=""><param name="MenuName" value="Open" />
+<param name="Event" value="OnOpen" />
+<param name="Index" value="4" />
+<param name="PictureIndex" value="3" />
+<param name="Enabled" value="0" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+<object clsid="{66ED6D22-1DE3-4F05-9D32-C15AA9452BF5}" id="item4" runtime=""><param name="MenuName" value="Close" />
+<param name="Event" value="OnClose" />
+<param name="Index" value="5" />
+<param name="PictureIndex" value="4" />
+<param name="Enabled" value="0" />
+<param name="BitmapEnabled" value="0" />
+<param name="Checked" value="0" />
+<param name="ShortcutKey" value="0" />
+<param name="ShortcutShiftKey" value="0" />
+<param name="ShortcutCtrlKey" value="0" />
+<param name="ShortcutAltKey" value="0" />
+<param name="Count" value="0" />
+</object>
+</object>
+</RENApplication>
