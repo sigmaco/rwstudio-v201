@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{AE5BF632-70D1-4BC5-86C5-014B236CD4C2}" type="generic">
+      <Name>EnvMap</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{556953D7-AA2A-4F71-95FE-B54F7C2287D7}" type="RWSEntityID" />
+      <ParentReference id="{C5535F10-95D2-42F4-AD75-17CB1D801530}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{C8D52721-0E94-450C-82FB-00CB0D962234}" type="generic">
+      <Name>Maestro Entities</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{FD0DD01C-8A55-485B-9AEB-0A8511556B5A}" type="RWSEntityID" />
+      <ParentReference id="{9B5484A0-7BA8-40AA-8138-2CC5D2CADF91}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

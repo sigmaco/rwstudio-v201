@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{598A9921-2EFF-4654-B781-FDCA4B48CDC0}">
+      <Name>ADLSkin Material Pipe</Name>
+      <Description></Description>
+      <Behavior>CG3x_ADLSkin_MatPipeID</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{42C47057-34CF-492B-92D8-9FCAD252761E}" type="RWSAssetID" />
+      <ChildReference id="{D18F14F4-BB58-4676-9E1B-6402EF6B988D}" type="RWSAssetID" />
+      <ParentReference id="{B89289A8-CFD7-4E5E-BE7F-C7AE66027AC1}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

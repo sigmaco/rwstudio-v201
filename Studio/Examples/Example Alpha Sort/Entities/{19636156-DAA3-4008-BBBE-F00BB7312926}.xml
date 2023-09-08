@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{19636156-DAA3-4008-BBBE-F00BB7312926}">
+      <Name>Set Opaque Hint</Name>
+      <Behavior>CSetCLevelHint</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{0D7A0334-0E42-4050-93B7-41D4F95973C3}" type="RWSAssetID" />
+      <ChildReference id="{987DBD1C-7E71-4292-A576-78F5B988A702}" type="RWSAssetID" />
+      <ChildReference id="{FD0A6127-0660-4370-8097-54F2BB46FAE3}" type="RWSAssetID" />
+      <ParentReference id="{B0CFBA89-8656-43A9-8512-5525FCBCEB78}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

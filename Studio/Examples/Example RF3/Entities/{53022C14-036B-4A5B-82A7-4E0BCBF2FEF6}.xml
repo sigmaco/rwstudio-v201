@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{53022C14-036B-4A5B-82A7-4E0BCBF2FEF6}">
+      <Name>Guard</Name>
+      <Behavior>CMultiAnimate</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{8FEDF814-DF85-4958-8FA5-C1CB4A3173D9}" type="RWSAssetID" />
+      <ChildReference id="{61E8AA29-F9DB-4612-81FC-241C002CD437}" type="RWSFolderID" />
+      <ParentReference id="{5E7AAAD2-B15C-43BE-ABC8-CF4C0813E632}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               bf3826b3 <!-- -0.719341 -->
+               00000000 <!-- 0.000000 -->
+               bf31d528 <!-- -0.694659 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f7fffd1 <!-- 0.999997 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f31d4e1 <!-- 0.694655 -->
+               00000000 <!-- 0.000000 -->
+               bf382664 <!-- -0.719336 -->
+               00000000 <!-- 0.000000 -->
+               43bf60af <!-- 382.755 -->
+               00000000 <!-- 0.000000 -->
+               44b91ce2 <!-- 1480.90 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CMultiAnimate</Class>
+         <Member>CMD_MsgNextAnimTrigger</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="6">alien</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CMultiAnimate</Class>
+         <Member>CMD_BlendDuration</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f4ccccd <!-- 0.800000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

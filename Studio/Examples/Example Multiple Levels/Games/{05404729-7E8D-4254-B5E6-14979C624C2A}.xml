@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{05404729-7E8D-4254-B5E6-14979C624C2A}">
+      <Name>Game: Multiple Levels Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{F8CEAB89-7261-403D-B602-13565542B629}" type="RWSFolderID" />
+      <ChildReference id="{55B8AA00-FD8E-47D6-95E0-D99B8FBCE9FE}" type="RWSFolderID" />
+      <ChildReference id="{4462F599-3F46-4658-93D2-5966BA8937F5}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

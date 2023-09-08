@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{5E47B63F-4F37-4E3F-AF2D-6C9BD5ABF2AB}" type="asset">
+      <Name>Audio Dictionaries</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{0881A57A-C9C0-43B9-B2D2-0809FFD78693}" type="RWSAssetID" />
+      <ChildReference id="{2D5C276D-4BD8-4FA6-8925-20EA06B4ABB9}" type="RWSAssetID" />
+      <ChildReference id="{A666DDDC-E1BD-4975-A6CF-2C481CDFC0A8}" type="RWSAssetID" />
+      <ChildReference id="{20009019-23FA-4008-9B90-F94FFE5B51BC}" type="RWSAssetID" />
+      <ChildReference id="{1CCB017B-548E-419D-9B81-5D6D03DD9777}" type="RWSAssetID" />
+      <ChildReference id="{B2D869EA-5D5D-4D33-8C98-2C2A39F8A820}" type="RWSAssetID" />
+      <ChildReference id="{CAF4EF31-EE54-4A3B-AAAF-51642D25CCAD}" type="RWSAssetID" />
+      <ChildReference id="{AA6D0D87-8B7F-4699-AED9-288027483545}" type="RWSAssetID" />
+      <ParentReference id="{7DF3E0B3-D180-4399-AADA-9F1D882865EB}" type="RWSFolderID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{4462F599-3F46-4658-93D2-5966BA8937F5}" type="generic">
+      <Name>Level: Level 3, Animating things</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{ABDAA72E-6FD4-4AF4-A854-2158775F858D}" type="RWSFolderID" />
+      <ChildReference id="{E792809C-F0AE-443A-BCF3-E637FBFDBF9B}" type="RWSFolderID" />
+      <ChildReference id="{F589D95D-54D5-4CFC-89C4-D04177FF176C}" type="RWSFolderID" />
+      <ChildReference id="{BD14986D-CC29-463C-85D2-A2D722E9D6D8}" type="RWSFolderID" />
+      <ParentReference id="{05404729-7E8D-4254-B5E6-14979C624C2A}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

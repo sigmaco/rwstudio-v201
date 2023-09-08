@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{66CBDA2C-424A-4710-8859-5A95339E9698}">
+      <Name>Env1</Name>
+      <Behavior>CFXEnvironmentMap</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{D1C852AD-C479-4F75-9E77-1F011BB94C3B}" type="RWSAssetID" />
+      <ChildReference id="{EC2F6428-0628-4106-9AE6-11DF0E6C31C3}" type="RWSAssetID" />
+      <ParentReference id="{C589679D-2A41-4C31-A56E-7EC34B9CE68A}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_Source</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_UserRotation_x</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               42ece148 <!-- 118.440 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_UserRotation_y</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               43900000 <!-- 288.000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_UserRotation_z</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4351851f <!-- 209.520 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_AnimRotation_x</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               404f5c29 <!-- 3.24000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_AnimRotation_y</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40ec28f6 <!-- 7.38000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_AnimRotation_z</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               c00a3d71 <!-- -2.16000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

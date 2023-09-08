@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{DE01D002-0C92-4094-B3BA-8031F59F57AE}" type="generic">
+      <Name>Train</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{9A371E25-9671-4936-B00E-6750323E54C8}" type="RWSEntityID" />
+      <ChildReference id="{3149066E-087F-4B91-BD66-73D56C4572ED}" type="RWSEntityID" />
+      <ChildReference id="{31250637-713A-49D1-88A5-E920CCBD28E5}" type="RWSEntityID" />
+      <ChildReference id="{60016CD0-D5A4-4F31-98F3-A90703C677D1}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{EAC90470-7D42-43E3-9ADE-6510DA8E6554}" type="generic">
+      <Name>Tank</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{EBB143D1-04A8-4AE8-8A1D-E37B375CAC0F}" type="RWSEntityID" />
+      <ChildReference id="{BF312CF1-1FB8-4751-A7A8-1478877F6337}" type="RWSEntityID" />
+      <ChildReference id="{8A457AC1-D540-4573-926D-C71B757788B0}" type="RWSEntityID" />
+      <ParentReference id="{C89556C1-BC8C-49DA-9230-71017CFA4412}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

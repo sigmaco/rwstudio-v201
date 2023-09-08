@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{BA82D5BE-A800-4CE3-8E80-BFAC4ED09D6D}" type="generic">
+      <Name>Level: Motion Blur</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{AF25558E-BDCF-4EBE-9E52-57C492FF3F0D}" type="RWSFolderID" />
+      <ChildReference id="{4E557B39-A505-4109-ADB8-F71398E7C2A4}" type="RWSFolderID" />
+      <ChildReference id="{8980B306-FFF3-443A-ADE6-168BCB179ED4}" type="RWSFolderID" />
+      <ChildReference id="{D9D41990-245E-4255-AD82-12273D105A1E}" type="RWSFolderID" />
+      <ParentReference id="{671CC586-1A51-49F7-ACD6-A156290DBE2C}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{02FE9AFC-618F-4A62-B2AA-73FDA0C2B6AD}" type="generic">
+      <Name>World</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{CD193D94-16E1-400A-8458-E47719C4336D}" type="RWSEntityID" />
+      <ChildReference id="{C3A528B5-82F6-478F-9B28-F19F6796E3BC}" type="RWSEntityID" />
+      <ParentReference id="{D3F0EBAC-2964-45A5-AA73-6EF1702FD0BE}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

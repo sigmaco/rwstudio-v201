@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{079C2BA7-BF78-4265-BCC9-E3C3A92B7C67}">
+      <Name>3D Audio Sound 2</Name>
+      <Description></Description>
+      <Behavior>AudioSound3D</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{9517595D-0A10-4511-9B9E-429A0154AE58}" type="RWSAssetID" />
+      <ParentReference id="{AE7089D1-6710-46F3-A83B-6E6EFC2ABE61}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c5fd0a3d <!-- -8097.28 -->
+               43480000 <!-- 200.000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_m_play</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="8">playfx2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_gain</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3ee56042 <!-- 0.448000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_sample</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_m_stop</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_selectText</Member>
+         <Type>RwChar</Type>
+         <Value>
+            <Data type="RWSChar" num="7">ATMOS2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_FadeDown</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_FadeUp</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_Debug</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioSound3D</Class>
+         <Member>CMD_FadeStep</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3cd4fdf4 <!-- 0.0260000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

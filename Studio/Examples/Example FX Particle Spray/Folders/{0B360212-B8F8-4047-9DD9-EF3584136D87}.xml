@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{0B360212-B8F8-4047-9DD9-EF3584136D87}" type="generic">
+      <Name>Box Fountain Group</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{CBD23638-785D-4112-B2DE-55EFB8AD1231}" type="RWSEntityID" />
+      <ChildReference id="{BBFA7278-2D78-4CC4-A86D-7329F62BD56B}" type="RWSEntityID" />
+      <ParentReference id="{884B6728-6A53-47AB-BADC-53C87FBB4901}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

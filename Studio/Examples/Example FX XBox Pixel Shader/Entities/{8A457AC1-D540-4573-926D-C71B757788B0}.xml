@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{8A457AC1-D540-4573-926D-C71B757788B0}">
+      <Name>Tank 1</Name>
+      <Behavior>CEntity</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{1D6ACE7C-5A23-44CB-A5F7-EEECBF40964F}" type="RWSAssetID" />
+      <ParentReference id="{EAC90470-7D42-43E3-9ADE-6510DA8E6554}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               40261bda <!-- 2.59545 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               c0261bda <!-- -2.59545 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               40261bda <!-- 2.59545 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               4415cc66 <!-- 599.194 -->
+               40ae0db4 <!-- 5.43917 -->
+               44f55d6e <!-- 1962.92 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{4A857341-2BD6-4810-ACD9-B44349B9BE67}">
+      <Name>Warning Light Trigger</Name>
+      <Description></Description>
+      <Behavior>ATCylinder</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{D0E29D12-D3A8-4E79-974E-425A43B205E8}" type="RWSAssetID" />
+      <ParentReference id="{578C34B5-BACF-4B8D-B8D8-66A519127102}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               459c4000 <!-- 5000.00 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               44fa0000 <!-- 2000.00 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               459c4000 <!-- 5000.00 -->
+               00000000 <!-- 0.000000 -->
+               c2700000 <!-- -60.0000 -->
+               447c447b <!-- 1009.07 -->
+               458ca000 <!-- 4500.00 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_QueryEvent</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="13">trigger_test</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_DebugRender</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_EnterEvent</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="17">warning_light_on</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_Logic</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">2</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>ATBase</Class>
+         <Member>CMD_ExitEvent</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="18">warning_light_off</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

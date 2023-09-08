@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{591313B4-00C6-45D0-8F0C-F87EDD53A9F0}">
+      <Name>Crash Xbox</Name>
+      <Type>rwaID_WAVEDICT</Type>
+      <Description></Description>
+      <Platform>XBox</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Models\crash_xbox.rws" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{C4C3C5CC-8AB6-4CCC-93CE-809F8510D533}">
+      <Name>Ambient GCN</Name>
+      <Type>rwaID_WAVEDICT</Type>
+      <Description></Description>
+      <Platform>GameCube</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Models\ambient_gcn.rws" />
+      <ParentReference id="{FF83FD24-DFF9-4AFB-9E73-177A93620009}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

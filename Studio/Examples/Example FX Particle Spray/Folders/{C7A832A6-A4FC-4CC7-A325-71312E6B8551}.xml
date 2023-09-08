@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{C7A832A6-A4FC-4CC7-A325-71312E6B8551}" type="generic">
+      <Name>DebugTools</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{8CD09623-6FC2-4769-AD2A-87E5A14872C8}" type="RWSEntityID" />
+      <ChildReference id="{EF488F69-D928-4EB4-BB1C-CAA25C8E07B2}" type="RWSEntityID" />
+      <ParentReference id="{0C384E4C-A693-400F-9E1E-2F229914DE6B}" type="RWSFolderID" />
+      <ParentReference id="{53684608-39B7-4F23-B027-DBA091640FA8}" type="RWSFolderID" />
+      <ParentReference id="{622537B4-4673-44A8-AFF7-B84624288925}" type="RWSFolderID" />
+      <ParentReference id="{884B6728-6A53-47AB-BADC-53C87FBB4901}" type="RWSFolderID" />
+      <ParentReference id="{93B1650B-428F-4103-9576-6FC20B3648E2}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

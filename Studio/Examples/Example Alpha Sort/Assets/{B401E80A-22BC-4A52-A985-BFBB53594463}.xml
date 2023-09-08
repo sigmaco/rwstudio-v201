@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{B401E80A-22BC-4A52-A985-BFBB53594463}">
+      <Name>Front Arm Grab</Name>
+      <Type>rwID_HANIMANIMATION</Type>
+      <Description>Front Arm Grab</Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Models\front_arm_grab.anm" />
+      <ParentReference id="{A48315DE-BB12-4DDA-A5EC-26CAEFC2C743}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

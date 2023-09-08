@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <AttributeShare id="{360FDF35-75D2-4450-9046-F9DEF0C02F3B}">
+      <Name>Shared attribute(s) for Warrior 4 weights per vertex</Name>
+      <ParentReference id="{1236FF07-71BB-424E-8036-8513E5B75D73}" type="RWSEntityID" />
+      <ParentReference id="{22646AFD-7646-4EE7-B445-F3F7066CE5E6}" type="RWSEntityID" />
+      <ParentReference id="{34D0ADDC-D170-489F-996F-E99966BBEC42}" type="RWSEntityID" />
+      <ParentReference id="{37CB2653-6A67-450B-84DF-4809A512A617}" type="RWSEntityID" />
+      <ParentReference id="{5D492206-D27D-4E93-8D7D-7AC39EBB8F03}" type="RWSEntityID" />
+      <ParentReference id="{97B618CF-1EF8-4CB7-B651-B5C55D66BE9F}" type="RWSEntityID" />
+      <ParentReference id="{C9FA987F-4FFE-496D-879A-288C954E3120}" type="RWSEntityID" />
+      <ParentReference id="{D2F01C02-440C-4471-84E8-1F81E0DC494B}" type="RWSEntityID" />
+      <ParentReference id="{D4B96D12-C01F-43DE-9DFA-15677688279D}" type="RWSEntityID" />
+      <ParentReference id="{EC5141EF-3661-4D08-9262-AF7AA84B6B5D}" type="RWSEntityID" />
+      <ParentReference id="RWS_AttributeShareHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CMultiAnimate</Class>
+         <Member>CMD_MsgNextAnimTrigger</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CMultiAnimate</Class>
+         <Member>CMD_Rate</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f90c49c <!-- 1.13100 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CMultiAnimate</Class>
+         <Member>CMD_BlendDuration</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CMultiAnimate</Class>
+         <Member>CMD_Loop</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </AttributeShare>
+
+</RenderWareStudio>
+

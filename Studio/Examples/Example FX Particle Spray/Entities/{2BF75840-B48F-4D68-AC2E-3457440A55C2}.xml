@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{2BF75840-B48F-4D68-AC2E-3457440A55C2}">
+      <Name>Pin Wheel Firework Generator</Name>
+      <Description></Description>
+      <Behavior>CFXReplicatorGenerator</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{BC89B65A-A138-4F86-996D-D6467CF2615F}" type="RWSAssetID" />
+      <ParentReference id="{551E35ED-E7B2-4F82-A7DC-D43F6D40E3F2}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               451bf99a <!-- 2495.60 -->
+               4488228f <!-- 1089.08 -->
+               45aa1c8f <!-- 5443.57 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_Msg_Rx_Alt_Trigger_Particles</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="16">iMsgRunningTick</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Start_Render</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_Msg_Particle_Active</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="5">KATH</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_ExpireTime</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_ExpireTime_Bias</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">360</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_initial_velocity</Member>
+         <Type>RwV3d</Type>
+         <Value>
+            <Data type="RWSReal" num="3" encoding="binary">
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_initial_angvelocity</Member>
+         <Type>RwV3d</Type>
+         <Value>
+            <Data type="RWSReal" num="3" encoding="binary">
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_initial_acceleration</Member>
+         <Type>RwV3d</Type>
+         <Value>
+            <Data type="RWSReal" num="3" encoding="binary">
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_initial_angfriction</Member>
+         <Type>RwV3d</Type>
+         <Value>
+            <Data type="RWSReal" num="3" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               3f800000 <!-- 1.00000 -->
+               3f800000 <!-- 1.00000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_initial_angacceleration</Member>
+         <Type>RwV3d</Type>
+         <Value>
+            <Data type="RWSReal" num="3" encoding="binary">
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3d958106 <!-- 0.0730000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_number_of_message_to_trigger</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">400</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXReplicatorGenerator</Class>
+         <Member>CMD_Set_m_number_of_particles_to_create</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

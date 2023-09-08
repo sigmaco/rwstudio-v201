@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{C0F32D7D-DA16-49C1-8F60-83BA36ED9436}">
+      <Name>Adler22</Name>
+      <Type>rwID_2DFONT</Type>
+      <Description>PS2 Maestro Font - Adler Size 22</Description>
+      <Platform>PS2</Platform>
+      <Model></Model>
+      <SendName>1</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\ps2\Adler22.fnt" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

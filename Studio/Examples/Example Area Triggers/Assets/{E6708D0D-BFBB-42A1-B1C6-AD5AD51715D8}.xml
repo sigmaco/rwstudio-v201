@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{E6708D0D-BFBB-42A1-B1C6-AD5AD51715D8}">
+      <Name>ATrig_UnitSph</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform>None</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\ATrig_UnitSph.dff" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

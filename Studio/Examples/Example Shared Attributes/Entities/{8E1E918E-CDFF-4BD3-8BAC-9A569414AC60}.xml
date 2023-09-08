@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{8E1E918E-CDFF-4BD3-8BAC-9A569414AC60}">
+      <Name>PowerUp 1</Name>
+      <Behavior>FPSBouncyPickup</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{743FBA32-20DC-42CE-9880-F0FE9AA6BF34}" type="RWSAssetID" />
+      <ChildReference id="{C7216554-959D-4AE5-BF69-28922290CBEC}" type="RWSAttributeShareID" />
+      <ParentReference id="{1EBC0B8C-23F7-409E-9487-B3581069FC72}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c1e614af <!-- -28.7601 -->
+               43490148 <!-- 201.005 -->
+               452ef852 <!-- 2799.52 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

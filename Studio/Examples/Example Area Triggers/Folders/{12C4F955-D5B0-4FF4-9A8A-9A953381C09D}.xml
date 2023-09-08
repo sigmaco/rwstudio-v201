@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="generic">
+      <Name>Level: Example Uses</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{B7067D31-6BD1-43B4-BE5D-812C8EA6C902}" type="RWSFolderID" />
+      <ChildReference id="{8424DD5A-15F3-4FE7-BB1C-3B2ABAAA722F}" type="RWSFolderID" />
+      <ChildReference id="{AC13CF27-BF49-4CC8-AD70-D35998BFDC20}" type="RWSFolderID" />
+      <ChildReference id="{30A83021-65D9-4247-9703-16FDEC291A0F}" type="RWSFolderID" />
+      <ChildReference id="{578C34B5-BACF-4B8D-B8D8-66A519127102}" type="RWSFolderID" />
+      <ChildReference id="{DCC2CEFB-0B37-4617-A07D-3F52F3FB778C}" type="RWSFolderID" />
+      <ParentReference id="{9EB80C5B-B506-4DF1-8048-FF7ED22E4D0E}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

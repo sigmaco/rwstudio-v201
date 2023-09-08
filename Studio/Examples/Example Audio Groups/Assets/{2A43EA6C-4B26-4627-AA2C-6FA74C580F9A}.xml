@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{2A43EA6C-4B26-4627-AA2C-6FA74C580F9A}">
+      <Name>Crash PS2</Name>
+      <Type>rwaID_WAVEDICT</Type>
+      <Description></Description>
+      <Platform>None</Platform>
+      <Model></Model>
+      <SendName>1</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Models\crash_ps2.rws" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

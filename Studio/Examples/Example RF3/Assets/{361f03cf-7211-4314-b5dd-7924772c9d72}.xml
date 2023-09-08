@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{361f03cf-7211-4314-b5dd-7924772c9d72}">
+      <Name>run</Name>
+      <Type>rwID_HANIMANIMATION</Type>
+      <Description>Auto-generated from: Models\run.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures" file="RWStudio RF3 Exports\Generic\Models\run\run1.rws" />
+      <ParentReference id="{6F6920D0-82E5-4EAF-8993-4E0A379F1018}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

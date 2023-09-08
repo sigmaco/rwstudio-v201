@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{BAC9584C-211F-4E1F-B9F1-5AA1BBCDB68A}" type="generic">
+      <Name>Level: Rotating Motion Blur</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{AF25558E-BDCF-4EBE-9E52-57C492FF3F0D}" type="RWSFolderID" />
+      <ChildReference id="{4E557B39-A505-4109-ADB8-F71398E7C2A4}" type="RWSFolderID" />
+      <ChildReference id="{8980B306-FFF3-443A-ADE6-168BCB179ED4}" type="RWSFolderID" />
+      <ChildReference id="{4C5F221D-6530-4C94-8054-224FB2A59872}" type="RWSFolderID" />
+      <ParentReference id="{671CC586-1A51-49F7-ACD6-A156290DBE2C}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

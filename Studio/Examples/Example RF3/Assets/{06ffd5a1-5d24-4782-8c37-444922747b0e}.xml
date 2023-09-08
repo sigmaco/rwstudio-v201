@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{06ffd5a1-5d24-4782-8c37-444922747b0e}">
+      <Name>crypt_tree_monster</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description>Auto-generated from: Models\military_lab.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures\" file="RWStudio RF3 Exports\Generic\Models\military_lab\military_lab3.rws" />
+      <ParentReference id="{39C5FD63-2192-42F9-A293-0CC20473897A}" type="RWSEntityID" />
+      <ParentReference id="{0D7AC3E2-4E3C-4392-A27C-5A3B8CC4CB0C}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

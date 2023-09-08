@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{B89289A8-CFD7-4E5E-BE7F-C7AE66027AC1}" type="generic">
+      <Name>G3x_ADL Pipes</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{A6BC427B-380F-435A-9A76-4AF6CBA443E3}" type="RWSEntityID" />
+      <ChildReference id="{4E98D04F-81C3-4A85-B940-79126644A744}" type="RWSEntityID" />
+      <ChildReference id="{598A9921-2EFF-4654-B781-FDCA4B48CDC0}" type="RWSEntityID" />
+      <ParentReference id="{D1D4936D-628B-4CF2-8496-1F93820D5C85}" type="RWSFolderID" />
+      <ParentReference id="{DF0BD1EB-A652-454B-95BF-5F66655F7FEE}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

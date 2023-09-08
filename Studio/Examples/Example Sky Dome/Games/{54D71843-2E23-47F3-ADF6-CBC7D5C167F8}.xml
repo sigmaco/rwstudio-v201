@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{54D71843-2E23-47F3-ADF6-CBC7D5C167F8}">
+      <Name>Game: Sky Dome</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{F0C7F621-B4CB-46E1-A20B-74687AC19039}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

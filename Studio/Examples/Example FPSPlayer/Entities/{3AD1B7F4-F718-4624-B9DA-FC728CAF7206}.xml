@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{3AD1B7F4-F718-4624-B9DA-FC728CAF7206}">
+      <Name>Platform</Name>
+      <Behavior>FPSPlatform</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{37B8EAA0-D23A-4E9F-B784-178D15D7DB34}" type="RWSAssetID" />
+      <ParentReference id="{1E39B4F6-7409-4143-A4B0-8747A40F5072}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c18f71de <!-- -17.9306 -->
+               43fdd26f <!-- 507.644 -->
+               c55a4d48 <!-- -3492.83 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlatform</Class>
+         <Member>CMD_height</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               44005f1b <!-- 513.486 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlatform</Class>
+         <Member>CMD_speed</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">399</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlatform</Class>
+         <Member>CMD_targetname</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="17">ACTN_PLAYERTOUCH</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

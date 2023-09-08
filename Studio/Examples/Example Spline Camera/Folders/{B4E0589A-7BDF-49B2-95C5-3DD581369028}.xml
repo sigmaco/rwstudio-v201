@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{B4E0589A-7BDF-49B2-95C5-3DD581369028}" type="generic">
+      <Name>Level: Spline Camera Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{A0625F95-565F-46A8-AEA8-A0F209C61CCC}" type="RWSFolderID" />
+      <ChildReference id="{7E73BBA7-A623-4893-B469-1158A4A1C41B}" type="RWSFolderID" />
+      <ParentReference id="{3D3E4536-DBEB-428C-B107-5671ACF9D778}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

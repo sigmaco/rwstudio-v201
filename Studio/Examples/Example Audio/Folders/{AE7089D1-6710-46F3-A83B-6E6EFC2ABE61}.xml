@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{AE7089D1-6710-46F3-A83B-6E6EFC2ABE61}" type="generic">
+      <Name>Audio Entities</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{F754F9C5-65D2-41AF-8274-64EFCB6F38E1}" type="RWSEntityID" />
+      <ChildReference id="{4B314B40-B4D9-44DC-BE08-97E8521DF735}" type="RWSEntityID" />
+      <ChildReference id="{079C2BA7-BF78-4265-BCC9-E3C3A92B7C67}" type="RWSEntityID" />
+      <ChildReference id="{F2C0A7DE-DD3F-4C07-9044-0528A15CDEBC}" type="RWSEntityID" />
+      <ChildReference id="{BC73FCAF-1AB4-4837-A510-8B5837E13147}" type="RWSEntityID" />
+      <ChildReference id="{2773B0B4-9B77-480A-AF8F-F3E0D864C80A}" type="RWSEntityID" />
+      <ChildReference id="{7310378E-A1A0-418F-828B-28792BEB274E}" type="RWSEntityID" />
+      <ChildReference id="{49B4C522-2D10-4565-AD33-4A51CC1AA607}" type="RWSEntityID" />
+      <ChildReference id="{056A4F02-E580-48B7-B6E8-A9F62797BF64}" type="RWSEntityID" />
+      <ChildReference id="{AA2C5369-FFFA-4AB2-9A92-B4489E3F4592}" type="RWSEntityID" />
+      <ChildReference id="{999B0408-7E08-4779-83CA-CC9CD9E959C4}" type="RWSEntityID" />
+      <ChildReference id="{5F813F7D-D8D4-40D6-B2A9-39152A17F8F8}" type="RWSEntityID" />
+      <ParentReference id="{7DF3E0B3-D180-4399-AADA-9F1D882865EB}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

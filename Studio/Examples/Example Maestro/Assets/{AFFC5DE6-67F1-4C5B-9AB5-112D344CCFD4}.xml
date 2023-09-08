@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{AFFC5DE6-67F1-4C5B-9AB5-112D344CCFD4}">
+      <Name>Adler22</Name>
+      <Type>rwID_2DFONT</Type>
+      <Description>GCN Maestro Font - Adler Size 22</Description>
+      <Platform>GameCube</Platform>
+      <Model></Model>
+      <SendName>1</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\gcn\Adler22.fnt" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

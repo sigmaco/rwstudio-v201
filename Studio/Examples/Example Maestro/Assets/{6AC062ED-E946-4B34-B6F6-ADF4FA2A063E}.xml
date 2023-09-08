@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{6AC062ED-E946-4B34-B6F6-ADF4FA2A063E}">
+      <Name>t10</Name>
+      <Type>rwID_2DFONT</Type>
+      <Description>XBox Maestro Font - Times New Roman</Description>
+      <Platform>Xbox</Platform>
+      <Model></Model>
+      <SendName>1</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\xbox\t10.fnt" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

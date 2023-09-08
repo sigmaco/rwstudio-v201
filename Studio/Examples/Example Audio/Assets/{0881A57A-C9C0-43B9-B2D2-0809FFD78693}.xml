@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{0881A57A-C9C0-43B9-B2D2-0809FFD78693}">
+      <Name>Ambient PS2</Name>
+      <Type>rwaID_WAVEDICT</Type>
+      <Description></Description>
+      <Platform>PS2</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="\" file="Models\Ambient.rws" />
+      <ParentReference id="{5E47B63F-4F37-4E3F-AF2D-6C9BD5ABF2AB}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

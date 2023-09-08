@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{6CB46670-4B8D-4513-B5B5-F7117CE1E011}">
+      <Name>fx_splash</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\Effects\" file="Models\fx_splash.dff" />
+      <ParentReference id="{4198E850-FEEF-4D17-BD8A-05C6F0094D0C}" type="RWSEntityID" />
+      <ParentReference id="{719DD23B-F586-4B2B-9467-99B12603714F}" type="RWSEntityID" />
+      <ParentReference id="{C887BF38-A74C-4E8E-9790-CCC1C3F45966}" type="RWSEntityID" />
+      <ParentReference id="{E77A8008-BE89-45F4-AE67-1A8501A6A8DF}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

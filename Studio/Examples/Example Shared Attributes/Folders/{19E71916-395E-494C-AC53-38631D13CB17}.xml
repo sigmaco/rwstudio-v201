@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{19E71916-395E-494C-AC53-38631D13CB17}" type="generic">
+      <Name>Glow Lights</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{C9D03926-8D64-4BB5-B1D0-E0D04008DD4B}" type="RWSEntityID" />
+      <ChildReference id="{A882DFB4-3522-45A2-A683-171DAEC5A8F9}" type="RWSEntityID" />
+      <ChildReference id="{37D9D3CB-E8A6-452F-8154-0B4EF3010813}" type="RWSEntityID" />
+      <ChildReference id="{712189F2-D0D8-4267-B1EF-73E3DB2170BC}" type="RWSEntityID" />
+      <ParentReference id="{C5535F10-95D2-42F4-AD75-17CB1D801530}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

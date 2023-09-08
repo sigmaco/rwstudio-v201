@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{374497AE-0672-4EA2-8F83-A4CA78DBCA8D}">
+      <Name>Combination_Fonts_txd_d3d</Name>
+      <Type>rwID_PITEXDICTIONARY</Type>
+      <Description>Combination Fonts Texture Dictionary D3D</Description>
+      <Platform>DirectX</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\d3d8\Combination_Fonts_d3d.txd" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

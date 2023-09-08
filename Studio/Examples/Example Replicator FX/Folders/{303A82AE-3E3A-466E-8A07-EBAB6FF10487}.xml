@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{303A82AE-3E3A-466E-8A07-EBAB6FF10487}" type="generic">
+      <Name>Level: Replicator FX Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{12171FA6-5B0D-4AB1-A77A-C7EC72974AC1}" type="RWSEntityID" />
+      <ChildReference id="{01B14A61-7F5B-490C-BC50-5658B3FB7CEA}" type="RWSFolderID" />
+      <ChildReference id="{DCE15027-3913-4FFC-B5D8-311511BEE2BA}" type="RWSFolderID" />
+      <ChildReference id="{F66E0BCE-ABC0-4CD5-B40A-533BB68EB14D}" type="RWSFolderID" />
+      <ParentReference id="{F82E0A3E-7BC3-4170-9BB4-9A592EC05AFA}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

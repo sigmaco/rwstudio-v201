@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{ABF663DD-AFA9-4B34-9E14-9B66F5E284D0}">
+      <Name>Secret Door</Name>
+      <Behavior>FPSSecretDoor</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{02736261-4336-4BA3-8B26-6AFBCF4FE5F6}" type="RWSAssetID" />
+      <ParentReference id="{7CEB7549-2DB9-4893-91CA-A5D4CCE0FEF5}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c52980cd <!-- -2712.05 -->
+               4380b604 <!-- 257.422 -->
+               c46fbda2 <!-- -958.963 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSSecretDoor</Class>
+         <Member>CMD_spawnflags</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">2</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

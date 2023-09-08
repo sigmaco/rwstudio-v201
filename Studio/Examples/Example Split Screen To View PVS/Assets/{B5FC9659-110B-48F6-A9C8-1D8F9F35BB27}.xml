@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{B5FC9659-110B-48F6-A9C8-1D8F9F35BB27}">
+      <Name>.\Models\Map_PVS.bsp</Name>
+      <Type>rwID_WORLD</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\Map_PVS.bsp" />
+      <ParentReference id="{3909DEC5-7B39-47F5-91AB-0979743F865C}" type="RWSEntityID" />
+      <ParentReference id="{9C4463E8-F124-4909-B129-5F6C82F6A5DD}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

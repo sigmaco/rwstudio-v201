@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{6EE0FAC3-2656-4DA3-988E-D9D3E0D2A329}">
+      <Name>Directors Camera</Name>
+      <Behavior>CDirectorsCamera</Behavior>
+      <Build>
+      </Build>
+      <ParentReference id="{85936457-9B21-4005-835C-F71A48738AF8}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CDirectorsCamera</Class>
+         <Member>CMD_RenderOut</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="7">render</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

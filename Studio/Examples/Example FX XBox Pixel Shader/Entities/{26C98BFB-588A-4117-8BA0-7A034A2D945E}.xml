@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{26C98BFB-588A-4117-8BA0-7A034A2D945E}">
+      <Name>Example Pixel Shader</Name>
+      <Description></Description>
+      <Behavior>CFXXBoxExamplePS</Behavior>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{1D6ACE7C-5A23-44CB-A5F7-EEECBF40964F}" type="RWSAssetID" />
+      <ParentReference id="{01C6B7E6-727D-4FBC-9BD5-5215D0F44648}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CFXXBoxExamplePS</Class>
+         <Member>CMD_Set_m_Speed</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3ea04189 <!-- 0.313000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

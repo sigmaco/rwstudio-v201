@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="RWS_GlobalFolder" type="generic">
+      <Name>Global Folder</Name>
+      <Build>
+      </Build>
+      <ParentReference id="{C9B5A032-66D5-4AA3-A21A-F264F5DC0EA9}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

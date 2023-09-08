@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{E6AA6B8B-055B-4DA0-A86C-27E6CC4FEB60}">
+      <Name>Flag Shader</Name>
+      <Description></Description>
+      <Behavior>CFXFlagShader</Behavior>
+      <Platform>XBox</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{E8ED9DD3-D150-4A07-957F-BDF54A9A9781}" type="RWSAssetID" />
+      <ParentReference id="{F760310A-FB63-402A-B38D-AA512FFECCEA}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_HfreqA</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3d19999a <!-- 0.0375000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_HspeedA</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f94bc6a <!-- 1.16200 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_HamplitudeA</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40600000 <!-- 3.50000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_HfreqB</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3d8624dd <!-- 0.0655000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_HspeedB</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3ee66666 <!-- 0.450000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_HamplitudeB</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               41a00000 <!-- 20.0000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_VfreqA</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3ce56042 <!-- 0.0280000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_VspeedA</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3fa9ba5e <!-- 1.32600 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXFlagShader</Class>
+         <Member>CMD_Set_m_VamplitudeA</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4050a3d7 <!-- 3.26000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3dd612ef <!-- 0.104528 -->
+               00000000 <!-- 0.000000 -->
+               3f7e98e3 <!-- 0.994520 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f7ffffa <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               bf7e98e3 <!-- -0.994520 -->
+               00000000 <!-- 0.000000 -->
+               3dd612ef <!-- 0.104528 -->
+               00000000 <!-- 0.000000 -->
+               4085cf00 <!-- 4.18152 -->
+               00000000 <!-- 0.000000 -->
+               4112b7c0 <!-- 9.16986 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

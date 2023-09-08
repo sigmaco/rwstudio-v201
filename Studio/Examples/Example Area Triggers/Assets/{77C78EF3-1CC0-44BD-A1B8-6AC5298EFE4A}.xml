@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{77C78EF3-1CC0-44BD-A1B8-6AC5298EFE4A}">
+      <Name>ATrig_UnitBox</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform>None</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\ATrig_UnitBox.dff" />
+      <ParentReference id="{60929F07-51B7-4C8A-98B6-9A87ED44C332}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

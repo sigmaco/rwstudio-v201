@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{7F31F966-33E8-4EE1-B850-B2BFD444053A}" type="generic">
+      <Name>Environment</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{07089CCF-F9D2-4CC5-BD16-F81215E221B7}" type="RWSEntityID" />
+      <ChildReference id="{54B4B510-3542-453F-9420-98AEF9C22196}" type="RWSEntityID" />
+      <ChildReference id="{5DA273FA-C743-4898-93DA-0DC58A848879}" type="RWSEntityID" />
+      <ChildReference id="{8AC7FB31-59D1-4D7F-A9DC-2FA560060486}" type="RWSEntityID" />
+      <ChildReference id="{A3D3A7D3-0462-4133-A916-BC091629B232}" type="RWSEntityID" />
+      <ParentReference id="{F0C7F621-B4CB-46E1-A20B-74687AC19039}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

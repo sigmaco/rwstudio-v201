@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{A882DFB4-3522-45A2-A683-171DAEC5A8F9}">
+      <Name>Glow Light 1</Name>
+      <Behavior>CFXWaveLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{89F6BCD9-5D18-40CA-85ED-EFFC7B9C631D}" type="RWSAssetID" />
+      <ChildReference id="{015FB47D-843B-4D4B-B4C6-65CE0AA9A8AA}" type="RWSAttributeShareID" />
+      <ParentReference id="{19E71916-395E-494C-AC53-38631D13CB17}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f797061 <!-- 0.974371 -->
+               00000000 <!-- 0.000000 -->
+               be66598e <!-- -0.224951 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3e66598e <!-- 0.224951 -->
+               00000000 <!-- 0.000000 -->
+               3f797061 <!-- 0.974371 -->
+               00000000 <!-- 0.000000 -->
+               c5bddaa4 <!-- -6075.33 -->
+               44af1eb8 <!-- 1400.96 -->
+               4596c5ae <!-- 4824.71 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

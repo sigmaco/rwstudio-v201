@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{E8ED9DD3-D150-4A07-957F-BDF54A9A9781}">
+      <Name>Flag</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources=".\Models\Textures\" file=".\Models\Flag.dff" />
+      <ParentReference id="{4563B6D8-233A-4497-823B-26C938B75299}" type="RWSEntityID" />
+      <ParentReference id="{8B54DF8A-8BDE-4F6B-8372-327F6AB52AD3}" type="RWSEntityID" />
+      <ParentReference id="{9A459AE3-38DB-4983-AC29-182B189A7D9A}" type="RWSEntityID" />
+      <ParentReference id="{AD61284B-0853-4918-A7BF-46A3E4143619}" type="RWSEntityID" />
+      <ParentReference id="{C4DCA1F1-823F-4FA1-B22B-616EBA63AB1A}" type="RWSEntityID" />
+      <ParentReference id="{DFCFDE55-2B34-4C54-B649-2E1668B25FBC}" type="RWSEntityID" />
+      <ParentReference id="{E6AA6B8B-055B-4DA0-A86C-27E6CC4FEB60}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

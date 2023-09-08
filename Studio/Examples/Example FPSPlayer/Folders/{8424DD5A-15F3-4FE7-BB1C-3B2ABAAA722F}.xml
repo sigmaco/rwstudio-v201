@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{8424DD5A-15F3-4FE7-BB1C-3B2ABAAA722F}" type="generic">
+      <Name>Lights</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{D49768CA-176E-4837-ACAB-410636A2C021}" type="RWSEntityID" />
+      <ChildReference id="{29E57726-C9A9-4A5C-938C-26F9D60345E0}" type="RWSEntityID" />
+      <ChildReference id="{80EF3CE0-3084-4759-A5F7-BD0A1A84A3B9}" type="RWSEntityID" />
+      <ChildReference id="{BCD2E2A4-DCC7-42F5-A0D6-632E584DD226}" type="RWSEntityID" />
+      <ChildReference id="{7533AC01-C8B6-4342-8843-44359A9A28EF}" type="RWSEntityID" />
+      <ChildReference id="{0A7DAD83-E00A-4C46-A768-CF5CF709AA1B}" type="RWSEntityID" />
+      <ChildReference id="{6F802A8C-6B1D-4D72-AE0D-210DAF44E0C0}" type="RWSEntityID" />
+      <ChildReference id="{1FF5F939-7A6A-44E6-BA8C-285F4D0CFF60}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

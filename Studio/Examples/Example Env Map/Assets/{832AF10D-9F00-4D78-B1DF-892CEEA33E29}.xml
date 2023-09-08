@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{832AF10D-9F00-4D78-B1DF-892CEEA33E29}">
+      <Name>EnvTeapot_pure</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\EnvTeapot_pure.dff" />
+      <ParentReference id="{FA6394EA-D179-46F9-99E8-9015AA9F464C}" type="RWSEntityID" />
+      <ParentReference id="{FC5F1238-8DB1-44F0-9672-226472F28C0F}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

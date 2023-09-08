@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{C5C80237-2DA3-4980-91D9-4BC8B91C2156}">
+      <Name>.\Models\BOX.dff</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="textures" file=".\Models\BOX.dff" />
+      <ParentReference id="{54B4B510-3542-453F-9420-98AEF9C22196}" type="RWSEntityID" />
+      <ParentReference id="{585DD658-6EEF-451C-96B5-53C2AE48989D}" type="RWSEntityID" />
+      <ParentReference id="{5DA273FA-C743-4898-93DA-0DC58A848879}" type="RWSEntityID" />
+      <ParentReference id="{8AC7FB31-59D1-4D7F-A9DC-2FA560060486}" type="RWSEntityID" />
+      <ParentReference id="{A3D3A7D3-0462-4133-A916-BC091629B232}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

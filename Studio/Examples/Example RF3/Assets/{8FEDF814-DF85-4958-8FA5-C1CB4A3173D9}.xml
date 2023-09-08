@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{8FEDF814-DF85-4958-8FA5-C1CB4A3173D9}">
+      <Name>Guard</Name>
+      <Type>RF3|rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\mb_guard.rf3" />
+      <ChildReference id="{0a65adde-0051-492a-8a1a-16bf44ba670e}" type="RWSAssetID" />
+      <ParentReference id="{53022C14-036B-4A5B-82A7-4E0BCBF2FEF6}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

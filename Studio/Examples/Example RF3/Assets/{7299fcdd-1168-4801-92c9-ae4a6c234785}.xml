@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{7299fcdd-1168-4801-92c9-ae4a6c234785}">
+      <Name>idle</Name>
+      <Type>rwID_HANIMANIMATION</Type>
+      <Description>Auto-generated from: Models\idle.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures" file="RWStudio RF3 Exports\Generic\Models\idle\idle1.rws" />
+      <ParentReference id="{3BBFC0F3-80A1-4BB8-950C-C30186575FBB}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

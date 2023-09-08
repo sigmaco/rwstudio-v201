@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{E9DFAEF7-CD7D-4C0F-9513-2494A1DC45CD}" type="generic">
+      <Name>Main Audio Groups</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{FF83FD24-DFF9-4AFB-9E73-177A93620009}" type="RWSEntityID" />
+      <ChildReference id="{0FCAB8A8-FAA1-448E-8966-0AEE272B3D64}" type="RWSEntityID" />
+      <ParentReference id="{BD835D7B-5822-4FCE-B399-A4831F39D2E3}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

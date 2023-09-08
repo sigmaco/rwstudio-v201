@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{1E39B4F6-7409-4143-A4B0-8747A40F5072}" type="generic">
+      <Name>Platforms</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{3AD1B7F4-F718-4624-B9DA-FC728CAF7206}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

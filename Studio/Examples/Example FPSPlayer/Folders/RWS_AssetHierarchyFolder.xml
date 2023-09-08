@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="RWS_AssetHierarchyFolder" type="asset">
+      <Build>
+      </Build>
+      <ChildReference id="{01390C78-8E10-4A9C-BEB3-5D721F9390A9}" type="RWSAssetID" />
+      <ChildReference id="{02736261-4336-4BA3-8B26-6AFBCF4FE5F6}" type="RWSAssetID" />
+      <ChildReference id="{0924210D-5C48-494E-9F2F-570F97CF56D2}" type="RWSAssetID" />
+      <ChildReference id="{24A1234C-95D7-4184-81D5-90FE74936BF8}" type="RWSAssetID" />
+      <ChildReference id="{352BC703-F615-4B44-903D-E795AB3A9FF6}" type="RWSAssetID" />
+      <ChildReference id="{37B8EAA0-D23A-4E9F-B784-178D15D7DB34}" type="RWSAssetID" />
+      <ChildReference id="{4EADB885-90BA-4D55-83CC-1BA9C856F8E3}" type="RWSAssetID" />
+      <ChildReference id="{91BFB5D2-9FA1-4135-8BAB-1138E2FFAB22}" type="RWSAssetID" />
+      <ChildReference id="{C920DAEE-2A66-44FE-92E9-2BB1B8DC5560}" type="RWSAssetID" />
+      <ChildReference id="{E785F2F2-7659-4186-AFAA-0CD95ECE686A}" type="RWSAssetID" />
+   </Folder>
+
+</RenderWareStudio>
+

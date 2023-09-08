@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{9B907EC9-A5C9-4461-84FC-7C074EE84612}">
+      <Name>Map</Name>
+      <Type>rwID_WORLD</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources=".\Models\Textures\" file="Models\Map_All.bsp" />
+      <ParentReference id="{2BB5BD27-7E65-4B81-9B63-D702E8CBE9EF}" type="RWSEntityID" />
+      <ParentReference id="{472ECFDD-F633-4C00-B40B-F0433DC04E58}" type="RWSEntityID" />
+      <ParentReference id="{6D09CD6E-39F0-4F00-87AE-4656109E5601}" type="RWSEntityID" />
+      <ParentReference id="{94772105-EE89-438C-8F52-2B7601D40DCD}" type="RWSEntityID" />
+      <ParentReference id="{E42A7971-EABF-4A02-A1DE-11CE96C1B9C5}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

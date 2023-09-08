@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{14FF781D-017C-42E4-8AF1-AA2F932F26F9}">
+      <Name>alpha_teapot</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\alpha_teapot.dff" />
+      <ParentReference id="{00B8746E-9993-4489-92E0-17491952BEAF}" type="RWSEntityID" />
+      <ParentReference id="{0185873C-D11A-4D29-9BB3-A4CC4CE74B2B}" type="RWSEntityID" />
+      <ParentReference id="{03190B57-A1FA-44FF-968B-9A54E6AFB9C3}" type="RWSEntityID" />
+      <ParentReference id="{1898FD41-4DCC-40C4-9628-CE9D0C5A20CC}" type="RWSEntityID" />
+      <ParentReference id="{1C32B5D9-9861-4AA5-B45C-B2124CC66EE5}" type="RWSEntityID" />
+      <ParentReference id="{1EB9CE61-550A-4C9A-B454-C48A1682B1EF}" type="RWSEntityID" />
+      <ParentReference id="{2F0630DF-F2AD-468F-AAC7-93BADBFEB39E}" type="RWSEntityID" />
+      <ParentReference id="{361F7A81-4FA6-4AF7-89A8-96CD3B5C9517}" type="RWSEntityID" />
+      <ParentReference id="{47BC769E-E39E-4656-9F8E-A92341DEF06C}" type="RWSEntityID" />
+      <ParentReference id="{4B4AD6CC-F1AE-4887-B73C-F13F174C1CA5}" type="RWSEntityID" />
+      <ParentReference id="{4E98D04F-81C3-4A85-B940-79126644A744}" type="RWSEntityID" />
+      <ParentReference id="{73C123F6-0BF8-4E21-85C7-C3A22D3C8C26}" type="RWSEntityID" />
+      <ParentReference id="{79CFB936-9214-4863-B039-F5F3AAD478C4}" type="RWSEntityID" />
+      <ParentReference id="{83FC5C94-C92A-43D1-B08A-52825DACDC6D}" type="RWSEntityID" />
+      <ParentReference id="{8C990C7D-920B-4274-9554-8EF8D0276528}" type="RWSEntityID" />
+      <ParentReference id="{A5981AFE-4CC4-4507-BBA8-E38A84C70BBE}" type="RWSEntityID" />
+      <ParentReference id="{B5D29EC8-A4EC-4324-87E0-834C4F41432E}" type="RWSEntityID" />
+      <ParentReference id="{BD7674B1-A10D-4A28-AA95-FCC5521284A0}" type="RWSEntityID" />
+      <ParentReference id="{EB07CB93-E8B2-42A6-AB79-7386A8649AE3}" type="RWSEntityID" />
+      <ParentReference id="{F5657D44-A230-4B84-B447-16604CBA5E8F}" type="RWSEntityID" />
+      <ParentReference id="{F611190B-AC82-4D5E-9F94-3A3A81C82A12}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

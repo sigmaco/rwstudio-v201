@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{0a65adde-0051-492a-8a1a-16bf44ba670e}">
+      <Name>mb_guard</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description>Auto-generated from: Models\mb_guard.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures\" file="RWStudio RF3 Exports\Generic\Models\mb_guard\mb_guard1.rws" />
+      <ParentReference id="{8FEDF814-DF85-4958-8FA5-C1CB4A3173D9}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

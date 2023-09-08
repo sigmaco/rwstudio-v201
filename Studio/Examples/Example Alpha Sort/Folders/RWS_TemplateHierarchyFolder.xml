@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="RWS_TemplateHierarchyFolder" type="template">
+      <Build>
+      </Build>
+      <ChildReference id="{27FC3764-5816-47AD-AD6A-50BA894BF6F3}" type="RWSEntityID" />
+      <ChildReference id="{2FA1B350-3880-4F1D-A0DC-BC44D2B4352B}" type="RWSEntityID" />
+      <ChildReference id="{7C78FA30-6012-4780-93E4-6591D4C0EF04}" type="RWSEntityID" />
+      <ChildReference id="{AD9A0E28-2DA7-4676-9D0E-F99DA7FB6843}" type="RWSEntityID" />
+   </Folder>
+
+</RenderWareStudio>
+

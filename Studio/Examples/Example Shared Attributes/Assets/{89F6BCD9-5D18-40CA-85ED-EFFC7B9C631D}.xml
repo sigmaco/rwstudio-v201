@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{89F6BCD9-5D18-40CA-85ED-EFFC7B9C631D}">
+      <Name>Light Bulb</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\bulb.dff" />
+      <ParentReference id="{1217EE09-54F9-4BF2-B6DF-C30D9E7B9348}" type="RWSEntityID" />
+      <ParentReference id="{28DEF252-5EB6-48D4-8B33-AF4591866A3B}" type="RWSEntityID" />
+      <ParentReference id="{303E49ED-5527-4DA7-99A6-039391591D09}" type="RWSEntityID" />
+      <ParentReference id="{37D9D3CB-E8A6-452F-8154-0B4EF3010813}" type="RWSEntityID" />
+      <ParentReference id="{444222FD-1A41-4DA1-AC1F-BDF6EEC2EE24}" type="RWSEntityID" />
+      <ParentReference id="{4467ABB0-425B-4573-AE93-BD306FD8B70F}" type="RWSEntityID" />
+      <ParentReference id="{46F2741B-6DDB-4D9E-BD2E-07265D8F7927}" type="RWSEntityID" />
+      <ParentReference id="{4AF661F4-C4E9-41F0-8290-21C52BBFE722}" type="RWSEntityID" />
+      <ParentReference id="{5E50F8A3-F668-4FE1-A34C-B9AF55226C47}" type="RWSEntityID" />
+      <ParentReference id="{6121EB97-6966-4D3A-B6E6-489180846778}" type="RWSEntityID" />
+      <ParentReference id="{712189F2-D0D8-4267-B1EF-73E3DB2170BC}" type="RWSEntityID" />
+      <ParentReference id="{7C587D78-FECB-4B28-9DB0-66ECFBF6AC1F}" type="RWSEntityID" />
+      <ParentReference id="{A45F59DB-3382-4D98-BA39-8B6509B6AF39}" type="RWSEntityID" />
+      <ParentReference id="{A882DFB4-3522-45A2-A683-171DAEC5A8F9}" type="RWSEntityID" />
+      <ParentReference id="{B92DCCAE-4E38-4D0F-B7CB-A5FC9B005CED}" type="RWSEntityID" />
+      <ParentReference id="{BA84D817-1DEC-498A-8078-CA5E3372A34E}" type="RWSEntityID" />
+      <ParentReference id="{C9D03926-8D64-4BB5-B1D0-E0D04008DD4B}" type="RWSEntityID" />
+      <ParentReference id="{CB964D6E-2ABE-4461-B42E-6E480FD976F0}" type="RWSEntityID" />
+      <ParentReference id="{D31EB1DB-2F67-49E6-8CA7-B714227C5241}" type="RWSEntityID" />
+      <ParentReference id="{D3FE711D-7113-41D4-9CFE-8D51AA31A1FF}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

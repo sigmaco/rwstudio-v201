@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{FAB55001-D7FF-472E-8D23-A2BBE3DB2097}" type="generic">
+      <Name>Flags</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{C4DCA1F1-823F-4FA1-B22B-616EBA63AB1A}" type="RWSEntityID" />
+      <ChildReference id="{8B54DF8A-8BDE-4F6B-8372-327F6AB52AD3}" type="RWSEntityID" />
+      <ChildReference id="{DFCFDE55-2B34-4C54-B649-2E1668B25FBC}" type="RWSEntityID" />
+      <ChildReference id="{4563B6D8-233A-4497-823B-26C938B75299}" type="RWSEntityID" />
+      <ChildReference id="{AD61284B-0853-4918-A7BF-46A3E4143619}" type="RWSEntityID" />
+      <ParentReference id="{DE403EC7-A66D-49D9-BCBC-175F7160B711}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

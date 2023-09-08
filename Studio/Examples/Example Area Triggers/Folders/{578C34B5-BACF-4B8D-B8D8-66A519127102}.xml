@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{578C34B5-BACF-4B8D-B8D8-66A519127102}" type="generic">
+      <Name>Area Triggers</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{4A857341-2BD6-4810-ACD9-B44349B9BE67}" type="RWSEntityID" />
+      <ChildReference id="{60929F07-51B7-4C8A-98B6-9A87ED44C332}" type="RWSEntityID" />
+      <ParentReference id="{12C4F955-D5B0-4FF4-9A8A-9A953381C09D}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

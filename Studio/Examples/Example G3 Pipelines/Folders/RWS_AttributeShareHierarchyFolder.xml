@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="RWS_AttributeShareHierarchyFolder" type="attributeshare">
+      <Build>
+      </Build>
+      <ChildReference id="{360FDF35-75D2-4450-9046-F9DEF0C02F3B}" type="RWSAttributeShareID" />
+   </Folder>
+
+</RenderWareStudio>
+

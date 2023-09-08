@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{0BD1E672-0BE8-4436-9070-AA44BE128C00}" type="generic">
+      <Name>Any Objetcs</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{A5981AFE-4CC4-4507-BBA8-E38A84C70BBE}" type="RWSEntityID" />
+      <ChildReference id="{79EAC0B1-6261-40AE-9535-C73C5EA7CAE3}" type="RWSEntityID" />
+      <ChildReference id="{D5D14CD2-131D-4B56-A2F7-BCBA183FA89D}" type="RWSEntityID" />
+      <ChildReference id="{8C9F145C-FCB1-4D20-8C2B-7F7064C6EB92}" type="RWSEntityID" />
+      <ChildReference id="{305C8AB2-5350-4D95-A221-AF8B06EBE285}" type="RWSEntityID" />
+      <ChildReference id="{D611ECAD-8D72-4D64-8C16-36AE9B26CDDD}" type="RWSEntityID" />
+      <ChildReference id="{4C40784F-79BB-4D4E-A397-E50E19133E2B}" type="RWSEntityID" />
+      <ChildReference id="{BD735C90-BAD7-42F1-88D4-5ECB7FD02D0C}" type="RWSEntityID" />
+      <ParentReference id="{905DA911-A24A-4422-BDD3-2BFBAD954158}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

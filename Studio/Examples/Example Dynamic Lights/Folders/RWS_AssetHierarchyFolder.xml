@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="RWS_AssetHierarchyFolder" type="asset">
+      <Build>
+      </Build>
+      <ChildReference id="{8B0D9A81-6525-4140-8B53-042BA3885238}" type="RWSAssetID" />
+      <ChildReference id="{F5FC6463-E8B8-4592-A3DD-E8FC70524155}" type="RWSAssetID" />
+   </Folder>
+
+</RenderWareStudio>
+

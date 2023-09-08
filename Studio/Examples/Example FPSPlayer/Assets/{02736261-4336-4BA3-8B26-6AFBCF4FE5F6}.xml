@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{02736261-4336-4BA3-8B26-6AFBCF4FE5F6}">
+      <Name>fpsdoor</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\fpsdoor.dff" />
+      <ParentReference id="{05442ACE-CAD8-4C05-A842-34C06EED82DE}" type="RWSEntityID" />
+      <ParentReference id="{1EB8E8AD-5B05-44B1-822C-B91551DD835B}" type="RWSEntityID" />
+      <ParentReference id="{79F3D1E3-465C-41E6-935A-CF3A2C3E312C}" type="RWSEntityID" />
+      <ParentReference id="{ABF663DD-AFA9-4B34-9E14-9B66F5E284D0}" type="RWSEntityID" />
+      <ParentReference id="{E957E538-8214-453F-A737-3CEBC0179265}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

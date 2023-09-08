@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{81B1FC21-F9AE-4F3E-A4D4-C3F399383A1F}">
+      <Name>Game: Alpha Sorting Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{4BE5DD1D-43D1-4251-A672-884B858058D1}" type="RWSFolderID" />
+      <ChildReference id="{205245BE-CD8C-45D8-8E08-70198FFFFAD5}" type="RWSFolderID" />
+      <ChildReference id="{04E3E85F-0F60-4D1B-AF04-D86EFDB29F41}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

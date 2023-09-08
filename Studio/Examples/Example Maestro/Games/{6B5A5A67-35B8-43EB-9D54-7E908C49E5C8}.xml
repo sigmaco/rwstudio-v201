@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{6B5A5A67-35B8-43EB-9D54-7E908C49E5C8}">
+      <Name>Game: Maestro Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{9B5484A0-7BA8-40AA-8138-2CC5D2CADF91}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{647CAECE-4C97-4161-B979-D5E7C50B0677}">
+      <Name>Motion Blur</Name>
+      <Description></Description>
+      <Behavior>CFXMotionBlur</Behavior>
+      <Platform>GameCube,PS2,Xbox</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{D9D41990-245E-4255-AD82-12273D105A1E}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Priority</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">0</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Set_m_BlurAmount</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f4c0831 <!-- 0.797000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Start_Render</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXMotionBlur</Class>
+         <Member>CMD_Set_m_Angle</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

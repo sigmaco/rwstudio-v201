@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{F93B367B-C424-4DEB-90E8-6BC0139409DB}">
+      <Name>Game: G3 Pipeline Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{D6E0BF4B-E1A5-4C13-A01E-B415005F4FFF}" type="RWSFolderID" />
+      <ChildReference id="{1A94019D-AB22-494B-B8FA-124A2F6B1B82}" type="RWSFolderID" />
+      <ChildReference id="{DF0BD1EB-A652-454B-95BF-5F66655F7FEE}" type="RWSFolderID" />
+      <ChildReference id="{36427FD4-1928-41C9-A976-51562D4D0304}" type="RWSFolderID" />
+      <ChildReference id="{D1D4936D-628B-4CF2-8496-1F93820D5C85}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

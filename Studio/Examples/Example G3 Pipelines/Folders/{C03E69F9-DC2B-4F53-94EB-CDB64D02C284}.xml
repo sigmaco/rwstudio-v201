@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{C03E69F9-DC2B-4F53-94EB-CDB64D02C284}" type="generic">
+      <Name>Set CRpLevel Hints</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{F5657D44-A230-4B84-B447-16604CBA5E8F}" type="RWSEntityID" />
+      <ChildReference id="{19F7CBEE-818B-4D60-8AA2-63D14F155187}" type="RWSEntityID" />
+      <ParentReference id="{905DA911-A24A-4422-BDD3-2BFBAD954158}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

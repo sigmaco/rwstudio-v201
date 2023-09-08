@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{5FF4F6BB-EDB3-4751-AABD-949E63CCFA95}">
+      <Name>t10</Name>
+      <Type>rwID_2DFONT</Type>
+      <Description>OGL Maestro Font - Times New Roman Size 10</Description>
+      <Platform>OpenGL</Platform>
+      <Model></Model>
+      <SendName>1</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Fonts\opengl\t10.fnt" />
+      <ParentReference id="{B26293B1-0F25-4F8F-8EC1-573C4123ADDD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

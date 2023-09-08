@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{A859E3AA-D998-4E7C-87EB-F983EB9F65E2}">
+      <Name>Game: Split Screen Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{1E5EE507-62B8-46C7-A1F7-E1DD3B525834}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

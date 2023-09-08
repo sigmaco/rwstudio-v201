@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{622537B4-4673-44A8-AFF7-B84624288925}" type="generic">
+      <Name>Level: Particle Effects 5</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{B90B07AB-6BEF-4D74-BE54-18B9AE5E16FB}" type="RWSFolderID" />
+      <ChildReference id="{551E35ED-E7B2-4F82-A7DC-D43F6D40E3F2}" type="RWSFolderID" />
+      <ChildReference id="{123AB5CE-C02C-4C91-A06C-294D2F439875}" type="RWSFolderID" />
+      <ChildReference id="{C7A832A6-A4FC-4CC7-A325-71312E6B8551}" type="RWSFolderID" />
+      <ParentReference id="{154230E4-8ED5-4C32-B6BA-A8B2ABEEA7BC}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

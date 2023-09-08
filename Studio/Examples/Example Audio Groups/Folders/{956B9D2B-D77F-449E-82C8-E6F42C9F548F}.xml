@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{956B9D2B-D77F-449E-82C8-E6F42C9F548F}" type="generic">
+      <Name>Controls</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{82E7DDA0-606B-4B43-9A84-E038545C6EE0}" type="RWSEntityID" />
+      <ChildReference id="{7FB64AAA-F77E-4106-8750-A1127DFC04EC}" type="RWSEntityID" />
+      <ChildReference id="{06969563-C363-4D1A-B5FC-070FFCC1C0BF}" type="RWSEntityID" />
+      <ChildReference id="{4890EBD3-7623-4E2F-8587-2EBCABAF2B0F}" type="RWSEntityID" />
+      <ChildReference id="{54132116-48AC-4E41-B2B0-FA789C7BE4A0}" type="RWSEntityID" />
+      <ParentReference id="{BD835D7B-5822-4FCE-B399-A4831F39D2E3}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{FF83FD24-DFF9-4AFB-9E73-177A93620009}">
+      <Name>Group - Ambient</Name>
+      <Behavior>AudioGroup</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{7078EF53-7D51-4F16-BD40-51B7A86AA710}" type="RWSAssetID" />
+      <ChildReference id="{7402F2AC-DF41-48B8-A8FC-AB37FA5A4272}" type="RWSAssetID" />
+      <ChildReference id="{48975901-3714-4191-A59B-0D50FE52A90E}" type="RWSAssetID" />
+      <ChildReference id="{C4C3C5CC-8AB6-4CCC-93CE-809F8510D533}" type="RWSAssetID" />
+      <ChildReference id="{5758E730-59D0-4459-B3EB-BCF98BB0B72F}" type="RWSAssetID" />
+      <ParentReference id="{E9DFAEF7-CD7D-4C0F-9513-2494A1DC45CD}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               422b271e <!-- 42.7882 -->
+               42d19b23 <!-- 104.803 -->
+               4419e21d <!-- 615.533 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioGroup</Class>
+         <Member>CMD_FadeDown</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="7">gpdown</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioGroup</Class>
+         <Member>CMD_FadeUp</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="5">gpup</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioGroup</Class>
+         <Member>CMD_Disable</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>AudioGroup</Class>
+         <Member>CMD_Enable</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{FA6394EA-D179-46F9-99E8-9015AA9F464C}">
+      <Name>Env2</Name>
+      <Behavior>CFXEnvironmentMap</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{832AF10D-9F00-4D78-B1DF-892CEEA33E29}" type="RWSAssetID" />
+      <ParentReference id="{C589679D-2A41-4C31-A56E-7EC34B9CE68A}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_Source</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">3</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_AnimRotation_x</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3f8a3d71 <!-- 1.08000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_AnimRotation_y</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               400a3d71 <!-- 2.16000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_AnimRotation_z</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               40a70a3d <!-- 5.22000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_UserRotation_x</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXEnvironmentMap</Class>
+         <Member>CMD_Set_m_UserRotation_y</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               42e0a3d7 <!-- 112.320 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

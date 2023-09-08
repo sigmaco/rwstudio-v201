@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{3FCC006C-237A-4C02-AD15-F79EB6054F6F}">
+      <Name>PS2 Controller</Name>
+      <Description></Description>
+      <Behavior>CPSX2StndController</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{1E6D1477-6D20-4509-992C-88A33AE58721}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

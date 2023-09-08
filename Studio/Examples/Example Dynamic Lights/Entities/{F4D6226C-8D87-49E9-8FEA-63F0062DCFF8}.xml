@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{F4D6226C-8D87-49E9-8FEA-63F0062DCFF8}">
+      <Template />
+      <Name>Template of CFXLight_Spline</Name>
+      <Behavior>CFXLight_Spline</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{8B0D9A81-6525-4140-8B53-042BA3885238}" type="RWSAssetID" />
+      <ParentReference id="RWS_TemplateHierarchyFolder" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               43c80000 <!-- 400.000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_SetInvisibleFlag</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_Light_Type</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXLight_Spline</Class>
+         <Member>CMD_m_trigger</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="16">iMsgStartSystem</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXLight_Spline</Class>
+         <Member>CMD_Set_c0</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4278190080</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXLight_Spline</Class>
+         <Member>CMD_Set_c1</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4278222592</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXLight_Spline</Class>
+         <Member>CMD_Set_c2</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4278222719</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXLight_Spline</Class>
+         <Member>CMD_Set_c3</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4278190207</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXLight_Spline</Class>
+         <Member>CMD_Set_c4</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">4278190080</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXLight_Spline</Class>
+         <Member>CMD_step</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               3b03126f <!-- 0.00200000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

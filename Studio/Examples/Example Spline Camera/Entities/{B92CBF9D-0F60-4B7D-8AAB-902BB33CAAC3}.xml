@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{B92CBF9D-0F60-4B7D-8AAB-902BB33CAAC3}">
+      <Name>Debug Tools</Name>
+      <Behavior>CDebugTools</Behavior>
+      <Build>
+      </Build>
+      <ParentReference id="{85936457-9B21-4005-835C-F71A48738AF8}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

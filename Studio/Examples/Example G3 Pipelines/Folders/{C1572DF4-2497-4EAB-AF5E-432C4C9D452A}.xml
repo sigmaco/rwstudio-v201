@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{C1572DF4-2497-4EAB-AF5E-432C4C9D452A}" type="generic">
+      <Name>Opaque World</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{E24B6DCF-64E2-42CE-B4DE-32476432179E}" type="RWSEntityID" />
+      <ChildReference id="{2166F2C9-8407-44DD-BF4D-B636BE1CF85B}" type="RWSEntityID" />
+      <ParentReference id="{905DA911-A24A-4422-BDD3-2BFBAD954158}" type="RWSFolderID" />
+      <ParentReference id="{CD7FB7BB-45F7-4443-B290-D7DE6C282A78}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

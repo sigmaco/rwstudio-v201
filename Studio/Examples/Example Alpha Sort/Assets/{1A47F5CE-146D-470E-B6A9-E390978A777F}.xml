@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{1A47F5CE-146D-470E-B6A9-E390978A777F}">
+      <Name>alpha_torus</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\alpha_torus.dff" />
+      <ParentReference id="{185C8F12-7195-4025-8893-ED3C26255EC0}" type="RWSEntityID" />
+      <ParentReference id="{37137351-90D8-4074-88C1-1D030A700928}" type="RWSEntityID" />
+      <ParentReference id="{54F0DD8D-6D1B-4D93-B63F-CBAA3C55A710}" type="RWSEntityID" />
+      <ParentReference id="{816F1929-7DF2-4E83-B0BF-945C1D600C06}" type="RWSEntityID" />
+      <ParentReference id="{863510CE-C9F0-4409-ADB2-5B01BCB4EDC3}" type="RWSEntityID" />
+      <ParentReference id="{96EEF196-6368-4D44-9F9F-98520300A062}" type="RWSEntityID" />
+      <ParentReference id="{A42FCB42-64E6-4D01-ACF7-67AE2BDC6E16}" type="RWSEntityID" />
+      <ParentReference id="{B06B7D54-9CF5-462F-93FB-BBC215222D7D}" type="RWSEntityID" />
+      <ParentReference id="{F15A854F-C6E4-4E8C-BA58-75CD629F9D1B}" type="RWSEntityID" />
+      <ParentReference id="{FDCA0D47-F4FC-42CD-8CE8-17EBFD7391E3}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

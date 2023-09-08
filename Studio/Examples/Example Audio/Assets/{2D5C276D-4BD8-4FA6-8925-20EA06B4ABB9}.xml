@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{2D5C276D-4BD8-4FA6-8925-20EA06B4ABB9}">
+      <Name>Animal PS2</Name>
+      <Type>rwaID_WAVEDICT</Type>
+      <Description></Description>
+      <Platform>PS2</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Models\Animal.rws" />
+      <ParentReference id="{5E47B63F-4F37-4E3F-AF2D-6C9BD5ABF2AB}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

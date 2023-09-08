@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{551E35ED-E7B2-4F82-A7DC-D43F6D40E3F2}" type="generic">
+      <Name>Simple Particles</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{4113A4A4-F6E7-43E3-A3F3-3EA3E53FF4C7}" type="RWSEntityID" />
+      <ChildReference id="{B3967E1F-09A8-4A34-8E16-3EF18F8B84EC}" type="RWSEntityID" />
+      <ChildReference id="{1E81822A-7DCD-4693-924A-48DB664A9390}" type="RWSEntityID" />
+      <ChildReference id="{F5EB9A7E-27AA-4D58-A0F7-ADF8812D71C9}" type="RWSEntityID" />
+      <ChildReference id="{FA4FB7E5-A641-4682-A8DF-478B5D1C438A}" type="RWSEntityID" />
+      <ChildReference id="{D1E79BC6-C634-4AFA-8729-47359DD4D495}" type="RWSEntityID" />
+      <ChildReference id="{B93E5B0D-5937-43DD-9FE3-68EDA601109A}" type="RWSEntityID" />
+      <ChildReference id="{1883194B-7A77-4DB0-A2F9-39638396008E}" type="RWSEntityID" />
+      <ChildReference id="{72B247CE-4277-4DD3-8B1D-E5629187256E}" type="RWSEntityID" />
+      <ChildReference id="{E96432CB-A4AE-44E5-85DC-9A2385FC6A33}" type="RWSEntityID" />
+      <ChildReference id="{2AF1D6A2-6C37-42C5-8BAD-9821FC90CAF0}" type="RWSEntityID" />
+      <ChildReference id="{25375EE6-C809-4AF4-9019-ACA2220D7016}" type="RWSEntityID" />
+      <ChildReference id="{0EB764AD-10F6-40CE-BF04-4C7643BF6A00}" type="RWSEntityID" />
+      <ChildReference id="{7F27072D-E9F1-4FB9-BD56-5E49515FA5E0}" type="RWSEntityID" />
+      <ChildReference id="{ADE73181-0114-4893-B103-00DE73DA2D07}" type="RWSEntityID" />
+      <ChildReference id="{09147531-9645-4992-8FFE-E9BFB0F6B133}" type="RWSEntityID" />
+      <ChildReference id="{227FC774-E9B4-49D8-88FF-DE80E9FED599}" type="RWSEntityID" />
+      <ChildReference id="{1270A3BE-B289-4BE1-81AD-EB64D99E9D88}" type="RWSEntityID" />
+      <ChildReference id="{B86C3C3A-D0B6-4FF2-B140-E17C51B57A92}" type="RWSEntityID" />
+      <ChildReference id="{09CD1B78-9E28-4191-980B-2FFAB8816CF0}" type="RWSEntityID" />
+      <ChildReference id="{642AF00E-0591-448F-AED6-0CA6DF481386}" type="RWSEntityID" />
+      <ChildReference id="{CD4ABC85-4738-418E-AC0E-330BC9C46E1F}" type="RWSEntityID" />
+      <ChildReference id="{74E79CE1-E1EC-473C-B877-2633912B4DF3}" type="RWSEntityID" />
+      <ChildReference id="{ED7FADEE-FE4A-42C3-BA95-14DE61A5254F}" type="RWSEntityID" />
+      <ChildReference id="{2BF75840-B48F-4D68-AC2E-3457440A55C2}" type="RWSEntityID" />
+      <ParentReference id="{622537B4-4673-44A8-AFF7-B84624288925}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

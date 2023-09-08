@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{C589679D-2A41-4C31-A56E-7EC34B9CE68A}" type="generic">
+      <Name>Level: Environment Map Example</Name>
+      <Description></Description>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{7427B4FD-DFEC-409D-9445-EED8A5617034}" type="RWSEntityID" />
+      <ChildReference id="{4377B2FB-8F53-4704-98E3-42690EA41A06}" type="RWSEntityID" />
+      <ChildReference id="{7F61B584-8B3C-4B97-8513-E125A89355A4}" type="RWSEntityID" />
+      <ChildReference id="{FC5F1238-8DB1-44F0-9672-226472F28C0F}" type="RWSEntityID" />
+      <ChildReference id="{EC64D112-FC4C-4FC3-813D-CBF48F09C8C6}" type="RWSEntityID" />
+      <ChildReference id="{037D7950-09C5-4060-A772-9B4E5E56CDE0}" type="RWSEntityID" />
+      <ChildReference id="{66CBDA2C-424A-4710-8859-5A95339E9698}" type="RWSEntityID" />
+      <ChildReference id="{FA6394EA-D179-46F9-99E8-9015AA9F464C}" type="RWSEntityID" />
+      <ParentReference id="{40D5FA25-EF82-462C-9893-71CD68B2C0A0}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

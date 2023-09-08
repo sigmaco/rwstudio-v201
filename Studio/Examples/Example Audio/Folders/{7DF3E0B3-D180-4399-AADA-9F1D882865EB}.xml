@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{7DF3E0B3-D180-4399-AADA-9F1D882865EB}" type="generic">
+      <Name>Level: Audio Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{69AC5373-BEEF-4548-BB3D-A08E317CDA08}" type="RWSFolderID" />
+      <ChildReference id="{956B9D2B-D77F-449E-82C8-E6F42C9F548F}" type="RWSFolderID" />
+      <ChildReference id="{AE7089D1-6710-46F3-A83B-6E6EFC2ABE61}" type="RWSFolderID" />
+      <ChildReference id="{2A24BA36-840C-4832-B435-33BF85A0F931}" type="RWSFolderID" />
+      <ChildReference id="{5E47B63F-4F37-4E3F-AF2D-6C9BD5ABF2AB}" type="RWSFolderID" />
+      <ParentReference id="{F3925200-EFC4-46FC-A60A-D233C10EDCF8}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

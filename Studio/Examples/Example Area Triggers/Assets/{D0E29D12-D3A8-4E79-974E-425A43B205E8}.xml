@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{D0E29D12-D3A8-4E79-974E-425A43B205E8}">
+      <Name>ATrig_UnitCyl</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform>None</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\ATrig_UnitCyl.dff" />
+      <ParentReference id="{4A857341-2BD6-4810-ACD9-B44349B9BE67}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

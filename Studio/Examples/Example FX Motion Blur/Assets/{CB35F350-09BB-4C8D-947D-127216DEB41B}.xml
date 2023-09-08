@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{CB35F350-09BB-4C8D-947D-127216DEB41B}">
+      <Name>fx_stars</Name>
+      <Type>rwID_CLUMP</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\Effects\" file="Models\fx_stars.dff" />
+      <ParentReference id="{C471722A-59F1-4118-8DD2-923C5C183CAB}" type="RWSEntityID" />
+      <ParentReference id="{DB2FEE05-F886-4AA5-A012-F3E27C771F05}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{DDC86088-5361-427A-A3D3-22369B861D6A}">
+      <Name>3rd person camera</Name>
+      <Behavior>CCameraLookAtPoint</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{BC89B65A-A138-4F86-996D-D6467CF2615F}" type="RWSAssetID" />
+      <ParentReference id="{2A6A9BC2-57A6-4F16-BB13-DDEACAF9F412}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               bf4cee9e <!-- -0.800516 -->
+               bb37eff1 <!-- -0.00280666 -->
+               bf196df4 <!-- -0.599334 -->
+               00000000 <!-- 0.000000 -->
+               3e7ac7da <!-- 0.244903 -->
+               3f69422d <!-- 0.911166 -->
+               bea9a9fc <!-- -0.331375 -->
+               00000000 <!-- 0.000000 -->
+               3f0c0991 <!-- 0.547021 -->
+               bed2f6c7 <!-- -0.412039 -->
+               bf3a8c7a <!-- -0.728706 -->
+               00000000 <!-- 0.000000 -->
+               44ee223d <!-- 1905.07 -->
+               441f10e5 <!-- 636.264 -->
+               459ff6cd <!-- 5118.85 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_m_InRender</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="13">iMsgDoRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_m_OutRender</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_View_Angle</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               42480000 <!-- 50.0000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_m_Msg_Rx_Pos</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="11">player_pos</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_max_elevation</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               429a6666 <!-- 77.2000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_pref_elevation</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               4283999a <!-- 65.8000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_min_elevation</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               42626666 <!-- 56.6000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_max_distance</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               443b8000 <!-- 750.000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_pref_distance</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               442f0000 <!-- 700.000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_min_distance</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               44228000 <!-- 650.000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

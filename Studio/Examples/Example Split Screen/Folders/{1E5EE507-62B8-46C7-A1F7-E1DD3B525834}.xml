@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{1E5EE507-62B8-46C7-A1F7-E1DD3B525834}" type="generic">
+      <Name>Level: Split Screen Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{34063E15-9EF4-42D5-89A1-93993D493A0B}" type="RWSFolderID" />
+      <ChildReference id="{3BCC6F6C-EBA2-4F67-949E-786F95833F69}" type="RWSFolderID" />
+      <ChildReference id="{6033C43C-325E-404A-9B51-0DA203E25E45}" type="RWSFolderID" />
+      <ChildReference id="{7416DF08-A3D2-45C2-A730-249CC120FC85}" type="RWSFolderID" />
+      <ParentReference id="{A859E3AA-D998-4E7C-87EB-F983EB9F65E2}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

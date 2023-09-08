@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{C89556C1-BC8C-49DA-9230-71017CFA4412}" type="generic">
+      <Name>Level: XBox Pixel Shader</Name>
+      <Description></Description>
+      <Platform></Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{C37BF250-A89A-4B6D-9143-6BC67B01E980}" type="RWSFolderID" />
+      <ChildReference id="{01C6B7E6-727D-4FBC-9BD5-5215D0F44648}" type="RWSFolderID" />
+      <ChildReference id="{F86C081F-AF59-4681-B6CF-8B8E494175AF}" type="RWSFolderID" />
+      <ChildReference id="{EAC90470-7D42-43E3-9ADE-6510DA8E6554}" type="RWSFolderID" />
+      <ParentReference id="{C9B5A032-66D5-4AA3-A21A-F264F5DC0EA9}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

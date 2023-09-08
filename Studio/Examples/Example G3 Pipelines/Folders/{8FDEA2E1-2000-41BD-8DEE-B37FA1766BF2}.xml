@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{8FDEA2E1-2000-41BD-8DEE-B37FA1766BF2}" type="generic">
+      <Name>G3x_A4D Pipes</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{8F713341-3173-412E-8AD1-8BCAE40B7B50}" type="RWSEntityID" />
+      <ChildReference id="{2EAD5102-D192-4016-A313-0F7C68E64173}" type="RWSEntityID" />
+      <ChildReference id="{1EB9CE61-550A-4C9A-B454-C48A1682B1EF}" type="RWSEntityID" />
+      <ParentReference id="{1A94019D-AB22-494B-B8FA-124A2F6B1B82}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

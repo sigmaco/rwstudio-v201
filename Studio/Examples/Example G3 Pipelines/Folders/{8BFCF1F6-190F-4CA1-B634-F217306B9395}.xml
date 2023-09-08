@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{8BFCF1F6-190F-4CA1-B634-F217306B9395}" type="generic">
+      <Name>Material FX</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{361F7A81-4FA6-4AF7-89A8-96CD3B5C9517}" type="RWSEntityID" />
+      <ParentReference id="{905DA911-A24A-4422-BDD3-2BFBAD954158}" type="RWSFolderID" />
+      <ParentReference id="{CD7FB7BB-45F7-4443-B290-D7DE6C282A78}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

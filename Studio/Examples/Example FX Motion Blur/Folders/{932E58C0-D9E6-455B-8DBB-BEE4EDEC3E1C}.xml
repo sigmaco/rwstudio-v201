@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{932E58C0-D9E6-455B-8DBB-BEE4EDEC3E1C}" type="generic">
+      <Name>Effects</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{D9D7CB72-2E77-4EC8-B740-A50FE31E8C93}" type="RWSEntityID" />
+      <ParentReference id="{77A43C22-4847-4A31-AEF0-D87D99220D09}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

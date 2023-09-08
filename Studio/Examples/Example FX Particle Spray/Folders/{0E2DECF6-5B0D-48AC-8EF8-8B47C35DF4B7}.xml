@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{0E2DECF6-5B0D-48AC-8EF8-8B47C35DF4B7}" type="generic">
+      <Name>Rockets Group</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{D988CF3E-83EC-4387-8DCD-D5F154C79038}" type="RWSEntityID" />
+      <ChildReference id="{3829A0EA-E9EC-4F9F-9866-C26E57813A29}" type="RWSEntityID" />
+      <ChildReference id="{F0CD2186-EB1F-403E-BABC-E0F3DEDC2542}" type="RWSEntityID" />
+      <ParentReference id="{53684608-39B7-4F23-B027-DBA091640FA8}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

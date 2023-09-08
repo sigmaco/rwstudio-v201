@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{0F6AC854-6792-4FC3-89D3-DB6B089FC887}">
+      <Name>Alien Jar</Name>
+      <Behavior>CEntity</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{3481C58B-BE6F-4188-81F4-99D84DB500E2}" type="RWSAssetID" />
+      <ParentReference id="{01B14A61-7F5B-490C-BC50-5658B3FB7CEA}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               bb8768c0 <!-- -0.00413236 -->
+               bf7fff69 <!-- -0.999991 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f7fff69 <!-- 0.999991 -->
+               bb8768c0 <!-- -0.00413236 -->
+               00000000 <!-- 0.000000 -->
+               4509991f <!-- 2201.57 -->
+               40e75476 <!-- 7.22906 -->
+               4380872b <!-- 257.056 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

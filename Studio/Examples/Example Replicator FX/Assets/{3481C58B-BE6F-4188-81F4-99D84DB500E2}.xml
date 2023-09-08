@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{3481C58B-BE6F-4188-81F4-99D84DB500E2}">
+      <Name>.\Models\Alien_jar.dff</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources=".\Models\Textures\" file=".\Models\Alien_jar.dff" />
+      <ParentReference id="{0F6AC854-6792-4FC3-89D3-DB6B089FC887}" type="RWSEntityID" />
+      <ParentReference id="{BBCCB045-82FC-45E9-9492-2310FF05196A}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

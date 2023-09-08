@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{0747B299-D0B5-4E6E-9E47-946D85525382}">
+      <Name>Entity&lt;6060&gt;</Name>
+      <Behavior>FPSPlatform</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{4A7BC7F0-C362-4A95-A667-8A309C3A745B}" type="RWSAssetID" />
+      <ParentReference id="{289AE276-F352-446F-8CD0-22CACAE3A564}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               c18f71de <!-- -17.9306 -->
+               43fdd26f <!-- 507.644 -->
+               c55a4d48 <!-- -3492.83 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlatform</Class>
+         <Member>CMD_height</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               44005f1b <!-- 513.486 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>FPSPlatform</Class>
+         <Member>CMD_speed</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">399</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

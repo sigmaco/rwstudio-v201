@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{5999BB38-5B42-4B64-B9F0-338F7F208B67}">
+      <Name>Left Arm Stab</Name>
+      <Type>rwID_HANIMANIMATION</Type>
+      <Description></Description>
+      <Platform></Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Models\left_arm_stab.anm" />
+      <ParentReference id="{54D06143-DBC2-4741-BB0B-7B1C16DDA7AD}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

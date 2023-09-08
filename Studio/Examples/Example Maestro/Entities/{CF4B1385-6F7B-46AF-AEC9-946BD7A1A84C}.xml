@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{CF4B1385-6F7B-46AF-AEC9-946BD7A1A84C}">
+      <Name>XBox Controller</Name>
+      <Description></Description>
+      <Behavior>CXboxStndController</Behavior>
+      <Platform>Xbox</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{F6225147-AAAA-4E4B-9D1A-D81379C9DB43}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               3ff61c58 <!-- 1.92274 -->
+               3e31eb42 <!-- 0.173749 -->
+               419bf838 <!-- 19.4962 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CXboxStndController</Class>
+         <Member>CMD_m_Inq_wB1</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="16">INQ_MENU_BTN_UP</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CXboxStndController</Class>
+         <Member>CMD_m_Inq_wB2</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="18">INQ_MENU_BTN_DOWN</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CXboxStndController</Class>
+         <Member>CMD_m_Inq_B1</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="20">INQ_MENU_BTN_SELECT</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CXboxStndController</Class>
+         <Member>CMD_m_Inq_B2</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="20">INQ_MENU_BTN_CANCEL</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CXboxStndController</Class>
+         <Member>CMD_m_Inq_wB3</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="18">INQ_MENU_BTN_LEFT</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CXboxStndController</Class>
+         <Member>CMD_m_Inq_wB4</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="19">INQ_MENU_BTN_RIGHT</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

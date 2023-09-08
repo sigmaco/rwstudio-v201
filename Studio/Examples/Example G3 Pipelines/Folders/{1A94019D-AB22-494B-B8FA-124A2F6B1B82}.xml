@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{1A94019D-AB22-494B-B8FA-124A2F6B1B82}" type="generic">
+      <Name>Level: Using G3x_A4D (1 Ambient + 4 Directional) Pipeline</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{8FDEA2E1-2000-41BD-8DEE-B37FA1766BF2}" type="RWSFolderID" />
+      <ChildReference id="{CE03CA3A-D4BE-43C1-9B37-2CB540C4C535}" type="RWSFolderID" />
+      <ChildReference id="{0998CA23-81B0-42EC-8437-E0D57D7D0C3E}" type="RWSFolderID" />
+      <ChildReference id="{84368144-F2F7-44DB-9B67-64F9CF2A2731}" type="RWSFolderID" />
+      <ChildReference id="{78539827-2407-4E71-A84A-EFC032B7791C}" type="RWSFolderID" />
+      <ChildReference id="{90C153EB-F983-4CE8-A2BF-46022835A87B}" type="RWSFolderID" />
+      <ChildReference id="{8CF98BCC-610B-4B1A-B24F-A17C837B6CAB}" type="RWSFolderID" />
+      <ChildReference id="{E0FAC4F9-9C98-425C-A6C6-9D5F8065C370}" type="RWSFolderID" />
+      <ParentReference id="{F93B367B-C424-4DEB-90E8-6BC0139409DB}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

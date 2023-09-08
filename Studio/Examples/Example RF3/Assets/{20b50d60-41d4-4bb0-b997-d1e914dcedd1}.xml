@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{20b50d60-41d4-4bb0-b997-d1e914dcedd1}">
+      <Name>lift_jail</Name>
+      <Type>rwID_HANIMANIMATION</Type>
+      <Description>Auto-generated from: Models\military_lab.rf3</Description>
+      <SendName>0</SendName>
+      <ObjectReference id="" resources="Models\Textures\" file="RWStudio RF3 Exports\Generic\Models\military_lab\military_lab2.rws" />
+      <ParentReference id="{a3e581d5-6ea7-4934-8045-d8ab58a5231b}" type="RWSAssetID" />
+   </Asset>
+
+</RenderWareStudio>
+

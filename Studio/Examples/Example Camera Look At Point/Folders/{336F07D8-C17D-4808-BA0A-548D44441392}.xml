@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{336F07D8-C17D-4808-BA0A-548D44441392}" type="generic">
+      <Name>Level: Camera Look At Point</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{EA394614-7CBB-4E70-9DED-64AD4EF18B82}" type="RWSFolderID" />
+      <ChildReference id="{6776E18F-44C1-42AD-87C1-DBB734F64D94}" type="RWSFolderID" />
+      <ChildReference id="{32D4928D-3225-4DFF-AA46-E506390C39D8}" type="RWSFolderID" />
+      <ChildReference id="{8680D96C-81A6-41B1-B99B-1AD76D6F6EE2}" type="RWSFolderID" />
+      <ParentReference id="{3BE3F75A-8803-410E-8C5A-0B84E18E69F4}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

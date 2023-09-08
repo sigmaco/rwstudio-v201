@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{67647BC5-FB3F-4F8E-8E08-0CCC65E1BD31}">
+      <Name>Light 1</Name>
+      <Behavior>CFXColorLight</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{85C79B43-DF5D-43E1-9298-63D7396D56FB}" type="RWSAssetID" />
+      <ParentReference id="{B83CD901-F5F8-4DEA-94D4-2A77E6218346}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f248da3 <!-- 0.642786 -->
+               00000000 <!-- 0.000000 -->
+               bf441b63 <!-- -0.766043 -->
+               00000000 <!-- 0.000000 -->
+               bf1c9e2c <!-- -0.611789 -->
+               bf1a108b <!-- -0.601815 -->
+               bf036b02 <!-- -0.513352 -->
+               00000000 <!-- 0.000000 -->
+               beec0a68 <!-- -0.461017 -->
+               3f4c733a <!-- 0.798633 -->
+               bec60fc2 <!-- -0.386839 -->
+               00000000 <!-- 0.000000 -->
+               428207ef <!-- 65.0155 -->
+               424dd5b3 <!-- 51.4587 -->
+               44581ed9 <!-- 864.482 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CFXBaseLight</Class>
+         <Member>CMD_Set_t_Light_Type</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">1</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

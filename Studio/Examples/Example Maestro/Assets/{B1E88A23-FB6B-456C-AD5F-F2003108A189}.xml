@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{B1E88A23-FB6B-456C-AD5F-F2003108A189}">
+      <Name>Combination_d3d</Name>
+      <Type>rwID_PITEXDICTIONARY</Type>
+      <Description>D3D8 Maestro Texture Dictionary</Description>
+      <Platform>DirectX</Platform>
+      <Model></Model>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="" file="Maestro\TexDict\Combination_d3d.txd" />
+      <ParentReference id="{77881B3A-5DD0-406F-BBD5-183D7D7FA55C}" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{3BE3F75A-8803-410E-8C5A-0B84E18E69F4}">
+      <Name>Game: Camera Look At Point Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{336F07D8-C17D-4808-BA0A-548D44441392}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

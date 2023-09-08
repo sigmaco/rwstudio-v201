@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{8CF98BCC-610B-4B1A-B24F-A17C837B6CAB}" type="generic">
+      <Name>Warriors 4 weights per vertex A4D</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{D4B96D12-C01F-43DE-9DFA-15677688279D}" type="RWSEntityID" />
+      <ChildReference id="{34D0ADDC-D170-489F-996F-E99966BBEC42}" type="RWSEntityID" />
+      <ChildReference id="{37CB2653-6A67-450B-84DF-4809A512A617}" type="RWSEntityID" />
+      <ChildReference id="{97B618CF-1EF8-4CB7-B651-B5C55D66BE9F}" type="RWSEntityID" />
+      <ChildReference id="{D2F01C02-440C-4471-84E8-1F81E0DC494B}" type="RWSEntityID" />
+      <ChildReference id="{5D492206-D27D-4E93-8D7D-7AC39EBB8F03}" type="RWSEntityID" />
+      <ChildReference id="{EC5141EF-3661-4D08-9262-AF7AA84B6B5D}" type="RWSEntityID" />
+      <ParentReference id="{1A94019D-AB22-494B-B8FA-124A2F6B1B82}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

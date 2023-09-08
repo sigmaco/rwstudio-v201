@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Game id="{F82E0A3E-7BC3-4170-9BB4-9A592EC05AFA}">
+      <Name>Game: Replicator FX Example</Name>
+      <Build>
+      </Build>
+      <ChildReference id="RWS_GlobalFolder" type="RWSFolderID" />
+      <ChildReference id="{303A82AE-3E3A-466E-8A07-EBAB6FF10487}" type="RWSFolderID" />
+   </Game>
+
+</RenderWareStudio>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{84368144-F2F7-44DB-9B67-64F9CF2A2731}" type="generic">
+      <Name>Input Devices</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{8211CF78-8631-40F5-8047-4E689B8175A0}" type="RWSEntityID" />
+      <ChildReference id="{F288A74E-8CE3-4873-8085-9489004B7AC2}" type="RWSEntityID" />
+      <ChildReference id="{883D1A37-DAC9-481E-AA7E-CA665BEDB722}" type="RWSEntityID" />
+      <ChildReference id="{2D0D755E-C7C2-496B-915B-0A8A247C15CF}" type="RWSEntityID" />
+      <ChildReference id="{7851C36C-2192-4862-ADB0-C693059862DF}" type="RWSEntityID" />
+      <ParentReference id="{1A94019D-AB22-494B-B8FA-124A2F6B1B82}" type="RWSFolderID" />
+      <ParentReference id="{36427FD4-1928-41C9-A976-51562D4D0304}" type="RWSFolderID" />
+      <ParentReference id="{905DA911-A24A-4422-BDD3-2BFBAD954158}" type="RWSFolderID" />
+      <ParentReference id="{CD7FB7BB-45F7-4443-B290-D7DE6C282A78}" type="RWSFolderID" />
+      <ParentReference id="{D1D4936D-628B-4CF2-8496-1F93820D5C85}" type="RWSFolderID" />
+      <ParentReference id="{D6E0BF4B-E1A5-4C13-A01E-B415005F4FFF}" type="RWSFolderID" />
+      <ParentReference id="{DF0BD1EB-A652-454B-95BF-5F66655F7FEE}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{482FDB6A-E67E-4FBB-948C-8BDA66CE5E87}" type="generic">
+      <Name>Level: Split Screen To View PVS</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{656EB228-E45D-475E-A3F7-8F62D6E9117C}" type="RWSFolderID" />
+      <ChildReference id="{54E153C2-323B-403E-9DD2-576A99F4552B}" type="RWSFolderID" />
+      <ChildReference id="{D0EB0C6F-4774-4110-8CDC-8F044F532682}" type="RWSFolderID" />
+      <ChildReference id="{FD48F784-AA6F-455E-8F5D-5AFD7F34D9E6}" type="RWSFolderID" />
+      <ParentReference id="{A7F88395-3556-468B-B9D5-A098A60217DD}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

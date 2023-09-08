@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{33D4B109-EA9F-41C3-9FE7-22166593FBAE}" type="generic">
+      <Name>Audio Animal Groups</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{FD0C6812-A652-41B4-B164-E0977CB98F7F}" type="RWSEntityID" />
+      <ChildReference id="{4975F712-6E42-433C-B664-D5A06E95FB09}" type="RWSEntityID" />
+      <ChildReference id="{1B6902B8-D31D-4394-8C8B-CF88B65B1120}" type="RWSEntityID" />
+      <ChildReference id="{0196891F-6A57-404F-A527-035CE064A764}" type="RWSEntityID" />
+      <ChildReference id="{A74F60EB-0F4E-4BA3-AAEA-E0DB2D7F7D97}" type="RWSEntityID" />
+      <ChildReference id="{DF7BB431-C3A2-408F-B1D9-478A0D2BAC1A}" type="RWSEntityID" />
+      <ParentReference id="{BD835D7B-5822-4FCE-B399-A4831F39D2E3}" type="RWSFolderID" />
+   </Folder>
+
+</RenderWareStudio>
+

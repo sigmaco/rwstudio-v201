@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Asset id="{FD0A6127-0660-4370-8097-54F2BB46FAE3}">
+      <Name>bigcone</Name>
+      <Type>rwID_CLUMP</Type>
+      <SendName>0</SendName>
+      <Build>
+      </Build>
+      <ObjectReference id="" resources="Models\Textures\" file="Models\bigcone.dff" />
+      <ParentReference id="{033C9E63-3B4D-471A-A9C5-0965D0279907}" type="RWSEntityID" />
+      <ParentReference id="{09696A71-F1C2-4E84-8ED5-ECDDFEA05CF2}" type="RWSEntityID" />
+      <ParentReference id="{0F25E780-59E1-48E0-BB7D-32D0DAA68B31}" type="RWSEntityID" />
+      <ParentReference id="{14FBAB07-918E-4F5F-A6F0-E14E2F297310}" type="RWSEntityID" />
+      <ParentReference id="{186047C6-97FF-4C09-A177-D4B02B48399D}" type="RWSEntityID" />
+      <ParentReference id="{18E1C1A6-AD02-4AC3-8C81-4AE1B6C7F2FD}" type="RWSEntityID" />
+      <ParentReference id="{19636156-DAA3-4008-BBBE-F00BB7312926}" type="RWSEntityID" />
+      <ParentReference id="{1D365792-2E9B-4E23-8687-EF36F2C925AD}" type="RWSEntityID" />
+      <ParentReference id="{1D3DDDA7-E879-474C-9584-E41C68936EA0}" type="RWSEntityID" />
+      <ParentReference id="{1D596933-1F44-459F-AE63-04E7A73F95CF}" type="RWSEntityID" />
+      <ParentReference id="{5B0BF33A-893D-4C43-8C2A-089850684FD3}" type="RWSEntityID" />
+      <ParentReference id="{68141E5B-F51B-4890-A909-46BA4E20A019}" type="RWSEntityID" />
+      <ParentReference id="{71498ACD-6495-49E2-868E-0338E14F1CA6}" type="RWSEntityID" />
+      <ParentReference id="{7EE4398F-3494-40C5-85DA-A459CD3F54D5}" type="RWSEntityID" />
+      <ParentReference id="{8CA7B7C5-82B3-4940-AD9B-101633944856}" type="RWSEntityID" />
+      <ParentReference id="{9CDA1117-89FB-4F8D-8904-C44D3455F0D9}" type="RWSEntityID" />
+      <ParentReference id="{9F735E1C-9E09-4717-BF41-ED6EE73A8152}" type="RWSEntityID" />
+      <ParentReference id="{B306B655-E50A-43C0-A00A-F0404BE658B1}" type="RWSEntityID" />
+      <ParentReference id="{FDF76443-13A8-4DF3-BC18-8F2FDCBA06BE}" type="RWSEntityID" />
+      <ParentReference id="{FE2AD696-3042-41A4-BB32-3AB1B1283EDE}" type="RWSEntityID" />
+      <ParentReference id="{FEA97C83-9B38-46A9-BBBF-950246BDBB18}" type="RWSEntityID" />
+      <ParentReference id="RWS_AssetHierarchyFolder" type="RWSFolderID" />
+   </Asset>
+
+</RenderWareStudio>
+

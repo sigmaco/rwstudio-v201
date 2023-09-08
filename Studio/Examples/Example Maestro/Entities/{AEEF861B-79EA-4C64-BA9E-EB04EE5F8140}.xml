@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{AEEF861B-79EA-4C64-BA9E-EB04EE5F8140}">
+      <Name>PS2 Controller</Name>
+      <Description></Description>
+      <Behavior>CPSX2StndController</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{F6225147-AAAA-4E4B-9D1A-D81379C9DB43}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               00000000 <!-- 0.000000 -->
+               3f800000 <!-- 1.00000 -->
+               00000000 <!-- 0.000000 -->
+               bec4c7d2 <!-- -0.384337 -->
+               3e31eb42 <!-- 0.173749 -->
+               419bcf0e <!-- 19.4761 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CPSX2StndController</Class>
+         <Member>CMD_m_Inq_Triangle</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="20">INQ_MENU_BTN_CANCEL</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CPSX2StndController</Class>
+         <Member>CMD_m_Inq_Cross</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="20">INQ_MENU_BTN_SELECT</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CPSX2StndController</Class>
+         <Member>CMD_m_Inq_PAD_Up</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="16">INQ_MENU_BTN_UP</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CPSX2StndController</Class>
+         <Member>CMD_m_Inq_PAD_Down</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="18">INQ_MENU_BTN_DOWN</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CPSX2StndController</Class>
+         <Member>CMD_m_Inq_PAD_Left</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="18">INQ_MENU_BTN_LEFT</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CPSX2StndController</Class>
+         <Member>CMD_m_Inq_PAD_Right</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="19">INQ_MENU_BTN_RIGHT</Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

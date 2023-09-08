@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="{55B8AA00-FD8E-47D6-95E0-D99B8FBCE9FE}" type="generic">
+      <Name>Level: Level 2, Platforms</Name>
+      <Build>
+      </Build>
+      <ChildReference id="{ABDAA72E-6FD4-4AF4-A854-2158775F858D}" type="RWSFolderID" />
+      <ChildReference id="{E792809C-F0AE-443A-BCF3-E637FBFDBF9B}" type="RWSFolderID" />
+      <ChildReference id="{289AE276-F352-446F-8CD0-22CACAE3A564}" type="RWSFolderID" />
+      <ParentReference id="{05404729-7E8D-4254-B5E6-14979C624C2A}" type="RWSGameID" />
+   </Folder>
+
+</RenderWareStudio>
+

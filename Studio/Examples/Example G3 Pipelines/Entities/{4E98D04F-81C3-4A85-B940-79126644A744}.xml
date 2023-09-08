@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{4E98D04F-81C3-4A85-B940-79126644A744}">
+      <Name>ADLGem Material Pipe</Name>
+      <Description></Description>
+      <Behavior>CG3x_ADLGem_MatPipeID</Behavior>
+      <Platform>PS2</Platform>
+      <Build>
+      </Build>
+      <ChildReference id="{14FF781D-017C-42E4-8AF1-AA2F932F26F9}" type="RWSAssetID" />
+      <ChildReference id="{C7B42A3B-D693-4F0B-9E44-47645CD2E287}" type="RWSAssetID" />
+      <ChildReference id="{1E213493-5CBF-4B6D-8B14-634010AAF238}" type="RWSAssetID" />
+      <ParentReference id="{B89289A8-CFD7-4E5E-BE7F-C7AE66027AC1}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

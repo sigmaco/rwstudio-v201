@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{B30ABC20-1CD6-4580-AA92-92B71031C8A0}">
+      <Name>XBox controller</Name>
+      <Description></Description>
+      <Behavior>CXboxStndController</Behavior>
+      <Platform>XBox</Platform>
+      <Build>
+      </Build>
+      <ParentReference id="{123AB5CE-C02C-4C91-A06C-294D2F439875}" type="RWSFolderID" />
+   </Entity>
+
+</RenderWareStudio>

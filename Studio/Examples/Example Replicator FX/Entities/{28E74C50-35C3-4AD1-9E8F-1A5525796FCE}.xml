@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Entity id="{28E74C50-35C3-4AD1-9E8F-1A5525796FCE}">
+      <Name>Effects camera</Name>
+      <Behavior>CCameraLookAtPoint</Behavior>
+      <Build>
+      </Build>
+      <ChildReference id="{91344B69-B520-4E17-81D4-0A8E51977238}" type="RWSAssetID" />
+      <ParentReference id="{01B14A61-7F5B-490C-BC50-5658B3FB7CEA}" type="RWSFolderID" />
+      <Attribute>
+         <Class>CSystemCommands</Class>
+         <Member>CMD_LoadMatrix</Member>
+         <Type>RwMatrix</Type>
+         <Value>
+            <Data type="RWSReal" num="16" encoding="binary">
+               bdcb3172 <!-- -0.0992154 -->
+               bad958f7 <!-- -0.00165823 -->
+               3f7ebcb6 <!-- 0.995067 -->
+               00000000 <!-- 0.000000 -->
+               3e64fa05 <!-- 0.223610 -->
+               3f79716d <!-- 0.974387 -->
+               3cc3f233 <!-- 0.0239192 -->
+               00000000 <!-- 0.000000 -->
+               bf7838e3 <!-- -0.969618 -->
+               3e6646ae <!-- 0.224879 -->
+               bdc53ab8 <!-- -0.0963034 -->
+               00000000 <!-- 0.000000 -->
+               42100419 <!-- 36.0040 -->
+               43e6dae1 <!-- 461.710 -->
+               447c5f5c <!-- 1009.49 -->
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_m_InRender</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="13">iMsgDoRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_m_RxEnableCameraEvent</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_priority</Member>
+         <Type>RwUInt32</Type>
+         <Value>
+            <Data type="RWSUInt32" num="1">65535</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_m_OutRender</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="9">MyRender</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_max_elevation</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               42c80000 <!-- 100.000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_pref_elevation</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_min_elevation</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               c2273333 <!-- -41.8000 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_max_angle</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               43b0c28f <!-- 353.520 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_pref_angle</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               43208f5c <!-- 160.560 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_min_angle</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               c1ec28f6 <!-- -29.5200 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_View_Angle</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               426e51ec <!-- 59.5800 -->
+            </Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_m_respondtocamerarequest</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_StartsActive</Member>
+         <Type>BOOLEAN</Type>
+         <Value>
+            <Data type="RWSBool" num="1">1</Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_Set_m_TxEnableCameraEvent</Member>
+         <Type>MESSAGE_TYPE</Type>
+         <Value>
+            <Data type="RWSChar" num="1"></Data>
+         </Value>
+      </Attribute>
+      <Attribute>
+         <Class>CCameraLookAtPoint</Class>
+         <Member>CMD_m_pref_distance</Member>
+         <Type>RwReal</Type>
+         <Value>
+            <Data type="RWSReal" num="1" encoding="binary">
+               00000000 <!-- 0.000000 -->
+            </Data>
+         </Value>
+      </Attribute>
+   </Entity>
+
+</RenderWareStudio>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<RenderWareStudio version="2.0">
+
+   <Folder id="RWS_AttributeShareHierarchyFolder" type="attributeshare">
+      <Build>
+      </Build>
+      <ChildReference id="{015FB47D-843B-4D4B-B4C6-65CE0AA9A8AA}" type="RWSAttributeShareID" />
+      <ChildReference id="{11C3464A-B41A-413F-BD61-D42A1610507A}" type="RWSAttributeShareID" />
+      <ChildReference id="{39AFC320-2EAD-4CAA-897E-5F669FC68710}" type="RWSAttributeShareID" />
+      <ChildReference id="{C7216554-959D-4AE5-BF69-28922290CBEC}" type="RWSAttributeShareID" />
+      <ChildReference id="{CDF054E6-4D78-4E24-8849-3AF5B92B2B91}" type="RWSAttributeShareID" />
+   </Folder>
+
+</RenderWareStudio>
+
